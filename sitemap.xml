@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite.com/about/index.html</loc>
+    
+    <lastmod>2020-04-22T05:42:59.067Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2020/02/16/sort-algorithms/</loc>
+    
+    <lastmod>2020-04-22T05:38:16.266Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/2020/04/22/hello-world/</loc>
     
     <lastmod>2020-04-22T01:59:01.820Z</lastmod>
@@ -9,35 +23,7 @@
   </url>
   
   <url>
-    <loc>http://yoursite.com/2020/02/16/sort-algorithms/</loc>
-    
-    <lastmod>2020-04-05T02:43:43.000Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://yoursite.com/404.html</loc>
-    
-    <lastmod>2020-04-05T02:43:43.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/about/index.html</loc>
-    
-    <lastmod>2020-04-05T02:43:43.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/categories/index.html</loc>
-    
-    <lastmod>2020-04-05T02:43:43.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/archives/index.html</loc>
     
     <lastmod>2020-04-05T02:43:43.000Z</lastmod>
     
@@ -51,7 +37,7 @@
   </url>
   
   <url>
-    <loc>http://yoursite.com/tags/index.html</loc>
+    <loc>http://yoursite.com/archives/index.html</loc>
     
     <lastmod>2020-04-05T02:43:43.000Z</lastmod>
     
@@ -59,6 +45,20 @@
   
   <url>
     <loc>http://yoursite.com/friends/index.html</loc>
+    
+    <lastmod>2020-04-05T02:43:43.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/categories/index.html</loc>
+    
+    <lastmod>2020-04-05T02:43:43.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/tags/index.html</loc>
     
     <lastmod>2020-04-05T02:43:43.000Z</lastmod>
     
