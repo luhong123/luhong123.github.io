@@ -68,4 +68,32 @@
     
   </entry>
   
+  <entry>
+    <title>第一章   MySQL 大纲介绍</title>
+    <link href="http://yoursite.com/2020/02/16/di-yi-zhang-mysql-da-gang-jie-shao/"/>
+    <id>http://yoursite.com/2020/02/16/di-yi-zhang-mysql-da-gang-jie-shao/</id>
+    <published>2020-02-16T07:09:23.000Z</published>
+    <updated>2020-04-22T05:52:28.384Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;1、官方定义的MySQL-DBA工作内容&quot;&gt;&lt;a href=&quot;#1、官方定义的MySQL-DBA工作内容&quot; class=&quot;headerlink&quot; title=&quot;1、官方定义的MySQL  DBA工作内容&quot;&gt;&lt;/a&gt;1、官方定义的MySQL 
+        
+      
+    
+    </summary>
+    
+      <category term="mysql" scheme="http://yoursite.com/categories/mysql/"/>
+    
+    
+      <category term="leetcode" scheme="http://yoursite.com/tags/leetcode/"/>
+    
+      <category term="mysql" scheme="http://yoursite.com/tags/mysql/"/>
+    
+  </entry>
+  
 </feed>
