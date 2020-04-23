@@ -45,8 +45,8 @@
     
     <entry>
       <title>第三章mysql连接管理</title>
-      <link href="/2020/02/23/mysql-qi-dong-duo-shi-li/"/>
-      <url>/2020/02/23/mysql-qi-dong-duo-shi-li/</url>
+      <link href="/2020/02/23/ce-shi/"/>
+      <url>/2020/02/23/ce-shi/</url>
       
         <content type="html"><![CDATA[<h1 id="1-MySQL-连接管理"><a href="#1-MySQL-连接管理" class="headerlink" title="1. MySQL 连接管理"></a>1. MySQL 连接管理</h1><h2 id="1-2连接命令"><a href="#1-2连接命令" class="headerlink" title="1.2连接命令"></a>1.2连接命令</h2><pre><code>1.1 mysqladmin  -- 了解 # 修改密码 [root@db01 ~]# mysqladmin -uroot -p123 password 123456# 关闭数据库[root@db01 ~]# mysqladmin -uroot -p123456  shutdown # 刷新日志（二进制日志）[root@db01 ~]# mysqladmin -uroot -p123 flush-logs1.2 mysqldump（备份章节） ---了解</code></pre><h2 id="2-MySQL-启动和关闭"><a href="#2-MySQL-启动和关闭" class="headerlink" title="2. MySQL 启动和关闭"></a>2. MySQL 启动和关闭</h2><pre><code>2.1.1 懒人方式 Centos6(Sys-v): service mysqld start/stop/restart/statusCentos7（systemd）：systemctl start/stop/restart/status mysqld应用场景： 日常管理时使用。</code></pre><p><img src="MySQL%E5%90%AF%E5%8A%A8%E5%85%B3%E9%97%AD.png" alt></p>]]></content>
       
