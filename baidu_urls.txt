@@ -1,4 +1,5 @@
 http://yoursite.com/2020/04/22/02-mysql-lesson02-ti-xi-jie-gou-yu-guan-li/
 http://yoursite.com/2020/04/22/hello-world/
+http://yoursite.com/2020/02/23/di-san-zhang-mysql-lian-jie-guan-li/
 http://yoursite.com/2020/02/16/sort-algorithms/
-http://yoursite.com/2020/02/16/di-yi-zhang-mysql-da-gang-jie-shao-fu-ben/
+http://yoursite.com/2020/02/16/di-yi-zhang-mysql-da-gang-jie-shao/
