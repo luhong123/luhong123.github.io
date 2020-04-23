@@ -4,15 +4,16 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="第三章mysql连接管理, 自然语言处理 深度学习 算法码上来">
+    <meta name="keywords" content="mysql多实例部署, 自然语言处理 深度学习 算法码上来">
     <meta name="baidu-site-verification" content="fmlEuI34ir">
     <meta name="google-site-verification" content="yCy2azpds5XSuGZvis6OuA-XIGF5GuGpYRAaGfD6o48">
     <meta name="360-site-verification" content="b7c11a830ef90fd1464ad6206bb7b6e7">
-    <meta name="description" content="1. MySQL 连接管理1.2连接命令1.1 mysqladmin  -- 了解 
-# 修改密码 
-[root@db01 ~]# mysqladmin -uroot -p123 password 123456
-# 关闭数据库
-[root@">
+    <meta name="description" content="第一章  需求说明作者:夏正平
+
+部署MySQL5.7的三个多实例环境(端口分别为3307,3308,3309)
+部署MySQL5.6和8.0版本数据库实例((端口分别为3316和3326)
+
+第二章 环境准备1.虚拟机环境$ hostna">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -20,7 +21,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>第三章mysql连接管理 | 小明同学</title>
+    <title>mysql多实例部署 | 小明同学</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -333,13 +334,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/1.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/0.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        第三章mysql连接管理
+                        mysql多实例部署
                     </div>
                 </div>
             </div>
@@ -454,8 +455,8 @@
                             <span class="chip bg-color">mysql</span>
                         </a>
                         
-                        <a href="/tags/leetcode/" target="_blank">
-                            <span class="chip bg-color">leetcode</span>
+                        <a href="/tags/案例/" target="_blank">
+                            <span class="chip bg-color">案例</span>
                         </a>
                         
                     </div>
@@ -492,14 +493,14 @@
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    105
+                    1.5k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    8 分
                 </div>
                 
                 
@@ -515,19 +516,226 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="1-MySQL-连接管理"><a href="#1-MySQL-连接管理" class="headerlink" title="1. MySQL 连接管理"></a>1. MySQL 连接管理</h1><h2 id="1-2连接命令"><a href="#1-2连接命令" class="headerlink" title="1.2连接命令"></a>1.2连接命令</h2><pre><code>1.1 mysqladmin  -- 了解 
-# 修改密码 
-[root@db01 ~]# mysqladmin -uroot -p123 password 123456
-# 关闭数据库
-[root@db01 ~]# mysqladmin -uroot -p123456  shutdown 
-# 刷新日志（二进制日志）
-[root@db01 ~]# mysqladmin -uroot -p123 flush-logs
+                <h1 id="第一章-需求说明"><a href="#第一章-需求说明" class="headerlink" title="第一章  需求说明"></a>第一章  需求说明</h1><p>作者:夏正平</p>
+<ol>
+<li>部署<code>MySQL</code>5.7的三个多实例环境(端口分别为3307,3308,3309)</li>
+<li>部署<code>MySQL</code>5.6和8.0版本数据库实例((端口分别为3316和3326)</li>
+</ol>
+<h1 id="第二章-环境准备"><a href="#第二章-环境准备" class="headerlink" title="第二章 环境准备"></a>第二章 环境准备</h1><h2 id="1-虚拟机环境"><a href="#1-虚拟机环境" class="headerlink" title="1.虚拟机环境"></a>1.虚拟机环境</h2><pre><code>$ hostname -I 
+  10.0.1.51
+$ hostname
+  db01
+$ cat /etc/redhat-release 
+  CentOS Linux release 7.7.1908 (Core)</code></pre><h2 id="2-虚拟机优化"><a href="#2-虚拟机优化" class="headerlink" title="2.虚拟机优化"></a>2.虚拟机优化</h2><pre><code># 关闭Selinux
+$ setenforce 0
+$ sed -i s#SELINUX=enforcing#SELINUX=disabled#g /etc/selinux/config
 
-1.2 mysqldump（备份章节） ---了解</code></pre><h2 id="2-MySQL-启动和关闭"><a href="#2-MySQL-启动和关闭" class="headerlink" title="2. MySQL 启动和关闭"></a>2. MySQL 启动和关闭</h2><pre><code>2.1.1 懒人方式 
-Centos6(Sys-v): service mysqld start/stop/restart/status
-Centos7（systemd）：systemctl start/stop/restart/status mysqld
-应用场景： 日常管理时使用。</code></pre><p><img src="MySQL%E5%90%AF%E5%8A%A8%E5%85%B3%E9%97%AD.png" alt></p>
+# 关闭防火墙
+$ systemctl stop firewalld
+$ systemctl disable firewalld
+$ iptables-save
 
+# 更改yum源
+$ mv /etc/yum.repos.d/CentOS-Base.repo /etc/yum.repos.d/CentOS-Base.repo.ori
+$ wget -O /etc/yum.repos.d/CentOS-Base.repo http://mirrors.aliyun.com/repo/Centos-7.repo
+$ sed  -i &#39;/aliyuncs/d&#39; /etc/yum.repos.d/CentOS-Base.repo 
+
+# 添加epel源
+$ wget -O /etc/yum.repos.d/epel.repo http://mirrors.aliyun.com/repo/epel-7.repo
+
+# 更新yum缓存
+$  yum clean all
+$ yum makecache fast
+
+# 停止NetworkManager
+$ systemctl stop NetworkManager
+$ systemctl disable NetworkManager
+
+# 加大文件描述符
+$ echo &#39;* - nofile 65535&#39; &gt;&gt;/etc/security/limits.conf </code></pre><h2 id="3-清理环境"><a href="#3-清理环境" class="headerlink" title="3.清理环境"></a>3.清理环境</h2><h3 id="①卸载已安装的mysql"><a href="#①卸载已安装的mysql" class="headerlink" title="①卸载已安装的mysql"></a>①卸载已安装的mysql</h3><pre><code>$ rpm -qa | grep mysql
+# 结果如下
+mysql-community-common-8.0.18-1.el7.x86_64
+mysql-community-client-8.0.18-1.el7.x86_64
+mysql-community-libs-8.0.18-1.el7.x86_64
+
+# 使用以下命令依次删除上面的程序
+$ yum remove mysql-xxx-xxx-</code></pre><h3 id="②删除mysql的配置文件"><a href="#②删除mysql的配置文件" class="headerlink" title="②删除mysql的配置文件"></a>②删除mysql的配置文件</h3><pre><code>$ find / -name mysql|xargs rm -fr</code></pre><h3 id="③删除MariaDB的文件"><a href="#③删除MariaDB的文件" class="headerlink" title="③删除MariaDB的文件"></a>③删除MariaDB的文件</h3><pre><code>$ rpm -qa | grep mariadb
+$ rpm -e mariadb-xxx --nodeps</code></pre><h3 id="④删除my-cnf"><a href="#④删除my-cnf" class="headerlink" title="④删除my.cnf"></a>④删除my.cnf</h3><pre><code>$ rm -fr /etc/my.cnf</code></pre><h3 id="⑤检查端口是否被占用"><a href="#⑤检查端口是否被占用" class="headerlink" title="⑤检查端口是否被占用"></a>⑤检查端口是否被占用</h3><pre><code>$ which mysql
+$ pkill mysqld
+$ netstat -lntup|egrep &#39;3307|3308|3309|3316|3326&#39;</code></pre><h2 id="4-准备软件包"><a href="#4-准备软件包" class="headerlink" title="4.准备软件包"></a>4.准备软件包</h2><p><a href="https://downloads.mysql.com/archives/community/" target="_blank" rel="noopener">MySQL官方下载地址</a><br>下载二进制包略。</p>
+<h2 id="5-准备目录"><a href="#5-准备目录" class="headerlink" title="5.准备目录"></a>5.准备目录</h2><pre><code>$ rm -rf /data/*
+
+# MySQL安装目录
+$ mkdir -p /data/app
+
+# MySQL数据目录
+$ mkdir -p /data/330{7,8,9}/data
+$ mkdir -p /data/33{16,26}/data
+
+# Scoket目录
+$ mkdir -p /data/socket</code></pre><h1 id="第三章-部署MySQL5-7多实例"><a href="#第三章-部署MySQL5-7多实例" class="headerlink" title="第三章 部署MySQL5.7多实例"></a>第三章 部署MySQL5.7多实例</h1><h2 id="1-解压软件包并制作软连接"><a href="#1-解压软件包并制作软连接" class="headerlink" title="1.解压软件包并制作软连接"></a>1.解压软件包并制作软连接</h2><pre><code>$ tar xf mysql-5.7.28-linux-glibc2.12-x86_64.tar.gz
+$ mv mysql-5.7.28-linux-glibc2.12-x86_64 mysql-5.7.28
+$ ln -s /data/app/mysql-5.7.28 /data/app/mysql5728</code></pre><h2 id="2-创建MySQL多实例配置"><a href="#2-创建MySQL多实例配置" class="headerlink" title="2.创建MySQL多实例配置"></a>2.创建<code>MySQL</code>多实例配置</h2><pre><code># 3307实例配置
+$ cat &gt; /data/3307/my.cnf &lt;&lt;EOF 
+[mysqld]                    
+user=mysql                  
+basedir=/data/app/mysql5728    
+datadir=/data/3307/data     
+socket=/data/socket/mysql3307.sock      
+port=3307                   
+server_id=7                  
+EOF
+
+# 3308实例配置
+$ cat &gt; /data/3308/my.cnf &lt;&lt;EOF 
+[mysqld]                    
+user=mysql                  
+basedir=/data/app/mysql5728    
+datadir=/data/3308/data     
+socket=/data/socket/mysql3308.sock      
+port=3308                   
+server_id=8                  
+EOF
+
+# 3309实例配置
+$ cat &gt; /data/3309/my.cnf &lt;&lt;EOF 
+[mysqld]                    
+user=mysql                  
+basedir=/data/app/mysql5728    
+datadir=/data/3309/data     
+socket=/data/socket/mysql3309.sock      
+port=3309                   
+server_id=9                  
+EOF</code></pre><h2 id="3-创建MySQL傀儡用户并授权"><a href="#3-创建MySQL傀儡用户并授权" class="headerlink" title="3.创建MySQL傀儡用户并授权"></a>3.创建<code>MySQL</code>傀儡用户并授权</h2><pre><code>$ useradd -s /sbin/nologin -M mysql
+$ id mysql
+$ chown -R mysql.mysql /data</code></pre><h2 id="4-初始化"><a href="#4-初始化" class="headerlink" title="4.初始化"></a>4.初始化</h2><pre><code>$ /data/app/mysql5728/bin/mysqld --initialize-insecure --user=mysql --basedir=/data/app/mysql5728 --datadir=/data/3307/data
+$ echo $?
+
+$ /data/app/mysql5728/bin/mysqld --initialize-insecure --user=mysql --basedir=/data/app/mysql5728 --datadir=/data/3308/data
+$ echo $?
+
+$ /data/app/mysql5728/bin/mysqld --initialize-insecure --user=mysql --basedir=/data/app/mysql5728 --datadir=/data/3309/data
+$ echo $?</code></pre><h2 id="5-编写systemd启动脚本"><a href="#5-编写systemd启动脚本" class="headerlink" title="5.编写systemd启动脚本"></a>5.编写systemd启动脚本</h2><pre><code># 3307实例启动的服务脚本
+$ cat &gt; /etc/systemd/system/mysqld3307.service &lt;&lt;EOF
+[Unit]
+Description=MySQL Server
+Documentation=man:mysqld(8)
+Documentation=http://dev.mysql.com/doc/refman/en/using-systemd.html
+After=network.target
+After=syslog.target
+[Install]
+WantedBy=multi-user.target
+[Service]
+User=mysql
+Group=mysql
+ExecStart=/data/app/mysql5728/bin/mysqld --defaults-file=/data/3307/my.cnf
+LimitNOFILE = 5000
+EOF
+
+# 3308实例启动的服务脚本
+$ cat &gt; /etc/systemd/system/mysqld3308.service &lt;&lt;EOF
+[Unit]
+Description=MySQL Server
+Documentation=man:mysqld(8)
+Documentation=http://dev.mysql.com/doc/refman/en/using-systemd.html
+After=network.target
+After=syslog.target
+[Install]
+WantedBy=multi-user.target
+[Service]
+User=mysql
+Group=mysql
+ExecStart=/data/app/mysql5728/bin/mysqld --defaults-file=/data/3308/my.cnf
+LimitNOFILE = 5000
+EOF
+
+# 3309实例启动的服务脚本
+$ cat &gt; /etc/systemd/system/mysqld3309.service &lt;&lt;EOF
+[Unit]
+Description=MySQL Server
+Documentation=man:mysqld(8)
+Documentation=http://dev.mysql.com/doc/refman/en/using-systemd.html
+After=network.target
+After=syslog.target
+[Install]
+WantedBy=multi-user.target
+[Service]
+User=mysql
+Group=mysql
+ExecStart=/data/app/mysql5728/bin/mysqld --defaults-file=/data/3309/my.cnf
+LimitNOFILE = 5000
+EOF</code></pre><h2 id="6-启动多实例"><a href="#6-启动多实例" class="headerlink" title="6.启动多实例"></a>6.启动多实例</h2><pre><code>$ systemctl start mysqld3307
+$ systemctl start mysqld3308
+$ systemctl start mysqld3309
+$ netstat -lntup|grep mysqld
+  tcp6   0   0  :::3307    :::*     LISTEN   2093/mysqld         
+  tcp6   0   0  :::3308    :::*     LISTEN   2127/mysqld         
+  tcp6   0   0  :::3309    :::*     LISTEN   2161/mysqld </code></pre><h2 id="7-绝对路径登录MySQL多实例"><a href="#7-绝对路径登录MySQL多实例" class="headerlink" title="7.绝对路径登录MySQL多实例"></a>7.绝对路径登录<code>MySQL</code>多实例</h2><pre><code>$ /data/app/mysql5728/bin/mysql -S /data/socket/mysql3307.sock
+$ /data/app/mysql5728/bin/mysql -S /data/socket/mysql3308.sock
+$ /data/app/mysql5728/bin/mysql -S /data/socket/mysql3309.sock</code></pre><h1 id="第四章-部署MySQL5-6单实例"><a href="#第四章-部署MySQL5-6单实例" class="headerlink" title="第四章 部署MySQL5.6单实例"></a>第四章 部署MySQL5.6单实例</h1><h2 id="1-解压软件包并制作软连接-1"><a href="#1-解压软件包并制作软连接-1" class="headerlink" title="1.解压软件包并制作软连接"></a>1.解压软件包并制作软连接</h2><pre><code>$ tar xf mysql-5.6.46-linux-glibc2.12-x86_64.tar.gz
+$ mv mysql-5.6.46-linux-glibc2.12-x86_64 mysql-5.6.46
+$ ln -s ln -s mysql-5.6.46 mysql5646</code></pre><h2 id="2-创建MySQL实例配置"><a href="#2-创建MySQL实例配置" class="headerlink" title="2.创建MySQL实例配置"></a>2.创建<code>MySQL</code>实例配置</h2><pre><code>cat &gt; /data/3316/my.cnf &lt;&lt;EOF 
+[mysqld]                    
+user=mysql                  
+basedir=/data/app/mysql5646    
+datadir=/data/3316/data     
+socket=/data/socket/mysql3316.sock       
+port=3316                   
+server_id=16                  
+EOF</code></pre><h2 id="3-创建mysql傀儡用户并授权"><a href="#3-创建mysql傀儡用户并授权" class="headerlink" title="3.创建mysql傀儡用户并授权"></a>3.创建mysql傀儡用户并授权</h2><pre><code>$ chown -R mysql.mysql /data</code></pre><h2 id="4-初始化-1"><a href="#4-初始化-1" class="headerlink" title="4.初始化"></a>4.初始化</h2><pre><code>$ /data/app/mysql5646/scripts/mysql_install_db  --user=mysql --basedir=/data/app/mysql5646 --datadir=/data/3316/data
+$ echo $?</code></pre><h2 id="5-编写systemd启动脚本-1"><a href="#5-编写systemd启动脚本-1" class="headerlink" title="5.编写systemd启动脚本"></a>5.编写systemd启动脚本</h2><pre><code>cat &gt; /etc/systemd/system/mysqld3316.service &lt;&lt;EOF
+[Unit]
+Description=MySQL Server
+Documentation=man:mysqld(8)
+Documentation=http://dev.mysql.com/doc/refman/en/using-systemd.html
+After=network.target
+After=syslog.target
+[Install]
+WantedBy=multi-user.target
+[Service]
+User=mysql
+Group=mysql
+ExecStart=/data/app/mysql5646/bin/mysqld --defaults-file=/data/3316/my.cnf
+LimitNOFILE = 5000
+EOF</code></pre><h2 id="6-启动实例"><a href="#6-启动实例" class="headerlink" title="6.启动实例"></a>6.启动实例</h2><pre><code>$ systemctl daemon-reload
+$ systemctl start mysqld3316.service
+$ netstat -lntup|grep mysqld
+  tcp6  0  0 :::3316    :::*    LISTEN      2516/mysqld</code></pre><h2 id="7-绝对路径登录MySQL实例"><a href="#7-绝对路径登录MySQL实例" class="headerlink" title="7.绝对路径登录MySQL实例"></a>7.绝对路径登录<code>MySQL</code>实例</h2><pre><code>$ /data/app/mysql5646/bin/mysql -S /data/socket/mysql3316.sock</code></pre><h1 id="第五章-部署MySQL8-0单实例"><a href="#第五章-部署MySQL8-0单实例" class="headerlink" title="第五章 部署MySQL8.0单实例"></a>第五章 部署MySQL8.0单实例</h1><h2 id="1-解压软件包并制作软连接-2"><a href="#1-解压软件包并制作软连接-2" class="headerlink" title="1.解压软件包并制作软连接"></a>1.解压软件包并制作软连接</h2><pre><code>$ tar xf mysql-8.0.18-linux-glibc2.12-x86_64.tar.xz
+$ mv mysql-8.0.18-linux-glibc2.12-x86_64 mysql-8.0.18
+$ ln -s mysql-8.0.18 mysql8018</code></pre><h2 id="2-创建MySQL实例配置-1"><a href="#2-创建MySQL实例配置-1" class="headerlink" title="2.创建MySQL实例配置"></a>2.创建<code>MySQL</code>实例配置</h2><pre><code>cat &gt; /data/3326/my.cnf &lt;&lt;EOF 
+[mysqld]                    
+user=mysql                  
+basedir=/data/app/mysql8018     
+datadir=/data/3326/data     
+socket=/data/socket/mysql3326.sock       
+port=3326                  
+server_id=26                  
+EOF</code></pre><h2 id="3-创建mysql傀儡用户并授权-1"><a href="#3-创建mysql傀儡用户并授权-1" class="headerlink" title="3.创建mysql傀儡用户并授权"></a>3.创建mysql傀儡用户并授权</h2><pre><code>$ chown -R mysql.mysql /data</code></pre><h2 id="4-安装依赖并初始化"><a href="#4-安装依赖并初始化" class="headerlink" title="4.安装依赖并初始化"></a>4.安装依赖并初始化</h2><pre><code>$ yum install -y perl-DBD-MySQL perl-Config-Tiny epel-release perl-Log-Dispatch perl-Parallel-ForkManager perl-Time-HiRes
+$ /data/app/mysql8018/bin/mysqld --initialize-insecure --user=mysql --basedir=/data/app/mysql8018 --datadir=/data/3326/data
+$ echo $?</code></pre><h2 id="5-编写systemd启动脚本-2"><a href="#5-编写systemd启动脚本-2" class="headerlink" title="5.编写systemd启动脚本"></a>5.编写systemd启动脚本</h2><pre><code>cat &gt; /etc/systemd/system/mysqld3326.service &lt;&lt;EOF
+[Unit]
+Description=MySQL Server
+Documentation=man:mysqld(8)
+Documentation=http://dev.mysql.com/doc/refman/en/using-systemd.html
+After=network.target
+After=syslog.target
+[Install]
+WantedBy=multi-user.target
+[Service]
+User=mysql
+Group=mysql
+ExecStart=/data/app/mysql8018/bin/mysqld --defaults-file=/data/3326/my.cnf
+LimitNOFILE = 5000
+EOF</code></pre><h2 id="6-启动实例-1"><a href="#6-启动实例-1" class="headerlink" title="6.启动实例"></a>6.启动实例</h2><pre><code>$ systemctl start mysqld3326.service 
+$ netstat -lntup|grep mysqld
+  tcp6       0      0 :::3326    :::*    LISTEN      2686/mysqld  </code></pre><h2 id="7-绝对路径登录MySQL实例-1"><a href="#7-绝对路径登录MySQL实例-1" class="headerlink" title="7.绝对路径登录MySQL实例"></a>7.绝对路径登录<code>MySQL</code>实例</h2><pre><code>$ /data/app/mysql8018/bin/mysql -S /data/socket/mysql3326.sock</code></pre><p>至此，在同一台服务器上部署多版本MySQL多实例完成，可是使用一下命令验证：</p>
+<pre><code>[root@db01 ~]# netstat -lntup|grep mysqld
+tcp6       0      0 :::3326    :::*        LISTEN      2686/mysqld         
+tcp6       0      0 :::33060   :::*        LISTEN      2686/mysqld         
+tcp6       0      0 :::3307    :::*        LISTEN      2093/mysqld         
+tcp6       0      0 :::3308    :::*        LISTEN      2127/mysqld         
+tcp6       0      0 :::3309    :::*        LISTEN      2161/mysqld         
+tcp6       0      0 :::3316    :::*        LISTEN      2516/mysqld </code></pre>
             </div>
             <hr />
 
@@ -685,7 +893,7 @@ Centos7（systemd）：systemctl start/stop/restart/status mysqld
             <br/>
             <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text"
                   property="dct:title" rel="dct:type">
-                    《第三章mysql连接管理》
+                    《mysql多实例部署》
                 </span> 由
             <a xmlns:cc="http://creativecommons.org/ns#" href="/2020/02/23/di-san-zhang-mysql-lian-jie-guan-li/" property="cc:attributionName"
                rel="cc:attributionURL">
@@ -1015,29 +1223,52 @@ Centos7（systemd）：systemctl start/stop/restart/status mysqld
             <div class="article-badge left-badge text-color">
                 <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2020/04/22/hello-world/">
+                <a href="/2020/02/23/mysql-qi-dong-duo-shi-li/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="Hello World">
+                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="第三章mysql连接管理">
                         
-                        <span class="card-title">Hello World</span>
+                        <span class="card-title">第三章mysql连接管理</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hex
+                            1. MySQL 连接管理1.2连接命令1.1 mysqladmin  -- 了解 
+# 修改密码 
+[root@db01 ~]# mysqladmin -uroot -p123 password 123456
+# 关闭数据库
+[root@
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2020-04-22
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2020-02-23
                         </span>
                         <span class="publish-author">
                             
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/mysql/" class="post-category" target="_blank">
+                                    mysql
+                                </a>
+                            
+                            
                         </span>
                     </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/mysql/" target="_blank">
+                        <span class="chip bg-color">mysql</span>
+                    </a>
+                    
+                    <a href="/tags/leetcode/" target="_blank">
+                        <span class="chip bg-color">leetcode</span>
+                    </a>
+                    
                 </div>
                 
             </div>
@@ -1262,7 +1493,7 @@ Centos7（systemd）：systemctl start/stop/restart/status mysqld
 
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">8.8k</span>
+            <span class="white-color">10.3k</span>
             
 
             <br>

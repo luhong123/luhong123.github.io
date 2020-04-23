@@ -68,8 +68,8 @@
   
   <entry>
     <title>第三章mysql连接管理</title>
-    <link href="http://yoursite.com/2020/02/23/di-san-zhang-mysql-lian-jie-guan-li/"/>
-    <id>http://yoursite.com/2020/02/23/di-san-zhang-mysql-lian-jie-guan-li/</id>
+    <link href="http://yoursite.com/2020/02/23/mysql-qi-dong-duo-shi-li/"/>
+    <id>http://yoursite.com/2020/02/23/mysql-qi-dong-duo-shi-li/</id>
     <published>2020-02-23T07:09:23.000Z</published>
     <updated>2020-04-23T05:20:52.774Z</updated>
     
@@ -91,6 +91,34 @@
       <category term="mysql" scheme="http://yoursite.com/tags/mysql/"/>
     
       <category term="leetcode" scheme="http://yoursite.com/tags/leetcode/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>mysql多实例部署</title>
+    <link href="http://yoursite.com/2020/02/23/di-san-zhang-mysql-lian-jie-guan-li/"/>
+    <id>http://yoursite.com/2020/02/23/di-san-zhang-mysql-lian-jie-guan-li/</id>
+    <published>2020-02-23T07:09:23.000Z</published>
+    <updated>2020-04-23T12:58:49.070Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;第一章-需求说明&quot;&gt;&lt;a href=&quot;#第一章-需求说明&quot; class=&quot;headerlink&quot; title=&quot;第一章  需求说明&quot;&gt;&lt;/a&gt;第一章 
+        
+      
+    
+    </summary>
+    
+      <category term="mysql" scheme="http://yoursite.com/categories/mysql/"/>
+    
+    
+      <category term="mysql" scheme="http://yoursite.com/tags/mysql/"/>
+    
+      <category term="案例" scheme="http://yoursite.com/tags/%E6%A1%88%E4%BE%8B/"/>
     
   </entry>
   
