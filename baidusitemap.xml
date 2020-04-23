@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>http://yoursite.com/2020/04/22/02-mysql-lesson02-ti-xi-jie-gou-yu-guan-li/</loc>
-    <lastmod>2020-04-22</lastmod>
-  </url>  <url>
     <loc>http://yoursite.com/2020/02/16/di-yi-zhang-mysql-da-gang-jie-shao/</loc>
+    <lastmod>2020-04-23</lastmod>
+  </url>  <url>
+    <loc>http://yoursite.com/2020/04/22/02-mysql-lesson02-ti-xi-jie-gou-yu-guan-li/</loc>
     <lastmod>2020-04-22</lastmod>
   </url>  <url>
     <loc>http://yoursite.com/2020/02/16/sort-algorithms/</loc>
