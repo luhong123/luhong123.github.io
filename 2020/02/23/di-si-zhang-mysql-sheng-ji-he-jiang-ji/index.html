@@ -4,15 +4,15 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="小明同学为了战斗而生, 自然语言处理 深度学习 算法码上来">
+    <meta name="keywords" content="MySQL升级和降级, 自然语言处理 深度学习 算法码上来">
     <meta name="baidu-site-verification" content="fmlEuI34ir">
     <meta name="google-site-verification" content="yCy2azpds5XSuGZvis6OuA-XIGF5GuGpYRAaGfD6o48">
     <meta name="360-site-verification" content="b7c11a830ef90fd1464ad6206bb7b6e7">
-    <meta name="description" content="
-
-前言性质汇总
-
-">
+    <meta name="description" content="1. MySQL升级和降级`
+1.1 方式1.1.1 INPLACE  就地 
+在一台服务器上，原版本升级到新版本。
+风险较大。
+==建议 ： 不管哪种方式升级，都应该先做备份。方便失败回退。==1.1.2 Mergeing 迁移   建议">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -20,7 +20,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>小明同学为了战斗而生 | 小明同学</title>
+    <title>MySQL升级和降级 | 小明同学</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -333,13 +333,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/24.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/2.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        小明同学为了战斗而生
+                        MySQL升级和降级
                     </div>
                 </div>
             </div>
@@ -450,12 +450,12 @@
                     
                     <div class="article-tag">
                         
-                        <a href="/tags/leetcode/" target="_blank">
-                            <span class="chip bg-color">leetcode</span>
+                        <a href="/tags/mysql/" target="_blank">
+                            <span class="chip bg-color">mysql</span>
                         </a>
                         
-                        <a href="/tags/算法/" target="_blank">
-                            <span class="chip bg-color">算法</span>
+                        <a href="/tags/数据库/" target="_blank">
+                            <span class="chip bg-color">数据库</span>
                         </a>
                         
                     </div>
@@ -466,8 +466,8 @@
                     <div class="post-cate">
                         <i class="fa fa-bookmark fa-fw icon-category"></i>
                         
-                        <a href="/categories/编程算法/" class="post-category" target="_blank">
-                            编程算法
+                        <a href="/categories/mysql/" class="post-category" target="_blank">
+                            mysql
                         </a>
                         
                     </div>
@@ -478,7 +478,7 @@
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-02-16
+                    2020-02-23
                 </div>
 
                 <div class="post-author info-break-policy">
@@ -492,14 +492,14 @@
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    6
+                    1.5k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    6 分
                 </div>
                 
                 
@@ -515,10 +515,183 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <blockquote>
-</blockquote>
-<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><h2 id="性质汇总"><a href="#性质汇总" class="headerlink" title="性质汇总"></a>性质汇总</h2><blockquote>
-</blockquote>
+                <h1 id="1-MySQL升级和降级"><a href="#1-MySQL升级和降级" class="headerlink" title="1. MySQL升级和降级"></a>1. MySQL升级和降级</h1><p>`</p>
+<h2 id="1-1-方式"><a href="#1-1-方式" class="headerlink" title="1.1 方式"></a>1.1 方式</h2><pre class="line-numbers language-cs"><code class="language-cs">1.1.1 INPLACE  就地 
+在一台服务器上，原版本升级到新版本。
+风险较大。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<h3 id="建议-：-不管哪种方式升级，都应该先做备份。方便失败回退。"><a href="#建议-：-不管哪种方式升级，都应该先做备份。方便失败回退。" class="headerlink" title="==建议 ： 不管哪种方式升级，都应该先做备份。方便失败回退。=="></a>==建议 ： 不管哪种方式升级，都应该先做备份。方便失败回退。==</h3><h2 id="1-1-2-Mergeing-迁移-建议"><a href="#1-1-2-Mergeing-迁移-建议" class="headerlink" title="1.1.2 Mergeing 迁移   建议"></a>1.1.2 Mergeing 迁移   建议</h2><pre class="line-numbers language-SPARQL"><code class="language-SPARQL">备份迁移 
+主从迁移<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<h3 id="1-2-升级注意事项"><a href="#1-2-升级注意事项" class="headerlink" title="1.2 升级注意事项"></a>1.2 升级注意事项</h3><pre class="line-numbers language-mssql"><code class="language-mssql">a. 支持GA版本之间升级
+b. 5.6--> 5.7  ,先将5.6升级至最新版，再升级到5.7
+c. 5.5 ---> 5.7 ,先将5.5 升级至最新，再5.5---> 5.6最新，再5.6--->5.7 最新
+d. 回退方案要提前考虑好，最好升级前要备份(特别是往8.0版本升级)。
+e. 降低停机时间（停业务的时间）<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h1 id="2-INPLACE-升级过程原理"><a href="#2-INPLACE-升级过程原理" class="headerlink" title="2.INPLACE 升级过程原理"></a>2.INPLACE 升级过程原理</h1><pre class="line-numbers language-cassandra"><code class="language-cassandra">0. 备份原数据库数据
+a. 安装新版本软件
+b. 关闭原数据库（挂维护页）
+c. 使用新版本软件 “挂” 旧版本数据启动(--skip-grant-tables ,--skip-networking)
+d. 升级 ： 只是升级系统表。升级时间和数据量无关的。
+e. 正常重启数据库。
+f. 验证各项功能是否正常。
+g. 业务恢复<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>1.4 5.6.46 —-&gt; 5.7.28 Inplace 升级演练</p>
+<pre class="line-numbers language-less"><code class="language-less">a<span class="token number">.</span> 安装 新版本软件 
+b<span class="token number">.</span> 停原库 
+# <span class="token number">1.</span> 快速关库功能关闭<span class="token punctuation">(</span>优雅关闭<span class="token punctuation">)</span>  
+vim <span class="token operator">/</span>data<span class="token operator">/</span><span class="token number">3316</span><span class="token operator">/</span>my<span class="token number">.</span>cnf 
+## 添加以下配置
+innodb_fast_shutdown=<span class="token number">0</span> 
+[root<span class="token variable">@db01</span> data]# systemctl stop mysqld<span class="token number">3316</span>
+c<span class="token number">.</span> 使用高版本软件挂低版本数据启动<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="1-停止数据库"><a href="#1-停止数据库" class="headerlink" title="1-停止数据库"></a>1-停止数据库</h3><pre><code>[root@db01 data]# systemctl stop mysqld3316</code></pre><h2 id="2-使用高版本软件挂低版本数据启动"><a href="#2-使用高版本软件挂低版本数据启动" class="headerlink" title="2- 使用高版本软件挂低版本数据启动"></a>2- 使用高版本软件挂低版本数据启动</h2><pre class="line-numbers language-powershell"><code class="language-powershell"><span class="token namespace">[root@db01 data]</span><span class="token comment" spellcheck="true"># vim /data/3316/my.cnf </span>
+<span class="token namespace">[mysqld]</span>
+user=mysql
+basedir=<span class="token operator">/</span><span class="token keyword">data</span><span class="token operator">/</span>app<span class="token operator">/</span>mysql
+datadir=<span class="token operator">/</span><span class="token keyword">data</span><span class="token operator">/</span>3316<span class="token operator">/</span><span class="token keyword">data</span>
+socket=<span class="token operator">/</span>tmp<span class="token operator">/</span>mysql3316<span class="token punctuation">.</span>sock
+port=3316
+server_id=16
+innodb_fast_shutdown=0<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="3-启动"><a href="#3-启动" class="headerlink" title="3-启动"></a>3-启动</h2><pre class="line-numbers language-shell"><code class="language-shell">[root@db01 data]# /data/app/mysql/bin/mysqld_safe --defaults-file=/data/3316/my.cnf --skip-grant-tables --skip-networking &<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h2 id="4-升级"><a href="#4-升级" class="headerlink" title="4-升级"></a>4-升级</h2><p> 升级 （升级到8.0可以省略）</p>
+<pre><code>d. 升级 （升级到8.0可以省略）
+[root@db01 data]# /data/app/mysql/bin/mysql_upgrade -S /tmp/mysql3316.sock --force </code></pre><h2 id="5-重启数据库到正常状态"><a href="#5-重启数据库到正常状态" class="headerlink" title="5-重启数据库到正常状态"></a>5-重启数据库到正常状态</h2><pre class="line-numbers language-spreadsheet"><code class="language-spreadsheet">[root@db01 data]# mysqladmin -S /tmp/mysql3316.sock shutdown
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h3 id="修改启动脚本"><a href="#修改启动脚本" class="headerlink" title="修改启动脚本"></a>修改启动脚本</h3><pre class="line-numbers language-powershell"><code class="language-powershell">修改以下内容 
+
+
+<span class="token namespace">[root@db01 data]</span><span class="token comment" spellcheck="true"># vim /etc/systemd/system/mysqld3316.service </span>
+
+ExecStart=<span class="token operator">/</span><span class="token keyword">data</span><span class="token operator">/</span>app<span class="token operator">/</span>mysql<span class="token operator">/</span>bin<span class="token operator">/</span>mysqld <span class="token operator">--</span>defaults<span class="token operator">-</span>file=<span class="token operator">/</span><span class="token keyword">data</span><span class="token operator">/</span>3316<span class="token operator">/</span>my<span class="token punctuation">.</span>cnf
+<span class="token operator">--</span>-<span class="token operator">--</span>-<span class="token operator">--</span>-<span class="token operator">--</span>-<span class="token operator">-</span>
+<span class="token namespace">[root@China ~]</span> <span class="token comment" spellcheck="true"># cat /etc/systemd/system/mysqld3316.service </span>
+<span class="token namespace">[Unit]</span>
+Description=MySQL Server
+Documentation=man:mysqld<span class="token punctuation">(</span>8<span class="token punctuation">)</span>
+Documentation=http:<span class="token operator">/</span><span class="token operator">/</span>dev<span class="token punctuation">.</span>mysql<span class="token punctuation">.</span>com<span class="token operator">/</span>doc<span class="token operator">/</span>refman<span class="token operator">/</span>en<span class="token operator">/</span><span class="token keyword">using</span><span class="token operator">-</span>systemd<span class="token punctuation">.</span>html
+After=network<span class="token punctuation">.</span>target
+After=syslog<span class="token punctuation">.</span>target
+<span class="token namespace">[Install]</span>
+WantedBy=multi<span class="token operator">-</span>user<span class="token punctuation">.</span>target
+<span class="token namespace">[Service]</span>
+User=mysql
+<span class="token function">Group</span>=mysql
+ExecStart=<span class="token operator">/</span><span class="token keyword">data</span><span class="token operator">/</span>app<span class="token operator">/</span>mysql80<span class="token operator">/</span>bin<span class="token operator">/</span>mysqld <span class="token operator">--</span>defaults<span class="token operator">-</span>file=<span class="token operator">/</span><span class="token keyword">data</span><span class="token operator">/</span>3316<span class="token operator">/</span>my<span class="token punctuation">.</span>cnf
+LimitNOFILE = 5000
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="6-启动数据库"><a href="#6-启动数据库" class="headerlink" title="6-启动数据库"></a>6-启动数据库</h2><pre class="line-numbers language-powershell"><code class="language-powershell"><span class="token namespace">[root@db01 data]</span><span class="token comment" spellcheck="true"># systemctl start mysqld3316 </span>
+
+<span class="token comment" spellcheck="true"># 连接查看</span>
+<span class="token namespace">[root@db01 data]</span><span class="token comment" spellcheck="true"># mysql -S /tmp/mysql3316.sock</span>
+<span class="token namespace">[root@db01 ~]</span><span class="token comment" spellcheck="true"># mysqlsh root:123@10.0.0.51:3306 -e "util.checkForServerUpgrade()"</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h1 id="3-SQL-应用基础"><a href="#3-SQL-应用基础" class="headerlink" title="3.-SQL 应用基础"></a>3.-SQL 应用基础</h1><h2 id="1、SQL介绍"><a href="#1、SQL介绍" class="headerlink" title="1、SQL介绍"></a>1、SQL介绍</h2><pre class="line-numbers language-css"><code class="language-css">结构化查询语言
+<span class="token number">5.7</span> 以后符合SQL<span class="token number">92</span>严格模式
+通过sql_mode参数来控制<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<h2 id="2、常用SQL分类"><a href="#2、常用SQL分类" class="headerlink" title="2、常用SQL分类"></a>2、常用SQL分类</h2><pre class="line-numbers language-undefined"><code class="language-undefined">DDL：数据定义语言
+DCL：数据控制语言
+DML：数据操作语言
+DQL：数据的查询语言<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="3、数据类型、表属性、字符集"><a href="#3、数据类型、表属性、字符集" class="headerlink" title="3、数据类型、表属性、字符集"></a>3、数据类型、表属性、字符集</h2><h3 id="3-1-数据类型"><a href="#3-1-数据类型" class="headerlink" title="3.1  数据类型"></a>3.1  数据类型</h3><h3 id="3-1-1-作用"><a href="#3-1-1-作用" class="headerlink" title="3.1.1 作用"></a>3.1.1 作用</h3><pre><code>影响到了SQL语句的执行行为。为了让数据库在存、取能够满足生活的常识、科学的逻辑，让这些数据有意义。
+例子： 
+    现实生活中常识：
+        日期： 1000-9999 年 1-12 月 1-31日 
+    科学逻辑：         
+        除法：除数不能为0</code></pre><h3 id="查看sql-mode"><a href="#查看sql-mode" class="headerlink" title="查看sql_mode"></a>查看sql_mode</h3><pre class="line-numbers language-powershell"><code class="language-powershell">mysql> <span class="token function">select</span> @@sql_mode<span class="token punctuation">;</span>
+ONLY_FULL_GROUP_BY          :  针对<span class="token function">group</span> by 语句执行时的规范
+STRICT_TRANS_TABLES         :  针对事务表启动严格模式
+NO_ZERO_IN_DATE             ： 2010<span class="token operator">-</span>00<span class="token operator">-</span>10
+NO_ZERO_DATE                ： 0000<span class="token operator">-</span>00<span class="token operator">-</span>00
+ERROR_FOR_DIVISION_BY_ZERO  ： 除数不能为0
+NO_AUTO_CREATE_USER         ： 是否自动创建用户
+NO_ENGINE_SUBSTITUTION      :  建表是使用了一个不支持的存储引擎报错。    <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="SQL-标准"><a href="#SQL-标准" class="headerlink" title="SQL 标准"></a>SQL 标准</h3><pre><code>SQL-89  \ SQL-92  \  SQL-99   \SQL03 .....</code></pre><pre class="line-numbers language-undefined"><code class="language-undefined">保证数据的准确性和标准性。<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h2 id="4-数据库对象属性介绍"><a href="#4-数据库对象属性介绍" class="headerlink" title="4-数据库对象属性介绍"></a>4-数据库对象属性介绍</h2><pre><code>库
+    库名
+    库属性：字符集、校对规则
+
+表 
+    表名 
+    列 ：
+        列名
+        列属性：数据类型、约束、其他属性
+    行
+    表属性：引擎、字符集、校对规则、其他。
+</code></pre><h2 id="5-字符集"><a href="#5-字符集" class="headerlink" title="5-字符集"></a>5-字符集</h2><pre><code>MySQL 中的 “密码本”
+2.2.2 种类
+utf8    not  UTF-8  
+utf8mb4 is   UTF-8（万国码）
+
+特点 : 
+1. utf8   , 最大支持3字节的字符。不支持emoji字符
+2. utf8mb4, 最大支持4字节的字符。支持emoji字符。
+
+8.0之前，默认字符集latin1,8.0之后是utf8mb4。
+我们建议使用utf8mb4.
+
+2.2.3 设置方法
+默认字符集参数
+建库
+建表
+
+2.3 校对规则（排序规则）  
+2.3.1 作用 
+影响到数据的排序方式。
+    ASCII码
+a    97
+b    98
+c    99
+d    100
+
+A    65
+B    66
+C    67
+D    68
+
+2.3.2 查看
+mysql&gt; show collation;
+
+
+2.4 列属性  </code></pre><h2 id="6-数据类型"><a href="#6-数据类型" class="headerlink" title="6-数据类型"></a>6-数据类型</h2><pre><code>#  作用 
+尽可能保证数据是有意义的。
+#  种类 
+## 数字类型
+整数：
+    tinyint   1字节  =  8位 = 00000000 - 11111111  = 2^8个  = 0  - 255     , -127-128    
+    int       4字节  =  32位                       = 2^32个 = 0  - 2^32-1  ,-2^31-2^31-1 ,10位数
+    bigint    8字节                                           0  - 2^64-1  ,-2^63-2^63-1 ,20位数
+浮点数：
+    decimal(m,n)
+
+## 字符串类型
+char(N)    : 
+    N字符个数，最大不超过255
+    定长的字符串类型。
+    例如： char(10) ,最多存10个字符,只要10个字符以内，都10个字符长度的存储空间。剩余用空格填充。
+varchar(M) ：
+    M字符个数，最大不超过65535
+    变长的字符串类型。会额外占用1-2字节存储字符长度。255字符之内，额外1字节，255以上，额外2字节
+    例如： varchar(10),最多存10个字符,按需分配存储空间。
+    abc 3             =4
+    asdasdadasd 1000  =1002
+
+enum(&#39;bj&#39;,&#39;sh&#39;,&#39;tj&#39;,&#39;heibei&#39;,&#39;henan&#39;,.....)
+district enum(&#39;bj&#39;,&#39;sh&#39;,&#39;tj&#39;,&#39;heibei&#39;,&#39;henan&#39;,.....)
+
+## 时间类型 
+datetime    8字节 
+timestamp   4字节 
+
+DATETIME 
+范围为从 1000-01-01 00:00:00.000000 至 9999-12-31 23:59:59.999999。
+
+TIMESTAMP 
+1970-01-01 00:00:00.000000 至 2038-01-19 03:14:07.999999。
+timestamp会受到时区的影响
+
+## 二进制类型
+## json 数据类型
+
+</code></pre><p>作者：wwwoldguocom<br>链接：<a href="https://www.jianshu.com/p/08c4b78402ff" target="_blank" rel="noopener">https://www.jianshu.com/p/08c4b78402ff</a><br>来源：简书<br>著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。</p>
 
             </div>
             <hr />
@@ -677,9 +850,9 @@
             <br/>
             <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text"
                   property="dct:title" rel="dct:type">
-                    《小明同学为了战斗而生》
+                    《MySQL升级和降级》
                 </span> 由
-            <a xmlns:cc="http://creativecommons.org/ns#" href="/2020/02/16/sort-algorithms/" property="cc:attributionName"
+            <a xmlns:cc="http://creativecommons.org/ns#" href="/2020/02/23/di-si-zhang-mysql-sheng-ji-he-jiang-ji/" property="cc:attributionName"
                rel="cc:attributionURL">
                 小明
             </a> 采用
@@ -720,7 +893,7 @@
         repo: 'godweiyang.github.io',
         owner: 'godweiyang',
         admin: "godweiyang",
-        id: '2020/02/16/sort-algorithms/',
+        id: '2020/02/23/di-si-zhang-mysql-sheng-ji-he-jiang-ji/',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -1007,84 +1180,25 @@
             <div class="article-badge left-badge text-color">
                 <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2020/02/23/01-ce-shi-fu-ben/">
+                <a href="/2020/02/23/01-ce-shi/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="中小企业如何做运维自动化">
+                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="第三章mysql连接管理">
                         
-                        <span class="card-title">中小企业如何做运维自动化</span>
+                        <span class="card-title">第三章mysql连接管理</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            中小企业如何做运维自动化以下文章来源于Spug运维 ，作者Spug运维
-Spug运维http://spug.dev
-我们先看一下中小企业面临的问题：
-1、人员有限，小一点的公司专业运维可能没有，开发自己上线，也有可能1-2个运维人员，基本不
+                            
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
                             <i class="fa fa-clock-o fa-fw icon-date"></i>2020-02-23
                         </span>
-                        <span class="publish-author">
-                            
-                            <i class="fa fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/Spug/" class="post-category" target="_blank">
-                                    Spug
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/自动化/" target="_blank">
-                        <span class="chip bg-color">自动化</span>
-                    </a>
-                    
-                    <a href="/tags/Spug/" target="_blank">
-                        <span class="chip bg-color">Spug</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fa fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/2020/02/16/di-yi-zhang-mysql-da-gang-jie-shao/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/20.jpg" class="responsive-img" alt="第一章   MySQL 大纲介绍">
-                        
-                        <span class="card-title">第一章   MySQL 大纲介绍</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            1、官方定义的MySQL  DBA工作内容（1）运维DBA
-初级：各版本、各平台安装搭建、升级
-中级：体系结构原理、基础管理（启动关闭、初始化配置文件管理、多实例管理、用户权限管理、基本SQL（增删改查））、
-     日志管理、备份与恢复
-                        
-                    </div>
-                    <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-02-16
-                            </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
@@ -1106,6 +1220,62 @@ Spug运维http://spug.dev
                     
                     <a href="/tags/mysql/" target="_blank">
                         <span class="chip bg-color">mysql</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fa fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2020/02/23/zhong-xiao-qi-ye-ru-he-zuo-yun-wei-zi-dong-hua/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="中小企业如何做运维自动化">
+                        
+                        <span class="card-title">中小企业如何做运维自动化</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            中小企业如何做运维自动化以下文章来源于Spug运维 ，作者Spug运维
+Spug运维http://spug.dev
+我们先看一下中小企业面临的问题：
+1、人员有限，小一点的公司专业运维可能没有，开发自己上线，也有可能1-2个运维人员，基本不
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-02-23
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Spug/" class="post-category" target="_blank">
+                                    Spug
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/自动化/" target="_blank">
+                        <span class="chip bg-color">自动化</span>
+                    </a>
+                    
+                    <a href="/tags/Spug/" target="_blank">
+                        <span class="chip bg-color">Spug</span>
                     </a>
                     
                 </div>

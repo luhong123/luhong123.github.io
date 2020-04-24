@@ -38,9 +38,9 @@
       <category term="mysql" scheme="http://yoursite.com/categories/mysql/"/>
     
     
-      <category term="数据库" scheme="http://yoursite.com/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
-    
       <category term="mysql" scheme="http://yoursite.com/tags/mysql/"/>
+    
+      <category term="数据库" scheme="http://yoursite.com/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
     
   </entry>
   
@@ -67,11 +67,11 @@
   </entry>
   
   <entry>
-    <title>第三章mysql连接管理</title>
-    <link href="http://yoursite.com/2020/02/23/ce-shi/"/>
-    <id>http://yoursite.com/2020/02/23/ce-shi/</id>
-    <published>2020-02-23T07:09:23.000Z</published>
-    <updated>2020-04-23T05:20:52.774Z</updated>
+    <title>编写Shell脚本的最佳实践</title>
+    <link href="http://yoursite.com/2020/02/24/bian-xie-shell-jiao-ben-de-zui-jia-shi-jian/"/>
+    <id>http://yoursite.com/2020/02/24/bian-xie-shell-jiao-ben-de-zui-jia-shi-jian/</id>
+    <published>2020-02-24T07:09:23.000Z</published>
+    <updated>2020-04-24T13:11:33.092Z</updated>
     
     <summary type="html">
     
@@ -79,18 +79,44 @@
       
         
         
-          &lt;h1 id=&quot;1-MySQL-连接管理&quot;&gt;&lt;a href=&quot;#1-MySQL-连接管理&quot; class=&quot;headerlink&quot; title=&quot;1. MySQL 连接管理&quot;&gt;&lt;/a&gt;1. MySQL 连接管理&lt;/h1&gt;&lt;h2 id=&quot;1-2连接命令&quot;&gt;&lt;a
+          &lt;h1 id=&quot;1-编写Shell脚本的最佳实践&quot;&gt;&lt;a href=&quot;#1-编写Shell脚本的最佳实践&quot; class=&quot;headerlink&quot; title=&quot;1. 编写Shell脚本的最佳实践&quot;&gt;&lt;/a&gt;1.
         
       
     
     </summary>
     
-      <category term="mysql" scheme="http://yoursite.com/categories/mysql/"/>
+      <category term="shell" scheme="http://yoursite.com/categories/shell/"/>
     
     
-      <category term="mysql" scheme="http://yoursite.com/tags/mysql/"/>
+      <category term="编程" scheme="http://yoursite.com/tags/%E7%BC%96%E7%A8%8B/"/>
     
-      <category term="leetcode" scheme="http://yoursite.com/tags/leetcode/"/>
+      <category term="shell" scheme="http://yoursite.com/tags/shell/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Nginx多策略流量分发</title>
+    <link href="http://yoursite.com/2020/02/24/nginx-duo-ce-lue-liu-liang-fen-fa/"/>
+    <id>http://yoursite.com/2020/02/24/nginx-duo-ce-lue-liu-liang-fen-fa/</id>
+    <published>2020-02-24T07:09:23.000Z</published>
+    <updated>2020-04-24T13:41:55.099Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;Nginx多策略流量分发&quot;&gt;&lt;a href=&quot;#Nginx多策略流量分发&quot; class=&quot;headerlink&quot; title=&quot;Nginx多策略流量分发&quot;&gt;&lt;/a&gt;Nginx多策略流量分发&lt;/h2&gt;&lt;h2 id=&quot;1、场景描述&quot;&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+      <category term="nginx" scheme="http://yoursite.com/categories/nginx/"/>
+    
+    
+      <category term="nginx" scheme="http://yoursite.com/tags/nginx/"/>
     
   </entry>
   
@@ -119,6 +145,141 @@
       <category term="mysql" scheme="http://yoursite.com/tags/mysql/"/>
     
       <category term="案例" scheme="http://yoursite.com/tags/%E6%A1%88%E4%BE%8B/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Linux禁止ping以及开启ping的方法</title>
+    <link href="http://yoursite.com/2020/02/23/linux-jin-zhi-ping-yi-ji-kai-qi-ping-de-fang-fa/"/>
+    <id>http://yoursite.com/2020/02/23/linux-jin-zhi-ping-yi-ji-kai-qi-ping-de-fang-fa/</id>
+    <published>2020-02-23T07:09:23.000Z</published>
+    <updated>2020-04-24T13:45:48.442Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;Linux默认是允许Ping响应的，系统是否允许Ping由2个因素决定的 ：&lt;/p&gt;
+&lt;p&gt;作者：Happiness&lt;/p&gt;
+&lt;p&gt;来源：&lt;a href=&quot;https://urlify.cn/Mr6zMb&quot; target=&quot;_blank&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="mysql" scheme="http://yoursite.com/categories/mysql/"/>
+    
+    
+      <category term="leetcode" scheme="http://yoursite.com/tags/leetcode/"/>
+    
+      <category term="mysql" scheme="http://yoursite.com/tags/mysql/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>第三章mysql连接管理</title>
+    <link href="http://yoursite.com/2020/02/23/01-ce-shi/"/>
+    <id>http://yoursite.com/2020/02/23/01-ce-shi/</id>
+    <published>2020-02-23T07:09:23.000Z</published>
+    <updated>2020-04-24T13:42:41.336Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+      <category term="mysql" scheme="http://yoursite.com/categories/mysql/"/>
+    
+    
+      <category term="leetcode" scheme="http://yoursite.com/tags/leetcode/"/>
+    
+      <category term="mysql" scheme="http://yoursite.com/tags/mysql/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>MySQL升级和降级</title>
+    <link href="http://yoursite.com/2020/02/23/di-si-zhang-mysql-sheng-ji-he-jiang-ji/"/>
+    <id>http://yoursite.com/2020/02/23/di-si-zhang-mysql-sheng-ji-he-jiang-ji/</id>
+    <published>2020-02-23T07:09:23.000Z</published>
+    <updated>2020-04-24T13:33:31.113Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;1-MySQL升级和降级&quot;&gt;&lt;a href=&quot;#1-MySQL升级和降级&quot; class=&quot;headerlink&quot; title=&quot;1. MySQL升级和降级&quot;&gt;&lt;/a&gt;1. MySQL升级和降级&lt;/h1&gt;&lt;p&gt;`&lt;/p&gt;
+&lt;h2 id=&quot;1-1-方式&quot;&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+      <category term="mysql" scheme="http://yoursite.com/categories/mysql/"/>
+    
+    
+      <category term="mysql" scheme="http://yoursite.com/tags/mysql/"/>
+    
+      <category term="数据库" scheme="http://yoursite.com/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>中小企业如何做运维自动化</title>
+    <link href="http://yoursite.com/2020/02/23/zhong-xiao-qi-ye-ru-he-zuo-yun-wei-zi-dong-hua/"/>
+    <id>http://yoursite.com/2020/02/23/zhong-xiao-qi-ye-ru-he-zuo-yun-wei-zi-dong-hua/</id>
+    <published>2020-02-23T07:09:23.000Z</published>
+    <updated>2020-04-24T13:57:10.689Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;中小企业如何做运维自动化&quot;&gt;&lt;a href=&quot;#中小企业如何做运维自动化&quot; class=&quot;headerlink&quot; title=&quot;中小企业如何做运维自动化&quot;&gt;&lt;/a&gt;中小企业如何做运维自动化&lt;/h2&gt;&lt;p&gt;以下文章来源于Spug运维
+        
+      
+    
+    </summary>
+    
+      <category term="Spug" scheme="http://yoursite.com/categories/Spug/"/>
+    
+    
+      <category term="自动化" scheme="http://yoursite.com/tags/%E8%87%AA%E5%8A%A8%E5%8C%96/"/>
+    
+      <category term="Spug" scheme="http://yoursite.com/tags/Spug/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>中小企业如何做运维自动化</title>
+    <link href="http://yoursite.com/2020/02/23/01-ce-shi-fu-ben/"/>
+    <id>http://yoursite.com/2020/02/23/01-ce-shi-fu-ben/</id>
+    <published>2020-02-23T07:09:23.000Z</published>
+    <updated>2020-04-24T14:05:54.993Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;中小企业如何做运维自动化&quot;&gt;&lt;a href=&quot;#中小企业如何做运维自动化&quot; class=&quot;headerlink&quot; title=&quot;中小企业如何做运维自动化&quot;&gt;&lt;/a&gt;中小企业如何做运维自动化&lt;/h2&gt;&lt;p&gt;以下文章来源于Spug运维
+        
+      
+    
+    </summary>
+    
+      <category term="Spug" scheme="http://yoursite.com/categories/Spug/"/>
+    
+    
+      <category term="自动化" scheme="http://yoursite.com/tags/%E8%87%AA%E5%8A%A8%E5%8C%96/"/>
+    
+      <category term="Spug" scheme="http://yoursite.com/tags/Spug/"/>
     
   </entry>
   
@@ -174,9 +335,9 @@
       <category term="mysql" scheme="http://yoursite.com/categories/mysql/"/>
     
     
-      <category term="mysql" scheme="http://yoursite.com/tags/mysql/"/>
-    
       <category term="leetcode" scheme="http://yoursite.com/tags/leetcode/"/>
+    
+      <category term="mysql" scheme="http://yoursite.com/tags/mysql/"/>
     
   </entry>
   

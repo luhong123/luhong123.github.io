@@ -4,15 +4,13 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="小明同学为了战斗而生, 自然语言处理 深度学习 算法码上来">
+    <meta name="keywords" content="Nginx多策略流量分发, 自然语言处理 深度学习 算法码上来">
     <meta name="baidu-site-verification" content="fmlEuI34ir">
     <meta name="google-site-verification" content="yCy2azpds5XSuGZvis6OuA-XIGF5GuGpYRAaGfD6o48">
     <meta name="360-site-verification" content="b7c11a830ef90fd1464ad6206bb7b6e7">
-    <meta name="description" content="
+    <meta name="description" content="Nginx多策略流量分发1、场景描述在实际生产环境中，流量分发有很多情况，下面主要讲讲以下两种流量分发场景：
 
-前言性质汇总
-
-">
+新版本上线，为了保证新版本稳定性，需要用线上的流量的引入，对新版本进行真实流量测试。如果新版本上线有问题，为降低影响范围，我们对">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -20,7 +18,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>小明同学为了战斗而生 | 小明同学</title>
+    <title>Nginx多策略流量分发 | 小明同学</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -333,13 +331,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/24.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/16.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        小明同学为了战斗而生
+                        Nginx多策略流量分发
                     </div>
                 </div>
             </div>
@@ -450,12 +448,8 @@
                     
                     <div class="article-tag">
                         
-                        <a href="/tags/leetcode/" target="_blank">
-                            <span class="chip bg-color">leetcode</span>
-                        </a>
-                        
-                        <a href="/tags/算法/" target="_blank">
-                            <span class="chip bg-color">算法</span>
+                        <a href="/tags/nginx/" target="_blank">
+                            <span class="chip bg-color">nginx</span>
                         </a>
                         
                     </div>
@@ -466,8 +460,8 @@
                     <div class="post-cate">
                         <i class="fa fa-bookmark fa-fw icon-category"></i>
                         
-                        <a href="/categories/编程算法/" class="post-category" target="_blank">
-                            编程算法
+                        <a href="/categories/nginx/" class="post-category" target="_blank">
+                            nginx
                         </a>
                         
                     </div>
@@ -478,7 +472,7 @@
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-02-16
+                    2020-02-24
                 </div>
 
                 <div class="post-author info-break-policy">
@@ -492,14 +486,14 @@
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    6
+                    1.2k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    5 分
                 </div>
                 
                 
@@ -515,10 +509,151 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <blockquote>
-</blockquote>
-<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><h2 id="性质汇总"><a href="#性质汇总" class="headerlink" title="性质汇总"></a>性质汇总</h2><blockquote>
-</blockquote>
+                <h2 id="Nginx多策略流量分发"><a href="#Nginx多策略流量分发" class="headerlink" title="Nginx多策略流量分发"></a>Nginx多策略流量分发</h2><h2 id="1、场景描述"><a href="#1、场景描述" class="headerlink" title="1、场景描述"></a>1、场景描述</h2><p>在实际生产环境中，流量分发有很多情况，下面主要讲讲以下两种流量分发场景：</p>
+<ol>
+<li>新版本上线，为了保证新版本稳定性，需要用线上的流量的引入，对新版本进行真实流量测试。如果新版本上线有问题，为降低影响范围，我们对流量的引入应该为从小到大的策略。</li>
+<li>现如今是移动端的时代，而移动端和pc端的设备的不同，需要对移动端和pc的流量进行不同的处理，同时可以针对两种设备的不同需求可以单独升级，可控性强，且架构灵活。</li>
+</ol>
+<h3 id="2、nginx策略配置"><a href="#2、nginx策略配置" class="headerlink" title="2、nginx策略配置"></a>2、nginx策略配置</h3><p>针对以上两种场景，nginx做为强大的web服务器，通过简单的配置来就可以满足我们的需求，下面我们就开始实战：</p>
+<pre><code>nginx version: nginx/1.16.1
+os version: centos 7</code></pre><p>完成以上需求，主要依赖于nginx的两个模块：</p>
+<ol>
+<li>ngx_http_split_clients_module 文档参考地址: <a href="http://nginx.org/en/docs/http/ngx_http_split_clients_module.html" target="_blank" rel="noopener">http://nginx.org/en/docs/http/ngx_http_split_clients_module.html</a></li>
+<li>ngx_http_map_module 文档参考地址：<a href="http://nginx.org/en/docs/http/ngx_http_map_module.html" target="_blank" rel="noopener">http://nginx.org/en/docs/http/ngx_http_map_module.html</a></li>
+</ol>
+<h3 id="3、流量按比例分配-ngx-http-split-clients-module"><a href="#3、流量按比例分配-ngx-http-split-clients-module" class="headerlink" title="3、流量按比例分配[ngx_http_split_clients_module]"></a>3、流量按比例分配[ngx_http_split_clients_module]</h3><p>按比例分配流量，通过ngx_http_split_clients_module模块实现，该模块可通过客户端的某些属性对客户端通过hash算法按比例分配，这些属性包括客户端ip等，通过hash函数，将不同客户端ip进行比例分配，从而可以将部分流量引入新版本服务中，下面看一下具体配置：</p>
+<pre><code>user nobody;
+worker_processes auto;
+error_log /var/log/nginx/error.log;
+pid /run/nginx.pid;
+
+events {
+    worker_connections 1024;
+}
+
+http {
+    log_format  main  &#39;$remote_addr - $remote_user [$time_local] &quot;$request&quot; &#39;
+                      &#39;$status $body_bytes_sent &quot;$http_referer&quot; &#39;
+                      &#39;&quot;$http_user_agent&quot; &quot;$http_x_forwarded_for&quot;&#39;;
+user nobody;
+worker_processes auto;
+error_log /var/log/nginx/error.log;
+pid /run/nginx.pid;
+
+events {
+    worker_connections 1024;
+}
+
+http {
+    log_format  main  &#39;$remote_addr - $remote_user [$time_local] &quot;$request&quot; &#39;
+                      &#39;$status $body_bytes_sent &quot;$http_referer&quot; &#39;
+                      &#39;&quot;$http_user_agent&quot; &quot;$http_x_forwarded_for&quot;&#39;;
+
+    access_log  /var/log/nginx/access.log  main;
+
+    include             /etc/nginx/mime.types;
+    default_type        application/octet-stream;
+
+    # 根据内置变量变量${remote_addr}进行1:1分发，并将v1和v2的值赋予$version变量
+    split_clients &quot;${remote_addr}AAA&quot; $version {
+                   50%               v1;
+                   *                 v2;
+    }
+
+    # v1版本服务
+    server {
+          listen 8081;
+          location  / {
+              return 200 &quot;v1\n&quot;;
+          }
+    }
+    # v2版本服务
+    server {
+          listen 8082;
+          location  / {
+              return 200 &quot;v2\n&quot;;
+          }
+    }
+
+    server {
+        listen 80;
+        location / {
+            proxy_pass http://127.0.0.1/$version;
+        }
+        # v2版本转发
+        location  /v2 {
+            proxy_pass http://127.0.0.1:8082/;
+        }
+        # v1版本转发
+        location  /v1 {
+            proxy_pass http://127.0.0.1:8081/;
+        }
+    }
+}</code></pre><p>在配置中，我们利用<code>split_clients</code>指令对<code>$remote_addr</code>变量进行hash运算，并按1:1比例随机地将<code>$version</code>的值赋予v1和v2，*表示剩余的比例，即1-50%，这样就可以通过<code>$version</code>的值进行流量分配，具体可看nginx配置，已有注释。可以看到在版本转发时，在<code>proxy_pass</code>转发路径最后加了/，是为了把版本路径(v1|v2)去掉，然后再进行转发，可以保持原有的请求uri路径不变，此处算是一个小技巧。</p>
+<p>实际效果：</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_gif/QFzRdz9libEYSsND4W9avicYCDsy6pICZibcWKzJlrBfLOeB6I5E5EGyicIC4luoiauicVU2gPhfPnx1EyibzB6Z7dBaw/640?wx_fmt=gif&tp=webp&wxfrom=5&wx_lazy=1" alt="img"></p>
+<h3 id="4、移动端和pc端流量分配-ngx-http-map-module"><a href="#4、移动端和pc端流量分配-ngx-http-map-module" class="headerlink" title="4、移动端和pc端流量分配[ngx_http_map_module]"></a>4、移动端和pc端流量分配[ngx_http_map_module]</h3><p>ngx_http_map_module模块可通过客户端属性按一定规则匹配映射为新的变量，我们可以对客户端的ua进行正则匹配来区分流量，从而进行流量分发，下面是nginx配置文件示例：</p>
+<pre><code>user nobody;
+worker_processes auto;
+error_log /var/log/nginx/error.log;
+pid /run/nginx.pid;
+
+events {
+    worker_connections 1024;
+}
+
+http {
+    log_format  main  &#39;$remote_addr - $remote_user [$time_local] &quot;$request&quot; &#39;
+                      &#39;$status $body_bytes_sent &quot;$http_referer&quot; &#39;
+                      &#39;&quot;$http_user_agent&quot; &quot;$http_x_forwarded_for&quot;&#39;;
+
+    access_log  /var/log/nginx/access.log  main;
+
+    include             /etc/nginx/mime.types;
+    default_type        application/octet-stream;
+
+
+    map &quot;${http_user_agent}&quot; $uatype {
+           default           nomobile;
+           &quot;~*mobile&quot;        mobile;
+    }
+
+    # pc端服务
+    server {
+          listen 8082;
+          location  / {
+              return 200 &quot;nomobile\n&quot;;
+          }
+    }
+
+    # 移动端服务
+    server {
+          listen 8081;
+          location  / {
+              return 200 &quot;mobile\n&quot;;
+          }
+    }
+
+    server {
+        listen 80;
+        location / {
+            proxy_pass http://127.0.0.1/$uatype;
+        }
+        # pc端版本转发
+        location  /nomobile {
+            proxy_pass http://127.0.0.1:8082/;
+        }
+        # 移动端版本转发
+        location  /mobile {
+            proxy_pass http://127.0.0.1:8081/;
+        }
+    }
+}</code></pre><p>在nginx配置中，我们可以看到使用map指令，对客户端的ua进行正则匹配，一旦匹配成功，$uatype将被分配为mobile，并根据此变量的值进行转发，剩下未匹配的由default 指定，此时$uatype为nomobile，从而转发到pc端服务，同时在转发到后端时，同样在proxy_pass后加/，也是为了去掉nomobile和mobile前缀。在使用map的正则匹配时，代表区分大小写的匹配，*则为不区分大小写。</p>
+<p>实际效果：</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_gif/QFzRdz9libEYSsND4W9avicYCDsy6pICZibrrcbDPt6GFaqELTxdchZsteca2nOZds9H7zNM8mfhVdY0nc7SC2nhA/640?wx_fmt=gif&tp=webp&wxfrom=5&wx_lazy=1" alt="img"></p>
+<h4 id="5、总结"><a href="#5、总结" class="headerlink" title="5、总结"></a>5、总结</h4><p>以上只是列举典型的流量分发方式，我们可以根据<code>$http_name</code>或者<code>$arg_name</code>来定制化需求，<code>$http_name</code>获取自定义头部，<code>$arg_name</code>获取自定义<code>uri</code>参数，这就给予我们更多的可能，比如我们可以再用户登录后，添加自定义头部，使用自定义头部，map指令进行流量拆分，更多的用途需要我们自行发挥想象进行探索。</p>
+<p>来源:</p>
+<p><a href="https://mp.weixin.qq.com/s/09R9l0cIcn4uogPNJbYwvw" target="_blank" rel="noopener">https://mp.weixin.qq.com/s/09R9l0cIcn4uogPNJbYwvw</a></p>
 
             </div>
             <hr />
@@ -677,9 +812,9 @@
             <br/>
             <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text"
                   property="dct:title" rel="dct:type">
-                    《小明同学为了战斗而生》
+                    《Nginx多策略流量分发》
                 </span> 由
-            <a xmlns:cc="http://creativecommons.org/ns#" href="/2020/02/16/sort-algorithms/" property="cc:attributionName"
+            <a xmlns:cc="http://creativecommons.org/ns#" href="/2020/02/24/nginx-duo-ce-lue-liu-liang-fen-fa/" property="cc:attributionName"
                rel="cc:attributionURL">
                 小明
             </a> 采用
@@ -720,7 +855,7 @@
         repo: 'godweiyang.github.io',
         owner: 'godweiyang',
         admin: "godweiyang",
-        id: '2020/02/16/sort-algorithms/',
+        id: '2020/02/24/nginx-duo-ce-lue-liu-liang-fen-fa/',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -1007,34 +1142,37 @@
             <div class="article-badge left-badge text-color">
                 <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2020/02/23/01-ce-shi-fu-ben/">
+                <a href="/2020/02/24/bian-xie-shell-jiao-ben-de-zui-jia-shi-jian/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="中小企业如何做运维自动化">
+                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="编写Shell脚本的最佳实践">
                         
-                        <span class="card-title">中小企业如何做运维自动化</span>
+                        <span class="card-title">编写Shell脚本的最佳实践</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            中小企业如何做运维自动化以下文章来源于Spug运维 ，作者Spug运维
-Spug运维http://spug.dev
-我们先看一下中小企业面临的问题：
-1、人员有限，小一点的公司专业运维可能没有，开发自己上线，也有可能1-2个运维人员，基本不
+                            1. 编写Shell脚本的最佳实践开头有“蛇棒”
+
+所谓shebang其实就是在很多脚本的第一行出现的以”#!”开头的注释，他指明了当我们没有指定解释器的时候默认的解释器，一般可能是下面这样：
+
+#!/bin/bash
+
+当然，解释器有很多
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2020-02-23
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2020-02-24
                         </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Spug/" class="post-category" target="_blank">
-                                    Spug
+                            <a href="/categories/shell/" class="post-category" target="_blank">
+                                    shell
                                 </a>
                             
                             
@@ -1044,12 +1182,12 @@ Spug运维http://spug.dev
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/自动化/" target="_blank">
-                        <span class="chip bg-color">自动化</span>
+                    <a href="/tags/编程/" target="_blank">
+                        <span class="chip bg-color">编程</span>
                     </a>
                     
-                    <a href="/tags/Spug/" target="_blank">
-                        <span class="chip bg-color">Spug</span>
+                    <a href="/tags/shell/" target="_blank">
+                        <span class="chip bg-color">shell</span>
                     </a>
                     
                 </div>
@@ -1063,27 +1201,29 @@ Spug运维http://spug.dev
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/02/16/di-yi-zhang-mysql-da-gang-jie-shao/">
+                <a href="/2020/02/23/di-san-zhang-mysql-lian-jie-guan-li/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/20.jpg" class="responsive-img" alt="第一章   MySQL 大纲介绍">
+                        <img src="/medias/featureimages/28.jpg" class="responsive-img" alt="mysql多实例部署">
                         
-                        <span class="card-title">第一章   MySQL 大纲介绍</span>
+                        <span class="card-title">mysql多实例部署</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            1、官方定义的MySQL  DBA工作内容（1）运维DBA
-初级：各版本、各平台安装搭建、升级
-中级：体系结构原理、基础管理（启动关闭、初始化配置文件管理、多实例管理、用户权限管理、基本SQL（增删改查））、
-     日志管理、备份与恢复
+                            第一章  需求说明作者:夏正平
+
+部署MySQL5.7的三个多实例环境(端口分别为3307,3308,3309)
+部署MySQL5.6和8.0版本数据库实例((端口分别为3316和3326)
+
+第二章 环境准备1.虚拟机环境$ hostna
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-02-16
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-02-23
                             </span>
                         <span class="publish-author">
                             
@@ -1100,12 +1240,12 @@ Spug运维http://spug.dev
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/leetcode/" target="_blank">
-                        <span class="chip bg-color">leetcode</span>
-                    </a>
-                    
                     <a href="/tags/mysql/" target="_blank">
                         <span class="chip bg-color">mysql</span>
+                    </a>
+                    
+                    <a href="/tags/案例/" target="_blank">
+                        <span class="chip bg-color">案例</span>
                     </a>
                     
                 </div>
