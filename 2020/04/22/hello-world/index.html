@@ -329,7 +329,7 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/11.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/30.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
@@ -995,7 +995,7 @@
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="第二章   体系结构">
+                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="第二章   体系结构">
                         
                         <span class="card-title">第二章   体系结构</span>
                     </div>
@@ -1049,25 +1049,23 @@ mysql -ur
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/02/24/bian-xie-shell-jiao-ben-de-zui-jia-shi-jian/">
+                <a href="/2020/02/24/di-si-zhang-mysql-sheng-ji-he-jiang-ji/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="编写Shell脚本的最佳实践">
+                        <img src="/medias/featureimages/28.jpg" class="responsive-img" alt="MySQL升级和降级">
                         
-                        <span class="card-title">编写Shell脚本的最佳实践</span>
+                        <span class="card-title">MySQL升级和降级</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            1. 编写Shell脚本的最佳实践开头有“蛇棒”
-
-所谓shebang其实就是在很多脚本的第一行出现的以”#!”开头的注释，他指明了当我们没有指定解释器的时候默认的解释器，一般可能是下面这样：
-
-#!/bin/bash
-
-当然，解释器有很多
+                            1. MySQL升级和降级`
+1.1 方式1.1.1 INPLACE  就地 
+在一台服务器上，原版本升级到新版本。
+风险较大。
+==建议 ： 不管哪种方式升级，都应该先做备份。方便失败回退。==1.1.2 Mergeing 迁移   建议
                         
                     </div>
                     <div class="publish-info">
@@ -1078,8 +1076,8 @@ mysql -ur
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/shell/" class="post-category" target="_blank">
-                                    shell
+                            <a href="/categories/mysql/" class="post-category" target="_blank">
+                                    mysql
                                 </a>
                             
                             
@@ -1089,12 +1087,12 @@ mysql -ur
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/编程/" target="_blank">
-                        <span class="chip bg-color">编程</span>
+                    <a href="/tags/mysql/" target="_blank">
+                        <span class="chip bg-color">mysql</span>
                     </a>
                     
-                    <a href="/tags/shell/" target="_blank">
-                        <span class="chip bg-color">shell</span>
+                    <a href="/tags/数据库/" target="_blank">
+                        <span class="chip bg-color">数据库</span>
                     </a>
                     
                 </div>
@@ -1245,11 +1243,11 @@ mysql -ur
     <footer class="page-footer bg-color">
     <div class="container row center-align">
         <div class="col s12 m8 l8 copy-right">
-            &copy; 2020-2020 小明. 版权所有
+            &copy; 2019-2020 小明. 版权所有
 
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">19.6k</span>
+            <span class="white-color">18.6k</span>
             
 
             <br>
@@ -1355,7 +1353,7 @@ mysql -ur
         minutes - 0-59之间的整数，做为date对象的分钟数
         seconds - 0-59之间的整数，做为date对象的秒数
         microseconds - 0-999之间的整数，做为date对象的毫秒数 */
-        var t1 = Date.UTC(2020, 04, 22, 00, 00, 00); //北京时间2020-04-22 00:00:00
+        var t1 = Date.UTC(2019, 04, 22, 00, 00, 00); //北京时间2020-04-22 00:00:00
         var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
         var diff = t2 - t1;
         var diffYears = Math.floor(diff / years);

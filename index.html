@@ -358,6 +358,13 @@
 
 <div class="carousel carousel-slider center index-cover" data-indicators="true" style="margin-top: -64px;">
     
+    <div id="prev-cover" class="left waves-effect carousel-control">
+        <i class="icon fa fa-angle-left"></i>
+    </div>
+    <div id="next-cover" class="right waves-effect carousel-control">
+        <i class="icon fa fa-angle-right"></i>
+    </div>
+    
 
     <div class="carousel-item red white-text bg-cover about-cover">
         <div class="container">
@@ -437,6 +444,60 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
     </div>
 
     
+    
+
+    
+    
+    <div class="carousel-item amber white-text carousel-post bg-cover"
+            style="background-image: url('/medias/featureimages/4.jpg');">
+        <div class="container">
+            <div class="row">
+                <div class="col s10 offset-s1">
+                    <div class="title center-align">小明同学为了战斗而生</div>
+                    <div class="description center-align">
+                    
+                        本文整理并总结了十大经典的排序算法（冒泡排序、选择排序、插入排序、快速排序、归并排序、希尔排序、计数排序、基数排序、桶排序、堆排序）的时间复杂度、空间复杂度等性质。
+                    
+                    </div>
+                    <div class="cover-btns">
+                        <a href="/2020/02/16/sort-algorithms/" class="waves-effect waves-light btn" target="_blank">
+                            <i class="icon fa fa-eye fa-fw"></i>阅读更多
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    
+    <div class="carousel-item amber white-text carousel-post bg-cover"
+            style="background-image: url('/medias/featureimages/28.jpg');">
+        <div class="container">
+            <div class="row">
+                <div class="col s10 offset-s1">
+                    <div class="title center-align">编写Shell脚本的最佳实践</div>
+                    <div class="description center-align">
+                    
+                        1. 编写Shell脚本的最佳实践开头有“蛇棒”
+
+所谓shebang其实就是在很多脚本的第一行出现的以”#!”开头的注释，他指明了当我们没有指定解释器的时候默认的解释器，一般可能是下面这样：
+
+#!/bin/bash
+
+当然，解释器有很多
+                    
+                    </div>
+                    <div class="cover-btns">
+                        <a href="/2020/02/24/bian-xie-shell-jiao-ben-de-zui-jia-shi-jian/" class="waves-effect waves-light btn" target="_blank">
+                            <i class="icon fa fa-eye fa-fw"></i>阅读更多
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    
 </div>
 
 <script>
@@ -454,7 +515,7 @@ $(function () {
     let autoCarousel = function() {
         carouselIntervalId = setInterval(function () {
             coverSlider.carousel('next');
-        }, 512);
+        }, 10000);
     };
     autoCarousel();
     
@@ -508,19 +569,23 @@ $(function () {
 
     
     
-    <div class="col s12" >
-        <div class="post-card" style="background-image: url('/medias/featureimages/24.jpg')">
+    <div class="col s12 m6" >
+        <div class="post-card" style="background-image: url('/medias/featureimages/3.jpg')">
             <div class="post-body">
                 <div class="post-categories">
                     
-                    <a href="/categories/编程算法/" class="category" target="_blank">编程算法</a>
+                    <a href="/categories/mysql/" class="category" target="_blank">mysql</a>
                     
                 </div>
-                <a href="/2020/02/16/sort-algorithms/" target="_blank">
-                    <h3 class="post-title">小明同学为了战斗而生</h3>
+                <a href="/2020/02/23/01-ce-shi/" target="_blank">
+                    <h3 class="post-title">第三章mysql连接管理</h3>
                 </a>
-                <p class="post-description">本文整理并总结了十大经典的排序算法（冒泡排序、选择排序、插入排序、快速排序、归并排序、希尔排序、计数排序、基数排序、桶排序、堆排序）的时间复杂度、空间复杂度等性质。</p>
-                <a href="/2020/02/16/sort-algorithms/" target="_blank"
+                <p class="post-description">
+                    
+                        
+                    
+                </p>
+                <a href="/2020/02/23/01-ce-shi/" target="_blank"
                         class="read-more btn waves-effect waves-light" style="background: linear-gradient(to right, #FF5E3A 0%, #FF2A68 100%)">
                     <i class="icon fa fa-eye fa-fw"></i>阅读更多
                 </a>
@@ -529,8 +594,8 @@ $(function () {
     </div>
     
     
-    <div class="col s12 m6" data-aos="zoom-in-up">
-        <div class="post-card" style="background-image: url('/medias/featureimages/2.jpg')">
+    <div class="col s12 m6" >
+        <div class="post-card" style="background-image: url('/medias/featureimages/1.jpg')">
             <div class="post-body">
                 <div class="post-categories">
                     
@@ -540,10 +605,14 @@ $(function () {
                 <a href="/2020/04/22/02-mysql-lesson02-ti-xi-jie-gou-yu-guan-li/" target="_blank">
                     <h3 class="post-title">第二章   体系结构</h3>
                 </a>
-                <p class="post-description">1. 体系结构1.1 C/S(客户端/服务端)模型介绍
+                <p class="post-description">
+                    
+                        1. 体系结构1.1 C/S(客户端/服务端)模型介绍
 image
 TCP/IP方式（远程、本地）：
-mysql -uroot -poldb</p>
+mysql -uroot -poldb
+                    
+                </p>
                 <a href="/2020/04/22/02-mysql-lesson02-ti-xi-jie-gou-yu-guan-li/" target="_blank"
                         class="read-more btn waves-effect waves-light" style="background: linear-gradient(to right, #EF4DB6 0%, #C643FC 100%)">
                     <i class="icon fa fa-eye fa-fw"></i>阅读更多
@@ -554,30 +623,7 @@ mysql -uroot -poldb</p>
     
     
     <div class="col s12 m6" data-aos="zoom-in-up">
-        <div class="post-card" style="background-image: url('/medias/featureimages/20.jpg')">
-            <div class="post-body">
-                <div class="post-categories">
-                    
-                    <a href="/categories/mysql/" class="category" target="_blank">mysql</a>
-                    
-                </div>
-                <a href="/2020/02/16/di-yi-zhang-mysql-da-gang-jie-shao/" target="_blank">
-                    <h3 class="post-title">第一章   MySQL 大纲介绍</h3>
-                </a>
-                <p class="post-description">1、官方定义的MySQL  DBA工作内容（1）运维DBA
-初级：各版本、各平台安装搭建、升级
-中级：体系结构原理、基础管理（启动关闭、初始</p>
-                <a href="/2020/02/16/di-yi-zhang-mysql-da-gang-jie-shao/" target="_blank"
-                        class="read-more btn waves-effect waves-light" style="background: linear-gradient(to right, #1AD6FD 0%, #1D62F0 100%)">
-                    <i class="icon fa fa-eye fa-fw"></i>阅读更多
-                </a>
-            </div>
-        </div>
-    </div>
-    
-    
-    <div class="col s12" data-aos="zoom-in-up">
-        <div class="post-card" style="background-image: url('/medias/featureimages/4.jpg')">
+        <div class="post-card" style="background-image: url('/medias/featureimages/29.jpg')">
             <div class="post-body">
                 <div class="post-categories">
                     
@@ -587,11 +633,39 @@ mysql -uroot -poldb</p>
                 <a href="/2020/02/23/linux-jin-zhi-ping-yi-ji-kai-qi-ping-de-fang-fa/" target="_blank">
                     <h3 class="post-title">Linux禁止ping以及开启ping的方法</h3>
                 </a>
-                <p class="post-description">Linux默认是允许Ping响应的，系统是否允许Ping由2个因素决定的 ：
+                <p class="post-description">
+                    
+                        Linux默认是允许Ping响应的，系统是否允许Ping由2个因素决定的 ：
 作者：Happiness
-来源：https://urlify.cn/Mr6zMb
-\1. 内</p>
+来源：https://urlify.
+                    
+                </p>
                 <a href="/2020/02/23/linux-jin-zhi-ping-yi-ji-kai-qi-ping-de-fang-fa/" target="_blank"
+                        class="read-more btn waves-effect waves-light" style="background: linear-gradient(to right, #1AD6FD 0%, #1D62F0 100%)">
+                    <i class="icon fa fa-eye fa-fw"></i>阅读更多
+                </a>
+            </div>
+        </div>
+    </div>
+    
+    
+    <div class="col s12 m6" data-aos="zoom-in-up">
+        <div class="post-card" style="background-image: url('/medias/featureimages/4.jpg')">
+            <div class="post-body">
+                <div class="post-categories">
+                    
+                    <a href="/categories/编程算法/" class="category" target="_blank">编程算法</a>
+                    
+                </div>
+                <a href="/2020/02/16/sort-algorithms/" target="_blank">
+                    <h3 class="post-title">小明同学为了战斗而生</h3>
+                </a>
+                <p class="post-description">
+                    
+                        本文整理并总结了十大经典的排序算法（冒泡排序、选择排序、插入排序、快速排序、归并排序、希尔排序、计数排序、基数排序、桶排序、堆排序）的时间复杂度、空间复杂度等性质。
+                    
+                </p>
+                <a href="/2020/02/16/sort-algorithms/" target="_blank"
                         class="read-more btn waves-effect waves-light" style="background: linear-gradient(to right, #FFCC00 0%, #FF9500 100%)">
                     <i class="icon fa fa-eye fa-fw"></i>阅读更多
                 </a>
@@ -601,76 +675,7 @@ mysql -uroot -poldb</p>
     
     
     <div class="col s12 m6" data-aos="zoom-in-up">
-        <div class="post-card" style="background-image: url('/medias/featureimages/2.jpg')">
-            <div class="post-body">
-                <div class="post-categories">
-                    
-                    <a href="/categories/mysql/" class="category" target="_blank">mysql</a>
-                    
-                </div>
-                <a href="/2020/02/23/01-ce-shi/" target="_blank">
-                    <h3 class="post-title">第三章mysql连接管理</h3>
-                </a>
-                <p class="post-description"></p>
-                <a href="/2020/02/23/01-ce-shi/" target="_blank"
-                        class="read-more btn waves-effect waves-light" style="background: linear-gradient(to right, #4cbf30 0%, #0f9d58 100%)">
-                    <i class="icon fa fa-eye fa-fw"></i>阅读更多
-                </a>
-            </div>
-        </div>
-    </div>
-    
-    
-    <div class="col s12 m6" data-aos="zoom-in-up">
-        <div class="post-card" style="background-image: url('/medias/featureimages/16.jpg')">
-            <div class="post-body">
-                <div class="post-categories">
-                    
-                    <a href="/categories/nginx/" class="category" target="_blank">nginx</a>
-                    
-                </div>
-                <a href="/2020/02/24/nginx-duo-ce-lue-liu-liang-fen-fa/" target="_blank">
-                    <h3 class="post-title">Nginx多策略流量分发</h3>
-                </a>
-                <p class="post-description">Nginx多策略流量分发1、场景描述在实际生产环境中，流量分发有很多情况，下面主要讲讲以下两种流量分发场景：
-
-新版本上线，为了保证新版本稳</p>
-                <a href="/2020/02/24/nginx-duo-ce-lue-liu-liang-fen-fa/" target="_blank"
-                        class="read-more btn waves-effect waves-light" style="background: linear-gradient(to right, #C644FC 0%, #5856D6 100%)">
-                    <i class="icon fa fa-eye fa-fw"></i>阅读更多
-                </a>
-            </div>
-        </div>
-    </div>
-    
-    
-    <div class="col s12" data-aos="zoom-in-up">
-        <div class="post-card" style="background-image: url('/medias/featureimages/2.jpg')">
-            <div class="post-body">
-                <div class="post-categories">
-                    
-                    <a href="/categories/mysql/" class="category" target="_blank">mysql</a>
-                    
-                </div>
-                <a href="/2020/02/23/di-si-zhang-mysql-sheng-ji-he-jiang-ji/" target="_blank">
-                    <h3 class="post-title">MySQL升级和降级</h3>
-                </a>
-                <p class="post-description">1. MySQL升级和降级`
-1.1 方式1.1.1 INPLACE  就地 
-在一台服务器上，原版本升级到新版本。
-风险较大。
-==建议 ： 不管哪种方式升级，都应该先</p>
-                <a href="/2020/02/23/di-si-zhang-mysql-sheng-ji-he-jiang-ji/" target="_blank"
-                        class="read-more btn waves-effect waves-light" style="background: linear-gradient(to right, #55EFCB 0%, #5BCAFF 100%)">
-                    <i class="icon fa fa-eye fa-fw"></i>阅读更多
-                </a>
-            </div>
-        </div>
-    </div>
-    
-    
-    <div class="col s12 m6" data-aos="zoom-in-up">
-        <div class="post-card" style="background-image: url('/medias/featureimages/17.jpg')">
+        <div class="post-card" style="background-image: url('/medias/featureimages/7.jpg')">
             <div class="post-body">
                 <div class="post-categories">
                     
@@ -680,11 +685,15 @@ mysql -uroot -poldb</p>
                 <a href="/2020/02/23/zhong-xiao-qi-ye-ru-he-zuo-yun-wei-zi-dong-hua/" target="_blank">
                     <h3 class="post-title">中小企业如何做运维自动化</h3>
                 </a>
-                <p class="post-description">中小企业如何做运维自动化以下文章来源于Spug运维 ，作者Spug运维
+                <p class="post-description">
+                    
+                        中小企业如何做运维自动化以下文章来源于Spug运维 ，作者Spug运维
 Spug运维http://spug.dev
-我们先看一下中小企业面临</p>
+我们先看一下中小企业面临
+                    
+                </p>
                 <a href="/2020/02/23/zhong-xiao-qi-ye-ru-he-zuo-yun-wei-zi-dong-hua/" target="_blank"
-                        class="read-more btn waves-effect waves-light" style="background: linear-gradient(to right, #FF5E3A 0%, #FF2A68 100%)">
+                        class="read-more btn waves-effect waves-light" style="background: linear-gradient(to right, #4cbf30 0%, #0f9d58 100%)">
                     <i class="icon fa fa-eye fa-fw"></i>阅读更多
                 </a>
             </div>
@@ -693,21 +702,27 @@ Spug运维http://spug.dev
     
     
     <div class="col s12 m6" data-aos="zoom-in-up">
-        <div class="post-card" style="background-image: url('/medias/featureimages/17.jpg')">
+        <div class="post-card" style="background-image: url('/medias/featureimages/28.jpg')">
             <div class="post-body">
                 <div class="post-categories">
                     
-                    <a href="/categories/Spug/" class="category" target="_blank">Spug</a>
+                    <a href="/categories/mysql/" class="category" target="_blank">mysql</a>
                     
                 </div>
-                <a href="/2020/02/23/01-ce-shi-fu-ben/" target="_blank">
-                    <h3 class="post-title">中小企业如何做运维自动化</h3>
+                <a href="/2020/02/24/di-si-zhang-mysql-sheng-ji-he-jiang-ji/" target="_blank">
+                    <h3 class="post-title">MySQL升级和降级</h3>
                 </a>
-                <p class="post-description">中小企业如何做运维自动化以下文章来源于Spug运维 ，作者Spug运维
-Spug运维http://spug.dev
-我们先看一下中小企业面临</p>
-                <a href="/2020/02/23/01-ce-shi-fu-ben/" target="_blank"
-                        class="read-more btn waves-effect waves-light" style="background: linear-gradient(to right, #EF4DB6 0%, #C643FC 100%)">
+                <p class="post-description">
+                    
+                        1. MySQL升级和降级`
+1.1 方式1.1.1 INPLACE  就地 
+在一台服务器上，原版本升级到新版本。
+风险较大。
+==建议 
+                    
+                </p>
+                <a href="/2020/02/24/di-si-zhang-mysql-sheng-ji-he-jiang-ji/" target="_blank"
+                        class="read-more btn waves-effect waves-light" style="background: linear-gradient(to right, #C644FC 0%, #5856D6 100%)">
                     <i class="icon fa fa-eye fa-fw"></i>阅读更多
                 </a>
             </div>
@@ -737,7 +752,7 @@ Spug运维http://spug.dev
                         <div class="card-image">
                             
                             
-                            <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="第二章   体系结构">
+                            <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="第二章   体系结构">
                             
                             <span class="card-title">第二章   体系结构</span>
                         </div>
@@ -793,7 +808,7 @@ mysql -ur
                         <div class="card-image">
                             
                             
-                            <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="Hello World">
+                            <img src="/medias/featureimages/30.jpg" class="responsive-img" alt="Hello World">
                             
                             <span class="card-title">Hello World</span>
                         </div>
@@ -821,11 +836,115 @@ mysql -ur
             
             <div class="article col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
+                    <a href="/2020/02/24/di-si-zhang-mysql-sheng-ji-he-jiang-ji/" target="_blank">
+                        <div class="card-image">
+                            
+                            
+                            <img src="/medias/featureimages/28.jpg" class="responsive-img" alt="MySQL升级和降级">
+                            
+                            <span class="card-title">MySQL升级和降级</span>
+                        </div>
+                    </a>
+
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                            1. MySQL升级和降级`
+1.1 方式1.1.1 INPLACE  就地 
+在一台服务器上，原版本升级到新版本。
+风险较大。
+==建议 ： 不管哪种方式升级，都应该先做备份。方便失败回退。==1.1.2 Mergeing 迁移   建议
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-02-24
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fa fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/categories/mysql/" class="post-category" target="_blank">
+                                    mysql
+                                </a>
+                                
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                    <div class="card-action article-tags">
+                        
+                        <a href="/tags/mysql/" target="_blank">
+                            <span class="chip bg-color">mysql</span>
+                        </a>
+                        
+                        <a href="/tags/数据库/" target="_blank">
+                            <span class="chip bg-color">数据库</span>
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <div class="article col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
+                    <a href="/2020/02/24/nginx-duo-ce-lue-liu-liang-fen-fa/" target="_blank">
+                        <div class="card-image">
+                            
+                            
+                            <img src="/medias/featureimages/19.jpg" class="responsive-img" alt="Nginx多策略流量分发">
+                            
+                            <span class="card-title">Nginx多策略流量分发</span>
+                        </div>
+                    </a>
+
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                            Nginx多策略流量分发1、场景描述在实际生产环境中，流量分发有很多情况，下面主要讲讲以下两种流量分发场景：
+
+新版本上线，为了保证新版本稳定性，需要用线上的流量的引入，对新版本进行真实流量测试。如果新版本上线有问题，为降低影响范围，我们对
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-02-24
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fa fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/categories/nginx/" class="post-category" target="_blank">
+                                    nginx
+                                </a>
+                                
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                    <div class="card-action article-tags">
+                        
+                        <a href="/tags/nginx/" target="_blank">
+                            <span class="chip bg-color">nginx</span>
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <div class="article col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
                     <a href="/2020/02/24/bian-xie-shell-jiao-ben-de-zui-jia-shi-jian/" target="_blank">
                         <div class="card-image">
                             
                             
-                            <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="编写Shell脚本的最佳实践">
+                            <img src="/medias/featureimages/28.jpg" class="responsive-img" alt="编写Shell脚本的最佳实践">
                             
                             <span class="card-title">编写Shell脚本的最佳实践</span>
                         </div>
@@ -878,74 +997,20 @@ mysql -ur
             
             <div class="article col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
-                    <a href="/2020/02/24/nginx-duo-ce-lue-liu-liang-fen-fa/" target="_blank">
+                    <a href="/2020/02/23/01-ce-shi/" target="_blank">
                         <div class="card-image">
                             
                             
-                            <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="Nginx多策略流量分发">
+                            <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="第三章mysql连接管理">
                             
-                            <span class="card-title">Nginx多策略流量分发</span>
+                            <span class="card-title">第三章mysql连接管理</span>
                         </div>
                     </a>
 
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                            Nginx多策略流量分发1、场景描述在实际生产环境中，流量分发有很多情况，下面主要讲讲以下两种流量分发场景：
-
-新版本上线，为了保证新版本稳定性，需要用线上的流量的引入，对新版本进行真实流量测试。如果新版本上线有问题，为降低影响范围，我们对
                             
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-02-24
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fa fa-bookmark fa-fw icon-category"></i>
-                                
-                                <a href="/categories/nginx/" class="post-category" target="_blank">
-                                    nginx
-                                </a>
-                                
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/nginx/" target="_blank">
-                            <span class="chip bg-color">nginx</span>
-                        </a>
-                        
-                    </div>
-                    
-                </div>
-            </div>
-            
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/2020/02/23/di-san-zhang-mysql-lian-jie-guan-li/" target="_blank">
-                        <div class="card-image">
-                            
-                            
-                            <img src="/medias/featureimages/28.jpg" class="responsive-img" alt="mysql多实例部署">
-                            
-                            <span class="card-title">mysql多实例部署</span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                            第一章  需求说明作者:夏正平
-
-部署MySQL5.7的三个多实例环境(端口分别为3307,3308,3309)
-部署MySQL5.6和8.0版本数据库实例((端口分别为3316和3326)
-
-第二章 环境准备1.虚拟机环境$ hostna
                             
                         </div>
                         <div class="publish-info">
@@ -968,12 +1033,12 @@ mysql -ur
                     
                     <div class="card-action article-tags">
                         
-                        <a href="/tags/mysql/" target="_blank">
-                            <span class="chip bg-color">mysql</span>
+                        <a href="/tags/leetcode/" target="_blank">
+                            <span class="chip bg-color">leetcode</span>
                         </a>
                         
-                        <a href="/tags/案例/" target="_blank">
-                            <span class="chip bg-color">案例</span>
+                        <a href="/tags/mysql/" target="_blank">
+                            <span class="chip bg-color">mysql</span>
                         </a>
                         
                     </div>
@@ -987,7 +1052,7 @@ mysql -ur
                         <div class="card-image">
                             
                             
-                            <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="Linux禁止ping以及开启ping的方法">
+                            <img src="/medias/featureimages/29.jpg" class="responsive-img" alt="Linux禁止ping以及开启ping的方法">
                             
                             <span class="card-title">Linux禁止ping以及开启ping的方法</span>
                         </div>
@@ -1039,117 +1104,11 @@ mysql -ur
             
             <div class="article col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
-                    <a href="/2020/02/23/01-ce-shi/" target="_blank">
-                        <div class="card-image">
-                            
-                            
-                            <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="第三章mysql连接管理">
-                            
-                            <span class="card-title">第三章mysql连接管理</span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                            
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-02-23
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fa fa-bookmark fa-fw icon-category"></i>
-                                
-                                <a href="/categories/mysql/" class="post-category" target="_blank">
-                                    mysql
-                                </a>
-                                
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/leetcode/" target="_blank">
-                            <span class="chip bg-color">leetcode</span>
-                        </a>
-                        
-                        <a href="/tags/mysql/" target="_blank">
-                            <span class="chip bg-color">mysql</span>
-                        </a>
-                        
-                    </div>
-                    
-                </div>
-            </div>
-            
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/2020/02/23/di-si-zhang-mysql-sheng-ji-he-jiang-ji/" target="_blank">
-                        <div class="card-image">
-                            
-                            
-                            <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="MySQL升级和降级">
-                            
-                            <span class="card-title">MySQL升级和降级</span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                            1. MySQL升级和降级`
-1.1 方式1.1.1 INPLACE  就地 
-在一台服务器上，原版本升级到新版本。
-风险较大。
-==建议 ： 不管哪种方式升级，都应该先做备份。方便失败回退。==1.1.2 Mergeing 迁移   建议
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-02-23
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fa fa-bookmark fa-fw icon-category"></i>
-                                
-                                <a href="/categories/mysql/" class="post-category" target="_blank">
-                                    mysql
-                                </a>
-                                
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/mysql/" target="_blank">
-                            <span class="chip bg-color">mysql</span>
-                        </a>
-                        
-                        <a href="/tags/数据库/" target="_blank">
-                            <span class="chip bg-color">数据库</span>
-                        </a>
-                        
-                    </div>
-                    
-                </div>
-            </div>
-            
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
                     <a href="/2020/02/23/zhong-xiao-qi-ye-ru-he-zuo-yun-wei-zi-dong-hua/" target="_blank">
                         <div class="card-image">
                             
                             
-                            <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="中小企业如何做运维自动化">
+                            <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="中小企业如何做运维自动化">
                             
                             <span class="card-title">中小企业如何做运维自动化</span>
                         </div>
@@ -1199,23 +1158,25 @@ Spug运维http://spug.dev
             
             <div class="article col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
-                    <a href="/2020/02/23/01-ce-shi-fu-ben/" target="_blank">
+                    <a href="/2020/02/23/di-san-zhang-mysql-lian-jie-guan-li/" target="_blank">
                         <div class="card-image">
                             
                             
-                            <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="中小企业如何做运维自动化">
+                            <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="mysql多实例部署">
                             
-                            <span class="card-title">中小企业如何做运维自动化</span>
+                            <span class="card-title">mysql多实例部署</span>
                         </div>
                     </a>
 
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                            中小企业如何做运维自动化以下文章来源于Spug运维 ，作者Spug运维
-Spug运维http://spug.dev
-我们先看一下中小企业面临的问题：
-1、人员有限，小一点的公司专业运维可能没有，开发自己上线，也有可能1-2个运维人员，基本不
+                            第一章  需求说明作者:夏正平
+
+部署MySQL5.7的三个多实例环境(端口分别为3307,3308,3309)
+部署MySQL5.6和8.0版本数据库实例((端口分别为3316和3326)
+
+第二章 环境准备1.虚拟机环境$ hostna
                             
                         </div>
                         <div class="publish-info">
@@ -1226,8 +1187,8 @@ Spug运维http://spug.dev
                                 
                                 <i class="fa fa-bookmark fa-fw icon-category"></i>
                                 
-                                <a href="/categories/Spug/" class="post-category" target="_blank">
-                                    Spug
+                                <a href="/categories/mysql/" class="post-category" target="_blank">
+                                    mysql
                                 </a>
                                 
                                 
@@ -1238,12 +1199,12 @@ Spug运维http://spug.dev
                     
                     <div class="card-action article-tags">
                         
-                        <a href="/tags/自动化/" target="_blank">
-                            <span class="chip bg-color">自动化</span>
+                        <a href="/tags/mysql/" target="_blank">
+                            <span class="chip bg-color">mysql</span>
                         </a>
                         
-                        <a href="/tags/Spug/" target="_blank">
-                            <span class="chip bg-color">Spug</span>
+                        <a href="/tags/案例/" target="_blank">
+                            <span class="chip bg-color">案例</span>
                         </a>
                         
                     </div>
@@ -1257,7 +1218,7 @@ Spug运维http://spug.dev
                         <div class="card-image">
                             
                             
-                            <img src="/medias/featureimages/24.jpg" class="responsive-img" alt="小明同学为了战斗而生">
+                            <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="小明同学为了战斗而生">
                             
                             <span class="card-title">小明同学为了战斗而生</span>
                         </div>
@@ -1308,7 +1269,7 @@ Spug运维http://spug.dev
                         <div class="card-image">
                             
                             
-                            <img src="/medias/featureimages/20.jpg" class="responsive-img" alt="第一章   MySQL 大纲介绍">
+                            <img src="/medias/featureimages/29.jpg" class="responsive-img" alt="第一章   MySQL 大纲介绍">
                             
                             <span class="card-title">第一章   MySQL 大纲介绍</span>
                         </div>
@@ -1365,11 +1326,11 @@ Spug运维http://spug.dev
     <footer class="page-footer bg-color">
     <div class="container row center-align">
         <div class="col s12 m8 l8 copy-right">
-            &copy; 2020-2020 小明. 版权所有
+            &copy; 2019-2020 小明. 版权所有
 
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">19.6k</span>
+            <span class="white-color">18.6k</span>
             
 
             <br>
@@ -1475,7 +1436,7 @@ Spug运维http://spug.dev
         minutes - 0-59之间的整数，做为date对象的分钟数
         seconds - 0-59之间的整数，做为date对象的秒数
         microseconds - 0-999之间的整数，做为date对象的毫秒数 */
-        var t1 = Date.UTC(2020, 04, 22, 00, 00, 00); //北京时间2020-04-22 00:00:00
+        var t1 = Date.UTC(2019, 04, 22, 00, 00, 00); //北京时间2020-04-22 00:00:00
         var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
         var diff = t2 - t1;
         var diffYears = Math.floor(diff / years);
