@@ -333,7 +333,7 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/28.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/22.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
@@ -450,12 +450,12 @@
                     
                     <div class="article-tag">
                         
-                        <a href="/tags/mysql/" target="_blank">
-                            <span class="chip bg-color">mysql</span>
-                        </a>
-                        
                         <a href="/tags/数据库/" target="_blank">
                             <span class="chip bg-color">数据库</span>
+                        </a>
+                        
+                        <a href="/tags/mysql/" target="_blank">
+                            <span class="chip bg-color">mysql</span>
                         </a>
                         
                     </div>
@@ -492,14 +492,14 @@
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.5k
+                    3k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    6 分
+                    15 分
                 </div>
                 
                 
@@ -691,7 +691,230 @@ timestamp会受到时区的影响
 ## 二进制类型
 ## json 数据类型
 
-</code></pre><p>作者：wwwoldguocom<br>链接：<a href="https://www.jianshu.com/p/08c4b78402ff" target="_blank" rel="noopener">https://www.jianshu.com/p/08c4b78402ff</a><br>来源：简书<br>著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。</p>
+</code></pre><h1 id="4-数据库降级"><a href="#4-数据库降级" class="headerlink" title="4-数据库降级"></a>4-数据库降级</h1><h2 id="1-官方解释"><a href="#1-官方解释" class="headerlink" title="1-官方解释"></a>1-官方解释</h2><pre><code>降级：
+官方解释： 
+https://dev.mysql.com/doc/refman/5.7/en/downgrade-paths.html
+Downgrade from MySQL 5.7 to 5.6 is supported using the logical downgrade method.
+
+https://dev.mysql.com/doc/refman/5.7/en/downgrade-binary-package.html#downgrade-procedure-inplace
+In-place downgrade is supported for downgrades between GA releases within the same release series.
+
+</code></pre><p>5.7.28 —》 5.7.10       inplace downgrade  ok</p>
+<p>原环境：<br>    5.7.28 二进制版本 + /data/3306/data  </p>
+<h2 id="2-安装-5-7-10-（低）-二进制版本"><a href="#2-安装-5-7-10-（低）-二进制版本" class="headerlink" title="2. 安装 5.7.10 （低） 二进制版本"></a>2. 安装 5.7.10 （低） 二进制版本</h2><pre><code>/data/app/mysql5710</code></pre><p>针对5728版本（高）进行处理工作</p>
+<pre class="line-numbers language-shell"><code class="language-shell">https://dev.mysql.com/doc/refman/5.7/en/downgrading-to-previous-series.html
+
+set sql_mode='STRICT_TRANS_TABLES,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION' ;
+set global sql_mode='STRICT_TRANS_TABLES,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION' ;
+select @@sql_mode;                              
+ALTER TABLE mysql.proc MODIFY definer char(77) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL DEFAULT '';
+ALTER TABLE mysql.event MODIFY definer char(77) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL DEFAULT '';
+ALTER TABLE mysql.tables_priv MODIFY Grantor char(77) COLLATE utf8_bin NOT NULL DEFAULT '';
+ALTER TABLE mysql.procs_priv MODIFY Grantor char(77) COLLATE utf8_bin NOT NULL DEFAULT '';<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="3-优雅的关闭5-7-28（高）。"><a href="#3-优雅的关闭5-7-28（高）。" class="headerlink" title="3. 优雅的关闭5.7.28（高）。"></a>3. 优雅的关闭5.7.28（高）。</h2><pre class="line-numbers language-scss"><code class="language-scss">set global innodb_fast_shutdown=<span class="token number">0</span> <span class="token punctuation">;</span>
+mysql --execute=<span class="token string">"SET GLOBAL innodb_fast_shutdown=0"</span>
+mysqladmin  shutdown
+
+[root@db<span class="token number">01</span> /data] # mysqladmin  -S /tmp/mysql<span class="token number">3308.</span>sock  shutdown
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="4-删除ib-logfile"><a href="#4-删除ib-logfile" class="headerlink" title="4. 删除ib_logfile*"></a>4. 删除ib_logfile*</h2><pre><code>防止冲突
+[root@db01 mysql5710]# rm -rf /data/3306/data/ib_logfile*</code></pre><h2 id="5-替换配置文件、环境变量-（替换成低版本）"><a href="#5-替换配置文件、环境变量-（替换成低版本）" class="headerlink" title="5. 替换配置文件、环境变量 （替换成低版本）"></a>5. 替换配置文件、环境变量 （替换成低版本）</h2><pre class="line-numbers language-shell"><code class="language-shell">[root@db01 mysql5710]# vim /etc/my.cnf
+[mysqld]
+user=mysql
+basedir=/data/app/mysql5710
+#basedir=/data/app/mysql56
+datadir=/data/3306/data
+socket=/tmp/mysql.sock
+[mysql]
+socket=/tmp/mysql.sock<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre><code>[root@db01 mysql5710]# vim /etc/profile
+export PATH=/data/app/mysql5710/bin:$PATH</code></pre><pre><code>[root@db01 mysql5710]# source /etc/profile
+
+db01_5.7 [(none)]&gt;select version();
++-----------+
+| version() |
++-----------+
+| 5.7.10    |
++-----------+
+1 row in set (0.00 sec)
+
+db01_5.7 [(none)]&gt;
+
+[root@db01 mysql5710]# mysql -V
+mysql  Ver 14.14 Distrib 5.7.10, for linux-glibc2.5 (x86_64) using  EditLine wrapper</code></pre><h2 id="6-启动数据库-1"><a href="#6-启动数据库-1" class="headerlink" title="6. 启动数据库"></a>6. 启动数据库</h2><pre class="line-numbers language-scss"><code class="language-scss">[root@db<span class="token number">01</span> mysql<span class="token number">5710</span>]# /etc/init<span class="token number">.</span>d/mysqld start 
+Starting MySQL<span class="token number">..</span> SUCCESS! 
+
+   全路径启动
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="7-执行upgrade"><a href="#7-执行upgrade" class="headerlink" title="7. 执行upgrade"></a>7. 执行upgrade</h2><pre><code>[root@db01 /data] # /data/app/mysql5710/bin/mysql_upgrade   --force 
+[root@db01 mysql5710]# mysql_upgrade --force </code></pre><pre class="line-numbers language-css"><code class="language-css">[root@db<span class="token number">01</span> /data] # /data/app/mysql<span class="token number">5710</span>/bin/mysql_upgrade   -S /tmp/mysql<span class="token number">3308.</span>sock   --force 
+Checking server version<span class="token number">.</span>
+Running queries to upgrade MySQL server<span class="token number">.</span>
+Checking system database<span class="token number">.</span>
+mysql<span class="token number">.</span>columns_priv                                 OK
+mysql<span class="token number">.</span>db                                           OK
+mysql<span class="token number">.</span>engine_cost                                  OK
+mysql<span class="token number">.</span>event                                        OK
+mysql<span class="token number">.</span>func                                         OK
+mysql<span class="token number">.</span>general_log                                  OK
+mysql<span class="token number">.</span>gtid_executed                                OK
+mysql<span class="token number">.</span>help_category                                OK
+mysql<span class="token number">.</span>help_keyword                                 OK
+mysql<span class="token number">.</span>help_relation                                OK
+mysql<span class="token number">.</span>help_topic                                   OK
+mysql<span class="token number">.</span>innodb_index_stats                           OK
+mysql<span class="token number">.</span>innodb_table_stats                           OK
+mysql<span class="token number">.</span>ndb_binlog_index                             OK
+mysql<span class="token number">.</span>plugin                                       OK
+mysql<span class="token number">.</span>proc                                         OK
+mysql<span class="token number">.</span>procs_priv                                   OK
+mysql<span class="token number">.</span>proxies_priv                                 OK
+mysql<span class="token number">.</span>server_cost                                  OK
+mysql<span class="token number">.</span>servers                                      OK
+mysql<span class="token number">.</span>slave_master_info                            OK
+mysql<span class="token number">.</span>slave_relay_log_info                         OK
+mysql<span class="token number">.</span>slave_worker_info                            OK
+mysql<span class="token number">.</span>slow_log                                     OK
+mysql<span class="token number">.</span>tables_priv                                  OK
+mysql<span class="token number">.</span>time_zone                                    OK
+mysql<span class="token number">.</span>time_zone_leap_second                        OK
+mysql<span class="token number">.</span>time_zone_name                               OK
+mysql<span class="token number">.</span>time_zone_transition                         OK
+mysql<span class="token number">.</span>time_zone_transition_type                    OK
+mysql<span class="token number">.</span>user                                         OK
+The sys schema is already up to date <span class="token punctuation">(</span>version <span class="token number">1.5.2</span><span class="token punctuation">)</span><span class="token number">.</span>
+Checking databases<span class="token number">.</span>
+sys<span class="token number">.</span>sys_config                                     OK
+Upgrade process completed successfully<span class="token number">.</span>
+Checking if update is needed<span class="token number">.</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h1 id="5-数据库5-7-5-6降级"><a href="#5-数据库5-7-5-6降级" class="headerlink" title="5-数据库5.7-5.6降级"></a>5-数据库5.7-5.6降级</h1><h2 id="0-恢复5-7-28-环境"><a href="#0-恢复5-7-28-环境" class="headerlink" title="0. 恢复5.7.28 环境"></a>0. 恢复5.7.28 环境</h2><pre class="line-numbers language-css"><code class="language-css"><span class="token number">0.</span> 恢复<span class="token number">5.7.28</span> 环境 
+[root@db<span class="token number">01</span> data]# pkill mysqld
+[root@db<span class="token number">01</span> data]# rm -rf /data/<span class="token number">3306</span>/data/*
+# 恢复配置文件
+[root@db<span class="token number">01</span> data]# vim /etc/my<span class="token number">.</span>cnf
+[mysqld]
+user=mysql
+basedir=/data/app/mysql
+#basedir=/data/app/mysql<span class="token number">56</span>
+datadir=/data/<span class="token number">3306</span>/data
+socket=/tmp/mysql<span class="token number">.</span>sock
+[mysql]
+socket=/tmp/mysql<span class="token number">.</span>sock
+
+# 恢复环境变量 
+export PATH=/data/app/mysql/<span class="token property">bin</span><span class="token punctuation">:</span>$PATH
+[root@db<span class="token number">01</span> data]# source /etc/profile
+
+[root@db<span class="token number">01</span> data]# mysql -V
+mysql  Ver <span class="token number">14.14</span> Distrib <span class="token number">5.7.28</span>, for linux-glibc<span class="token number">2.12</span> <span class="token punctuation">(</span>x<span class="token number">86</span>_<span class="token number">64</span><span class="token punctuation">)</span> using  EditLine wrapper
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="1-初始化数据"><a href="#1-初始化数据" class="headerlink" title="1-初始化数据"></a>1-初始化数据</h2><p>从新安装的软件</p>
+<pre><code>mysqld --initialize-insecure --user=mysql --basedir=/data/app/mysql --datadir=/data/3306/data</code></pre><h2 id="2-启动数据库"><a href="#2-启动数据库" class="headerlink" title="2-启动数据库"></a>2-启动数据库</h2><pre class="line-numbers language-scss"><code class="language-scss">[root@db<span class="token number">01</span> data]# /etc/init<span class="token number">.</span>d/mysqld start
+Starting MySQL<span class="token number">.</span>Logging to <span class="token string">'/data/3306/data/db01.err'</span><span class="token number">.</span>
+ SUCCESS! 
+
+ mysql> select <span class="token function">version</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
++-----------+
+| <span class="token function">version</span><span class="token punctuation">(</span><span class="token punctuation">)</span> |
++-----------+
+| <span class="token number">5.7.28</span>    |
++-----------+
+<span class="token number">1</span> row in set <span class="token punctuation">(</span><span class="token number">0.00</span> sec<span class="token punctuation">)</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="3-安装5-6-46二进制版本软件"><a href="#3-安装5-6-46二进制版本软件" class="headerlink" title="3-安装5.6.46二进制版本软件"></a>3-安装5.6.46二进制版本软件</h2><pre><code>/data/app/mysql56</code></pre><h2 id="4-处理5-7-28高版本数据"><a href="#4-处理5-7-28高版本数据" class="headerlink" title="4-处理5.7.28高版本数据"></a>4-处理5.7.28高版本数据</h2><pre class="line-numbers language-csharp"><code class="language-csharp"><span class="token keyword">set</span> sql_mode<span class="token operator">=</span><span class="token string">'STRICT_TRANS_TABLES,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION'</span> <span class="token punctuation">;</span>
+<span class="token keyword">set</span> <span class="token keyword">global</span> sql_mode<span class="token operator">=</span><span class="token string">'STRICT_TRANS_TABLES,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION'</span> <span class="token punctuation">;</span>
+<span class="token keyword">select</span> @@sql_mode<span class="token punctuation">;</span>   
+ALTER TABLE mysql<span class="token punctuation">.</span>proc MODIFY definer <span class="token keyword">char</span><span class="token punctuation">(</span><span class="token number">77</span><span class="token punctuation">)</span> CHARACTER SET utf8 COLLATE utf8_bin NOT NULL DEFAULT <span class="token string">''</span><span class="token punctuation">;</span>
+ALTER TABLE mysql<span class="token punctuation">.</span><span class="token keyword">event</span> MODIFY definer <span class="token keyword">char</span><span class="token punctuation">(</span><span class="token number">77</span><span class="token punctuation">)</span> CHARACTER SET utf8 COLLATE utf8_bin NOT NULL DEFAULT <span class="token string">''</span><span class="token punctuation">;</span>
+ALTER TABLE mysql<span class="token punctuation">.</span>tables_priv MODIFY Grantor <span class="token keyword">char</span><span class="token punctuation">(</span><span class="token number">77</span><span class="token punctuation">)</span> COLLATE utf8_bin NOT NULL DEFAULT <span class="token string">''</span><span class="token punctuation">;</span>
+ALTER TABLE mysql<span class="token punctuation">.</span>procs_priv MODIFY Grantor <span class="token keyword">char</span><span class="token punctuation">(</span><span class="token number">77</span><span class="token punctuation">)</span> COLLATE utf8_bin NOT NULL DEFAULT <span class="token string">''</span><span class="token punctuation">;</span>
+ALTER TABLE mysql<span class="token punctuation">.</span>tables_priv MODIFY User <span class="token keyword">char</span><span class="token punctuation">(</span><span class="token number">16</span><span class="token punctuation">)</span> NOT NULL <span class="token keyword">default</span> <span class="token string">''</span><span class="token punctuation">;</span>
+ALTER TABLE mysql<span class="token punctuation">.</span>columns_priv MODIFY User <span class="token keyword">char</span><span class="token punctuation">(</span><span class="token number">16</span><span class="token punctuation">)</span> NOT NULL <span class="token keyword">default</span> <span class="token string">''</span><span class="token punctuation">;</span>
+ALTER TABLE mysql<span class="token punctuation">.</span>user MODIFY User <span class="token keyword">char</span><span class="token punctuation">(</span><span class="token number">16</span><span class="token punctuation">)</span> NOT NULL <span class="token keyword">default</span> <span class="token string">''</span><span class="token punctuation">;</span>
+ALTER TABLE mysql<span class="token punctuation">.</span>db MODIFY User <span class="token keyword">char</span><span class="token punctuation">(</span><span class="token number">16</span><span class="token punctuation">)</span> NOT NULL <span class="token keyword">default</span> <span class="token string">''</span><span class="token punctuation">;</span>
+ALTER TABLE mysql<span class="token punctuation">.</span>procs_priv MODIFY User <span class="token keyword">char</span><span class="token punctuation">(</span><span class="token number">16</span><span class="token punctuation">)</span> binary DEFAULT <span class="token string">''</span> NOT NULL<span class="token punctuation">;</span>
+ALTER TABLE mysql<span class="token punctuation">.</span>user ADD Password <span class="token keyword">char</span><span class="token punctuation">(</span><span class="token number">41</span><span class="token punctuation">)</span> character <span class="token keyword">set</span> latin1
+collate latin1_bin NOT NULL <span class="token keyword">default</span> <span class="token string">''</span> AFTER user<span class="token punctuation">;</span>
+UPDATE mysql<span class="token punctuation">.</span>user SET password <span class="token operator">=</span> authentication_string WHERE
+<span class="token function">LENGTH</span><span class="token punctuation">(</span>authentication_string<span class="token punctuation">)</span> <span class="token operator">=</span> <span class="token number">41</span> AND plugin <span class="token operator">=</span> <span class="token string">'mysql_native_password'</span><span class="token punctuation">;</span>
+UPDATE mysql<span class="token punctuation">.</span>user SET authentication_string <span class="token operator">=</span> <span class="token string">''</span> WHERE
+<span class="token function">LENGTH</span><span class="token punctuation">(</span>authentication_string<span class="token punctuation">)</span> <span class="token operator">=</span> <span class="token number">41</span> AND plugin <span class="token operator">=</span> <span class="token string">'mysql_native_password'</span><span class="token punctuation">;</span>
+ALTER TABLE mysql<span class="token punctuation">.</span>help_category ENGINE<span class="token operator">=</span><span class="token string">'MyISAM'</span> STATS_PERSISTENT<span class="token operator">=</span>DEFAULT<span class="token punctuation">;</span>
+ALTER TABLE mysql<span class="token punctuation">.</span>help_keyword ENGINE<span class="token operator">=</span><span class="token string">'MyISAM'</span> STATS_PERSISTENT<span class="token operator">=</span>DEFAULT<span class="token punctuation">;</span>
+ALTER TABLE mysql<span class="token punctuation">.</span>help_relation ENGINE<span class="token operator">=</span><span class="token string">'MyISAM'</span> STATS_PERSISTENT<span class="token operator">=</span>DEFAULT<span class="token punctuation">;</span>
+ALTER TABLE mysql<span class="token punctuation">.</span>help_topic ENGINE<span class="token operator">=</span><span class="token string">'MyISAM'</span> STATS_PERSISTENT<span class="token operator">=</span>DEFAULT<span class="token punctuation">;</span>
+ALTER TABLE mysql<span class="token punctuation">.</span>time_zone ENGINE<span class="token operator">=</span><span class="token string">'MyISAM'</span> STATS_PERSISTENT<span class="token operator">=</span>DEFAULT<span class="token punctuation">;</span>
+ALTER TABLE mysql<span class="token punctuation">.</span>time_zone_leap_second ENGINE<span class="token operator">=</span><span class="token string">'MyISAM'</span> STATS_PERSISTENT<span class="token operator">=</span>DEFAULT<span class="token punctuation">;</span>
+ALTER TABLE mysql<span class="token punctuation">.</span>time_zone_name ENGINE<span class="token operator">=</span><span class="token string">'MyISAM'</span> STATS_PERSISTENT<span class="token operator">=</span>DEFAULT<span class="token punctuation">;</span>
+ALTER TABLE mysql<span class="token punctuation">.</span>time_zone_transition  ENGINE<span class="token operator">=</span><span class="token string">'MyISAM'</span> STATS_PERSISTENT<span class="token operator">=</span>DEFAULT<span class="token punctuation">;</span>
+ALTER TABLE mysql<span class="token punctuation">.</span>time_zone_transition_type ENGINE<span class="token operator">=</span><span class="token string">'MyISAM'</span> STATS_PERSISTENT<span class="token operator">=</span>DEFAULT<span class="token punctuation">;</span>
+ALTER TABLE mysql<span class="token punctuation">.</span>plugin ENGINE<span class="token operator">=</span><span class="token string">'MyISAM'</span> STATS_PERSISTENT<span class="token operator">=</span>DEFAULT<span class="token punctuation">;</span>
+ALTER TABLE mysql<span class="token punctuation">.</span>servers ENGINE<span class="token operator">=</span><span class="token string">'MyISAM'</span> STATS_PERSISTENT<span class="token operator">=</span>DEFAULT<span class="token punctuation">;</span>
+ALTER TABLE mysql<span class="token punctuation">.</span>user MODIFY plugin <span class="token function">CHAR</span><span class="token punctuation">(</span><span class="token number">64</span><span class="token punctuation">)</span> COLLATE utf8_bin
+DEFAULT <span class="token string">'mysql_native_password'</span><span class="token punctuation">;</span>
+DROP DATABASE sys<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="5-逻辑备份5-7-28数据"><a href="#5-逻辑备份5-7-28数据" class="headerlink" title="5. 逻辑备份5.7.28数据"></a>5. 逻辑备份5.7.28数据</h2><pre class="line-numbers language-scss"><code class="language-scss">[root@db<span class="token number">01</span> /data] # mysqldump -S /tmp/mysql<span class="token number">3308.</span>sock   -A >/tmp/full<span class="token number">.</span>sql
+[root@db<span class="token number">01</span> ~]# mysqldump -A >/tmp/full<span class="token number">.</span>sql<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<h2 id="6-初始化一套5-6-46的空环境"><a href="#6-初始化一套5-6-46的空环境" class="headerlink" title="6. 初始化一套5.6.46的空环境"></a>6. 初始化一套5.6.46的空环境</h2><pre class="line-numbers language-shell"><code class="language-shell">[root@db01 ~]# vim /etc/profile
+export PATH=/data/app/mysql56/bin:$PATH
+
+[root@db01 ~]# source /etc/profile
+[root@db01 ~]# mysql -V
+mysql  Ver 14.14 Distrib 5.6.46, for linux-glibc2.12 (x86_64) using  EditLine wrapper
+
+[root@db01 ~]# mv /etc/my.cnf /etc/my.cnf.bak
+mv: overwrite ‘/etc/my.cnf.bak’? y
+
+[root@db01 data]# rm -rf /data/3316/data/*<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="6-1-初始化-5-6"><a href="#6-1-初始化-5-6" class="headerlink" title="6.1-初始化 5.6"></a>6.1-初始化 5.6</h3><pre><code>[root@db01 data]# /data/app/mysql56/scripts/mysql_install_db  --user=mysql --basedir=/data/app/mysql56 --datadir=/data/3316/data
+[root@db01 data]# systemctl start mysqld3316</code></pre><h2 id="7-恢复备份数据到5-6-46中"><a href="#7-恢复备份数据到5-6-46中" class="headerlink" title="7. 恢复备份数据到5.6.46中"></a>7. 恢复备份数据到5.6.46中</h2><pre class="line-numbers language-css"><code class="language-css">[root@db<span class="token number">01</span> data]# mysql -S /tmp/mysql<span class="token number">3316.</span>sock 
+mysql> source /tmp/full<span class="token number">.</span>sql
+
+把 /etc/my<span class="token number">.</span>cnf 的移动走<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<h1 id="6-8-0的新功能"><a href="#6-8-0的新功能" class="headerlink" title="6-8.0的新功能"></a>6-8.0的新功能</h1><p>mysql-shell工具，8.0以后，可以调用这个命令，升级之前的预检查。</p>
+<pre><code>[root@db01 ~]# mysqlsh root:123@10.0.0.51:3306 -e &quot;util.checkForServerUpgrade()&quot;</code></pre><h2 id="例如：-5-7-28-升级至-8-0-18-版本"><a href="#例如：-5-7-28-升级至-8-0-18-版本" class="headerlink" title="例如：  5.7.28 升级至 8.0.18 版本"></a>例如：  5.7.28 升级至 8.0.18 版本</h2><h3 id="1-下载-8-0-18-版本的-mysql-shell，并安装"><a href="#1-下载-8-0-18-版本的-mysql-shell，并安装" class="headerlink" title="1. 下载 8.0.18 版本的 mysql-shell，并安装"></a>1. 下载 8.0.18 版本的 mysql-shell，并安装</h3><pre><code>[root@db01 app]# yum install -y mysql-shell-8.0.18-1.el7.x86_64.rpm</code></pre><h3 id="2-恢复5728环境"><a href="#2-恢复5728环境" class="headerlink" title="2. 恢复5728环境"></a>2. 恢复5728环境</h3><pre class="line-numbers language-css"><code class="language-css">[root@db<span class="token number">01</span> data]# pkill mysqld
+[root@db<span class="token number">01</span> data]# rm -rf /data/<span class="token number">3306</span>/data/*<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<h3 id="3-恢复配置文件"><a href="#3-恢复配置文件" class="headerlink" title="3.恢复配置文件"></a>3.恢复配置文件</h3><pre class="line-numbers language-scss"><code class="language-scss">[root@db<span class="token number">01</span> data]# vim /etc/my<span class="token number">.</span>cnf
+[mysqld]
+user=mysql
+basedir=/data/app/mysql
+#basedir=/data/app/mysql<span class="token number">56</span>
+datadir=/data/<span class="token number">3306</span>/data
+socket=/tmp/mysql<span class="token number">.</span>sock
+[mysql]
+socket=/tmp/mysql<span class="token number">.</span>sock<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="4-恢复环境变量"><a href="#4-恢复环境变量" class="headerlink" title="4.恢复环境变量"></a>4.恢复环境变量</h3><pre class="line-numbers language-scss"><code class="language-scss">export PATH=/data/app/mysql/<span class="token property">bin</span><span class="token punctuation">:</span><span class="token variable">$PATH</span>
+[root@db<span class="token number">01</span> data]# source /etc/profile
+
+[root@db<span class="token number">01</span> data]# mysql -V
+mysql  Ver <span class="token number">14.14</span> Distrib <span class="token number">5.7.28</span>, for linux-glibc<span class="token number">2.12</span> <span class="token punctuation">(</span>x<span class="token number">86</span>_<span class="token number">64</span><span class="token punctuation">)</span> using  EditLine wrapper
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="5-初始化数据"><a href="#5-初始化数据" class="headerlink" title="5.初始化数据"></a>5.初始化数据</h3><pre class="line-numbers language-scss"><code class="language-scss">mysqld --initialize-insecure --user=mysql --basedir=/data/app/mysql --datadir=/data/<span class="token number">3306</span>/data<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h3 id="6-启动数据库-2"><a href="#6-启动数据库-2" class="headerlink" title="6.启动数据库"></a>6.启动数据库</h3><pre class="line-numbers language-scss"><code class="language-scss">[root@db<span class="token number">01</span> data]# /etc/init<span class="token number">.</span>d/mysqld start
+Starting MySQL<span class="token number">.</span>Logging to <span class="token string">'/data/3306/data/db01.err'</span><span class="token number">.</span>
+ SUCCESS! 
+
+mysql> grant all on *<span class="token number">.</span>* to root@<span class="token string">'10.0.1.%'</span> identified by <span class="token string">'123'</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="7-预-检查"><a href="#7-预-检查" class="headerlink" title="7. 预 检查"></a>7. 预 检查</h3><p>检查</p>
+<pre class="line-numbers language-shell"><code class="language-shell">mysqlsh root:123@10.0.0.51:3306 -e "util.checkForServerUpgrade()"
+[root@db01 ~] # mysqlsh root:123@10.0.1.51:3308 -e "util.checkForServerUpgrade()"
+-----------
+[root@db01 ~] # mysqlsh root:123@10.0.1.51:3308 -e "util.checkForServerUpgrade()"
+WARNING: Using a password on the command line interface can be insecure.
+The MySQL server at 10.0.1.51:3308, version 5.7.28 - MySQL Community Server
+(GPL), will now be checked for compatibility issues for upgrade to MySQL
+8.0.18...
+
+1) Usage of old temporal type
+  No issues found
+
+2) Usage of db objects with names conflicting with new reserved keywords
+  No issues found
+
+3) Usage of utf8mb3 charset
+  No issues found
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
             </div>
             <hr />
@@ -1180,29 +1403,54 @@ timestamp会受到时区的影响
             <div class="article-badge left-badge text-color">
                 <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2020/04/22/hello-world/">
+                <a href="/2020/02/26/05-sql-ying-yong-ji-chu/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/30.jpg" class="responsive-img" alt="Hello World">
+                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="第五章SQL 常识">
                         
-                        <span class="card-title">Hello World</span>
+                        <span class="card-title">第五章SQL 常识</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hex
+                            1. SQL 常识1.1 SQL的介绍属于关系型数据库产品中专用的语句。结构化查询语句。
+MySQL 
+
+1.2  SQL 标准
+SQL-89  \ SQL-92  \  SQL-99   \SQL03 .....
+
+1.3 sql_mod
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2020-04-22
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2020-02-26
                         </span>
                         <span class="publish-author">
                             
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/mysql/" class="post-category" target="_blank">
+                                    mysql
+                                </a>
+                            
+                            
                         </span>
                     </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/mysql/" target="_blank">
+                        <span class="chip bg-color">mysql</span>
+                    </a>
+                    
+                    <a href="/tags/leetcode/" target="_blank">
+                        <span class="chip bg-color">leetcode</span>
+                    </a>
+                    
                 </div>
                 
             </div>
@@ -1218,7 +1466,7 @@ timestamp会受到时区的影响
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/19.jpg" class="responsive-img" alt="Nginx多策略流量分发">
+                        <img src="/medias/featureimages/13.jpg" class="responsive-img" alt="Nginx多策略流量分发">
                         
                         <span class="card-title">Nginx多策略流量分发</span>
                     </div>
@@ -1425,7 +1673,7 @@ timestamp会受到时区的影响
 
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">18.6k</span>
+            <span class="white-color">22.2k</span>
             
 
             <br>

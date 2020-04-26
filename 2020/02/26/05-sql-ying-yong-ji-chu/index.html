@@ -4,16 +4,17 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="mysql多实例部署, 自然语言处理 深度学习 算法码上来">
+    <meta name="keywords" content="第五章SQL 常识, 自然语言处理 深度学习 算法码上来">
     <meta name="baidu-site-verification" content="fmlEuI34ir">
     <meta name="google-site-verification" content="yCy2azpds5XSuGZvis6OuA-XIGF5GuGpYRAaGfD6o48">
     <meta name="360-site-verification" content="b7c11a830ef90fd1464ad6206bb7b6e7">
-    <meta name="description" content="第一章  需求说明作者:夏正平
+    <meta name="description" content="1. SQL 常识1.1 SQL的介绍属于关系型数据库产品中专用的语句。结构化查询语句。
+MySQL 
 
-部署MySQL5.7的三个多实例环境(端口分别为3307,3308,3309)
-部署MySQL5.6和8.0版本数据库实例((端口分别为3316和3326)
+1.2  SQL 标准
+SQL-89  \ SQL-92  \  SQL-99   \SQL03 .....
 
-第二章 环境准备1.虚拟机环境$ hostna">
+1.3 sql_mod">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -21,7 +22,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>mysql多实例部署 | 小明同学</title>
+    <title>第五章SQL 常识 | 小明同学</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -334,13 +335,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/9.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/21.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        mysql多实例部署
+                        第五章SQL 常识
                     </div>
                 </div>
             </div>
@@ -455,8 +456,8 @@
                             <span class="chip bg-color">mysql</span>
                         </a>
                         
-                        <a href="/tags/案例/" target="_blank">
-                            <span class="chip bg-color">案例</span>
+                        <a href="/tags/leetcode/" target="_blank">
+                            <span class="chip bg-color">leetcode</span>
                         </a>
                         
                     </div>
@@ -479,7 +480,7 @@
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-02-23
+                    2020-02-26
                 </div>
 
                 <div class="post-author info-break-policy">
@@ -493,14 +494,14 @@
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.5k
+                    2.1k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    8 分
+                    9 分
                 </div>
                 
                 
@@ -516,226 +517,317 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="第一章-需求说明"><a href="#第一章-需求说明" class="headerlink" title="第一章  需求说明"></a>第一章  需求说明</h1><p>作者:夏正平</p>
-<ol>
-<li>部署<code>MySQL</code>5.7的三个多实例环境(端口分别为3307,3308,3309)</li>
-<li>部署<code>MySQL</code>5.6和8.0版本数据库实例((端口分别为3316和3326)</li>
-</ol>
-<h1 id="第二章-环境准备"><a href="#第二章-环境准备" class="headerlink" title="第二章 环境准备"></a>第二章 环境准备</h1><h2 id="1-虚拟机环境"><a href="#1-虚拟机环境" class="headerlink" title="1.虚拟机环境"></a>1.虚拟机环境</h2><pre><code>$ hostname -I 
-  10.0.1.51
-$ hostname
-  db01
-$ cat /etc/redhat-release 
-  CentOS Linux release 7.7.1908 (Core)</code></pre><h2 id="2-虚拟机优化"><a href="#2-虚拟机优化" class="headerlink" title="2.虚拟机优化"></a>2.虚拟机优化</h2><pre><code># 关闭Selinux
-$ setenforce 0
-$ sed -i s#SELINUX=enforcing#SELINUX=disabled#g /etc/selinux/config
+                <h1 id="1-SQL-常识"><a href="#1-SQL-常识" class="headerlink" title="1. SQL 常识"></a>1. SQL 常识</h1><h2 id="1-1-SQL的介绍"><a href="#1-1-SQL的介绍" class="headerlink" title="1.1 SQL的介绍"></a>1.1 SQL的介绍</h2><pre class="line-numbers language-shell"><code class="language-shell">属于关系型数据库产品中专用的语句。结构化查询语句。
+MySQL 
 
-# 关闭防火墙
-$ systemctl stop firewalld
-$ systemctl disable firewalld
-$ iptables-save
+1.2  SQL 标准
+SQL-89  \ SQL-92  \  SQL-99   \SQL03 .....
 
-# 更改yum源
-$ mv /etc/yum.repos.d/CentOS-Base.repo /etc/yum.repos.d/CentOS-Base.repo.ori
-$ wget -O /etc/yum.repos.d/CentOS-Base.repo http://mirrors.aliyun.com/repo/Centos-7.repo
-$ sed  -i &#39;/aliyuncs/d&#39; /etc/yum.repos.d/CentOS-Base.repo 
+1.3 sql_mode <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="1-3-1-作用"><a href="#1-3-1-作用" class="headerlink" title="1.3.1 作用"></a>1.3.1 作用</h2><pre class="line-numbers language-scss"><code class="language-scss">影响到了SQL语句的执行行为。为了让数据库在存、取能够满足生活的常识、科学的逻辑，让这些数据有意义。
+例子： 
+    现实生活中常识：
+        日期： <span class="token number">1000</span>-<span class="token number">9999</span> 年 <span class="token number">1</span>-<span class="token number">12</span> 月 <span class="token number">1</span>-<span class="token number">31</span>日 
+    科学逻辑：         
+        除法：除数不能为<span class="token number">0</span>
+<span class="token number">1.3.2</span> 查看sql_mode 
+mysql> select @@sql_mode<span class="token punctuation">;</span>
+<span class="token property">ONLY_FULL_GROUP_BY</span>          <span class="token punctuation">:</span>  针对group by 语句执行时的规范
+<span class="token property">STRICT_TRANS_TABLES</span>         <span class="token punctuation">:</span>  针对事务表启动严格模式
+NO_ZERO_IN_DATE             ： <span class="token number">2010</span>-<span class="token number">00</span>-<span class="token number">10</span>
+NO_ZERO_DATE                ： <span class="token number">0000</span>-<span class="token number">00</span>-<span class="token number">00</span>
+ERROR_FOR_DIVISION_BY_ZERO  ： 除数不能为<span class="token number">0</span>
+NO_AUTO_CREATE_USER         ： 是否自动创建用户
+<span class="token property">NO_ENGINE_SUBSTITUTION</span>      <span class="token punctuation">:</span>  建表是使用了一个不支持的存储引擎报错。        
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h1 id="2-数据库对象属性介绍"><a href="#2-数据库对象属性介绍" class="headerlink" title="2. 数据库对象属性介绍"></a>2. 数据库对象属性介绍</h1><h2 id="2-1-数据库对象"><a href="#2-1-数据库对象" class="headerlink" title="2.1 数据库对象"></a>2.1 数据库对象</h2><pre><code>库
+    库名
+    库属性：字符集、校对规则
 
-# 添加epel源
-$ wget -O /etc/yum.repos.d/epel.repo http://mirrors.aliyun.com/repo/epel-7.repo
+表 
+    表名 
+    列 ：
+        列名
+        列属性：数据类型、约束、其他属性
+    行
+    表属性：引擎、字符集、校对规则、其他。
 
-# 更新yum缓存
-$  yum clean all
-$ yum makecache fast
+</code></pre><h3 id="2-2-字符集"><a href="#2-2-字符集" class="headerlink" title="2.2 字符集"></a>2.2 字符集</h3><pre><code>2.2 字符集  
+2.2.1 作用 
+MySQL 中的 “密码本”
+2.2.2 种类
+utf8    not  UTF-8  
+utf8mb4 is   UTF-8（万国码）
 
-# 停止NetworkManager
-$ systemctl stop NetworkManager
-$ systemctl disable NetworkManager
+特点 : 
+1. utf8   , 最大支持3字节的字符。不支持emoji字符
+2. utf8mb4, 最大支持4字节的字符。支持emoji字符。
+8.0之前，默认字符集latin1,8.0之后是utf8mb4。
+我们建议使用utf8mb4.</code></pre><h3 id="2-2-3-设置方法"><a href="#2-2-3-设置方法" class="headerlink" title="2.2.3 设置方法"></a>2.2.3 设置方法</h3><pre><code>默认字符集参数
+建库
+建表
 
-# 加大文件描述符
-$ echo &#39;* - nofile 65535&#39; &gt;&gt;/etc/security/limits.conf </code></pre><h2 id="3-清理环境"><a href="#3-清理环境" class="headerlink" title="3.清理环境"></a>3.清理环境</h2><h3 id="①卸载已安装的mysql"><a href="#①卸载已安装的mysql" class="headerlink" title="①卸载已安装的mysql"></a>①卸载已安装的mysql</h3><pre><code>$ rpm -qa | grep mysql
-# 结果如下
-mysql-community-common-8.0.18-1.el7.x86_64
-mysql-community-client-8.0.18-1.el7.x86_64
-mysql-community-libs-8.0.18-1.el7.x86_64
+2.3 校对规则（排序规则）  
+2.3.1 作用 
+影响到数据的排序方式。
+    ASCII码
+a    97
+b    98
+c    99
+d    100
 
-# 使用以下命令依次删除上面的程序
-$ yum remove mysql-xxx-xxx-</code></pre><h3 id="②删除mysql的配置文件"><a href="#②删除mysql的配置文件" class="headerlink" title="②删除mysql的配置文件"></a>②删除mysql的配置文件</h3><pre><code>$ find / -name mysql|xargs rm -fr</code></pre><h3 id="③删除MariaDB的文件"><a href="#③删除MariaDB的文件" class="headerlink" title="③删除MariaDB的文件"></a>③删除MariaDB的文件</h3><pre><code>$ rpm -qa | grep mariadb
-$ rpm -e mariadb-xxx --nodeps</code></pre><h3 id="④删除my-cnf"><a href="#④删除my-cnf" class="headerlink" title="④删除my.cnf"></a>④删除my.cnf</h3><pre><code>$ rm -fr /etc/my.cnf</code></pre><h3 id="⑤检查端口是否被占用"><a href="#⑤检查端口是否被占用" class="headerlink" title="⑤检查端口是否被占用"></a>⑤检查端口是否被占用</h3><pre><code>$ which mysql
-$ pkill mysqld
-$ netstat -lntup|egrep &#39;3307|3308|3309|3316|3326&#39;</code></pre><h2 id="4-准备软件包"><a href="#4-准备软件包" class="headerlink" title="4.准备软件包"></a>4.准备软件包</h2><p><a href="https://downloads.mysql.com/archives/community/" target="_blank" rel="noopener">MySQL官方下载地址</a><br>下载二进制包略。</p>
-<h2 id="5-准备目录"><a href="#5-准备目录" class="headerlink" title="5.准备目录"></a>5.准备目录</h2><pre><code>$ rm -rf /data/*
+A    65
+B    66
+C    67
+D    68
+</code></pre><h2 id="2-3-2-查看属性"><a href="#2-3-2-查看属性" class="headerlink" title="2.3.2 查看属性"></a>2.3.2 查看属性</h2><pre><code>mysql&gt; show collation;
+</code></pre><h2 id="2-4-列属性"><a href="#2-4-列属性" class="headerlink" title="2.4 列属性"></a>2.4 列属性</h2><h3 id="2-4-1-数据类型"><a href="#2-4-1-数据类型" class="headerlink" title="2.4.1 数据类型"></a>2.4.1 数据类型</h3><pre class="line-numbers language-powershell"><code class="language-powershell"><span class="token comment" spellcheck="true">#  作用 </span>
+尽可能保证数据是有意义的。
+<span class="token comment" spellcheck="true">#  种类 </span>
+<span class="token comment" spellcheck="true">## 数字类型</span>
+整数：
+    tinyint   1字节  =  8位 = 00000000 <span class="token operator">-</span> 11111111  = 2^8个  = 0  <span class="token operator">-</span> 255     <span class="token punctuation">,</span> <span class="token operator">-</span>127<span class="token operator">-</span>128    
+    int       4字节  =  32位                       = 2^32个 = 0  <span class="token operator">-</span> 2^32<span class="token operator">-</span>1  <span class="token punctuation">,</span><span class="token operator">-</span>2^31<span class="token operator">-</span>2^31<span class="token operator">-</span>1 <span class="token punctuation">,</span>10位数
+    bigint    8字节                                           0  <span class="token operator">-</span> 2^64<span class="token operator">-</span>1  <span class="token punctuation">,</span><span class="token operator">-</span>2^63<span class="token operator">-</span>2^63<span class="token operator">-</span>1 <span class="token punctuation">,</span>20位数
+浮点数：
+    decimal<span class="token punctuation">(</span>m<span class="token punctuation">,</span>n<span class="token punctuation">)</span>
 
-# MySQL安装目录
-$ mkdir -p /data/app
+<span class="token comment" spellcheck="true">## 字符串类型</span>
+char<span class="token punctuation">(</span>N<span class="token punctuation">)</span>    : 
+    N字符个数，最大不超过255
+    定长的字符串类型。
+    例如： char<span class="token punctuation">(</span>10<span class="token punctuation">)</span> <span class="token punctuation">,</span>最多存10个字符<span class="token punctuation">,</span>只要10个字符以内，都10个字符长度的存储空间。剩余用空格填充。
+varchar<span class="token punctuation">(</span>M<span class="token punctuation">)</span> ：
+    M字符个数，最大不超过65535
+    变长的字符串类型。会额外占用1<span class="token operator">-</span>2字节存储字符长度。255字符之内，额外1字节，255以上，额外2字节
+    例如： varchar<span class="token punctuation">(</span>10<span class="token punctuation">)</span><span class="token punctuation">,</span>最多存10个字符<span class="token punctuation">,</span>按需分配存储空间。
+    abc 3             =4
+    asdasdadasd 1000  =1002
 
-# MySQL数据目录
-$ mkdir -p /data/330{7,8,9}/data
-$ mkdir -p /data/33{16,26}/data
+enum<span class="token punctuation">(</span><span class="token string">'bj'</span><span class="token punctuation">,</span><span class="token string">'sh'</span><span class="token punctuation">,</span><span class="token string">'tj'</span><span class="token punctuation">,</span><span class="token string">'heibei'</span><span class="token punctuation">,</span><span class="token string">'henan'</span><span class="token punctuation">,</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">)</span>
+district enum<span class="token punctuation">(</span><span class="token string">'bj'</span><span class="token punctuation">,</span><span class="token string">'sh'</span><span class="token punctuation">,</span><span class="token string">'tj'</span><span class="token punctuation">,</span><span class="token string">'heibei'</span><span class="token punctuation">,</span><span class="token string">'henan'</span><span class="token punctuation">,</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">)</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="2-5时间类型"><a href="#2-5时间类型" class="headerlink" title="2.5时间类型"></a>2.5时间类型</h2><pre class="line-numbers language-shell"><code class="language-shell">datetime    8字节 
+timestamp   4字节 
 
-# Scoket目录
-$ mkdir -p /data/socket</code></pre><h1 id="第三章-部署MySQL5-7多实例"><a href="#第三章-部署MySQL5-7多实例" class="headerlink" title="第三章 部署MySQL5.7多实例"></a>第三章 部署MySQL5.7多实例</h1><h2 id="1-解压软件包并制作软连接"><a href="#1-解压软件包并制作软连接" class="headerlink" title="1.解压软件包并制作软连接"></a>1.解压软件包并制作软连接</h2><pre><code>$ tar xf mysql-5.7.28-linux-glibc2.12-x86_64.tar.gz
-$ mv mysql-5.7.28-linux-glibc2.12-x86_64 mysql-5.7.28
-$ ln -s /data/app/mysql-5.7.28 /data/app/mysql5728</code></pre><h2 id="2-创建MySQL多实例配置"><a href="#2-创建MySQL多实例配置" class="headerlink" title="2.创建MySQL多实例配置"></a>2.创建<code>MySQL</code>多实例配置</h2><pre><code># 3307实例配置
-$ cat &gt; /data/3307/my.cnf &lt;&lt;EOF 
-[mysqld]                    
-user=mysql                  
-basedir=/data/app/mysql5728    
-datadir=/data/3307/data     
-socket=/data/socket/mysql3307.sock      
-port=3307                   
-server_id=7                  
-EOF
+DATETIME 
+范围为从 1000-01-01 00:00:00.000000 至 9999-12-31 23:59:59.999999。
 
-# 3308实例配置
-$ cat &gt; /data/3308/my.cnf &lt;&lt;EOF 
-[mysqld]                    
-user=mysql                  
-basedir=/data/app/mysql5728    
-datadir=/data/3308/data     
-socket=/data/socket/mysql3308.sock      
-port=3308                   
-server_id=8                  
-EOF
+TIMESTAMP 
+1970-01-01 00:00:00.000000 至 2038-01-19 03:14:07.999999。
+timestamp会受到时区的影响
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="2-6二进制类型"><a href="#2-6二进制类型" class="headerlink" title="2.6二进制类型"></a>2.6二进制类型</h3><pre><code>## 二进制类型
+## json 数据类型
 
-# 3309实例配置
-$ cat &gt; /data/3309/my.cnf &lt;&lt;EOF 
-[mysqld]                    
-user=mysql                  
-basedir=/data/app/mysql5728    
-datadir=/data/3309/data     
-socket=/data/socket/mysql3309.sock      
-port=3309                   
-server_id=9                  
-EOF</code></pre><h2 id="3-创建MySQL傀儡用户并授权"><a href="#3-创建MySQL傀儡用户并授权" class="headerlink" title="3.创建MySQL傀儡用户并授权"></a>3.创建<code>MySQL</code>傀儡用户并授权</h2><pre><code>$ useradd -s /sbin/nologin -M mysql
-$ id mysql
-$ chown -R mysql.mysql /data</code></pre><h2 id="4-初始化"><a href="#4-初始化" class="headerlink" title="4.初始化"></a>4.初始化</h2><pre><code>$ /data/app/mysql5728/bin/mysqld --initialize-insecure --user=mysql --basedir=/data/app/mysql5728 --datadir=/data/3307/data
-$ echo $?
 
-$ /data/app/mysql5728/bin/mysqld --initialize-insecure --user=mysql --basedir=/data/app/mysql5728 --datadir=/data/3308/data
-$ echo $?
+数据类型选型： 合适的、足够的、简短的
+</code></pre><h2 id="2-7约束"><a href="#2-7约束" class="headerlink" title="2.7约束"></a>2.7约束</h2><pre class="line-numbers language-scala"><code class="language-scala"># 主键 primary key （PK）  ： 
+<span class="token number">1</span><span class="token punctuation">.</span> 一张表只能有一个，可以有多个列构成
+<span class="token number">2</span><span class="token punctuation">.</span> 特点： 非空<span class="token operator">+</span>唯一
+<span class="token number">3</span><span class="token punctuation">.</span> 建议每张表都设置主键，有利于索引的应用，通常是使用自增的数字列更佳。
 
-$ /data/app/mysql5728/bin/mysqld --initialize-insecure --user=mysql --basedir=/data/app/mysql5728 --datadir=/data/3309/data
-$ echo $?</code></pre><h2 id="5-编写systemd启动脚本"><a href="#5-编写systemd启动脚本" class="headerlink" title="5.编写systemd启动脚本"></a>5.编写systemd启动脚本</h2><pre><code># 3307实例启动的服务脚本
-$ cat &gt; /etc/systemd/system/mysqld3307.service &lt;&lt;EOF
-[Unit]
-Description=MySQL Server
-Documentation=man:mysqld(8)
-Documentation=http://dev.mysql.com/doc/refman/en/using-systemd.html
-After=network.target
-After=syslog.target
-[Install]
-WantedBy=multi-user.target
-[Service]
-User=mysql
-Group=mysql
-ExecStart=/data/app/mysql5728/bin/mysqld --defaults-file=/data/3307/my.cnf
-LimitNOFILE = 5000
-EOF
 
-# 3308实例启动的服务脚本
-$ cat &gt; /etc/systemd/system/mysqld3308.service &lt;&lt;EOF
-[Unit]
-Description=MySQL Server
-Documentation=man:mysqld(8)
-Documentation=http://dev.mysql.com/doc/refman/en/using-systemd.html
-After=network.target
-After=syslog.target
-[Install]
-WantedBy=multi-user.target
-[Service]
-User=mysql
-Group=mysql
-ExecStart=/data/app/mysql5728/bin/mysqld --defaults-file=/data/3308/my.cnf
-LimitNOFILE = 5000
-EOF
+# 非空 not <span class="token keyword">null</span> <span class="token operator">:</span>
+<span class="token number">1</span><span class="token punctuation">.</span> 特点： 必须录入值。
+<span class="token number">2</span><span class="token punctuation">.</span> 建议： 每个列最好设置为，有利于索引的应用。
 
-# 3309实例启动的服务脚本
-$ cat &gt; /etc/systemd/system/mysqld3309.service &lt;&lt;EOF
-[Unit]
-Description=MySQL Server
-Documentation=man:mysqld(8)
-Documentation=http://dev.mysql.com/doc/refman/en/using-systemd.html
-After=network.target
-After=syslog.target
-[Install]
-WantedBy=multi-user.target
-[Service]
-User=mysql
-Group=mysql
-ExecStart=/data/app/mysql5728/bin/mysqld --defaults-file=/data/3309/my.cnf
-LimitNOFILE = 5000
-EOF</code></pre><h2 id="6-启动多实例"><a href="#6-启动多实例" class="headerlink" title="6.启动多实例"></a>6.启动多实例</h2><pre><code>$ systemctl start mysqld3307
-$ systemctl start mysqld3308
-$ systemctl start mysqld3309
-$ netstat -lntup|grep mysqld
-  tcp6   0   0  :::3307    :::*     LISTEN   2093/mysqld         
-  tcp6   0   0  :::3308    :::*     LISTEN   2127/mysqld         
-  tcp6   0   0  :::3309    :::*     LISTEN   2161/mysqld </code></pre><h2 id="7-绝对路径登录MySQL多实例"><a href="#7-绝对路径登录MySQL多实例" class="headerlink" title="7.绝对路径登录MySQL多实例"></a>7.绝对路径登录<code>MySQL</code>多实例</h2><pre><code>$ /data/app/mysql5728/bin/mysql -S /data/socket/mysql3307.sock
-$ /data/app/mysql5728/bin/mysql -S /data/socket/mysql3308.sock
-$ /data/app/mysql5728/bin/mysql -S /data/socket/mysql3309.sock</code></pre><h1 id="第四章-部署MySQL5-6单实例"><a href="#第四章-部署MySQL5-6单实例" class="headerlink" title="第四章 部署MySQL5.6单实例"></a>第四章 部署MySQL5.6单实例</h1><h2 id="1-解压软件包并制作软连接-1"><a href="#1-解压软件包并制作软连接-1" class="headerlink" title="1.解压软件包并制作软连接"></a>1.解压软件包并制作软连接</h2><pre><code>$ tar xf mysql-5.6.46-linux-glibc2.12-x86_64.tar.gz
-$ mv mysql-5.6.46-linux-glibc2.12-x86_64 mysql-5.6.46
-$ ln -s ln -s mysql-5.6.46 mysql5646</code></pre><h2 id="2-创建MySQL实例配置"><a href="#2-创建MySQL实例配置" class="headerlink" title="2.创建MySQL实例配置"></a>2.创建<code>MySQL</code>实例配置</h2><pre><code>cat &gt; /data/3316/my.cnf &lt;&lt;EOF 
-[mysqld]                    
-user=mysql                  
-basedir=/data/app/mysql5646    
-datadir=/data/3316/data     
-socket=/data/socket/mysql3316.sock       
-port=3316                   
-server_id=16                  
-EOF</code></pre><h2 id="3-创建mysql傀儡用户并授权"><a href="#3-创建mysql傀儡用户并授权" class="headerlink" title="3.创建mysql傀儡用户并授权"></a>3.创建mysql傀儡用户并授权</h2><pre><code>$ chown -R mysql.mysql /data</code></pre><h2 id="4-初始化-1"><a href="#4-初始化-1" class="headerlink" title="4.初始化"></a>4.初始化</h2><pre><code>$ /data/app/mysql5646/scripts/mysql_install_db  --user=mysql --basedir=/data/app/mysql5646 --datadir=/data/3316/data
-$ echo $?</code></pre><h2 id="5-编写systemd启动脚本-1"><a href="#5-编写systemd启动脚本-1" class="headerlink" title="5.编写systemd启动脚本"></a>5.编写systemd启动脚本</h2><pre><code>cat &gt; /etc/systemd/system/mysqld3316.service &lt;&lt;EOF
-[Unit]
-Description=MySQL Server
-Documentation=man:mysqld(8)
-Documentation=http://dev.mysql.com/doc/refman/en/using-systemd.html
-After=network.target
-After=syslog.target
-[Install]
-WantedBy=multi-user.target
-[Service]
-User=mysql
-Group=mysql
-ExecStart=/data/app/mysql5646/bin/mysqld --defaults-file=/data/3316/my.cnf
-LimitNOFILE = 5000
-EOF</code></pre><h2 id="6-启动实例"><a href="#6-启动实例" class="headerlink" title="6.启动实例"></a>6.启动实例</h2><pre><code>$ systemctl daemon-reload
-$ systemctl start mysqld3316.service
-$ netstat -lntup|grep mysqld
-  tcp6  0  0 :::3316    :::*    LISTEN      2516/mysqld</code></pre><h2 id="7-绝对路径登录MySQL实例"><a href="#7-绝对路径登录MySQL实例" class="headerlink" title="7.绝对路径登录MySQL实例"></a>7.绝对路径登录<code>MySQL</code>实例</h2><pre><code>$ /data/app/mysql5646/bin/mysql -S /data/socket/mysql3316.sock</code></pre><h1 id="第五章-部署MySQL8-0单实例"><a href="#第五章-部署MySQL8-0单实例" class="headerlink" title="第五章 部署MySQL8.0单实例"></a>第五章 部署MySQL8.0单实例</h1><h2 id="1-解压软件包并制作软连接-2"><a href="#1-解压软件包并制作软连接-2" class="headerlink" title="1.解压软件包并制作软连接"></a>1.解压软件包并制作软连接</h2><pre><code>$ tar xf mysql-8.0.18-linux-glibc2.12-x86_64.tar.xz
-$ mv mysql-8.0.18-linux-glibc2.12-x86_64 mysql-8.0.18
-$ ln -s mysql-8.0.18 mysql8018</code></pre><h2 id="2-创建MySQL实例配置-1"><a href="#2-创建MySQL实例配置-1" class="headerlink" title="2.创建MySQL实例配置"></a>2.创建<code>MySQL</code>实例配置</h2><pre><code>cat &gt; /data/3326/my.cnf &lt;&lt;EOF 
-[mysqld]                    
-user=mysql                  
-basedir=/data/app/mysql8018     
-datadir=/data/3326/data     
-socket=/data/socket/mysql3326.sock       
-port=3326                  
-server_id=26                  
-EOF</code></pre><h2 id="3-创建mysql傀儡用户并授权-1"><a href="#3-创建mysql傀儡用户并授权-1" class="headerlink" title="3.创建mysql傀儡用户并授权"></a>3.创建mysql傀儡用户并授权</h2><pre><code>$ chown -R mysql.mysql /data</code></pre><h2 id="4-安装依赖并初始化"><a href="#4-安装依赖并初始化" class="headerlink" title="4.安装依赖并初始化"></a>4.安装依赖并初始化</h2><pre><code>$ yum install -y perl-DBD-MySQL perl-Config-Tiny epel-release perl-Log-Dispatch perl-Parallel-ForkManager perl-Time-HiRes
-$ /data/app/mysql8018/bin/mysqld --initialize-insecure --user=mysql --basedir=/data/app/mysql8018 --datadir=/data/3326/data
-$ echo $?</code></pre><h2 id="5-编写systemd启动脚本-2"><a href="#5-编写systemd启动脚本-2" class="headerlink" title="5.编写systemd启动脚本"></a>5.编写systemd启动脚本</h2><pre><code>cat &gt; /etc/systemd/system/mysqld3326.service &lt;&lt;EOF
-[Unit]
-Description=MySQL Server
-Documentation=man:mysqld(8)
-Documentation=http://dev.mysql.com/doc/refman/en/using-systemd.html
-After=network.target
-After=syslog.target
-[Install]
-WantedBy=multi-user.target
-[Service]
-User=mysql
-Group=mysql
-ExecStart=/data/app/mysql8018/bin/mysqld --defaults-file=/data/3326/my.cnf
-LimitNOFILE = 5000
-EOF</code></pre><h2 id="6-启动实例-1"><a href="#6-启动实例-1" class="headerlink" title="6.启动实例"></a>6.启动实例</h2><pre><code>$ systemctl start mysqld3326.service 
-$ netstat -lntup|grep mysqld
-  tcp6       0      0 :::3326    :::*    LISTEN      2686/mysqld  </code></pre><h2 id="7-绝对路径登录MySQL实例-1"><a href="#7-绝对路径登录MySQL实例-1" class="headerlink" title="7.绝对路径登录MySQL实例"></a>7.绝对路径登录<code>MySQL</code>实例</h2><pre><code>$ /data/app/mysql8018/bin/mysql -S /data/socket/mysql3326.sock</code></pre><p>至此，在同一台服务器上部署多版本MySQL多实例完成，可是使用一下命令验证：</p>
-<pre><code>[root@db01 ~]# netstat -lntup|grep mysqld
-tcp6       0      0 :::3326    :::*        LISTEN      2686/mysqld         
-tcp6       0      0 :::33060   :::*        LISTEN      2686/mysqld         
-tcp6       0      0 :::3307    :::*        LISTEN      2093/mysqld         
-tcp6       0      0 :::3308    :::*        LISTEN      2127/mysqld         
-tcp6       0      0 :::3309    :::*        LISTEN      2161/mysqld         
-tcp6       0      0 :::3316    :::*        LISTEN      2516/mysqld </code></pre>
+
+# 唯一 unique key ：
+<span class="token number">1</span><span class="token punctuation">.</span> 特点： 不能有重复值。
+
+
+# 无符号 unsigned
+<span class="token number">1</span><span class="token punctuation">.</span> 特点： 针对数字列，无符号设定。
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="2-8其他"><a href="#2-8其他" class="headerlink" title="2.8其他"></a>2.8其他</h2><pre><code>表属性 ： 
+        engine  ： 存储引擎设置，默认是innodb，也是我们建议的。
+        charset ： utf8mb4 
+        comment :  注释。
+列属性 ： 
+        default       :  默认值。一般是在not null 配合使用
+        auto_increment： 数字列自增长。一般是在主键列配合使用
+        comment       ： 列的注释，建议每个列都有
+</code></pre><h1 id="3-SQL-种类"><a href="#3-SQL-种类" class="headerlink" title="3. SQL 种类"></a>3. SQL 种类</h1><pre><code>3.1  DDL  ： 数据定义语言
+对于： 库 、表（元数据）的 增、删、改
+建库、删库、修改库、建表、删表、修改表
+3.2 DCL  ： 数据控制语言
+grant 
+revoke 
+3.3 DML  ： 数据操作语言
+表的数据行进行的增、删、改、查
+3.4 DQL  ： 数据查询语言
+对于表数据行查看
+对于元数据查看</code></pre><h2 id="1-DDL语句"><a href="#1-DDL语句" class="headerlink" title="1. DDL语句"></a>1. DDL语句</h2><pre class="line-numbers language-CQL"><code class="language-CQL">4.1 DDL-库定义 
+
+# 建库  
+CREATE DATABASE oldguo CHARSET utf8mb4;
+CREATE DATABASE school CHARSET utf8mb4;
+
+# 字符集设置： 
+vim /etc/my.cnf
+[mysqld]
+character_set_server=utf8mb4
+init_connect = "SET NAMES 'utf8mb4'"
+
+
+# 改库  
+CREATE DATABASE oldli ;
+SHOW CREATE DATABASE oldboy;
+SHOW CREATE DATABASE oldli;
+ALTER DATABASE oldli CHARSET utf8mb4;
+SHOW CREATE DATABASE oldli;
+
+# 删库 
+DROP DATABASE oldli;
+
+
+# 查库 
+show databases;
+SHOW CREATE DATABASE oldboy;
+
+
+# 库定义的 开发规范 
+开发  ----》  测试   ----》 预发布  ----》生产
+Windows                                   linux
+test=TEST                               test ≠ TEST
+
+1. 库名不能数字开头
+2. 库名要和业务有关
+3. 库名不要有大写字符
+   原因：为了多平台兼容。
+4. 建库需要显示指定字符集。建议是utf8mb4。    
+5. 生产中禁用普通用户的drop database权限。
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="2-DDL-表定义"><a href="#2-DDL-表定义" class="headerlink" title="2.DDL  - 表定义"></a>2.DDL  - 表定义</h2><pre><code># 建表 
+Create table `oldboy`.`student`
+( 
+`id` int NOT NULL AUTO_INCREMENT COMMENT &#39;学号&#39;,
+ `name` varchar(64) NOT NULL COMMENT &#39;学生姓名&#39;,
+ `age` tinyint UNSIGNED NOT NULL DEFAULT 0 COMMENT &#39;学生年龄&#39;,
+ `gender` CHAR(1) NOT NULL DEFAULT &#39;n&#39; COMMENT &#39;学生性别&#39;,
+ `address` enum(&#39;北京&#39;,&#39;天津&#39;,&#39;上海&#39;,&#39;重庆&#39;,&#39;河北&#39;,&#39;河南&#39;,&#39;山东&#39;,&#39;未知&#39;) NOT NULL DEFAULT &#39;未知&#39; COMMENT &#39;省份&#39;, 
+ `intime` datetime NOT NULL COMMENT &#39;入学时间&#39;,
+ `shenfen` CHAR(18) NOT NULL COMMENT &#39;身份证&#39;,
+ `num` int(10) UNSIGNED ZEROFILL NOT NULL COMMENT &#39;测试&#39;, 
+ primary key (`id`) 
+) ENGINE=InnoDB charset=utf8mb4 collate=utf8mb4_bin; 
+
+
+补充：  
+1. `` 反引号， 还原字符串原有的含义。
+2. 克隆一张和student表结构一致的stu表。
+create table stu like student;
+3. 建表规范
+    a. 表名： 
+        不能数字开头
+        业务有关
+        不要大写字母
+        不要超过18字符
+        不能是关键字
+    b. 存储引擎使用InnoDB
+    c. 5.7版本以后，字符集使用utf8mb4
+    d. 列名要和业务有关，不要超过18个字符
+    e. 选择合适、足够、简短数据类型
+    f. 建议每个列设置not null
+    g. 每个列要有注释
+    h. 每个表要有主键
+    i. 针对not null 列，可以设定默认值。
+    j. 表注释
+
+推荐软件： 
+yearing   开源SQL审核工具。
+inception SQL审核工具。
+
+
+# 查表
+mysql&gt; use oldboy;
+mysql&gt; show tables;
+mysql&gt; show create table student;  # 命令行
+mysql&gt; desc student;
+
+
+# 改表（表定义=元数据）  
+
+-- 修改表定义  
+--- 添加列: 在student表中添加telnum列 *****
+use oldboy;
+desc student;
+alter table oldboy.student 
+add column telnum CHAR(11) not null unique key default &#39;0&#39; comment &#39;手机号&#39; ;
+desc student;
+
+--- 不建议的方式
+alter table oldboy.student 
+add column a CHAR(11) not null unique key default &#39;0&#39; comment &#39;手机号&#39; after gender ;
+desc student;
+
+alter table oldboy.student 
+add column b CHAR(11) not null unique key default &#39;0&#39; comment &#39;手机号&#39; first ;
+desc student;
+
+--- 删除列 （不代表生产操作，危险！！！！）
+alter table student drop  a;
+alter table student drop  b;
+alter table student drop  telnum;
+
+--- 修改表属性
+--- 修改表名 
+alter table student rename to st;
+--- 修改引擎  *****
+create table t1(id int)engine=myisam;
+show create table t1;
+alter table t1 engine=innodb;
+--- 修改字符集
+create table t2(id int)charset=utf8;
+show create table t2;
+alter table t2 charset=utf8mb4;
+
+
+--- 修改列属性
+desc st;
+--- 修改列名
+alter table st change shenfen cardnum CHAR(18) not null default &#39;0&#39; comment &#39;身份证&#39;;
+
+--- 修改默认值
+alter table st change cardnum cardnum CHAR(18) not null default &#39;1&#39; comment &#39;身份证&#39;;
+
+--- 修改数据类型 *****
+alter table st modify cardnum CHAR(20) not null default &#39;1&#39; comment &#39;身份证&#39;;
+
+
+#  删表(危险操作！！ 普通用户禁用 drop 操作)
+drop table stu;
+
+
+# 表定义规范
+1. 建表  
+    a. 表名： 
+        不能数字开头
+        业务有关
+        不要大写字母
+        不要超过18字符
+        不能是关键字
+    b. 存储引擎使用InnoDB
+    c. 5.7版本以后，字符集使用utf8mb4
+    d. 列名要和业务有关，不要超过18个字符
+    e. 选择合适、足够、简短数据类型
+    f. 建议每个列设置not null
+    g. 每个列要有注释
+    h. 每个表要有主键
+    i. 针对not null 列，可以设定默认值。
+    j. 表注释    
+2. 修改表 
+    a. 添加列，使用追加式添加列 
+    b. 修改列属性，尽量使用modify语句
+    c. 修改表定义，建议在业务不繁忙期间进行。尽量采用pt-osc或者gh-ost工具减少业务影响。
+
+</code></pre><pre><code>上作业： 
+    1. 什么是online-ddl? 各个版本的不同？
+    参考 ： https://dev.mysql.com/doc/refman/5.7/en/innodb-online-ddl-operations.html
+    2. pt-osc（percona-toolkit : pt-online-schema-change） 或者 gh-ost工具的使用
+    参考： https://www.jianshu.com/p/c97228b6f60c 或者 百度。
+</code></pre>
             </div>
             <hr />
 
@@ -893,9 +985,9 @@ tcp6       0      0 :::3316    :::*        LISTEN      2516/mysqld </code></pre>
             <br/>
             <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text"
                   property="dct:title" rel="dct:type">
-                    《mysql多实例部署》
+                    《第五章SQL 常识》
                 </span> 由
-            <a xmlns:cc="http://creativecommons.org/ns#" href="/2020/02/23/di-san-zhang-mysql-lian-jie-guan-li/" property="cc:attributionName"
+            <a xmlns:cc="http://creativecommons.org/ns#" href="/2020/02/26/05-sql-ying-yong-ji-chu/" property="cc:attributionName"
                rel="cc:attributionURL">
                 小明
             </a> 采用
@@ -936,7 +1028,7 @@ tcp6       0      0 :::3316    :::*        LISTEN      2516/mysqld </code></pre>
         repo: 'godweiyang.github.io',
         owner: 'godweiyang',
         admin: "godweiyang",
-        id: '2020/02/23/di-san-zhang-mysql-lian-jie-guan-li/',
+        id: '2020/02/26/05-sql-ying-yong-ji-chu/',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -1223,51 +1315,29 @@ tcp6       0      0 :::3316    :::*        LISTEN      2516/mysqld </code></pre>
             <div class="article-badge left-badge text-color">
                 <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2020/02/23/zhong-xiao-qi-ye-ru-he-zuo-yun-wei-zi-dong-hua/">
+                <a href="/2020/04/22/hello-world/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/13.jpg" class="responsive-img" alt="中小企业如何做运维自动化">
+                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="Hello World">
                         
-                        <span class="card-title">中小企业如何做运维自动化</span>
+                        <span class="card-title">Hello World</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            中小企业如何做运维自动化以下文章来源于Spug运维 ，作者Spug运维
-Spug运维http://spug.dev
-我们先看一下中小企业面临的问题：
-1、人员有限，小一点的公司专业运维可能没有，开发自己上线，也有可能1-2个运维人员，基本不
+                            Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hex
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2020-02-23
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2020-04-22
                         </span>
                         <span class="publish-author">
                             
-                            <i class="fa fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/Spug/" class="post-category" target="_blank">
-                                    Spug
-                                </a>
-                            
-                            
                         </span>
                     </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/自动化/" target="_blank">
-                        <span class="chip bg-color">自动化</span>
-                    </a>
-                    
-                    <a href="/tags/Spug/" target="_blank">
-                        <span class="chip bg-color">Spug</span>
-                    </a>
-                    
                 </div>
                 
             </div>
@@ -1279,31 +1349,35 @@ Spug运维http://spug.dev
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/02/16/sort-algorithms/">
+                <a href="/2020/02/24/di-si-zhang-mysql-sheng-ji-he-jiang-ji/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="小明同学为了战斗而生">
+                        <img src="/medias/featureimages/22.jpg" class="responsive-img" alt="MySQL升级和降级">
                         
-                        <span class="card-title">小明同学为了战斗而生</span>
+                        <span class="card-title">MySQL升级和降级</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            本文整理并总结了十大经典的排序算法（冒泡排序、选择排序、插入排序、快速排序、归并排序、希尔排序、计数排序、基数排序、桶排序、堆排序）的时间复杂度、空间复杂度等性质。
+                            1. MySQL升级和降级`
+1.1 方式1.1.1 INPLACE  就地 
+在一台服务器上，原版本升级到新版本。
+风险较大。
+==建议 ： 不管哪种方式升级，都应该先做备份。方便失败回退。==1.1.2 Mergeing 迁移   建议
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-02-16
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-02-24
                             </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/编程算法/" class="post-category" target="_blank">
-                                    编程算法
+                            <a href="/categories/mysql/" class="post-category" target="_blank">
+                                    mysql
                                 </a>
                             
                             
@@ -1313,12 +1387,12 @@ Spug运维http://spug.dev
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/leetcode/" target="_blank">
-                        <span class="chip bg-color">leetcode</span>
+                    <a href="/tags/数据库/" target="_blank">
+                        <span class="chip bg-color">数据库</span>
                     </a>
                     
-                    <a href="/tags/算法/" target="_blank">
-                        <span class="chip bg-color">算法</span>
+                    <a href="/tags/mysql/" target="_blank">
+                        <span class="chip bg-color">mysql</span>
                     </a>
                     
                 </div>

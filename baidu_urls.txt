@@ -1,5 +1,6 @@
 http://yoursite.com/2020/04/22/02-mysql-lesson02-ti-xi-jie-gou-yu-guan-li/
 http://yoursite.com/2020/04/22/hello-world/
+http://yoursite.com/2020/02/26/05-sql-ying-yong-ji-chu/
 http://yoursite.com/2020/02/24/di-si-zhang-mysql-sheng-ji-he-jiang-ji/
 http://yoursite.com/2020/02/24/nginx-duo-ce-lue-liu-liang-fen-fa/
 http://yoursite.com/2020/02/24/bian-xie-shell-jiao-ben-de-zui-jia-shi-jian/
