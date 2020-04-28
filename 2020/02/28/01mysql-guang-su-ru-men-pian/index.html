@@ -4,11 +4,22 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="第三章mysql连接管理, 自然语言处理 深度学习 算法码上来">
+    <meta name="keywords" content="01-mysql光速入门, 自然语言处理 深度学习 算法码上来">
     <meta name="baidu-site-verification" content="fmlEuI34ir">
     <meta name="google-site-verification" content="yCy2azpds5XSuGZvis6OuA-XIGF5GuGpYRAaGfD6o48">
     <meta name="360-site-verification" content="b7c11a830ef90fd1464ad6206bb7b6e7">
-    <meta name="description" content="第三章mysql连接管理 | 小明同学">
+    <meta name="description" content="必会单词
+create 创建
+insert 插入
+primary key 主键
+alter 修改
+change 改变/修改
+rename 重命名
+modify 修改
+character 字符
+engine 引擎
+table 数据表
+data">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -16,7 +27,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>第三章mysql连接管理 | 小明同学</title>
+    <title>01-mysql光速入门 | 小明同学</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -329,13 +340,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/28.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/3.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        第三章mysql连接管理
+                        01-mysql光速入门
                     </div>
                 </div>
             </div>
@@ -450,8 +461,8 @@
                             <span class="chip bg-color">mysql</span>
                         </a>
                         
-                        <a href="/tags/leetcode/" target="_blank">
-                            <span class="chip bg-color">leetcode</span>
+                        <a href="/tags/mysql光速入门篇章/" target="_blank">
+                            <span class="chip bg-color">mysql光速入门篇章</span>
                         </a>
                         
                     </div>
@@ -474,7 +485,7 @@
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-02-23
+                    2020-02-28
                 </div>
 
                 <div class="post-author info-break-policy">
@@ -488,14 +499,14 @@
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    0
+                    3.6k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    14 分
                 </div>
                 
                 
@@ -511,7 +522,395 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                
+                <h2 id="必会单词"><a href="#必会单词" class="headerlink" title="必会单词"></a>必会单词</h2><ol>
+<li><code>create</code> 创建</li>
+<li><code>insert</code> 插入</li>
+<li><code>primary key</code> 主键</li>
+<li><code>alter</code> 修改</li>
+<li><code>change</code> 改变/修改</li>
+<li><code>rename</code> 重命名</li>
+<li><code>modify</code> 修改</li>
+<li><code>character</code> 字符</li>
+<li><code>engine</code> 引擎</li>
+<li><code>table</code> 数据表</li>
+<li><code>database</code> 数据库</li>
+<li><code>foreign key</code> 外键</li>
+<li><code>update</code> 更新</li>
+<li><code>delete</code> 删除</li>
+<li><code>drop</code> 扔掉/删除</li>
+<li><code>show</code> 展示</li>
+<li><code>unique</code> 唯一</li>
+</ol>
+<h2 id="数据库四门基本功课-增删改查"><a href="#数据库四门基本功课-增删改查" class="headerlink" title="数据库四门基本功课:增删改查"></a>数据库四门基本功课:<code>增删改查</code></h2><h2 id="创建数据库"><a href="#创建数据库" class="headerlink" title="创建数据库"></a>创建数据库</h2><h3 id="创建数据库的语法"><a href="#创建数据库的语法" class="headerlink" title="创建数据库的语法"></a>创建数据库的语法</h3><pre><code>create database db_name character set character_name
+复制代码</code></pre><ul>
+<li><code>db_name</code> :表示所要创建的数据库的名称。</li>
+<li><code>character_name</code> :表示数据库的字符集。</li>
+</ul>
+<blockquote>
+<p>『示例』创建一个名为 bookshop 的数据库,并设置其字符集为gbk。</p>
+</blockquote>
+<pre><code>create database bookshop character set gbk;
+复制代码</code></pre><p>结果:</p>
+<pre><code>mysql&gt; create database bookshop character set gbk;
+query ok, 1 row affected (0.00 sec)
+复制代码</code></pre><h2 id="操作数据库"><a href="#操作数据库" class="headerlink" title="操作数据库"></a>操作数据库</h2><h3 id="查看数据库"><a href="#查看数据库" class="headerlink" title="查看数据库"></a>查看数据库</h3><p>成功创建数据库后,可以使 用<code>show</code>命令查看 mysql 服务器中的所有数据库信息</p>
+<pre><code>show  databases;
+复制代码</code></pre><blockquote>
+<p>『示例』show命令査看 mysql 服务器中的所有数据库</p>
+</blockquote>
+<pre><code>mysql&gt; show databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| bookshop           |
+| mysql              |
+| performance_schema |
+| sys                |
++--------------------+
+5 rows in set (0.00 sec)
+复制代码</code></pre><h3 id="选择数据库"><a href="#选择数据库" class="headerlink" title="选择数据库"></a>选择数据库</h3><p>虽然成功创建了数据库,但并不表示当前就在操作操作库  <code>bookshop</code> 。可以使用 <code>use</code> 语句选择一个数据库。</p>
+<pre><code>use db_name;
+复制代码</code></pre><p>例如,选择名称为  <code>bookshop</code> 的数据库,设置其为当前默认的数据库,命令执行结果如下所示</p>
+<pre><code>mysql&gt; use bookshop;
+Database changed
+复制代码</code></pre><h3 id="修改数据库"><a href="#修改数据库" class="headerlink" title="修改数据库"></a>修改数据库</h3><p>数据库创建后,如果需要修改数据库的参数,可以使用 <code>alter database</code> 命令。语法如下:</p>
+<pre><code>alter database db_name character set character_name;
+复制代码</code></pre><blockquote>
+<p>『示例』将数据库 bookshop所用的字符集修改成 gb2312。</p>
+</blockquote>
+<pre><code>alter database bookshop character set gb2312;
+复制代码</code></pre><h3 id="删除数据库"><a href="#删除数据库" class="headerlink" title="删除数据库"></a>删除数据库</h3><p>删除数据库的操作可以使用  <code>drop database</code> 语句,语法如下:</p>
+<pre><code>drop database db_name;
+复制代码</code></pre><p>例如,通过 drop database 语句删除名称为 bookshop 的数据库,如下所示。</p>
+<pre><code>mysql&gt; drop database bookshop;
+query ok, 0 rows affected (0.03 sec)
+复制代码</code></pre><h2 id="数据库存储引擎"><a href="#数据库存储引擎" class="headerlink" title="数据库存储引擎"></a>数据库存储引擎</h2><ul>
+<li>数据库存储引擎是数据库底层软件组件,数据库管理系统( <code>dbms</code> ) 使用数据引擎进行创建、查询、更新和删除数据 操作。</li>
+<li>目前, mysql的存储引擎至少10种,使用 mysql命令“ <code>show engines;</code> ” 即可查看mysql服务实例支持的存储引擎。</li>
+</ul>
+<p>如下所示。</p>
+<p>![111.png](data:image/svg+xml;utf8,<?xml version="1.0"?><svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="1240" height="261"/>)</p>
+<h3 id="innodb存储引擎"><a href="#innodb存储引擎" class="headerlink" title="innodb存储引擎"></a>innodb存储引擎</h3><ul>
+<li>支持自动增长列。</li>
+<li>支持外键完整性约束。</li>
+<li>存储格式</li>
+</ul>
+<h3 id="myisam存储引擎"><a href="#myisam存储引擎" class="headerlink" title="myisam存储引擎"></a>myisam存储引擎</h3><ul>
+<li>myisam存储引擎的文件类型有三个。<ul>
+<li>.frm 文件存储表定义。</li>
+<li>数据文件的扩展名为 .myd (mydata)。</li>
+<li>索引文件的扩展名是 .myi (myindex)。</li>
+</ul>
+</li>
+<li>基于 myisam 存储引擎的表支持3种不同的存储格式, 分别是<ul>
+<li>静态型</li>
+<li>动态型</li>
+<li>压缩型</li>
+</ul>
+</li>
+</ul>
+<h3 id="memory存储引擎"><a href="#memory存储引擎" class="headerlink" title="memory存储引擎"></a>memory存储引擎</h3><ul>
+<li>memory表的大小是受到限制的。</li>
+<li>memory不支持varchar、blob、和text数据类型,因为这种表类型按固定长度的记录格式存储</li>
+</ul>
+<h2 id="如何选择存储引擎"><a href="#如何选择存储引擎" class="headerlink" title="如何选择存储引擎"></a>如何选择存储引擎</h2><p>![1553474200843.png](data:image/svg+xml;utf8,<?xml version="1.0"?><svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="1240" height="542"/>)</p>
+<h2 id="掌握数据表的基础知识"><a href="#掌握数据表的基础知识" class="headerlink" title="掌握数据表的基础知识"></a>掌握数据表的基础知识</h2><h3 id="表的定义"><a href="#表的定义" class="headerlink" title="表的定义"></a>表的定义</h3><ul>
+<li>表是包含数据库中所有数据的数据库对象。</li>
+<li>在表中,数据成二维行列格式,每一行代表一个唯一的记录,每一列代表一个域。</li>
+</ul>
+<p>![1553474228031.png](data:image/svg+xml;utf8,<?xml version="1.0"?><svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="1240" height="437"/>)</p>
+<h3 id="列名"><a href="#列名" class="headerlink" title="列名"></a>列名</h3><p>列名是用来访问表中具体域的标识符,列名必须遵循下列规则:</p>
+<ul>
+<li>列名是可以含有从1到128的asc码字符,它的组成包括字母、下划线、符号以及数字</li>
+<li>不要给列名命名为与sql关键字相同的名字,比如 select, in, desc等。</li>
+<li>列名应该反映数据的属性。</li>
+</ul>
+<h2 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h2><h3 id="数值类型"><a href="#数值类型" class="headerlink" title="数值类型"></a>数值类型</h3><ul>
+<li><p>整数数据类型</p>
+<ul>
+<li><p>整数数据类型包括 </p>
+<pre><code>bigint</code></pre><p>、</p>
+<pre><code>int</code></pre><p>、 </p>
+<pre><code>mediumint</code></pre><p>、 </p>
+<pre><code>smallint</code></pre><p>和 </p>
+<pre><code>tinyint</code></pre><p>![1553474246891.png](data:image/svg+xml;utf8,<?xml version="1.0"?><svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="1240" height="482"/>)</p>
+</li>
+</ul>
+</li>
+<li><p>小数数据类型</p>
+<ul>
+<li>小数数据类型包括 <code>decimal</code>、 <code>numeric</code>两类。从功能上说两者完全等价,两者的唯一区别在于 decimal不能用于带有 <code>indentity</code> 关键字的列</li>
+<li>声明小数型数据的格式是 numeric | decimal(p[,s]),其中p 为精度,s为小数位数,s的默认值为0</li>
+</ul>
+</li>
+<li><p>浮点数据类型</p>
+<ul>
+<li>浮点型也称近似类型。这种类型不能提供精确表示数据的精度,使用这种类型来存储某些数值时,有可能会损失些精度。</li>
+</ul>
+</li>
+</ul>
+<p>![1553474289406.png](data:image/svg+xml;utf8,<?xml version="1.0"?><svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="1240" height="252"/>)</p>
+<h3 id="字符串类型"><a href="#字符串类型" class="headerlink" title="字符串类型"></a>字符串类型</h3><p>常用的字符串类型主要包括<code>char</code>、 <code>varchar</code>、 <code>binary</code>、 <code>varbinary</code> 等类型。</p>
+<p><img src="https://user-gold-cdn.xitu.io/2019/4/18/16a2e70c3363ff57?imageView2/0/w/1280/h/960/format/webp/ignore-error/1" alt="1553474306952.png"></p>
+<h3 id="日期时间类型"><a href="#日期时间类型" class="headerlink" title="日期时间类型"></a>日期时间类型</h3><p>在 mysql中,日期时间类型包括 <code>datetime</code>、<code>time</code>、<code>timestamp</code>、<code>date</code>等。</p>
+<p><img src="https://user-gold-cdn.xitu.io/2019/4/18/16a2e70c3529e2dd?imageView2/0/w/1280/h/960/format/webp/ignore-error/1" alt="1553474417005.png"></p>
+<ul>
+<li>enum类型和set类型<ul>
+<li>所谓枚举类型enum,就是指定数据只能取指定范围内的值。</li>
+<li>对于可以选取多个值的字段,可以选择set类型,例如,“爱好”字段就可以选择set类型,因为可能有多种爱好</li>
+</ul>
+</li>
+<li>text类型和blob类型<ul>
+<li>text类型存储只能存储字符数据。而blob类型可以用于存储二进制数据。</li>
+<li>text类型包括 tinytext、text、 mediumtext和 longtext</li>
+</ul>
+</li>
+<li>长度<ul>
+<li>给列定义的大小部分指的是该列能接受多少个字符,比如char允许用户只输入一个字符,而另一些则不允许这些做,所以建议使列值尽可能小,显示列越小,表所占的空间也就越少。</li>
+<li>但是还有一个问题就是如果减少列的大小, mysql将用截断数据以满足新的大小尺寸,所以很可能丢失有价值的信 息数据。</li>
+</ul>
+</li>
+</ul>
+<h2 id="管理网上书城系统数据库"><a href="#管理网上书城系统数据库" class="headerlink" title="管理网上书城系统数据库"></a>管理网上书城系统数据库</h2><h3 id="表的设计步骤"><a href="#表的设计步骤" class="headerlink" title="表的设计步骤"></a>表的设计步骤</h3><ol>
+<li>表的命名方式。</li>
+<li>表中每一列的名称、数据类型及其长度。</li>
+<li>表中的列是否允许空值, 是否唯一, 是否要进行默认设置或添加用户定义约束。</li>
+<li>表间的关系, 即确定哪些列是主键, 哪些是外键</li>
+</ol>
+<h3 id="使用sql语句创建数据表"><a href="#使用sql语句创建数据表" class="headerlink" title="使用sql语句创建数据表"></a>使用sql语句创建数据表</h3><p>语法</p>
+<pre><code>create table tb_name(
+    column name1 datatype[列级别约束条件],
+    column name2 datatype[列级别约束条件]
+    ...
+    [表级别约束条件]
+);
+复制代码</code></pre><p>创建如下数据表的话</p>
+<p>![1553475040319.png](data:image/svg+xml;utf8,<?xml version="1.0"?><svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="1240" height="659"/>)</p>
+<p>实际代码</p>
+<pre><code>create table customers(
+    cid char(6) not null primary key,
+    ctruename varchar(50),
+    cpassword varchar (50),
+    csex char (2),
+    caddress varchar(50),
+    cmobile varchar(11),
+    cemail varchar(50),
+    cregisterdate datetime
+)engine=innodb;
+复制代码</code></pre><h1 id="数据完整性约束"><a href="#数据完整性约束" class="headerlink" title="数据完整性约束"></a>数据完整性约束</h1><h2 id="数据完整性概述"><a href="#数据完整性概述" class="headerlink" title="数据完整性概述"></a>数据完整性概述</h2><h3 id="什么是数据完整性"><a href="#什么是数据完整性" class="headerlink" title="什么是数据完整性?"></a>什么是数据完整性?</h3><blockquote>
+<p>存在你数据库里的数据, 就要符合你数据库的<code>规矩</code></p>
+</blockquote>
+<p>在 mysql中可以通过 primary key约束、foreign key约束、 unique、空值约束和默认值约束等来实施数据完整性</p>
+<ul>
+<li>实体完整性(每行数据都不一样)</li>
+<li>域完整性(数据大小在字段允许的范围内)</li>
+<li>引用完整性约束(外键和对应主键的值要一致)</li>
+<li>自定义完整性(自己定义的一些规则)</li>
+</ul>
+<h2 id="主健约束"><a href="#主健约束" class="headerlink" title="主健约束"></a>主健约束</h2><p>主键(<code>primary key</code>)约束是使用最为频繁的约束 它的作用是<code>唯一标记一条数据</code></p>
+<p>所以:</p>
+<ol>
+<li>主键不能为null</li>
+<li>主键不能重复</li>
+<li>用过的主键, 即便删除来这条记录, 最好也不要再用</li>
+<li>主键不能修改</li>
+</ol>
+<p>总结起来就是<code>四不</code></p>
+<blockquote>
+<p>不为空, 不相同, 不重用, 不改动</p>
+</blockquote>
+<h3 id="单字段主键"><a href="#单字段主键" class="headerlink" title="单字段主键"></a>单字段主键</h3><blockquote>
+<p>『示例』顾客信息表 customers中需要以“顾客编号”作为顾客的唯一标识,在创建数据表 customers时,为cid列设置primary key约束,由于单列组成主键,故该主键可以定义为列级主键。</p>
+</blockquote>
+<pre><code>create table customers(
+    cid char(6) not null primary key,
+    ctruename varchar (30) not null,
+    cpassword varchar (30) not null,
+    csex char(2)not null,
+    caddress varchar (50) null,
+    cmobile varchar (11) not null,
+    cemail varchar(50) null,
+    cregisterdate datetime not null
+);
+复制代码</code></pre><h3 id="多字段主键"><a href="#多字段主键" class="headerlink" title="多字段主键"></a>多字段主键</h3><blockquote>
+<p>『示例』如果在订单详情表中不设置编号,则可以将表中“订单编号 + 商品编号”作为订单详情的唯一标识,在创建数据表 orderdetails时, 为oid和gid的组合设置 primary key约束。</p>
+</blockquote>
+<p><img src="https://user-gold-cdn.xitu.io/2019/4/18/16a2e70c395b0a03?imageView2/0/w/1280/h/960/format/webp/ignore-error/1" alt="1553476242358.png"></p>
+<pre><code>create table orderdetails(
+    oid char(14) not null,
+    gid char(6) not null,
+    odprice float not null,
+    odnumber int not null,
+    primary key (oid, gid)
+);
+复制代码</code></pre><h3 id="外健约束"><a href="#外健约束" class="headerlink" title="外健约束"></a>外健约束</h3><p>外键( foreign key )约束标识表之间的关系,用于强制参照完整性,为表中一列或者多列数据提供参照完整性。</p>
+<p>简单说, 外键是连接另一个表的<code>锚点</code></p>
+<p>创建外键的基本语法如下:</p>
+<pre><code>[constraint&lt;外键名&gt;] foreign key 列名1 [, 列名2, ...] references &lt;主键表&gt; 主键列1 [主键列2...]
+复制代码</code></pre><p>看着挺唬人, 其实很简单, 看个例子</p>
+<blockquote>
+<p>『示例』在创建数据表订单表 orders时,表中的cid(客户编号)引用了客户表 customers中的客户编号,需要建立 orders表和 customers 表之间的关系。其中cid为关联列, customers 表为主键表, orders表为外键表。</p>
+</blockquote>
+<p>![1553480030204.png](data:image/svg+xml;utf8,<?xml version="1.0"?><svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="942" height="836"/>)</p>
+<pre><code>create table orders(
+    oid char(14) not null primary key,
+    cid char(6) not null,
+    odate datetime not null,
+    osum float not null,
+    ostatus char(1) not null,
+    foreign key(cid) references customers(cid)
+)engine=innodb;
+复制代码</code></pre><h3 id="唯一约束"><a href="#唯一约束" class="headerlink" title="唯一约束"></a>唯一约束</h3><p>『示例』为了保证<code>客户信息表</code>表 customers中的<code>手机号</code>不重复,在创建数据表 customers时,为 cmobile设置 unique约 束</p>
+<p>![1553480144712.png](data:image/svg+xml;utf8,<?xml version="1.0"?><svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="939" height="510"/>)</p>
+<pre><code>-- 如果存在就删除, 防止重复建表而报错
+drop table if exists customers; 
+
+create table customers(
+    cid char(6) not null primary key,
+    ctruename varchar (30) not null,
+    cpassword varchar (30) not null,
+    csex char(2)not null,
+    caddress varchar (50) null,
+    cmobile varchar (11) not null unique,
+    cemail varchar(50) null,
+    cregisterdate datetime not null
+);
+复制代码</code></pre><h3 id="默认值约束"><a href="#默认值约束" class="headerlink" title="默认值约束"></a>默认值约束</h3><p>『示例』在创建<code>客户信息</code>表 customers时,为用户性别csex 字段设置为默认值“男”。</p>
+<p><img src="https://user-gold-cdn.xitu.io/2019/4/18/16a2e70c5741bc11?imageView2/0/w/1280/h/960/format/webp/ignore-error/1" alt="1553480570751.png"></p>
+<pre><code>create table customers(
+    cid char(6) not null primary key,
+    ctruename varchar (30) not null,
+    cpassword varchar (30) not null,
+    csex char(2)not null default &#39;男&#39;,
+    caddress varchar (50) null,
+    cmobile varchar (11) not null unique,
+    cemail varchar(50) null,
+    cregisterdate datetime not null
+);
+复制代码</code></pre><h3 id="非空约束"><a href="#非空约束" class="headerlink" title="非空约束"></a>非空约束</h3><ul>
+<li>非空值约束限制一列或多个列的值不能为空(null) 空表示未定义或未知的值。</li>
+<li>在默认情况下,所有列都接受空值, 若要某列不接受空值, 则可以在该列上设置not null约束。</li>
+<li>null值既不等价于数值型数据0, 也不等价于字符型数据中的空串, 只是表明字段值是未知的</li>
+</ul>
+<h1 id="使用sql语句操作数据表"><a href="#使用sql语句操作数据表" class="headerlink" title="使用sql语句操作数据表"></a>使用sql语句操作数据表</h1><h3 id="修改数据表"><a href="#修改数据表" class="headerlink" title="修改数据表"></a>修改数据表</h3><p>如需在表中添加列，请使用下面的语法:</p>
+<pre><code>alter table table_name add column_name datatype;
+复制代码</code></pre><blockquote>
+<p>『示例』在客户表中新增一个客户昵称字段, 变长11位</p>
+</blockquote>
+<pre><code>alter table customers add cnickname varchar(11);
+复制代码</code></pre><p>如需删除表中的列，请使用下面的语法（请注意，某些数据库系统不允许这种在数据库表中删除列的方式）：</p>
+<pre><code>alter table table_name drop column column_name
+复制代码</code></pre><blockquote>
+<p>『示例』删除用户昵称字段</p>
+</blockquote>
+<pre><code>alter table customers drop cnickname
+复制代码</code></pre><p>要改变表中列的数据类型，请使用下面的语法：</p>
+<pre><code>alter table table_name modify column column_name datatype
+复制代码</code></pre><blockquote>
+<p>『示例』假设已经在数据库 bookshop中创建了表customers。要把字段 csex 的数据类型改为int类型。</p>
+</blockquote>
+<pre><code>use bookshop;
+alter table customers modify csex int not null;
+复制代码</code></pre><blockquote>
+<p>『示例』假设已经在数据库 bookshop中创建了表 customers。添加一个新的字段 state,类型为cha(1),不允许为空,将字段 address列删除。</p>
+</blockquote>
+<pre><code>use bookshop;
+alter table customers add state char() not null, drop column address
+复制代码</code></pre><h3 id="修改表名"><a href="#修改表名" class="headerlink" title="修改表名"></a>修改表名</h3><p>用  <code>rename table</code> 语句来更改表的名字。其语法形式如下</p>
+<pre><code>rename table tb_name to new_tb_name
+复制代码</code></pre><blockquote>
+<p>『示例』假设数据库 bookshop 中存在 customers 表,将 customers 表重命名为 customers2 表。</p>
+</blockquote>
+<pre><code>use bookshop;
+rename table customers to customers2;
+复制代码</code></pre><h3 id="删除数据表"><a href="#删除数据表" class="headerlink" title="删除数据表"></a>删除数据表</h3><p>删除表是指删除数据库中已存在的表。在 mysql 中通过  drop table 语句来删除表。语法如下:</p>
+<pre><code>drop table tb_name;
+复制代码</code></pre><blockquote>
+<p>『示例』假设存在 customers,删除 bookshop数据库中 customers 数据表。</p>
+</blockquote>
+<pre><code>use bookshop;
+drop table customers;
+复制代码</code></pre><h1 id="管理数据表数据"><a href="#管理数据表数据" class="headerlink" title="管理数据表数据"></a>管理数据表数据</h1><h2 id="插入记录"><a href="#插入记录" class="headerlink" title="插入记录"></a>插入记录</h2><ol>
+<li><h5 id="为表的所有字段插入数据"><a href="#为表的所有字段插入数据" class="headerlink" title="为表的所有字段插入数据"></a>为表的所有字段插入数据</h5><p>使用基本的 insert语句插入数据要求指定表名称和插入到新记录中的值。基本语法格式为</p>
+<pre><code>insert into tb_name (col_list) values (val_list);
+insert into tb_name values (val_list);
+复制代码</code></pre><blockquote>
+<p>『示例』向 bookshop数据库的表 customers插入如下的数据。</p>
+</blockquote>
+</li>
+</ol>
+<p><img src="https://user-gold-cdn.xitu.io/2019/4/18/16a2e70c594f74b0?imageView2/0/w/1280/h/960/format/webp/ignore-error/1" alt="1553481712468.png"></p>
+<pre><code> ```msyql
+ insert into customers
+      ( cid, 
+        truename, 
+        cpassword, 
+        csex, 
+        address, 
+        cmobile, 
+        cemai, 
+        cregisterdate )
+ values
+      ( &#39;c0011&#39;, 
+        &#39;李 平&#39;, 
+        &#39;123456&#39;, 
+        &#39;女&#39;, 
+        &#39;广东中山市&#39;, 
+        &#39;1351543876&#39;, 
+        &#39;liping163.com&#39;, 
+        &#39;2009-9-6&#39; );</code></pre><p>复制代码</p>
+<pre><code>
+1. ##### 为表的指定字段插入数据
+
+   &gt; 『示例』新顾客信息录入,顾客信息地址 address和电子邮箱cemail尚缺,只能将该顾客的部分信息如表所示添 加到 customers表中。
+
+
+
+![1553481814639.png](data:image/svg+xml;utf8,&lt;?xml version=&quot;1.0&quot;?&gt;&lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; version=&quot;1.1&quot; width=&quot;842&quot; height=&quot;96&quot;&gt;&lt;/svg&gt;)
+
+
+</code></pre><pre class="line-numbers language-sql"><code class="language-sql"> <span class="token keyword">insert</span> <span class="token keyword">into</span> customers
+<span class="token punctuation">(</span> cid<span class="token punctuation">,</span> truename<span class="token punctuation">,</span> password<span class="token punctuation">,</span> csex<span class="token punctuation">,</span> cmobile<span class="token punctuation">,</span> cregisterdate <span class="token punctuation">)</span>
+ <span class="token keyword">values</span>
+<span class="token punctuation">(</span> <span class="token number">c0012</span><span class="token punctuation">,</span> 张先明<span class="token punctuation">,</span> <span class="token number">23456</span><span class="token punctuation">,</span> 男<span class="token punctuation">,</span> <span class="token number">13513452312</span><span class="token punctuation">,</span> <span class="token number">2009</span><span class="token operator">-</span><span class="token number">10</span><span class="token operator">-</span><span class="token number">6</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<p>复制代码</p>
+<pre><code>
+1. ##### 同时插入多条记录
+
+   &gt; 『示例』如果想一次性插入多条, 可以这样...
+</code></pre><p>   use bookshop;<br>   insert into customers values<br>       (<br>          ‘c0013’,<br>          ‘韩志国’,<br>          ‘123456’,<br>          ‘男’,<br>          null,<br>          ‘13512134256’,<br>          ‘hanzo’,<br>          ‘al63com’,<br>          ‘2010-1-16’<br>          ), (<br>          ‘c00141’,<br>          ‘张小明’,<br>          ‘123456’,<br>          ‘男’,<br>          null,<br>          ‘13613434256’,<br>          ‘zma163.com’,<br>          ‘2010-2-24’);<br>   复制代码</p>
+<pre><code>
+## 修改记录
+
+### 修改表中的全部数据
+
+&gt; 『示例』修改商品信息表 goods中的数据,将全部书籍的价钱九折出售。
+</code></pre><p>update goods;<br>set price = price * 0.9;<br>复制代码</p>
+<pre><code>
+### 根据条件修改表中的数据
+
+&gt; 『示例』修改商品信息表gods中的数据,将书籍存量小于100本的图书再增加50本。完成语句如下所示。
+</code></pre><p>update goods;<br>set number = number + 50 where number &lt;= 100;<br>复制代码</p>
+<pre><code>
+## 删除记录
+
+### 根据条件删除表中的数据
+
+&gt; 『示例』商品编号为“010001”的商品已售完,并且以后不考虑再进货,需要在商品信息表中清除该商品的信息。完 成语句如下所示
+</code></pre><p>delete from goods where gid=010001;<br>复制代码</p>
+<pre><code>
+### 删除表中的全部数据
+
+&gt; 『示例』删除商品信息表中的所有信息。完成语句如下所示。
+</code></pre><p>delete from goods;<br>复制代码</p>
+<pre><code>
+### ***切记, update和delete如果没有where条件, 后果会很严重...***
+
+
+
+作者：猫哥的技术博客
+链接：https://juejin.im/post/5cb7eba6f265da038c020d24</code></pre>
             </div>
             <hr />
 
@@ -669,9 +1068,9 @@
             <br/>
             <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text"
                   property="dct:title" rel="dct:type">
-                    《第三章mysql连接管理》
+                    《01-mysql光速入门》
                 </span> 由
-            <a xmlns:cc="http://creativecommons.org/ns#" href="/2020/02/23/01-ce-shi/" property="cc:attributionName"
+            <a xmlns:cc="http://creativecommons.org/ns#" href="/2020/02/28/01mysql-guang-su-ru-men-pian/" property="cc:attributionName"
                rel="cc:attributionURL">
                 小明
             </a> 采用
@@ -712,7 +1111,7 @@
         repo: 'godweiyang.github.io',
         owner: 'godweiyang',
         admin: "godweiyang",
-        id: '2020/02/23/01-ce-shi/',
+        id: '2020/02/28/01mysql-guang-su-ru-men-pian/',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -999,54 +1398,29 @@
             <div class="article-badge left-badge text-color">
                 <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2020/02/24/bian-xie-shell-jiao-ben-de-zui-jia-shi-jian/">
+                <a href="/2020/04/22/hello-world/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/22.jpg" class="responsive-img" alt="编写Shell脚本的最佳实践">
+                        <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="Hello World">
                         
-                        <span class="card-title">编写Shell脚本的最佳实践</span>
+                        <span class="card-title">Hello World</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            1. 编写Shell脚本的最佳实践开头有“蛇棒”
-
-所谓shebang其实就是在很多脚本的第一行出现的以”#!”开头的注释，他指明了当我们没有指定解释器的时候默认的解释器，一般可能是下面这样：
-
-#!/bin/bash
-
-当然，解释器有很多
+                            Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hex
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2020-02-24
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2020-04-22
                         </span>
                         <span class="publish-author">
                             
-                            <i class="fa fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/shell/" class="post-category" target="_blank">
-                                    shell
-                                </a>
-                            
-                            
                         </span>
                     </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/编程/" target="_blank">
-                        <span class="chip bg-color">编程</span>
-                    </a>
-                    
-                    <a href="/tags/shell/" target="_blank">
-                        <span class="chip bg-color">shell</span>
-                    </a>
-                    
                 </div>
                 
             </div>
@@ -1058,29 +1432,36 @@
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/02/23/linux-jin-zhi-ping-yi-ji-kai-qi-ping-de-fang-fa/">
+                <a href="/2020/02/28/02-mysql-guang-su-ru-men-pian-cha-xun/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="Linux禁止ping以及开启ping的方法">
+                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="02-mysql光速入门篇查询">
                         
-                        <span class="card-title">Linux禁止ping以及开启ping的方法</span>
+                        <span class="card-title">02-mysql光速入门篇查询</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Linux默认是允许Ping响应的，系统是否允许Ping由2个因素决定的 ：
-作者：Happiness
-来源：https://urlify.cn/Mr6zMb
-\1. 内核参数
+                            select数据表三连
+查看表结构
 
-\2. 防火墙需要2个因素同时允许才能允许Ping，2个因素
+desc table_name;
+复制代码
+查看建表语句
+
+show create table table_name;
+复制代码
+查看表里的数据
+
+select * from table_name;
+复
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-02-23
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-02-28
                             </span>
                         <span class="publish-author">
                             
@@ -1101,8 +1482,8 @@
                         <span class="chip bg-color">mysql</span>
                     </a>
                     
-                    <a href="/tags/leetcode/" target="_blank">
-                        <span class="chip bg-color">leetcode</span>
+                    <a href="/tags/mysql光速入门篇章/" target="_blank">
+                        <span class="chip bg-color">mysql光速入门篇章</span>
                     </a>
                     
                 </div>
@@ -1276,7 +1657,7 @@
 
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">22.2k</span>
+            <span class="white-color">32.6k</span>
             
 
             <br>

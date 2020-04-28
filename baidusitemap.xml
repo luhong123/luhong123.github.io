@@ -2,10 +2,22 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>http://yoursite.com/2020/02/26/05-sql-ying-yong-ji-chu/</loc>
-    <lastmod>2020-04-26</lastmod>
+    <lastmod>2020-04-28</lastmod>
+  </url>  <url>
+    <loc>http://yoursite.com/2020/02/28/02-mysql-guang-su-ru-men-pian-cha-xun/</loc>
+    <lastmod>2020-04-28</lastmod>
+  </url>  <url>
+    <loc>http://yoursite.com/2020/02/28/01mysql-guang-su-ru-men-pian/</loc>
+    <lastmod>2020-04-28</lastmod>
   </url>  <url>
     <loc>http://yoursite.com/2020/02/24/di-si-zhang-mysql-sheng-ji-he-jiang-ji/</loc>
-    <lastmod>2020-04-26</lastmod>
+    <lastmod>2020-04-27</lastmod>
+  </url>  <url>
+    <loc>http://yoursite.com/2020/02/23/linux-jin-zhi-ping-yi-ji-kai-qi-ping-de-fang-fa/</loc>
+    <lastmod>2020-04-27</lastmod>
+  </url>  <url>
+    <loc>http://yoursite.com/2020/04/22/02-mysql-lesson02-ti-xi-jie-gou-yu-guan-li/</loc>
+    <lastmod>2020-04-27</lastmod>
   </url>  <url>
     <loc>http://yoursite.com/2020/02/24/bian-xie-shell-jiao-ben-de-zui-jia-shi-jian/</loc>
     <lastmod>2020-04-25</lastmod>
@@ -16,23 +28,17 @@
     <loc>http://yoursite.com/2020/02/24/nginx-duo-ce-lue-liu-liang-fen-fa/</loc>
     <lastmod>2020-04-24</lastmod>
   </url>  <url>
-    <loc>http://yoursite.com/2020/02/23/linux-jin-zhi-ping-yi-ji-kai-qi-ping-de-fang-fa/</loc>
-    <lastmod>2020-04-24</lastmod>
-  </url>  <url>
     <loc>http://yoursite.com/2020/02/16/di-yi-zhang-mysql-da-gang-jie-shao/</loc>
     <lastmod>2020-04-24</lastmod>
   </url>  <url>
     <loc>http://yoursite.com/2020/02/23/zhong-xiao-qi-ye-ru-he-zuo-yun-wei-zi-dong-hua/</loc>
     <lastmod>2020-04-24</lastmod>
   </url>  <url>
-    <loc>http://yoursite.com/2020/02/23/01-ce-shi/</loc>
+    <loc>http://yoursite.com/2020/02/23/02/</loc>
     <lastmod>2020-04-24</lastmod>
   </url>  <url>
     <loc>http://yoursite.com/2020/02/23/di-san-zhang-mysql-lian-jie-guan-li/</loc>
     <lastmod>2020-04-23</lastmod>
-  </url>  <url>
-    <loc>http://yoursite.com/2020/04/22/02-mysql-lesson02-ti-xi-jie-gou-yu-guan-li/</loc>
-    <lastmod>2020-04-22</lastmod>
   </url>  <url>
     <loc>http://yoursite.com/2020/04/22/hello-world/</loc>
     <lastmod>2020-04-22</lastmod>
