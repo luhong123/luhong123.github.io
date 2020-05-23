@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite.com/2020/05/18/12-fen-bu-shi-jia-gou-mycat-copy/</loc>
+    
+    <lastmod>2020-05-23T10:45:56.164Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2020/05/17/12-fen-bu-shi-jia-gou-mycat/</loc>
+    
+    <lastmod>2020-05-23T10:44:16.203Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/2020/05/16/10-mysql-zhu-cong-fu-zhi/</loc>
     
     <lastmod>2020-05-16T03:28:51.764Z</lastmod>
@@ -170,14 +184,14 @@
   </url>
   
   <url>
-    <loc>http://yoursite.com/tags/index.html</loc>
+    <loc>http://yoursite.com/categories/index.html</loc>
     
     <lastmod>2020-04-05T02:43:43.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://yoursite.com/categories/index.html</loc>
+    <loc>http://yoursite.com/tags/index.html</loc>
     
     <lastmod>2020-04-05T02:43:43.000Z</lastmod>
     

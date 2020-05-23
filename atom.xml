@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-05-16T03:28:51.764Z</updated>
+  <updated>2020-05-23T10:45:56.164Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,62 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>13-MySQL 全面优化+故障+PT工具使用</title>
+    <link href="http://yoursite.com/2020/05/18/12-fen-bu-shi-jia-gou-mycat-copy/"/>
+    <id>http://yoursite.com/2020/05/18/12-fen-bu-shi-jia-gou-mycat-copy/</id>
+    <published>2020-05-18T08:09:23.000Z</published>
+    <updated>2020-05-23T10:45:56.164Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;简介&quot;&gt;&lt;a href=&quot;#简介&quot; class=&quot;headerlink&quot; title=&quot;简介&quot;&gt;&lt;/a&gt;简介&lt;/h2&gt;&lt;pre class=&quot;line-numbers language-powershell&quot;&gt;&lt;code
+        
+      
+    
+    </summary>
+    
+      <category term="mysql" scheme="http://yoursite.com/categories/mysql/"/>
+    
+    
+      <category term="mysql" scheme="http://yoursite.com/tags/mysql/"/>
+    
+      <category term="leetcode" scheme="http://yoursite.com/tags/leetcode/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>12分布式架构-Mycat</title>
+    <link href="http://yoursite.com/2020/05/17/12-fen-bu-shi-jia-gou-mycat/"/>
+    <id>http://yoursite.com/2020/05/17/12-fen-bu-shi-jia-gou-mycat/</id>
+    <published>2020-05-17T08:09:23.000Z</published>
+    <updated>2020-05-23T10:44:16.203Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;1-分布式架构-Mycat&quot;&gt;&lt;a href=&quot;#1-分布式架构-Mycat&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="mysql" scheme="http://yoursite.com/categories/mysql/"/>
+    
+    
+      <category term="mysql" scheme="http://yoursite.com/tags/mysql/"/>
+    
+      <category term="leetcode" scheme="http://yoursite.com/tags/leetcode/"/>
+    
+  </entry>
   
   <entry>
     <title>10-主从复制（Replication）</title>
@@ -38,9 +94,9 @@
       <category term="mysql" scheme="http://yoursite.com/categories/mysql/"/>
     
     
-      <category term="leetcode" scheme="http://yoursite.com/tags/leetcode/"/>
-    
       <category term="mysql" scheme="http://yoursite.com/tags/mysql/"/>
+    
+      <category term="leetcode" scheme="http://yoursite.com/tags/leetcode/"/>
     
   </entry>
   
@@ -66,9 +122,9 @@
       <category term="mysql" scheme="http://yoursite.com/categories/mysql/"/>
     
     
-      <category term="leetcode" scheme="http://yoursite.com/tags/leetcode/"/>
-    
       <category term="mysql" scheme="http://yoursite.com/tags/mysql/"/>
+    
+      <category term="leetcode" scheme="http://yoursite.com/tags/leetcode/"/>
     
   </entry>
   
@@ -94,9 +150,9 @@
       <category term="mysql" scheme="http://yoursite.com/categories/mysql/"/>
     
     
-      <category term="leetcode" scheme="http://yoursite.com/tags/leetcode/"/>
-    
       <category term="mysql" scheme="http://yoursite.com/tags/mysql/"/>
+    
+      <category term="leetcode" scheme="http://yoursite.com/tags/leetcode/"/>
     
   </entry>
   
@@ -122,9 +178,9 @@
       <category term="mysql" scheme="http://yoursite.com/categories/mysql/"/>
     
     
-      <category term="mysql" scheme="http://yoursite.com/tags/mysql/"/>
-    
       <category term="数据库" scheme="http://yoursite.com/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+    
+      <category term="mysql" scheme="http://yoursite.com/tags/mysql/"/>
     
   </entry>
   
@@ -150,9 +206,9 @@
       <category term="mysql" scheme="http://yoursite.com/categories/mysql/"/>
     
     
-      <category term="mysql" scheme="http://yoursite.com/tags/mysql/"/>
-    
       <category term="数据库" scheme="http://yoursite.com/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+    
+      <category term="mysql" scheme="http://yoursite.com/tags/mysql/"/>
     
   </entry>
   
@@ -178,9 +234,9 @@
       <category term="mysql" scheme="http://yoursite.com/categories/mysql/"/>
     
     
-      <category term="mysql" scheme="http://yoursite.com/tags/mysql/"/>
-    
       <category term="数据库" scheme="http://yoursite.com/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+    
+      <category term="mysql" scheme="http://yoursite.com/tags/mysql/"/>
     
   </entry>
   
@@ -286,9 +342,9 @@
       <category term="mysql" scheme="http://yoursite.com/categories/mysql/"/>
     
     
-      <category term="leetcode" scheme="http://yoursite.com/tags/leetcode/"/>
-    
       <category term="mysql" scheme="http://yoursite.com/tags/mysql/"/>
+    
+      <category term="leetcode" scheme="http://yoursite.com/tags/leetcode/"/>
     
   </entry>
   
@@ -315,9 +371,9 @@
       <category term="mysql" scheme="http://yoursite.com/categories/mysql/"/>
     
     
-      <category term="mysql" scheme="http://yoursite.com/tags/mysql/"/>
-    
       <category term="数据库" scheme="http://yoursite.com/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+    
+      <category term="mysql" scheme="http://yoursite.com/tags/mysql/"/>
     
   </entry>
   
@@ -389,9 +445,9 @@
       <category term="mysql" scheme="http://yoursite.com/categories/mysql/"/>
     
     
-      <category term="leetcode" scheme="http://yoursite.com/tags/leetcode/"/>
-    
       <category term="mysql" scheme="http://yoursite.com/tags/mysql/"/>
+    
+      <category term="leetcode" scheme="http://yoursite.com/tags/leetcode/"/>
     
   </entry>
   
@@ -419,9 +475,9 @@
       <category term="mysql" scheme="http://yoursite.com/categories/mysql/"/>
     
     
-      <category term="leetcode" scheme="http://yoursite.com/tags/leetcode/"/>
-    
       <category term="mysql" scheme="http://yoursite.com/tags/mysql/"/>
+    
+      <category term="leetcode" scheme="http://yoursite.com/tags/leetcode/"/>
     
   </entry>
   
@@ -482,36 +538,6 @@
   </entry>
   
   <entry>
-    <title>小明同学为了战斗而生</title>
-    <link href="http://yoursite.com/2020/02/16/sort-algorithms/"/>
-    <id>http://yoursite.com/2020/02/16/sort-algorithms/</id>
-    <published>2020-02-16T07:09:23.000Z</published>
-    <updated>2020-04-24T14:56:10.201Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;blockquote&gt;
-&lt;/blockquote&gt;
-&lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;h2 id=&quot;性质汇总&quot;&gt;&lt;a href=&quot;#性质汇总&quot;
-        
-      
-    
-    </summary>
-    
-      <category term="编程算法" scheme="http://yoursite.com/categories/%E7%BC%96%E7%A8%8B%E7%AE%97%E6%B3%95/"/>
-    
-    
-      <category term="leetcode" scheme="http://yoursite.com/tags/leetcode/"/>
-    
-      <category term="算法" scheme="http://yoursite.com/tags/%E7%AE%97%E6%B3%95/"/>
-    
-  </entry>
-  
-  <entry>
     <title>第一章   MySQL 大纲介绍</title>
     <link href="http://yoursite.com/2020/02/16/di-yi-zhang-mysql-da-gang-jie-shao/"/>
     <id>http://yoursite.com/2020/02/16/di-yi-zhang-mysql-da-gang-jie-shao/</id>
@@ -533,9 +559,9 @@
       <category term="mysql" scheme="http://yoursite.com/categories/mysql/"/>
     
     
-      <category term="leetcode" scheme="http://yoursite.com/tags/leetcode/"/>
-    
       <category term="mysql" scheme="http://yoursite.com/tags/mysql/"/>
+    
+      <category term="leetcode" scheme="http://yoursite.com/tags/leetcode/"/>
     
   </entry>
   
