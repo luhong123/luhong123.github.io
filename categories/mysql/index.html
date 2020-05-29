@@ -356,10 +356,19 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
                 
                 
                 
+                <a href="/categories/kvm-openstack/" title="kvm openstack: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            style="background-color: #F9EBEA;">kvm openstack
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
                 <a href="/categories/mysql/" title="mysql: 16">
                     <span class="chip center-align waves-effect waves-light
                              chip-active "
-                            style="background-color: #F9EBEA;">mysql
+                            style="background-color: #F5EEF8;">mysql
                         <span class="tag-length">16</span>
                     </span>
                 </a>
@@ -368,7 +377,7 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
                 <a href="/categories/nginx/" title="nginx: 1">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
-                            style="background-color: #F5EEF8;">nginx
+                            style="background-color: #D5F5E3;">nginx
                         <span class="tag-length">1</span>
                     </span>
                 </a>
@@ -377,7 +386,16 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
                 <a href="/categories/编程算法/" title="编程算法: 1">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
-                            style="background-color: #D5F5E3;">编程算法
+                            style="background-color: #E8F8F5;">编程算法
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/categories/k8s/" title="k8s: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            style="background-color: #FEF9E7;">k8s
                         <span class="tag-length">1</span>
                     </span>
                 </a>
@@ -386,7 +404,7 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
                 <a href="/categories/Spug/" title="Spug: 1">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
-                            style="background-color: #E8F8F5;">Spug
+                            style="background-color: #F8F9F9;">Spug
                         <span class="tag-length">1</span>
                     </span>
                 </a>
@@ -395,7 +413,7 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
                 <a href="/categories/shell/" title="shell: 1">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
-                            style="background-color: #FEF9E7;">shell
+                            style="background-color: #82E0AA;">shell
                         <span class="tag-length">1</span>
                     </span>
                 </a>
@@ -413,40 +431,28 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
             
             <div class="article tag-post col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
-                    <a href="/2020/05/18/12-fen-bu-shi-jia-gou-mycat-copy/">
+                    <a href="/2020/05/19/11-mysql-zhu-cong-fu-zhi-gao-ji-jin-jie/">
                         <div class="card-image tag-image">
                             
                             
-                            <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="13-MySQL 全面优化+故障+PT工具使用">
+                            <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="11-mysql-主从复制高级进阶">
                             
-                            <span class="card-title">13-MySQL 全面优化+故障+PT工具使用</span>
+                            <span class="card-title">11-mysql-主从复制高级进阶</span>
                         </div>
                     </a>
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                                简介1. 优化的哲学
-
-1.1 什么时候优化 ？
-优化有风险，涉足请谨慎！！
-优化一定是由业务需求触发的。
-
-1.2 数据库的优化谁来参与 ？ 
-硬件工程师 
-网落管理员
-系统管理员
-开发人员
-DBA 
-领导
-
-
-
-1.3 数据库优化的思路
+                                1-延时从库1-介绍
+普通的主从复制，处理物理故障损坏比较擅长。
+如果主库出现了DROP DATABASE操作。
+延时从库： 主库做了某项操作之后，从库延时多长时间回放（SQL）。可以处理逻辑损坏。
+2-配置mysql>stop slave
                             
                         </div>
                         <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-05-18
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-05-19
                             </span>
                             <span class="publish-author">
                                 
@@ -464,12 +470,12 @@ DBA
                     
                     <div class="card-action article-tags">
                         
-                        <a href="/tags/mysql/" target="_blank">
-                            <span class="chip bg-color">mysql</span>
-                        </a>
-                        
                         <a href="/tags/leetcode/" target="_blank">
                             <span class="chip bg-color">leetcode</span>
+                        </a>
+                        
+                        <a href="/tags/mysql/" target="_blank">
+                            <span class="chip bg-color">mysql</span>
                         </a>
                         
                     </div>
@@ -483,7 +489,7 @@ DBA
                         <div class="card-image tag-image">
                             
                             
-                            <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="12分布式架构-Mycat">
+                            <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="12分布式架构-Mycat">
                             
                             <span class="card-title">12分布式架构-Mycat</span>
                         </div>
@@ -526,12 +532,12 @@ rm
                     
                     <div class="card-action article-tags">
                         
-                        <a href="/tags/mysql/" target="_blank">
-                            <span class="chip bg-color">mysql</span>
-                        </a>
-                        
                         <a href="/tags/leetcode/" target="_blank">
                             <span class="chip bg-color">leetcode</span>
+                        </a>
+                        
+                        <a href="/tags/mysql/" target="_blank">
+                            <span class="chip bg-color">mysql</span>
                         </a>
                         
                     </div>
@@ -545,7 +551,7 @@ rm
                         <div class="card-image tag-image">
                             
                             
-                            <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="10-主从复制（Replication）">
+                            <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="10-主从复制（Replication）">
                             
                             <span class="card-title">10-主从复制（Replication）</span>
                         </div>
@@ -579,12 +585,12 @@ rm
                     
                     <div class="card-action article-tags">
                         
-                        <a href="/tags/mysql/" target="_blank">
-                            <span class="chip bg-color">mysql</span>
-                        </a>
-                        
                         <a href="/tags/leetcode/" target="_blank">
                             <span class="chip bg-color">leetcode</span>
+                        </a>
+                        
+                        <a href="/tags/mysql/" target="_blank">
+                            <span class="chip bg-color">mysql</span>
                         </a>
                         
                     </div>
@@ -598,7 +604,7 @@ rm
                         <div class="card-image tag-image">
                             
                             
-                            <img src="/medias/featureimages/30.jpg" class="responsive-img" alt="09- mysql_备份恢复">
+                            <img src="/medias/featureimages/29.jpg" class="responsive-img" alt="09- mysql_备份恢复">
                             
                             <span class="card-title">09- mysql_备份恢复</span>
                         </div>
@@ -635,12 +641,12 @@ rm
                     
                     <div class="card-action article-tags">
                         
-                        <a href="/tags/mysql/" target="_blank">
-                            <span class="chip bg-color">mysql</span>
-                        </a>
-                        
                         <a href="/tags/leetcode/" target="_blank">
                             <span class="chip bg-color">leetcode</span>
+                        </a>
+                        
+                        <a href="/tags/mysql/" target="_blank">
+                            <span class="chip bg-color">mysql</span>
                         </a>
                         
                     </div>
@@ -654,7 +660,7 @@ rm
                         <div class="card-image tag-image">
                             
                             
-                            <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="08-mysq日志管理">
+                            <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="08-mysq日志管理">
                             
                             <span class="card-title">08-mysq日志管理</span>
                         </div>
@@ -691,12 +697,12 @@ mysql
                     
                     <div class="card-action article-tags">
                         
-                        <a href="/tags/mysql/" target="_blank">
-                            <span class="chip bg-color">mysql</span>
-                        </a>
-                        
                         <a href="/tags/leetcode/" target="_blank">
                             <span class="chip bg-color">leetcode</span>
+                        </a>
+                        
+                        <a href="/tags/mysql/" target="_blank">
+                            <span class="chip bg-color">mysql</span>
                         </a>
                         
                     </div>
@@ -710,7 +716,7 @@ mysql
                         <div class="card-image tag-image">
                             
                             
-                            <img src="/medias/featureimages/22.jpg" class="responsive-img" alt="07- MySQL 存储引擎">
+                            <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="07- MySQL 存储引擎">
                             
                             <span class="card-title">07- MySQL 存储引擎</span>
                         </div>
@@ -747,12 +753,12 @@ MRG_MYISAM
                     
                     <div class="card-action article-tags">
                         
-                        <a href="/tags/数据库/" target="_blank">
-                            <span class="chip bg-color">数据库</span>
-                        </a>
-                        
                         <a href="/tags/mysql/" target="_blank">
                             <span class="chip bg-color">mysql</span>
+                        </a>
+                        
+                        <a href="/tags/数据库/" target="_blank">
+                            <span class="chip bg-color">数据库</span>
                         </a>
                         
                     </div>
@@ -766,7 +772,7 @@ MRG_MYISAM
                         <div class="card-image tag-image">
                             
                             
-                            <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="06-索引优化">
+                            <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="06-索引优化">
                             
                             <span class="card-title">06-索引优化</span>
                         </div>
@@ -802,12 +808,12 @@ MRG_MYISAM
                     
                     <div class="card-action article-tags">
                         
-                        <a href="/tags/数据库/" target="_blank">
-                            <span class="chip bg-color">数据库</span>
-                        </a>
-                        
                         <a href="/tags/mysql/" target="_blank">
                             <span class="chip bg-color">mysql</span>
+                        </a>
+                        
+                        <a href="/tags/数据库/" target="_blank">
+                            <span class="chip bg-color">数据库</span>
                         </a>
                         
                     </div>
@@ -821,7 +827,7 @@ MRG_MYISAM
                         <div class="card-image tag-image">
                             
                             
-                            <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="第二章   体系结构">
+                            <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="第二章   体系结构">
                             
                             <span class="card-title">第二章   体系结构</span>
                         </div>
@@ -857,12 +863,12 @@ mysql -ur
                     
                     <div class="card-action article-tags">
                         
-                        <a href="/tags/数据库/" target="_blank">
-                            <span class="chip bg-color">数据库</span>
-                        </a>
-                        
                         <a href="/tags/mysql/" target="_blank">
                             <span class="chip bg-color">mysql</span>
+                        </a>
+                        
+                        <a href="/tags/数据库/" target="_blank">
+                            <span class="chip bg-color">数据库</span>
                         </a>
                         
                     </div>
@@ -876,7 +882,7 @@ mysql -ur
                         <div class="card-image tag-image">
                             
                             
-                            <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="02-mysql光速入门篇查询">
+                            <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="02-mysql光速入门篇查询">
                             
                             <span class="card-title">02-mysql光速入门篇查询</span>
                         </div>
@@ -919,12 +925,12 @@ select * from table_name;
                     
                     <div class="card-action article-tags">
                         
-                        <a href="/tags/mysql/" target="_blank">
-                            <span class="chip bg-color">mysql</span>
-                        </a>
-                        
                         <a href="/tags/mysql光速入门篇章/" target="_blank">
                             <span class="chip bg-color">mysql光速入门篇章</span>
+                        </a>
+                        
+                        <a href="/tags/mysql/" target="_blank">
+                            <span class="chip bg-color">mysql</span>
                         </a>
                         
                     </div>
@@ -938,7 +944,7 @@ select * from table_name;
                         <div class="card-image tag-image">
                             
                             
-                            <img src="/medias/featureimages/30.jpg" class="responsive-img" alt="01-mysql光速入门">
+                            <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="01-mysql光速入门">
                             
                             <span class="card-title">01-mysql光速入门</span>
                         </div>
@@ -980,12 +986,12 @@ data
                     
                     <div class="card-action article-tags">
                         
-                        <a href="/tags/mysql/" target="_blank">
-                            <span class="chip bg-color">mysql</span>
-                        </a>
-                        
                         <a href="/tags/mysql光速入门篇章/" target="_blank">
                             <span class="chip bg-color">mysql光速入门篇章</span>
+                        </a>
+                        
+                        <a href="/tags/mysql/" target="_blank">
+                            <span class="chip bg-color">mysql</span>
                         </a>
                         
                     </div>
@@ -999,7 +1005,7 @@ data
                         <div class="card-image tag-image">
                             
                             
-                            <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="第五章SQL 常识">
+                            <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="第五章SQL 常识">
                             
                             <span class="card-title">第五章SQL 常识</span>
                         </div>
@@ -1036,12 +1042,12 @@ SQL-89  \ SQL-92  \  SQL-99   \SQL03 .....
                     
                     <div class="card-action article-tags">
                         
-                        <a href="/tags/mysql/" target="_blank">
-                            <span class="chip bg-color">mysql</span>
-                        </a>
-                        
                         <a href="/tags/leetcode/" target="_blank">
                             <span class="chip bg-color">leetcode</span>
+                        </a>
+                        
+                        <a href="/tags/mysql/" target="_blank">
+                            <span class="chip bg-color">mysql</span>
                         </a>
                         
                     </div>
@@ -1055,7 +1061,7 @@ SQL-89  \ SQL-92  \  SQL-99   \SQL03 .....
                         <div class="card-image tag-image">
                             
                             
-                            <img src="/medias/featureimages/28.jpg" class="responsive-img" alt="MySQL升级和降级">
+                            <img src="/medias/featureimages/27.jpg" class="responsive-img" alt="MySQL升级和降级">
                             
                             <span class="card-title">MySQL升级和降级</span>
                         </div>
@@ -1090,12 +1096,12 @@ SQL-89  \ SQL-92  \  SQL-99   \SQL03 .....
                     
                     <div class="card-action article-tags">
                         
-                        <a href="/tags/数据库/" target="_blank">
-                            <span class="chip bg-color">数据库</span>
-                        </a>
-                        
                         <a href="/tags/mysql/" target="_blank">
                             <span class="chip bg-color">mysql</span>
+                        </a>
+                        
+                        <a href="/tags/数据库/" target="_blank">
+                            <span class="chip bg-color">数据库</span>
                         </a>
                         
                     </div>
@@ -1139,7 +1145,7 @@ SQL-89  \ SQL-92  \  SQL-99   \SQL03 .....
 
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">65.4k</span>
+            <span class="white-color">72.2k</span>
             
 
             <br>
