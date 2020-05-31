@@ -1,17 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>http://yoursite.com/2020/02/16/guan-fang-yuan-jing-xiang-yuan-hui-zong/</loc>
-    <lastmod>2020-05-29</lastmod>
+    <loc>http://yoursite.com/2020/05/26/01-yun-ji-suan-kvm-openstack/</loc>
+    <lastmod>2020-05-31</lastmod>
   </url>  <url>
-    <loc>http://yoursite.com/2020/05/18/01-yun-ji-suan-kvm-openstack/</loc>
-    <lastmod>2020-05-29</lastmod>
+    <loc>http://yoursite.com/2020/05/21/13-mysql-quan-mian-you-hua-gu-zhang-pt-gong-ju-shi-yong/</loc>
+    <lastmod>2020-05-31</lastmod>
+  </url>  <url>
+    <loc>http://yoursite.com/2020/05/27/02-docker-ji-chu-cao-zuo/</loc>
+    <lastmod>2020-05-31</lastmod>
+  </url>  <url>
+    <loc>http://yoursite.com/2020/05/23/guan-fang-yuan-jing-xiang-yuan-hui-zong/</loc>
+    <lastmod>2020-05-31</lastmod>
+  </url>  <url>
+    <loc>http://yoursite.com/2020/05/20/12-fen-bu-shi-jia-gou-mycat/</loc>
+    <lastmod>2020-05-31</lastmod>
   </url>  <url>
     <loc>http://yoursite.com/2020/05/19/11-mysql-zhu-cong-fu-zhi-gao-ji-jin-jie/</loc>
     <lastmod>2020-05-29</lastmod>
-  </url>  <url>
-    <loc>http://yoursite.com/2020/05/17/12-fen-bu-shi-jia-gou-mycat/</loc>
-    <lastmod>2020-05-23</lastmod>
   </url>  <url>
     <loc>http://yoursite.com/2020/05/16/10-mysql-zhu-cong-fu-zhi/</loc>
     <lastmod>2020-05-16</lastmod>
@@ -59,9 +65,6 @@
     <lastmod>2020-04-24</lastmod>
   </url>  <url>
     <loc>http://yoursite.com/2020/02/23/zhong-xiao-qi-ye-ru-he-zuo-yun-wei-zi-dong-hua/</loc>
-    <lastmod>2020-04-24</lastmod>
-  </url>  <url>
-    <loc>http://yoursite.com/2020/02/23/02/</loc>
     <lastmod>2020-04-24</lastmod>
   </url>  <url>
     <loc>http://yoursite.com/2020/02/23/di-san-zhang-mysql-lian-jie-guan-li/</loc>

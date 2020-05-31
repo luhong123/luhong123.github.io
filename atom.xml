@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-05-29T15:08:45.112Z</updated>
+  <updated>2020-05-31T09:19:13.979Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,149 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>02-docker基础操作</title>
+    <link href="http://yoursite.com/2020/05/27/02-docker-ji-chu-cao-zuo/"/>
+    <id>http://yoursite.com/2020/05/27/02-docker-ji-chu-cao-zuo/</id>
+    <published>2020-05-27T08:09:23.000Z</published>
+    <updated>2020-05-31T09:19:13.979Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;1-什么是容器&quot;&gt;&lt;a href=&quot;#1-什么是容器&quot; class=&quot;headerlink&quot; title=&quot;1.什么是容器&quot;&gt;&lt;/a&gt;1.什么是容器&lt;/h2&gt;&lt;p&gt;&lt;img
+        
+      
+    
+    </summary>
+    
+      <category term="docker" scheme="http://yoursite.com/categories/docker/"/>
+    
+    
+      <category term="leetcode" scheme="http://yoursite.com/tags/leetcode/"/>
+    
+      <category term="云计算" scheme="http://yoursite.com/tags/%E4%BA%91%E8%AE%A1%E7%AE%97/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>01-云计算_kvm_openstack</title>
+    <link href="http://yoursite.com/2020/05/26/01-yun-ji-suan-kvm-openstack/"/>
+    <id>http://yoursite.com/2020/05/26/01-yun-ji-suan-kvm-openstack/</id>
+    <published>2020-05-26T08:09:23.000Z</published>
+    <updated>2020-05-31T10:58:14.578Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;1：什么是云计算？&quot;&gt;&lt;a href=&quot;#1：什么是云计算？&quot; class=&quot;headerlink&quot; title=&quot;1：什么是云计算？&quot;&gt;&lt;/a&gt;1：什么是云计算？&lt;/h2&gt;&lt;p&gt;云计算是一种按量付费的模式！云计算的底层是通过虚拟化技术来实现的！&lt;/p&gt;
+&lt;h2
+        
+      
+    
+    </summary>
+    
+      <category term="kvm" scheme="http://yoursite.com/categories/kvm/"/>
+    
+      <category term="openstack" scheme="http://yoursite.com/categories/kvm/openstack/"/>
+    
+    
+      <category term="leetcode" scheme="http://yoursite.com/tags/leetcode/"/>
+    
+      <category term="云计算" scheme="http://yoursite.com/tags/%E4%BA%91%E8%AE%A1%E7%AE%97/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>官方源、镜像源汇总</title>
+    <link href="http://yoursite.com/2020/05/23/guan-fang-yuan-jing-xiang-yuan-hui-zong/"/>
+    <id>http://yoursite.com/2020/05/23/guan-fang-yuan-jing-xiang-yuan-hui-zong/</id>
+    <published>2020-05-23T07:09:23.000Z</published>
+    <updated>2020-05-31T09:17:54.365Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;站点版&quot;&gt;&lt;a href=&quot;#站点版&quot; class=&quot;headerlink&quot; title=&quot;站点版&quot;&gt;&lt;/a&gt;站点版&lt;/h2&gt;&lt;h3 id=&quot;（一）、企业站&quot;&gt;&lt;a href=&quot;#（一）、企业站&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="k8s" scheme="http://yoursite.com/categories/k8s/"/>
+    
+    
+      <category term="leetcode" scheme="http://yoursite.com/tags/leetcode/"/>
+    
+      <category term="k8s" scheme="http://yoursite.com/tags/k8s/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>13-MySQL 全面优化+故障+PT工具使用</title>
+    <link href="http://yoursite.com/2020/05/21/13-mysql-quan-mian-you-hua-gu-zhang-pt-gong-ju-shi-yong/"/>
+    <id>http://yoursite.com/2020/05/21/13-mysql-quan-mian-you-hua-gu-zhang-pt-gong-ju-shi-yong/</id>
+    <published>2020-05-21T08:09:23.000Z</published>
+    <updated>2020-05-31T10:54:47.873Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;简介&quot;&gt;&lt;a href=&quot;#简介&quot; class=&quot;headerlink&quot; title=&quot;简介&quot;&gt;&lt;/a&gt;简介&lt;/h2&gt;&lt;pre class=&quot;line-numbers language-powershell&quot;&gt;&lt;code
+        
+      
+    
+    </summary>
+    
+      <category term="mysql" scheme="http://yoursite.com/categories/mysql/"/>
+    
+    
+      <category term="mysql" scheme="http://yoursite.com/tags/mysql/"/>
+    
+      <category term="leetcode" scheme="http://yoursite.com/tags/leetcode/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>12分布式架构-Mycat</title>
+    <link href="http://yoursite.com/2020/05/20/12-fen-bu-shi-jia-gou-mycat/"/>
+    <id>http://yoursite.com/2020/05/20/12-fen-bu-shi-jia-gou-mycat/</id>
+    <published>2020-05-20T08:09:23.000Z</published>
+    <updated>2020-05-31T09:11:36.141Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;1-分布式架构-Mycat&quot;&gt;&lt;a href=&quot;#1-分布式架构-Mycat&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="mysql" scheme="http://yoursite.com/categories/mysql/"/>
+    
+    
+      <category term="mysql" scheme="http://yoursite.com/tags/mysql/"/>
+    
+      <category term="leetcode" scheme="http://yoursite.com/tags/leetcode/"/>
+    
+  </entry>
   
   <entry>
     <title>11-mysql-主从复制高级进阶</title>
@@ -38,65 +181,9 @@
       <category term="mysql" scheme="http://yoursite.com/categories/mysql/"/>
     
     
-      <category term="leetcode" scheme="http://yoursite.com/tags/leetcode/"/>
-    
       <category term="mysql" scheme="http://yoursite.com/tags/mysql/"/>
     
-  </entry>
-  
-  <entry>
-    <title>13-MySQL 全面优化+故障+PT工具使用</title>
-    <link href="http://yoursite.com/2020/05/18/01-yun-ji-suan-kvm-openstack/"/>
-    <id>http://yoursite.com/2020/05/18/01-yun-ji-suan-kvm-openstack/</id>
-    <published>2020-05-18T08:09:23.000Z</published>
-    <updated>2020-05-29T15:12:11.282Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h2 id=&quot;简介&quot;&gt;&lt;a href=&quot;#简介&quot; class=&quot;headerlink&quot; title=&quot;简介&quot;&gt;&lt;/a&gt;简介&lt;/h2&gt;&lt;pre class=&quot;line-numbers language-powershell&quot;&gt;&lt;code
-        
-      
-    
-    </summary>
-    
-      <category term="kvm openstack" scheme="http://yoursite.com/categories/kvm-openstack/"/>
-    
-    
       <category term="leetcode" scheme="http://yoursite.com/tags/leetcode/"/>
-    
-      <category term="云计算" scheme="http://yoursite.com/tags/%E4%BA%91%E8%AE%A1%E7%AE%97/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>12分布式架构-Mycat</title>
-    <link href="http://yoursite.com/2020/05/17/12-fen-bu-shi-jia-gou-mycat/"/>
-    <id>http://yoursite.com/2020/05/17/12-fen-bu-shi-jia-gou-mycat/</id>
-    <published>2020-05-17T08:09:23.000Z</published>
-    <updated>2020-05-23T10:44:16.203Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h1 id=&quot;1-分布式架构-Mycat&quot;&gt;&lt;a href=&quot;#1-分布式架构-Mycat&quot; class=&quot;headerlink&quot;
-        
-      
-    
-    </summary>
-    
-      <category term="mysql" scheme="http://yoursite.com/categories/mysql/"/>
-    
-    
-      <category term="leetcode" scheme="http://yoursite.com/tags/leetcode/"/>
-    
-      <category term="mysql" scheme="http://yoursite.com/tags/mysql/"/>
     
   </entry>
   
@@ -122,9 +209,9 @@
       <category term="mysql" scheme="http://yoursite.com/categories/mysql/"/>
     
     
-      <category term="leetcode" scheme="http://yoursite.com/tags/leetcode/"/>
-    
       <category term="mysql" scheme="http://yoursite.com/tags/mysql/"/>
+    
+      <category term="leetcode" scheme="http://yoursite.com/tags/leetcode/"/>
     
   </entry>
   
@@ -150,9 +237,9 @@
       <category term="mysql" scheme="http://yoursite.com/categories/mysql/"/>
     
     
-      <category term="leetcode" scheme="http://yoursite.com/tags/leetcode/"/>
-    
       <category term="mysql" scheme="http://yoursite.com/tags/mysql/"/>
+    
+      <category term="leetcode" scheme="http://yoursite.com/tags/leetcode/"/>
     
   </entry>
   
@@ -178,9 +265,9 @@
       <category term="mysql" scheme="http://yoursite.com/categories/mysql/"/>
     
     
-      <category term="leetcode" scheme="http://yoursite.com/tags/leetcode/"/>
-    
       <category term="mysql" scheme="http://yoursite.com/tags/mysql/"/>
+    
+      <category term="leetcode" scheme="http://yoursite.com/tags/leetcode/"/>
     
   </entry>
   
@@ -370,9 +457,9 @@
       <category term="mysql" scheme="http://yoursite.com/categories/mysql/"/>
     
     
-      <category term="leetcode" scheme="http://yoursite.com/tags/leetcode/"/>
-    
       <category term="mysql" scheme="http://yoursite.com/tags/mysql/"/>
+    
+      <category term="leetcode" scheme="http://yoursite.com/tags/leetcode/"/>
     
   </entry>
   
@@ -460,26 +547,6 @@
   </entry>
   
   <entry>
-    <title>第三章mysql连接管理</title>
-    <link href="http://yoursite.com/2020/02/23/02/"/>
-    <id>http://yoursite.com/2020/02/23/02/</id>
-    <published>2020-02-23T07:09:23.000Z</published>
-    <updated>2020-04-24T13:42:41.336Z</updated>
-    
-    <summary type="html">
-    
-    </summary>
-    
-      <category term="mysql" scheme="http://yoursite.com/categories/mysql/"/>
-    
-    
-      <category term="leetcode" scheme="http://yoursite.com/tags/leetcode/"/>
-    
-      <category term="mysql" scheme="http://yoursite.com/tags/mysql/"/>
-    
-  </entry>
-  
-  <entry>
     <title>Linux禁止ping以及开启ping的方法</title>
     <link href="http://yoursite.com/2020/02/23/linux-jin-zhi-ping-yi-ji-kai-qi-ping-de-fang-fa/"/>
     <id>http://yoursite.com/2020/02/23/linux-jin-zhi-ping-yi-ji-kai-qi-ping-de-fang-fa/</id>
@@ -503,65 +570,9 @@
       <category term="mysql" scheme="http://yoursite.com/categories/mysql/"/>
     
     
+      <category term="mysql" scheme="http://yoursite.com/tags/mysql/"/>
+    
       <category term="leetcode" scheme="http://yoursite.com/tags/leetcode/"/>
-    
-      <category term="mysql" scheme="http://yoursite.com/tags/mysql/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>中小企业如何做运维自动化</title>
-    <link href="http://yoursite.com/2020/02/23/zhong-xiao-qi-ye-ru-he-zuo-yun-wei-zi-dong-hua/"/>
-    <id>http://yoursite.com/2020/02/23/zhong-xiao-qi-ye-ru-he-zuo-yun-wei-zi-dong-hua/</id>
-    <published>2020-02-23T07:09:23.000Z</published>
-    <updated>2020-04-24T14:07:01.016Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h2 id=&quot;中小企业如何做运维自动化&quot;&gt;&lt;a href=&quot;#中小企业如何做运维自动化&quot; class=&quot;headerlink&quot; title=&quot;中小企业如何做运维自动化&quot;&gt;&lt;/a&gt;中小企业如何做运维自动化&lt;/h2&gt;&lt;p&gt;以下文章来源于Spug运维
-        
-      
-    
-    </summary>
-    
-      <category term="Spug" scheme="http://yoursite.com/categories/Spug/"/>
-    
-    
-      <category term="自动化" scheme="http://yoursite.com/tags/%E8%87%AA%E5%8A%A8%E5%8C%96/"/>
-    
-      <category term="Spug" scheme="http://yoursite.com/tags/Spug/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>mysql多实例部署</title>
-    <link href="http://yoursite.com/2020/02/23/di-san-zhang-mysql-lian-jie-guan-li/"/>
-    <id>http://yoursite.com/2020/02/23/di-san-zhang-mysql-lian-jie-guan-li/</id>
-    <published>2020-02-23T07:09:23.000Z</published>
-    <updated>2020-04-23T12:58:49.070Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h1 id=&quot;第一章-需求说明&quot;&gt;&lt;a href=&quot;#第一章-需求说明&quot; class=&quot;headerlink&quot; title=&quot;第一章  需求说明&quot;&gt;&lt;/a&gt;第一章 
-        
-      
-    
-    </summary>
-    
-      <category term="mysql" scheme="http://yoursite.com/categories/mysql/"/>
-    
-    
-      <category term="mysql" scheme="http://yoursite.com/tags/mysql/"/>
-    
-      <category term="案例" scheme="http://yoursite.com/tags/%E6%A1%88%E4%BE%8B/"/>
     
   </entry>
   

@@ -1,0 +1,3114 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="utf-8">
+    <meta name="keywords" content="01-云计算_kvm_openstack, 自然语言处理 深度学习 算法码上来">
+    <meta name="baidu-site-verification" content="fmlEuI34ir">
+    <meta name="google-site-verification" content="yCy2azpds5XSuGZvis6OuA-XIGF5GuGpYRAaGfD6o48">
+    <meta name="360-site-verification" content="b7c11a830ef90fd1464ad6206bb7b6e7">
+    <meta name="description" content="1：什么是云计算？云计算是一种按量付费的模式！云计算的底层是通过虚拟化技术来实现的！
+2：云计算的服务类型2.1 IAAS 基础设施即服务(infrastructure as an service)    虚拟机  ecs  opensta">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>01-云计算_kvm_openstack | 小明同学</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+    <style type="text/css">
+        
+    </style>
+
+    <script src="/libs/jquery/jquery-2.2.0.min.js"></script>
+    <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+    <script>
+        var _hmt = _hmt || [];
+        (function () {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?46e79e71af0709a5b9106bf20cecc493";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+
+    
+        <script>
+            (function(){
+                var bp = document.createElement('script');
+                var curProtocol = window.location.protocol.split(':')[0];
+                if (curProtocol === 'https') {
+                    bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+                }
+                else {
+                    bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+                }
+                var s = document.getElementsByTagName("script")[0];
+                s.parentNode.insertBefore(bp, s);
+            })();
+        </script>
+    
+
+    <script>
+        (function(){
+        var src = "https://jspassport.ssl.qhimg.com/11.0.1.js?d182b3f28525f2db83acfaaf6e696dba";
+        document.write('<script src="' + src + '" id="sozz"><\/script>');
+        })();
+    </script>
+
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+
+<body>
+
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">小明同学</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fa fa-navicon"></i></a>
+<ul class="right">
+    
+    <li class="hide-on-med-and-down">
+        <a href="/" class="waves-effect waves-light">
+            
+            <i class="fa fa-home"></i>
+            
+            <span>首页</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/tags" class="waves-effect waves-light">
+            
+            <i class="fa fa-tags"></i>
+            
+            <span>标签</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/categories" class="waves-effect waves-light">
+            
+            <i class="fa fa-bookmark"></i>
+            
+            <span>分类</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/archives" class="waves-effect waves-light">
+            
+            <i class="fa fa-archive"></i>
+            
+            <span>归档</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/about" class="waves-effect waves-light">
+            
+            <i class="fa fa-user-circle-o"></i>
+            
+            <span>关于</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/friends" class="waves-effect waves-light">
+            
+            <i class="fa fa-address-book"></i>
+            
+            <span>友情链接</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/contact" class="waves-effect waves-light">
+            
+            <i class="fa fa-comments"></i>
+            
+            <span>留言板</span>
+        </a>
+    </li>
+    
+    <li>
+        <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+            <i id="searchIcon" class="fa fa-search" title="搜索"></i>
+        </a>
+    </li>
+</ul>
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">小明同学</div>
+        <div class="logo-desc">
+            
+            计算机科学与技术 | 自然语言处理
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li>
+            <a href="/" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-home"></i>
+                
+                首页
+            </a>
+        </li>
+        
+        <li>
+            <a href="/tags" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-tags"></i>
+                
+                标签
+            </a>
+        </li>
+        
+        <li>
+            <a href="/categories" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-bookmark"></i>
+                
+                分类
+            </a>
+        </li>
+        
+        <li>
+            <a href="/archives" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-archive"></i>
+                
+                归档
+            </a>
+        </li>
+        
+        <li>
+            <a href="/about" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-user-circle-o"></i>
+                
+                关于
+            </a>
+        </li>
+        
+        <li>
+            <a href="/friends" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-address-book"></i>
+                
+                友情链接
+            </a>
+        </li>
+        
+        <li>
+            <a href="/contact" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-comments"></i>
+                
+                留言板
+            </a>
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="" class="waves-effect waves-light" target="_blank">
+                <i class="fa fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+    
+<script src="/libs/cryptojs/crypto-js.min.js"></script>
+<script>
+    (function() {
+        let pwd = '';
+        if (pwd && pwd.length > 0) {
+            if (pwd !== CryptoJS.SHA256(prompt('请输入访问本文章的密码')).toString(CryptoJS.enc.Hex)) {
+                alert('密码错误，将返回主页！');
+                location.href = '/';
+            }
+        }
+    })();
+</script>
+
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/22.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <div class="description center-align post-title">
+                        01-云计算_kvm_openstack
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        margin: 35px 0 15px 0;
+        padding-left: 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #toc-content .is-active-link::before {
+        background-color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 20px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                        <a href="/tags/leetcode/" target="_blank">
+                            <span class="chip bg-color">leetcode</span>
+                        </a>
+                        
+                        <a href="/tags/云计算/" target="_blank">
+                            <span class="chip bg-color">云计算</span>
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fa fa-bookmark fa-fw icon-category"></i>
+                        
+                        <a href="/categories/kvm/" class="post-category" target="_blank">
+                            kvm
+                        </a>
+                        
+                        <a href="/categories/kvm/openstack/" class="post-category" target="_blank">
+                            openstack
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                <div class="post-date info-break-policy">
+                    <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2020-05-26
+                </div>
+
+                <div class="post-author info-break-policy">
+                    <i class="fa fa-user-o fa-fw"></i>作者:&nbsp;&nbsp;
+                    
+                    小明
+                    
+                </div>
+
+                
+                
+                <div class="info-break-policy">
+                    <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    8.4k
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    42 分
+                </div>
+                
+                
+
+                
+                <div id="busuanzi_container_page_pv" class="info-break-policy">
+                    <i class="fa fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                    <span id="busuanzi_value_page_pv"></span>
+                </div>
+                
+            </div>
+        </div>
+        <hr class="clearfix">
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h2 id="1：什么是云计算？"><a href="#1：什么是云计算？" class="headerlink" title="1：什么是云计算？"></a>1：什么是云计算？</h2><p>云计算是一种按量付费的模式！云计算的底层是通过虚拟化技术来实现的！</p>
+<h2 id="2：云计算的服务类型"><a href="#2：云计算的服务类型" class="headerlink" title="2：云计算的服务类型"></a>2：云计算的服务类型</h2><p>2.1 IAAS 基础设施即服务(infrastructure as an service)    虚拟机  ecs  openstack</p>
+<p>2.2 PAAS 平台即服务(platform as an service ) php，java      docker容器 +k8s</p>
+<p>2.3 SAAS  软件即服务(software as an service )   企业邮箱服务  cdn服务  rds数据库    开发+运维</p>
+<p><img src="https://oldqiang.com/wp-content/uploads/2020/01/1563155289688.png" alt="1563155289688"></p>
+<h2 id="3：为什么要用云计算"><a href="#3：为什么要用云计算" class="headerlink" title="3：为什么要用云计算"></a>3：为什么要用云计算</h2><p>小公司：10台  20w+ idc  5w + 100M   10W， 10台云主机，前期投入小，扩展灵活，风险小</p>
+<p>大公司：闲置服务器计算资源，虚拟机，出租（超卖）</p>
+<p>64G 服务器  64台1G   320台1G      64台  大公司自己的业务   264台  租出去</p>
+<p>国企，银行</p>
+<p>公有云:  谁都可以租</p>
+<p>私有云:  只有公司内部使用</p>
+<p>混合云: 有自己的私有云 + 租的公有云</p>
+<h2 id="4：云计算的基础KVM虚拟化"><a href="#4：云计算的基础KVM虚拟化" class="headerlink" title="4：云计算的基础KVM虚拟化"></a>4：云计算的基础KVM虚拟化</h2><p>宿主机：内存4G+  纯净的系统CentOS-7</p>
+<h3 id="4-1：什么是虚拟化？"><a href="#4-1：什么是虚拟化？" class="headerlink" title="4.1：什么是虚拟化？"></a>4.1：什么是虚拟化？</h3><p>虚拟化，通过模拟计算机的硬件，来实现在同一台计算机上同时运行多个不同的操作系统的技术。</p>
+<h3 id="4-2-：虚拟化软件的差别"><a href="#4-2-：虚拟化软件的差别" class="headerlink" title="4.2 ：虚拟化软件的差别"></a>4.2 ：虚拟化软件的差别</h3><pre class="line-numbers language-spreadsheet"><code class="language-spreadsheet">linux虚拟化软件：
+qemu      软件纯模拟全虚拟化软件，特别慢！兼容性好！
+xen(半)   性能特别好，需要使用专门修改之后的内核，兼容性差！  redhat 5.5  xen kvm
+KVM（linux）    全虚拟机，它有硬件支持cpu，基于内核，而且不需要使用专门的内核   centos6 kvm
+性能较好，兼容较好
+
+vmware workstations:  图形界面
+
+virtual box: 图形界面   Oracle   <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>vmware workstations:  图形界面</p>
+<p>virtual box: 图形界面   Oracle   </p>
+<h3 id="4-3-安装kvm虚拟化管理工具"><a href="#4-3-安装kvm虚拟化管理工具" class="headerlink" title="4.3 安装kvm虚拟化管理工具"></a>4.3 安装kvm虚拟化管理工具</h3><table>
+<thead>
+<tr>
+<th align="left">主机名</th>
+<th align="left">ip地址</th>
+<th align="left">内存</th>
+<th align="left">虚拟机</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">kvm01</td>
+<td align="left">10.0.0.11</td>
+<td align="left">4G(后期调整到2G)</td>
+<td align="left">cpu开启vt虚拟化</td>
+</tr>
+<tr>
+<td align="left">kvm02</td>
+<td align="left">10.0.0.12</td>
+<td align="left">2G</td>
+<td align="left">cpu开启vt虚拟化</td>
+</tr>
+</tbody></table>
+<p>KVM：Kernel-based Virtual Machine </p>
+<pre class="line-numbers language-shell"><code class="language-shell">yum install libvirt virt-install qemu-kvm -y<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<blockquote>
+<p><strong>KVM：Kernel-based Virtual Machine</strong>  </p>
+<p><strong>libvirt  作用：虚拟机的管理软件 libvirt: kvm,xen,qemu,lxc….</strong></p>
+<p><strong>virt   virt-install virt-clone   作用：虚拟机的安装工具和克隆工具 qemu-kvm  qemu-img (qcow2,raw)作用：管理虚拟机的虚拟磁盘</strong></p>
+<p><strong>环境要求：</strong></p>
+<p><strong>centos 7.4   7.6</strong></p>
+<p><strong>vmware   宿主机  kvm虚拟机</strong></p>
+<p><strong>内存4G，cpu开启虚拟化</strong></p>
+</blockquote>
+<p><img src="https://oldqiang.com/wp-content/uploads/2020/01/1563157833562.png" alt="1563157833562"></p>
+<p>IP：10.0.0.11</p>
+<p>echo  ‘192.168.12.201  mirrors.aliyun.com’ &gt;&gt;/etc/hosts</p>
+<pre class="line-numbers language-CQL"><code class="language-CQL">curl -o /etc/yum.repos.d/CentOS-Base.repo http://mirrors.aliyun.com/repo/Centos-7.repo<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>安装软件包</p>
+<pre class="line-numbers language-CQL"><code class="language-CQL">yum install libvirt virt-install qemu-kvm -y<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p> <img src="G:/%E5%B0%8F%E6%98%8E%E5%90%8C%E5%AD%A6%E4%BD%9C%E4%B8%9A%E8%A1%A8/%E5%91%BD%E4%BB%A4%E5%AD%A6%E4%B9%A0%E6%96%87%E4%BB%B6.md/05-mysql%E6%95%B0%E6%8D%AE%E5%BA%93/tup/image-20200521120652479-1590922341970.png" alt="image-20200521120652479"></p>
+<p><img src="G:/%E5%B0%8F%E6%98%8E%E5%90%8C%E5%AD%A6%E4%BD%9C%E4%B8%9A%E8%A1%A8/%E5%91%BD%E4%BB%A4%E5%AD%A6%E4%B9%A0%E6%96%87%E4%BB%B6.md/05-mysql%E6%95%B0%E6%8D%AE%E5%BA%93/tup/image-20200521120713414-1590922341971.png" alt="image-20200521120713414"></p>
+<h3 id="4-4：安装一台kvm虚拟机"><a href="#4-4：安装一台kvm虚拟机" class="headerlink" title="4.4：安装一台kvm虚拟机"></a>4.4：安装一台kvm虚拟机</h3><pre class="line-numbers language-powershell"><code class="language-powershell">VNC<span class="token operator">-</span>Viewer<span class="token operator">-</span>6<span class="token punctuation">.</span>19<span class="token punctuation">.</span>325
+宿主机
+
+微软的远程桌面
+
+vnc:远程的桌面管理工具
+向日葵
+微软的远程桌面
+
+systemctl <span class="token function">start</span> libvirtd<span class="token punctuation">.</span>service
+systemctl status libvirtd<span class="token punctuation">.</span>service
+
+10<span class="token punctuation">.</span>0<span class="token punctuation">.</span>0<span class="token punctuation">.</span>11  宿主机
+
+建议虚拟机内存不要低于1024M，否则安装系统特别慢！
+<span class="token operator">--</span>-<span class="token operator">--</span>-<span class="token operator">--</span>-<span class="token operator">--</span>-<span class="token operator">--</span>-<span class="token operator">--</span>-<span class="token operator">--</span>-<span class="token operator">--</span><span class="token operator">-</span>
+上传一个镜像<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-spreadsheet"><code class="language-spreadsheet">镜像安装导入  注意镜像放在opt 下 root 下没有权限： 原因在于 使用kvm 的普通用户
+
+virt-install --virt-type kvm --os-type=linux --os-variant rhel7 --name centos7 --memory 1024 --vcpus 1 --disk /opt/centos2.raw,format=raw,size=10 --cdrom /opt/CentOS-7-x86_64-DVD-1708.iso --network network=default --graphics vnc,listen=0.0.0.0 --noautoconsole
+
+
+
+virt-install --virt-type kvm --os-type=linux --os-variant rhel7 --name centos7 --memory 1024 --vcpus 1 --disk /opt/centos2.raw,format=qum2,size=10 --cdrom /opt/CentOS-7-x86_64-DVD-1708.iso --network network=default --graphics vnc,listen=0.0.0.0 --noautoconsole
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><strong>参数介绍</strong></p>
+<pre class="line-numbers language-c++"><code class="language-c++">vnc：10.0.0.11:5900
+
+--virt-type kvm    虚拟化的类型(qemu)
+--os-type=linux    系统类型
+--os-variant rhel7 系统版本
+--name centos7     虚拟机的名字 
+--memory 1024      虚拟机的内存
+--vcpus 1          虚拟cpu的核数
+--disk /opt/centos2.raw,format=raw,size=10 #磁盘位置大小10G
+--cdrom /opt/CentOS-7-x86_64-DVD-1708.iso  #镜像的位置
+--network network=default   使用默认NAT的网络
+--graphics vnc,listen=0.0.0.0  #监听的端口
+--noautoconsole    # 
+
+   系统建议装双语言jekins 优化汉语<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><img src="https://oldqiang.com/wp-content/uploads/2020/01/1563160425280.png" alt="1563160425280"></p>
+<p>云主机都没有swap分区</p>
+<p><img src="https://oldqiang.com/wp-content/uploads/2020/01/1563161133486.png" alt="1563161133486"></p>
+<h3 id="4-5：kvm虚拟机的virsh日常管理和配置"><a href="#4-5：kvm虚拟机的virsh日常管理和配置" class="headerlink" title="4.5：kvm虚拟机的virsh日常管理和配置"></a>4.5：kvm虚拟机的virsh日常管理和配置</h3><pre class="line-numbers language-powershell"><code class="language-powershell">列表list（<span class="token operator">--</span>all）
+<span class="token namespace">[root@kvm01 /opt]</span> <span class="token comment" spellcheck="true"># virsh list --all</span>
+
+
+开机<span class="token function">start</span>
+<span class="token namespace">[root@kvm01 /opt]</span> <span class="token comment" spellcheck="true"># virsh  start    centos7</span>
+
+
+关机shutdown<span class="token punctuation">(</span>虚拟机有系统<span class="token punctuation">)</span>
+<span class="token namespace">[root@kvm01 /opt]</span> <span class="token comment" spellcheck="true"># virsh  shutdown   centos7</span>
+centos 6  无法关键 缺少软件 acpid
+
+
+拔电源关机destroy
+<span class="token namespace">[root@kvm01 /opt]</span> <span class="token comment" spellcheck="true"># virsh  destroy  centos7 </span>
+
+
+重启reboot<span class="token punctuation">(</span>虚拟机有系统<span class="token punctuation">)</span>
+<span class="token namespace">[root@kvm01 /opt]</span> <span class="token comment" spellcheck="true"># virsh  reboot   centos7 </span>
+
+
+导出配置dumpxml  例子：virsh dumpxml centos7 >centos7<span class="token operator">-</span>off<span class="token punctuation">.</span>xml
+<span class="token punctuation">[</span>root@kvm01 virsh  dumpxml  centos7  > vm_centos7<span class="token punctuation">.</span>xml
+
+
+删除undefine  推荐：先destroy，在undefine <span class="token comment" spellcheck="true">#默认删除配置文件，磁盘文件纯在</span>
+<span class="token namespace">[root@kvm01]</span><span class="token operator">/</span>opt<span class="token punctuation">]</span>virsh destroy centos7 
+<span class="token namespace">[root@kvm01 /opt]</span> <span class="token comment" spellcheck="true"># virsh  undefine  centos7 </span>
+
+导入配置<span class="token keyword">define</span>
+<span class="token namespace">[root@kvm01 /opt]</span> <span class="token comment" spellcheck="true"># virsh  define  /opt/vm_centos7.xml </span>
+ ll <span class="token operator">/</span>etc<span class="token operator">/</span>libvirt<span class="token operator">/</span>qemu<span class="token operator">/</span>autostart<span class="token operator">/</span> <span class="token comment" spellcheck="true">#系统配置文件</span>
+ <span class="token namespace">[root@kvm01 /opt]</span> <span class="token comment" spellcheck="true"># virsh  start  centos7 </span>
+
+
+
+
+修改配置edit<span class="token punctuation">(</span>自带语法检查<span class="token punctuation">)</span>
+<span class="token namespace">[root@kvm01 /opt]</span> <span class="token comment" spellcheck="true"># virsh edit  centos7 </span>
+
+
+
+重命名domrename （低版本不支持）
+
+挂起suspend  虚拟机
+<span class="token namespace">[root@kvm01 /opt]</span> <span class="token comment" spellcheck="true"># virsh  suspend  centos7 </span>
+
+
+恢复resumehis     虚拟机
+<span class="token namespace">[root@kvm01 /opt]</span> <span class="token comment" spellcheck="true"># virsh  resume  centos7 </span>
+
+
+查询vnc端口号vncdisplay
+<span class="token namespace">[root@kvm01 /opt]</span> <span class="token comment" spellcheck="true"># virsh  vncdisplay centos7 </span>
+:0
+
+<span class="token function">ps</span> <span class="token operator">-</span>ef 端口
+<span class="token operator">--</span>-<span class="token operator">--</span>-<span class="token operator">--</span>-<span class="token operator">--</span>
+kvm虚拟机开机启动
+kvm运行业务程序
+开机启动autostart，前提：systemctl enable libvirtd；
+
+<span class="token namespace">[root@kvm01 /opt]</span> <span class="token comment" spellcheck="true"># systemctl enable libvirtd</span>
+<span class="token namespace">[root@kvm01 /opt]</span> <span class="token comment" spellcheck="true"># virsh autostart  centos7 </span>
+Domain centos7 marked as autostarted
+<span class="token operator">--</span>测试
+<span class="token namespace">[root@kvm01 /opt]</span> <span class="token comment" spellcheck="true"># systemctl stop   libvirtd</span>
+<span class="token namespace">[root@kvm01 /opt]</span> <span class="token comment" spellcheck="true"># systemctl start    libvirtd</span>
+<span class="token namespace">[root@kvm01 /opt]</span> <span class="token comment" spellcheck="true"># virsh list  --all</span>
+ Id    Name                           State
+<span class="token operator">--</span>-<span class="token operator">--</span>-<span class="token operator">--</span>-<span class="token operator">--</span>-<span class="token operator">--</span>-<span class="token operator">--</span>-<span class="token operator">--</span>-<span class="token operator">--</span>-<span class="token operator">--</span>-<span class="token operator">--</span>-<span class="token operator">--</span>-<span class="token operator">--</span>-<span class="token operator">--</span>-<span class="token operator">--</span>-<span class="token operator">--</span>-<span class="token operator">--</span>-<span class="token operator">--</span>-<span class="token operator">-</span>
+ 1     centos7                        running
+
+
+
+取消开机启动autostart <span class="token operator">--</span>disable
+<span class="token namespace">[root@kvm01 /opt]</span> <span class="token comment" spellcheck="true"># virsh  autostart --disable  centos7 </span>
+查看那些开机自动启动了
+<span class="token namespace">[root@kvm01 /opt]</span> <span class="token comment" spellcheck="true"># ll /etc/libvirt/qemu/autostart/</span>
+lrwxrwxrwx 1 root root 29 May 21 17:46 centos7<span class="token punctuation">.</span>xml <span class="token operator">-</span>> <span class="token operator">/</span>etc<span class="token operator">/</span>libvirt<span class="token operator">/</span>qemu<span class="token operator">/</span>centos7<span class="token punctuation">.</span>xml
+
+<span class="token namespace">[root@kvm01 /opt]</span> <span class="token comment" spellcheck="true"># virsh  list --autostart </span>
+
+
+修改名字——以及升级最大内存当前内存
+关机
+<span class="token namespace">[root@kvm01 /opt]</span> <span class="token comment" spellcheck="true"># virsh  shutdown   centos7 </span>
+改名字
+<span class="token namespace">[root@kvm01 /opt]</span> <span class="token comment" spellcheck="true"># virsh domrename   centos7  centos3</span>
+
+ virsh edit centos7 
+  155  virsh dumpxml  centos7 grep raw 
+  156  virsh dumpxml  centos7 <span class="token punctuation">|</span>grep ra
+  需要<span class="token function">mv</span> 配置文件以及磁盘文件名字
+<span class="token namespace">[root@kvm01 /opt]</span> <span class="token comment" spellcheck="true"># virsh dumpxml centos7 | grep -n 'raw'</span>
+43:      &lt;driver name=<span class="token string">'qemu'</span> <span class="token function">type</span>=<span class="token string">'raw'</span><span class="token operator">/</span>>
+44:      &lt;source file=<span class="token string">'/opt/centos7.raw'</span><span class="token operator">/</span>>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre><code>kvm 虚拟机主要有磁盘文件 和配置文组成  ： 可以用于升级：迁移</code></pre><p>console 控制台 登录</p>
+<pre class="line-numbers language-powershell"><code class="language-powershell"><span class="token namespace">[root@kvm01 /opt]</span> <span class="token comment" spellcheck="true"># ssh 192.168.122.85</span>
+<span class="token namespace">[root@localhost ~]</span><span class="token comment" spellcheck="true"># grubby --update-kernel=ALL --args="console=ttyS0,115200n8"</span>
+<span class="token namespace">[root@localhost ~]</span><span class="token comment" spellcheck="true"># reboot</span>
+
+centos7的kvm虚拟机：
+grubby <span class="token operator">--</span>update<span class="token operator">-</span>kernel=ALL <span class="token operator">--</span>args=<span class="token string">"console=ttyS0,115200n8"</span>
+reboot
+
+
+登录<span class="token operator">--</span>-<span class="token operator">--</span>
+<span class="token namespace">[root@kvm01 /opt]</span> <span class="token comment" spellcheck="true"># virsh  console  centos7 </span>
+Connected to domain centos7
+Escape character is ^<span class="token punctuation">]</span>
+
+CentOS Linux 7 <span class="token punctuation">(</span>Core<span class="token punctuation">)</span>
+Kernel 3<span class="token punctuation">.</span>10<span class="token punctuation">.</span>0<span class="token operator">-</span>693<span class="token punctuation">.</span>el7<span class="token punctuation">.</span>x86_64 on an x86_64
+
+localhost login: root
+Password: 
+Last login: Thu May 21 17:57:56 <span class="token keyword">from</span> 192<span class="token punctuation">.</span>168<span class="token punctuation">.</span>122<span class="token punctuation">.</span>1
+<span class="token namespace">[root@localhost ~]</span><span class="token comment" spellcheck="true"># </span>
+
+ctrl <span class="token operator">+</span> <span class="token punctuation">]</span> 回到主机
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>作业1：实现centos6的kvm虚拟机，console命令行登录？ 安装一台centos6的kvm虚拟机,在安装的过程中.内核参数selinux=0</p>
+<h3 id="4-6：kvm-虚拟机虚拟磁盘-管理和快照管理"><a href="#4-6：kvm-虚拟机虚拟磁盘-管理和快照管理" class="headerlink" title="4.6：kvm==虚拟机虚拟磁盘==管理和快照管理"></a>4.6：kvm==虚拟机虚拟磁盘==管理和快照管理</h3><pre class="line-numbers language-powershell"><code class="language-powershell">raw：  裸格式，占用空间比较大，不支持快照功能，不方便传输 <span class="token punctuation">,</span>读写性能较好          总50G 占用5G<span class="token punctuation">,</span>传输50G
+qcow2： qcow（<span class="token function">copy</span> on <span class="token function">write</span>）占用空间小，支持快照，性能比raw差一点，方便传输  总50G 占用5G<span class="token punctuation">,</span>传输5G
+===
+
+
+
+virt<span class="token operator">-</span>install <span class="token operator">--</span>virt<span class="token operator">-</span><span class="token function">type</span> kvm <span class="token operator">--</span>os<span class="token operator">-</span><span class="token function">type</span>=linux <span class="token operator">--</span>os<span class="token operator">-</span>variant rhel7 <span class="token operator">--</span>name centos7 <span class="token operator">--</span>memory 1024 <span class="token operator">--</span>vcpus 1 <span class="token operator">--</span>disk <span class="token operator">/</span>opt<span class="token operator">/</span>centos2<span class="token punctuation">.</span>raw<span class="token punctuation">,</span>format=raw<span class="token punctuation">,</span>size=10 <span class="token operator">--</span>cdrom <span class="token operator">/</span>opt<span class="token operator">/</span>CentOS<span class="token operator">-</span>7<span class="token operator">-</span>x86_64<span class="token operator">-</span>DVD<span class="token operator">-</span>1708<span class="token punctuation">.</span>iso <span class="token operator">--</span>network network=default <span class="token operator">--</span>graphics vnc<span class="token punctuation">,</span>listen=0<span class="token punctuation">.</span>0<span class="token punctuation">.</span>0<span class="token punctuation">.</span>0 <span class="token operator">--</span>noautoconsole
+
+virt<span class="token operator">-</span>install <span class="token operator">--</span>virt<span class="token operator">-</span><span class="token function">type</span> kvm <span class="token operator">--</span>os<span class="token operator">-</span><span class="token function">type</span>=linux <span class="token operator">--</span>os<span class="token operator">-</span>variant rhel7 <span class="token operator">--</span>name centos7 <span class="token operator">--</span>memory 1024 <span class="token operator">--</span>vcpus 1 <span class="token operator">--</span>disk <span class="token operator">/</span><span class="token keyword">data</span><span class="token operator">/</span>oldboy<span class="token punctuation">.</span>qcow2<span class="token punctuation">,</span>format=qcow2<span class="token punctuation">,</span>size=10 <span class="token operator">--</span>cdrom <span class="token operator">/</span><span class="token keyword">data</span><span class="token operator">/</span>CentOS<span class="token operator">-</span>7<span class="token punctuation">.</span>2<span class="token operator">-</span>x86_64<span class="token operator">-</span>DVD<span class="token operator">-</span>1511<span class="token punctuation">.</span>iso <span class="token operator">--</span>network network=default <span class="token operator">--</span>graphics vnc<span class="token punctuation">,</span>listen=0<span class="token punctuation">.</span>0<span class="token punctuation">.</span>0<span class="token punctuation">.</span>0 <span class="token operator">--</span>noautoconsole<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="4-6-1磁盘工具的常用命令"><a href="#4-6-1磁盘工具的常用命令" class="headerlink" title="4.6.1磁盘工具的常用命令"></a>4.6.1磁盘工具的常用命令</h4><pre class="line-numbers language-powershell"><code class="language-powershell">qemu <span class="token operator">-</span>img   info，create，resize，convert
+
+查看虚拟磁盘信息
+<span class="token namespace">[root@kvm01 /opt]</span> <span class="token comment" spellcheck="true"># qemu-img   info  centos7.raw </span>
+image: centos7<span class="token punctuation">.</span>raw
+file format: raw
+virtual size: 10G <span class="token punctuation">(</span>10737418240 bytes<span class="token punctuation">)</span>
+disk size: 1<span class="token punctuation">.</span>1G
+
+
+创建一块qcow2格式的虚拟硬盘：
+qemu<span class="token operator">-</span>img create <span class="token operator">-</span>f qcow2 test<span class="token punctuation">.</span>qcow2 2G
+
+调整磁盘磁盘容量
+qemu<span class="token operator">-</span>img   resize  test<span class="token punctuation">.</span>qcow2 <span class="token operator">+</span>20G
+
+注意关机转换
+raw转qcow2：qemu<span class="token operator">-</span>img convert  <span class="token operator">-</span>f raw     <span class="token operator">-</span>O qcow2           oldboy<span class="token punctuation">.</span>raw   oldboy<span class="token punctuation">.</span>qcow2
+<span class="token operator">-</span>c 压缩<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>修改为qcow2可以快照</p>
+<pre class="line-numbers language-powershell"><code class="language-powershell">关机<span class="token namespace">[root@kvm01 /opt]</span> <span class="token comment" spellcheck="true"># virsh shutdown centos7 </span>
+
+<span class="token namespace">[root@kvm01 /opt]</span>  virsh  edit centos7
+<span class="token namespace">[root@kvm01 /opt]</span> virsh dumpxml  centos7 <span class="token punctuation">|</span>grep qcow2
+<span class="token namespace">[root@kvm01 /opt]</span> virsh <span class="token function">start</span> centos7 
+<span class="token namespace">[root@kvm01 /opt]</span> virsh console  centos7 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>virsh edit web01：</p>
+<p>查看虚拟磁盘信息 qemu-img info  test.qcow2</p>
+<p>创建一块qcow2格式的虚拟硬盘： qemu-img create -f qcow2 test.qcow2 2G</p>
+<p>调整磁盘磁盘容量 qemu-img   resize  test.qcow2 +20G</p>
+<p>raw转qcow2：qemu-img convert  -f raw     -O qcow2           oldboy.raw   oldboy.qcow2 -c 压缩                   virsh edit web01：</p>
+<pre class="line-numbers language-powershell"><code class="language-powershell">&lt;disk <span class="token function">type</span>=<span class="token string">'file'</span> device=<span class="token string">'disk'</span>>
+      &lt;driver name=<span class="token string">'qemu'</span> <span class="token function">type</span>=<span class="token string">'qcow2'</span><span class="token operator">/</span>>
+      &lt;source file=<span class="token string">'/data/centos2.qcow2'</span><span class="token operator">/</span>>
+      &lt;target dev=<span class="token string">'vda'</span> bus=<span class="token string">'virtio'</span><span class="token operator">/</span>>
+      &lt;address <span class="token function">type</span>=<span class="token string">'pci'</span> domain=<span class="token string">'0x0000'</span> bus=<span class="token string">'0x00'</span> slot=<span class="token string">'0x06'</span> <span class="token keyword">function</span>=<span class="token string">'0x0'</span><span class="token operator">/</span>>
+&lt;<span class="token operator">/</span>disk><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>virsh destroy web01</p>
+<p> virsh start web01    </p>
+<h4 id="4-6-2快照管理"><a href="#4-6-2快照管理" class="headerlink" title="4.6.2快照管理"></a>4.6.2快照管理</h4><pre class="line-numbers language-powershell"><code class="language-powershell">创建快照virsh snapshot<span class="token operator">-</span>create<span class="token operator">-as</span> centos7 <span class="token operator">--</span>name install_ok  
+<span class="token namespace">[root@kvm01 /opt]</span> <span class="token comment" spellcheck="true"># virsh  snapshot-create-as centos7  --name 2ok_</span>
+
+
+查看快照virsh snapshot<span class="token operator">-</span>list centos7
+<span class="token namespace">[root@kvm01 /opt]</span> <span class="token comment" spellcheck="true"># virus</span>
+ Name                 Creation Time             State
+<span class="token operator">--</span>-<span class="token operator">--</span>-<span class="token operator">--</span>-<span class="token operator">--</span>-<span class="token operator">--</span>-<span class="token operator">--</span>-<span class="token operator">--</span>-<span class="token operator">--</span>-<span class="token operator">--</span>-<span class="token operator">--</span>-<span class="token operator">--</span>-<span class="token operator">--</span>-<span class="token operator">--</span>-<span class="token operator">--</span>-<span class="token operator">--</span>-<span class="token operator">--</span>-<span class="token operator">--</span>-<span class="token operator">--</span>-<span class="token operator">--</span>-<span class="token operator">--</span><span class="token operator">-</span>
+ 2ok_                 2020<span class="token operator">-</span>05<span class="token operator">-</span>22 10:34:24 <span class="token operator">+</span>0800 running
+ youhua_ok            2020<span class="token operator">-</span>05<span class="token operator">-</span>22 10:24:55 <span class="token operator">+</span>0800 running
+
+
+还原快照virsh snapshot<span class="token operator">-</span>revert centos7 <span class="token operator">--</span>snapshotname 1516574134
+<span class="token namespace">[root@kvm01 /opt]</span> <span class="token comment" spellcheck="true"># virsh snapshot-revert centos7  --snapshotname 2ok_</span>
+
+删除快照virsh snapshot<span class="token operator">-</span>delete centos7 <span class="token operator">--</span>snapshotname 1516636570
+
+
+raw不支持做快照，qcow2支持快照，并且快照就保存在qcow2的磁盘文件中<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="4-7-kvm虚拟机克隆"><a href="#4-7-kvm虚拟机克隆" class="headerlink" title="4.7:kvm虚拟机克隆"></a>4.7:kvm虚拟机克隆</h3><h4 id="4-7-1：完整克隆"><a href="#4-7-1：完整克隆" class="headerlink" title="4.7.1：完整克隆"></a>4.7.1：完整克隆</h4><pre><code>磁盘文件拷贝独立</code></pre><p>自动挡：</p>
+<pre class="line-numbers language-powershell"><code class="language-powershell">virt<span class="token operator">-</span>clone <span class="token operator">--</span>auto<span class="token operator">-</span>clone <span class="token operator">-</span>o web01 <span class="token operator">-</span>n web02 <span class="token punctuation">(</span>完整克隆<span class="token punctuation">)</span> 
+<span class="token namespace">[root@kvm01 /opt]</span> <span class="token comment" spellcheck="true"># virt-clone --auto-clone -o centos7 -n web01</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>手动挡：</p>
+<pre class="line-numbers language-powershell"><code class="language-powershell">qemu<span class="token operator">-</span>img convert <span class="token operator">-</span>f qcow2 <span class="token operator">-</span>O qcow2 <span class="token operator">-</span>c web01<span class="token punctuation">.</span>qcow2 web03<span class="token punctuation">.</span>qcow2
+virsh dumpxml web01 >web02<span class="token punctuation">.</span>xml
+vim web02<span class="token punctuation">.</span>xml
+<span class="token comment" spellcheck="true">#修改虚拟机的名字</span>
+<span class="token comment" spellcheck="true">#删除虚拟机uuid</span>
+<span class="token comment" spellcheck="true">#删除mac地址</span>
+<span class="token comment" spellcheck="true">#修改磁盘路径</span>
+<span class="token namespace">[root@kvm01 /opt]</span> <span class="token comment" spellcheck="true"># virsh define  web02.xml  </span>
+
+virsh <span class="token keyword">define</span> web02<span class="token punctuation">.</span>xml 
+virsh <span class="token function">start</span> web02
+<span class="token namespace">[root@kvm01 /opt]</span> <span class="token comment" spellcheck="true"># virsh start web02</span>
+
+<span class="token operator">-</span>c 压缩 
+就是先创建磁盘文件在导入配置文件<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="4-7-2：链接克隆"><a href="#4-7-2：链接克隆" class="headerlink" title="4.7.2：链接克隆"></a>4.7.2：链接克隆</h4><pre class="line-numbers language-powershell"><code class="language-powershell">a：生成虚拟机磁盘文件 qemu<span class="token operator">-</span>img  create  <span class="token operator">-</span>f qcow2  <span class="token operator">-</span>b  web03<span class="token punctuation">.</span>qcow2   web04<span class="token punctuation">.</span>qcow2
+
+qemu<span class="token operator">-</span>img  create  <span class="token operator">-</span>f qcow2  <span class="token operator">-</span>b  web01<span class="token punctuation">.</span>qcow2   web03<span class="token punctuation">.</span>qcow2
+
+b：生成虚拟机的配置文件
+ qemu<span class="token operator">-</span>img info web03<span class="token punctuation">.</span>qcow2
+c：导入虚拟机并进行启动测试
+virsh dumpxml web01 >web03<span class="token punctuation">.</span>xml
+vim web03<span class="token punctuation">.</span>xml
+
+<span class="token comment" spellcheck="true">#修改虚拟机的名字</span>
+&lt;name>web03&lt;<span class="token operator">/</span>name>
+<span class="token comment" spellcheck="true">#删除虚拟机uuid</span>
+&lt;uuid>8e505e25<span class="token operator">-</span>5175<span class="token operator">-</span>46ab<span class="token operator">-</span>a9f6<span class="token operator">-</span>feaa096daaa4&lt;<span class="token operator">/</span>uuid>
+<span class="token comment" spellcheck="true">#删除mac地址</span>
+&lt;mac address=<span class="token string">'52:54:00:4e:5b:89'</span><span class="token operator">/</span>>
+<span class="token comment" spellcheck="true">#修改磁盘路径</span>
+&lt;source file=<span class="token string">'/opt/web03.qcow2'</span><span class="token operator">/</span>>
+
+
+
+virsh <span class="token keyword">define</span> web03<span class="token punctuation">.</span>xml  virsh <span class="token function">start</span> web03<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>全自动链接克隆脚本：</p>
+<pre class="line-numbers language-powershell"><code class="language-powershell"><span class="token namespace">[root@kvm01 scripts]</span><span class="token comment" spellcheck="true"># cat link_clone.sh </span>
+<span class="token comment" spellcheck="true">#!/bin/bash</span>
+old_vm=<span class="token variable">$1</span>
+new_vm=<span class="token variable">$2</span>
+<span class="token comment" spellcheck="true">#a：生成虚拟机磁盘文件</span>
+old_disk=`virsh dumpxml <span class="token variable">$old_vm</span><span class="token punctuation">|</span>grep <span class="token string">"&lt;source file"</span><span class="token punctuation">|</span>awk <span class="token operator">-</span>F<span class="token string">"'"</span> <span class="token string">'{print $2}'</span>`
+disk_tmp=`dirname <span class="token variable">$old_disk</span>`
+qemu<span class="token operator">-</span>img create <span class="token operator">-</span>f qcow2 <span class="token operator">-</span>b <span class="token variable">$old_disk</span>  $<span class="token punctuation">{</span>disk_tmp<span class="token punctuation">}</span><span class="token operator">/</span>$<span class="token punctuation">{</span>new_vm<span class="token punctuation">}</span><span class="token punctuation">.</span>qcow2
+<span class="token comment" spellcheck="true">#b：生成虚拟机的配置文件</span>
+virsh dumpxml <span class="token variable">$old_vm</span> ><span class="token operator">/</span>tmp<span class="token operator">/</span>$<span class="token punctuation">{</span>new_vm<span class="token punctuation">}</span><span class="token punctuation">.</span>xml
+<span class="token comment" spellcheck="true">#修改虚拟机的名字</span>
+sed <span class="token operator">-</span><span class="token function">ri</span> <span class="token string">"s#(&lt;name>)(.*)(&lt;/name>)#\1${new_vm}\3#g"</span> <span class="token operator">/</span>tmp<span class="token operator">/</span>$<span class="token punctuation">{</span>new_vm<span class="token punctuation">}</span><span class="token punctuation">.</span>xml
+<span class="token comment" spellcheck="true">#删除虚拟机uuid</span>
+sed <span class="token operator">-</span>i <span class="token string">'/&lt;uuid>/d'</span> <span class="token operator">/</span>tmp<span class="token operator">/</span>$<span class="token punctuation">{</span>new_vm<span class="token punctuation">}</span><span class="token punctuation">.</span>xml
+<span class="token comment" spellcheck="true">#删除mac地址</span>
+sed <span class="token operator">-</span>i <span class="token string">'/&lt;mac address/d'</span> <span class="token operator">/</span>tmp<span class="token operator">/</span>$<span class="token punctuation">{</span>new_vm<span class="token punctuation">}</span><span class="token punctuation">.</span>xml
+<span class="token comment" spellcheck="true">#修改磁盘路径</span>
+sed <span class="token operator">-</span><span class="token function">ri</span> <span class="token string">"s#(&lt;source file=')(.*)('/>)#\1${disk_tmp}/${new_vm}.qcow2\3#g"</span> <span class="token operator">/</span>tmp<span class="token operator">/</span>$<span class="token punctuation">{</span>new_vm<span class="token punctuation">}</span><span class="token punctuation">.</span>xml
+<span class="token comment" spellcheck="true">#c：导入虚拟机并进行启动测试</span>
+virsh <span class="token keyword">define</span> <span class="token operator">/</span>tmp<span class="token operator">/</span>$<span class="token punctuation">{</span>new_vm<span class="token punctuation">}</span><span class="token punctuation">.</span>xml
+virsh <span class="token function">start</span> $<span class="token punctuation">{</span>new_vm<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="4-8：kvm虚拟机的桥接网络"><a href="#4-8：kvm虚拟机的桥接网络" class="headerlink" title="4.8：kvm虚拟机的桥接网络"></a>4.8：kvm虚拟机的桥接网络</h3><p>默认的虚拟机网络是NAT模式，网段192.168.122.0/24</p>
+<p><strong>虚拟机模版机桥接开始</strong></p>
+<hr>
+<p><img src="G:/%E5%B0%8F%E6%98%8E%E5%90%8C%E5%AD%A6%E4%BD%9C%E4%B8%9A%E8%A1%A8/%E5%91%BD%E4%BB%A4%E5%AD%A6%E4%B9%A0%E6%96%87%E4%BB%B6.md/05-mysql%E6%95%B0%E6%8D%AE%E5%BA%93/tup/image-20200522130047573-1590922341971.png" alt="image-20200522130047573"></p>
+<h4 id="4-8-1-创建桥接网卡"><a href="#4-8-1-创建桥接网卡" class="headerlink" title="4.8.1:创建桥接网卡"></a>4.8.1:创建桥接网卡</h4><pre class="line-numbers language-powershell"><code class="language-powershell"><span class="token namespace">[root@kvm01 ~]</span> <span class="token comment" spellcheck="true"># cat /etc/sysconfig/network-scripts/ifcfg-eth0 </span>
+DEVICE=<span class="token string">"eth0"</span>
+ONBOOT=<span class="token string">"yes"</span>
+BOOTPROTO=<span class="token string">"none"</span>
+IPADDR=<span class="token string">"10.0.1.11"</span>
+NETMASK=<span class="token string">"255.255.255.0"</span>
+GATEWAY=<span class="token string">"10.0.1.254"</span>
+网卡只留这么多
+
+
+创建桥接网卡命令
+<span class="token namespace">[root@kvm01 ~]</span> <span class="token comment" spellcheck="true"># virsh iface-bridge eth0 br0</span>
+
+
+取消桥接网卡命令 
+<span class="token namespace">[root@kvm01 ~]</span><span class="token comment" spellcheck="true"># virsh iface-unbridge br0</span>
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="4-8-2-新虚拟机使用桥接模式"><a href="#4-8-2-新虚拟机使用桥接模式" class="headerlink" title="4.8.2 新虚拟机使用桥接模式"></a>4.8.2 新虚拟机使用桥接模式</h4><p><strong>默认NAT模式</strong></p>
+<hr>
+<p>virt-install –virt-type kvm –os-type=linux –os-variant rhel7 –name web04 –memory 1024 –vcpus 1 –disk /opt/web04.qcow2 –boot hd -==-network network=default -==-graphics vnc,listen=0.0.0.0 –noautoconsole</p>
+<p><strong>桥接模式</strong>:==改动==</p>
+<hr>
+<p>virt-install –virt-type kvm –os-type=linux –os-variant rhel7 –name web04 –memory 1024 –vcpus 1 –disk /data/web04.qcow2 –boot hd ==–network bridge=br0== –graphics vnc,listen=0.0.0.0 –noautoconsole</p>
+<p>问题1：</p>
+<p>如果虚拟机获取不到ip地址：</p>
+<p><img src="G:/%E5%B0%8F%E6%98%8E%E5%90%8C%E5%AD%A6%E4%BD%9C%E4%B8%9A%E8%A1%A8/%E5%91%BD%E4%BB%A4%E5%AD%A6%E4%B9%A0%E6%96%87%E4%BB%B6.md/05-mysql%E6%95%B0%E6%8D%AE%E5%BA%93/tup/image-20200522130433348-1590922341971.png" alt="image-20200522130433348"></p>
+<h4 id="4-8-3-将已有虚拟机网络修改为桥接模式"><a href="#4-8-3-将已有虚拟机网络修改为桥接模式" class="headerlink" title="4.8.3 将已有虚拟机网络修改为桥接模式"></a>4.8.3 将已有虚拟机网络修改为桥接模式</h4><p><strong>关机状态下修改虚拟机配置文件：</strong></p>
+<p>例如：virsh ed==it w==eb04</p>
+<pre class="line-numbers language-powershell"><code class="language-powershell"><span class="token namespace">[root@kvm01 ~]</span> <span class="token comment" spellcheck="true"># virsh stop web04</span>
+
+<span class="token namespace">[root@kvm01 ~]</span> <span class="token comment" spellcheck="true"># virsh list --all</span>
+ Id    Name                           State
+<span class="token operator">--</span>-<span class="token operator">--</span>-<span class="token operator">--</span>-<span class="token operator">--</span>-<span class="token operator">--</span>-<span class="token operator">--</span>-<span class="token operator">--</span>-<span class="token operator">--</span>-<span class="token operator">--</span>-<span class="token operator">--</span>-<span class="token operator">--</span>-<span class="token operator">--</span>-<span class="token operator">--</span>-<span class="token operator">--</span>-<span class="token operator">--</span>-<span class="token operator">--</span>-<span class="token operator">--</span>-<span class="token operator">-</span>
+ <span class="token operator">-</span>     centos7                        shut off
+ <span class="token operator">-</span>     web01                          shut off
+ <span class="token operator">-</span>     web02                          shut off
+ <span class="token operator">-</span>     web03                          shut off
+ <span class="token operator">-</span>     web04                          shut off
+
+<span class="token namespace">[root@kvm01 ~]</span> <span class="token comment" spellcheck="true"># virsh edit web04 </span>
+<span class="token operator">--</span>-<span class="token operator">--</span>-<span class="token operator">--</span>-<span class="token operator">--</span>-<span class="token operator">--</span>-<span class="token operator">-</span>新
+    &lt;interface <span class="token function">type</span>=<span class="token string">'bridge'</span>>
+      &lt;mac address=<span class="token string">'52:54:00:4b:2a:b7'</span><span class="token operator">/</span>>
+      &lt;source bridge=<span class="token string">'br0'</span><span class="token operator">/</span>>
+
+  <span class="token operator">--</span>-<span class="token operator">--</span>-<span class="token operator">--</span><span class="token operator">-</span>旧的
+   88       &lt;mac address=<span class="token string">'52:54:00:07:9d:5c'</span><span class="token operator">/</span>>
+ 89       &lt;source network=<span class="token string">'default'</span> bridge=<span class="token string">'virbr0'</span><span class="token operator">/</span>>
+ 90       &lt;target dev=<span class="token string">'vnet0'</span><span class="token operator">/</span>>
+<span class="token operator">--</span>-<span class="token operator">--</span>-<span class="token operator">--</span>-<span class="token operator">-</span>
+
+ <span class="token namespace">[root@kvm01 ~]</span> <span class="token comment" spellcheck="true"># virsh start web04</span>
+<span class="token namespace">[root@kvm01 ~]</span> <span class="token comment" spellcheck="true"># virsh console web04 </span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>b：启动虚拟机，测试虚拟机网络</p>
+<p><img src="G:/%E5%B0%8F%E6%98%8E%E5%90%8C%E5%AD%A6%E4%BD%9C%E4%B8%9A%E8%A1%A8/%E5%91%BD%E4%BB%A4%E5%AD%A6%E4%B9%A0%E6%96%87%E4%BB%B6.md/05-mysql%E6%95%B0%E6%8D%AE%E5%BA%93/tup/image-20200522130853076-1590922341971.png" alt="image-20200522130853076"></p>
+<p>如果上层没有开启dhcp,需要手动配置ip地址,IPADDR,NATMASK.GATEWAY,DNS1=180.76.76.76</p>
+<p><img src="G:/%E5%B0%8F%E6%98%8E%E5%90%8C%E5%AD%A6%E4%BD%9C%E4%B8%9A%E8%A1%A8/%E5%91%BD%E4%BB%A4%E5%AD%A6%E4%B9%A0%E6%96%87%E4%BB%B6.md/05-mysql%E6%95%B0%E6%8D%AE%E5%BA%93/tup/1578543325216-1590922341972.png" alt="1578543325216"></p>
+<h3 id="4-9：热添加技术"><a href="#4-9：热添加技术" class="headerlink" title="4.9：热添加技术"></a>4.9：热添加技术</h3><p>热添加硬盘、网卡、内存、cpu</p>
+<h4 id="4-9-1-kvm热添加硬盘"><a href="#4-9-1-kvm热添加硬盘" class="headerlink" title="4.9.1 kvm热添加硬盘"></a>4.9.1 kvm热添加硬盘</h4><pre class="line-numbers language-powershell"><code class="language-powershell"><span class="token namespace">[root@kvm01 /opt]</span> <span class="token comment" spellcheck="true"># qemu-img   create  -f qcow2 /opt/wbe04_add.qcw2 1G </span>
+
+
+查看硬盘
+<span class="token namespace">[root@kvm01 /opt]</span> <span class="token comment" spellcheck="true"># qemu-img info web04_add.qcow2 </span>
+image: web04_add<span class="token punctuation">.</span>qcow2
+file format: qcow2
+virtual size: 3<span class="token punctuation">.</span>0G <span class="token punctuation">(</span>3221225472 bytes<span class="token punctuation">)</span>
+disk size: 196K
+cluster_size: 65536
+Format specific information:
+    compat: 1<span class="token punctuation">.</span>1
+    lazy refcounts: false
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>临时立即生效</p>
+<pre class="line-numbers language-powershell"><code class="language-powershell"><span class="token namespace">[root@kvm01 /opt]</span> <span class="token comment" spellcheck="true"># virsh attach-disk  web04 /opt/web04add.qcow2  vdb --subdriver qcow2</span>
+                                                     主机  磁盘文件             盘符  磁盘格式
+
+格式化
+root @ localhost ~ 21:23:14 $ 
+mkfs<span class="token punctuation">.</span>xfs <span class="token operator">/</span>dev<span class="token operator">/</span>vdb
+
+挂载
+root @ localhost <span class="token operator">/</span>mnt 21:24:31 $ 
+<span class="token function">mount</span>  <span class="token operator">/</span>dev<span class="token operator">/</span>vdb   <span class="token operator">/</span>mnt<span class="token operator">/</span>
+
+
+一般临时加永久两条参数一起
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><strong>永久生效(需要重启)</strong></p>
+<pre class="line-numbers language-powershell"><code class="language-powershell">virsh attach<span class="token operator">-</span>disk web01 <span class="token operator">/</span><span class="token keyword">data</span><span class="token operator">/</span>web01<span class="token operator">-</span>add<span class="token punctuation">.</span>qcow2 vdb <span class="token operator">--</span>subdriver qcow2 <span class="token operator">--</span>config<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p><strong>临时剥离硬盘</strong></p>
+<pre class="line-numbers language-powershell"><code class="language-powershell">virsh detach<span class="token operator">-</span>disk web01 vdb<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p><strong>永久剥离硬盘</strong></p>
+<pre><code>virsh detach-disk web01 vdb --config</code></pre><pre class="line-numbers language-powershell"><code class="language-powershell">扩容：
+在虚拟机里把扩容盘的挂载目录，卸载掉
+umount <span class="token operator">/</span>mnt
+
+
+在宿主机上剥离硬盘
+<span class="token namespace">[root@kvm01 /opt]</span> <span class="token comment" spellcheck="true"># virsh detach-disk web04  vdb</span>
+在宿主机上调整容量qemu<span class="token operator">-</span>img resize
+<span class="token namespace">[root@kvm01 /opt]</span> <span class="token comment" spellcheck="true"># qemu-img  resize /opt/web04_add.qcow2  4G</span>
+
+在宿主机上再次附加硬盘
+<span class="token namespace">[root@kvm01 /opt]</span> <span class="token comment" spellcheck="true"># virsh attach-disk web04 /opt/web04_add.qcow2 vdb   --subdriver qcow2</span>
+
+在虚拟机里再次挂载扩容盘
+fdisk <span class="token operator">-</span>l
+<span class="token function">mount</span> <span class="token operator">/</span>dev<span class="token operator">/</span>vdb <span class="token operator">/</span>mnt
+xfs_growfs <span class="token operator">/</span>dev<span class="token operator">/</span>vdb
+
+在虚拟机里用xfs_growfs更新扩容盘超级块信息
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>作业1:扩容kvm虚拟机的根分区</p>
+<h4 id="4-9-2-kvm虚拟机在线热添加网卡"><a href="#4-9-2-kvm虚拟机在线热添加网卡" class="headerlink" title="4.9.2 kvm虚拟机在线热添加网卡"></a>4.9.2 kvm虚拟机在线热添加网卡</h4><pre class="line-numbers language-powershell"><code class="language-powershell"><span class="token namespace">[root@kvm01 /opt]</span> <span class="token comment" spellcheck="true"># virsh  attach-interface  web04 -- bridge br0 </span>
+<span class="token namespace">[root@kvm01 /opt]</span> <span class="token comment" spellcheck="true"># virsh attach-interface web04 network default</span>
+<span class="token namespace">[root@kvm01 /opt]</span> <span class="token comment" spellcheck="true"># virsh attach-interface web04 network default --model virtio</span>
+mac 地址在 虚拟机里面 ip add 查看 
+删除
+<span class="token namespace">[root@kvm01 /opt]</span> <span class="token comment" spellcheck="true"># virsh detach-interface   web04  network --mac 52:54:00:4a:27:86 </span>
+
+添加一块桥接模式 ens10: 随机
+<span class="token namespace">[root@kvm01 opt]</span><span class="token comment" spellcheck="true"># virsh attach-interface web04 bridge br0  #</span>
+添加一块nat模块
+<span class="token namespace">[root@kvm01 /opt]</span> <span class="token comment" spellcheck="true"># virsh attach-interface web04 network default </span>
+添加网卡 指定驱动内型 
+<span class="token namespace">[root@kvm01 /opt]</span> <span class="token comment" spellcheck="true"># virsh attach-interface web04 network default --model virtio</span>
+写入配置文件
+<span class="token namespace">[root@kvm01 /opt]</span> <span class="token comment" spellcheck="true"># virsh attach-interface web04 network default --model virtio --config</span>
+
+
+virsh attach<span class="token operator">-</span>interface web04  <span class="token operator">--</span><span class="token function">type</span> bridge <span class="token operator">--</span>source br0 <span class="token operator">--</span>model virtio 
+
+virsh attach<span class="token operator">-</span>interface web04  <span class="token operator">--</span><span class="token function">type</span> bridge <span class="token operator">--</span>source br0 <span class="token operator">--</span>model virtio  <span class="token operator">--</span>config
+
+virsh detach<span class="token operator">-</span>interface web04 <span class="token operator">--</span><span class="token function">type</span> bridge <span class="token operator">--</span>mac 52:54:00:35:d3:71<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="4-9-3-kvm虚拟机在线热添加内存"><a href="#4-9-3-kvm虚拟机在线热添加内存" class="headerlink" title="4.9.3 kvm虚拟机在线热添加内存"></a>4.9.3 kvm虚拟机在线热添加内存</h4><pre class="line-numbers language-powershell"><code class="language-powershell">缩小内存
+<span class="token namespace">[root@kvm01 /opt]</span> <span class="token comment" spellcheck="true"># virsh setmem  web04  --size 512M</span>
+增加内存
+<span class="token namespace">[root@kvm01 /opt]</span> <span class="token comment" spellcheck="true"># virsh setmaxmem web04  --size  2048M</span>
+<span class="token namespace">[root@kvm01 /opt]</span> <span class="token comment" spellcheck="true"># vim vm_centos7.xml </span>
+
+ 4   &lt;memory unit=<span class="token string">'KiB'</span>>1048576&lt;<span class="token operator">/</span>memory>  最大
+  5   &lt;currentMemory unit=<span class="token string">'KiB'</span>>1048576&lt;<span class="token operator">/</span>currentMemory>  当前
+
+<span class="token operator">--</span>-<span class="token operator">--</span>
+virt<span class="token operator">-</span>install <span class="token operator">--</span>virt<span class="token operator">-</span><span class="token function">type</span> kvm <span class="token operator">--</span>os<span class="token operator">-</span><span class="token function">type</span>=linux <span class="token operator">--</span>os<span class="token operator">-</span>variant rhel7 <span class="token operator">--</span>name web04 <span class="token operator">--</span>memory 512<span class="token punctuation">,</span>maxmemory=2048 <span class="token operator">--</span>vcpus 1 <span class="token operator">--</span>disk <span class="token operator">/</span><span class="token keyword">data</span><span class="token operator">/</span>web04<span class="token punctuation">.</span>qcow2 <span class="token operator">--</span>boot hd <span class="token operator">--</span>network bridge=br0 <span class="token operator">--</span>graphics vnc<span class="token punctuation">,</span>listen=0<span class="token punctuation">.</span>0<span class="token punctuation">.</span>0<span class="token punctuation">.</span>0 <span class="token operator">--</span>noautoconsole
+<span class="token operator">--</span>-<span class="token operator">--</span>-<span class="token operator">--</span>
+临时热添加内存
+virsh  setmem web04 1024M 
+永久增大内存
+virsh  setmem web04 1024M <span class="token operator">--</span>config
+
+调整虚拟机内存最大值
+
+virsh setmaxmem web04 4G<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="4-9-4-kvm虚拟机在线热添加cpu"><a href="#4-9-4-kvm虚拟机在线热添加cpu" class="headerlink" title="4.9.4 kvm虚拟机在线热添加cpu"></a>4.9.4 kvm虚拟机在线热添加cpu</h4><pre class="line-numbers language-powershell"><code class="language-powershell">virt<span class="token operator">-</span>install <span class="token operator">--</span>virt<span class="token operator">-</span><span class="token function">type</span> kvm <span class="token operator">--</span>os<span class="token operator">-</span><span class="token function">type</span>=linux <span class="token operator">--</span>os<span class="token operator">-</span>variant rhel7 <span class="token operator">--</span>name web04 <span class="token operator">--</span>memory 512<span class="token punctuation">,</span>maxmemory=2048 <span class="token operator">--</span>vcpus 1<span class="token punctuation">,</span>maxvcpus=10 <span class="token operator">--</span>disk <span class="token operator">/</span><span class="token keyword">data</span><span class="token operator">/</span>web04<span class="token punctuation">.</span>qcow2 <span class="token operator">--</span>boot hd <span class="token operator">--</span>network bridge=br0 <span class="token operator">--</span>graphics vnc<span class="token punctuation">,</span>listen=0<span class="token punctuation">.</span>0<span class="token punctuation">.</span>0<span class="token punctuation">.</span>0 <span class="token operator">--</span>noautoconsole
+
+服务器有几颗cpu怎么看？
+NUMA node<span class="token punctuation">(</span>s<span class="token punctuation">)</span>:          1
+setvcpu：设置cpu的属性 支不支持vt，指令集
+setvcpus：设置cpu的核数
+  &lt;vcpu placement=<span class="token string">'static'</span> current=<span class="token string">'1'</span>>4&lt;<span class="token operator">/</span>vcpu>
+  &lt;vcpu placement=<span class="token string">'static'</span>>1&lt;<span class="token operator">/</span>vcpu>
+
+
+热添加cpu核数
+<span class="token namespace">[root@kvm01 /opt]</span> <span class="token comment" spellcheck="true"># virsh setvcpus  web04 4</span>
+
+永久添加cpu核数
+<span class="token namespace">[root@kvm01 /opt]</span> <span class="token comment" spellcheck="true">#virsh setvcpus web04 4 --config</span>
+
+调整虚拟机cpu的最大值
+
+<span class="token namespace">[root@kvm01 /opt]</span> <span class="token comment" spellcheck="true">#virsh setvcpus web01  --maximum 4 --config</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="4-10：virt-manager和kvm虚拟机热迁移-共享的网络文件系统"><a href="#4-10：virt-manager和kvm虚拟机热迁移-共享的网络文件系统" class="headerlink" title="4.10：virt-manager和kvm虚拟机热迁移(共享的网络文件系统)"></a>4.10：virt-manager和kvm虚拟机热迁移(共享的网络文件系统)</h3><pre><code>冷迁移kvm虚拟机:配置文件,磁盘文件
+
+热迁移kvm虚拟机:配置文件,nfs共享
+
+1): yum groupinstall &quot;GNOME Desktop&quot; -y yum install openssh-askpass -y
+
+yum install tigervnc-server -y
+
+vncpasswd vncserver :1 vncserver -kill :1
+
+2):kvm虚拟机热迁移 1：两边的环境（桥接网卡）</code></pre><table>
+<thead>
+<tr>
+<th align="left">主机名</th>
+<th align="left">ip</th>
+<th align="left">内存</th>
+<th align="left">网络</th>
+<th align="left">软件需求</th>
+<th align="left">虚拟化</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">kvm01</td>
+<td align="left">10.0.0.11</td>
+<td align="left">2G</td>
+<td align="left">创建br0桥接网卡</td>
+<td align="left">kvm和nfs</td>
+<td align="left">开启虚拟化</td>
+</tr>
+<tr>
+<td align="left">kvm02</td>
+<td align="left">10.0.0.12</td>
+<td align="left">2G</td>
+<td align="left">创建br0桥接网卡</td>
+<td align="left">kvm和nfs</td>
+<td align="left">开启虚拟化</td>
+</tr>
+<tr>
+<td align="left">nfs01</td>
+<td align="left">10.0.0.31</td>
+<td align="left">1G</td>
+<td align="left">无</td>
+<td align="left">nfs</td>
+<td align="left">无</td>
+</tr>
+</tbody></table>
+<p><img src="G:/%E5%B0%8F%E6%98%8E%E5%90%8C%E5%AD%A6%E4%BD%9C%E4%B8%9A%E8%A1%A8/%E5%91%BD%E4%BB%A4%E5%AD%A6%E4%B9%A0%E6%96%87%E4%BB%B6.md/05-mysql%E6%95%B0%E6%8D%AE%E5%BA%93/tup/image-20200522221910542-1590922341972.png" alt="image-20200522221910542"></p>
+<p>2：实现共享存储（nfs）</p>
+<p>==kvm虚拟机迁移的时候：一定要注意宿主机环境一致！！！==</p>
+<p><a href="https://oldqiang.com/archives/368.html" target="_blank" rel="noopener">https://oldqiang.com/archives/368.html</a></p>
+<pre class="line-numbers language-powershell"><code class="language-powershell">nfs 端口
+yum  install nfs<span class="token operator">-</span>utils rpcbind  <span class="token operator">-</span>y
+​
+vim <span class="token operator">/</span>etc<span class="token operator">/</span>exports
+<span class="token operator">/</span><span class="token keyword">data</span>  10<span class="token punctuation">.</span>0<span class="token punctuation">.</span>1<span class="token punctuation">.</span>0<span class="token operator">/</span>24<span class="token punctuation">(</span>rw<span class="token punctuation">,</span>async<span class="token punctuation">,</span>no_root_squash<span class="token punctuation">,</span>no_all_squash<span class="token punctuation">)</span>
+
+​
+mkdir <span class="token operator">/</span><span class="token keyword">data</span>
+systemctl <span class="token function">start</span> rpcbind
+systemctl enable rpcbind
+systemctl <span class="token function">start</span> nfs
+systemctl enable nfs
+systemctl <span class="token function">start</span> rpcbind  nfs
+​
+
+<span class="token comment" spellcheck="true">#kvm01和kvm02</span>
+<span class="token namespace">[root@kvm02 /opt]</span> <span class="token comment" spellcheck="true"># showmount  -e 10.0.1.31</span>
+
+<span class="token function">mount</span> <span class="token operator">-</span>t nfs 10<span class="token punctuation">.</span>0<span class="token punctuation">.</span>0<span class="token punctuation">.</span>31:<span class="token operator">/</span><span class="token keyword">data</span> <span class="token operator">/</span><span class="token keyword">data</span>
+yum install libvirt qemu<span class="token operator">-</span>kvm virt<span class="token operator">-</span>install <span class="token operator">-</span>y
+
+<span class="token namespace">[root@kvm02 ~]</span> <span class="token comment" spellcheck="true"># systemctl  start  libvirtd</span>
+<span class="token namespace">[root@kvm02 ~]</span> <span class="token comment" spellcheck="true"># systemctl  status   libvirtd</span>
+
+
+服务端所有节点安装
+yum install nfs<span class="token operator">-</span>utils <span class="token operator">-</span>y
+桥接网卡
+<span class="token namespace">[root@kvm02 /opt]</span> <span class="token comment" spellcheck="true"># virsh iface-bridge  eth0 br0</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><strong>冷迁移</strong></p>
+<pre class="line-numbers language-powershell"><code class="language-powershell">备份
+<span class="token namespace">[root@kvm01 /opt]</span> <span class="token comment" spellcheck="true"># virsh  dumpxml  web03  > web03.xml </span>
+相同目录以免改配置文件
+<span class="token namespace">[root@kvm01 /opt]</span> <span class="token comment" spellcheck="true"># scp  web03.xml  web03.qcow2  root@10.0.1.12:/opt/</span>
+<span class="token namespace">[root@kvm01 /opt]</span> <span class="token comment" spellcheck="true"># scp  centos7.qcow2    root@10.0.1.12:/opt/</span>
+
+导入  启动 
+<span class="token namespace">[root@kvm02 /opt]</span> <span class="token comment" spellcheck="true"># virsh define  /opt/web03.xml  </span>
+
+error: Failed to <span class="token function">start</span> domain web04
+error: Cannot get interface MTU on <span class="token string">'br0'</span>: No such device
+桥接网卡 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>3：在线热迁移</p>
+<pre class="line-numbers language-powershell"><code class="language-powershell"><span class="token namespace">[root@kvm02 /]</span> <span class="token comment" spellcheck="true"># mv  /opt/ /srv/</span>
+<span class="token namespace">[root@kvm02 /]</span> <span class="token comment" spellcheck="true"># mv /opt/*  /srv/</span>
+<span class="token namespace">[root@kvm02 /]</span> <span class="token comment" spellcheck="true">#  mount -t nfs 10.0.1.31:/data /opt/</span>
+<span class="token namespace">[root@kvm02 /]</span> <span class="token comment" spellcheck="true"># mv /srv/* /opt/</span>
+<span class="token namespace">[root@kvm01 /opt]</span> <span class="token comment" spellcheck="true"># rm -rf /etc/libvirt/qemu/*.xml</span>
+<span class="token namespace">[root@kvm01 /opt]</span> <span class="token comment" spellcheck="true"># systemctl restart  libvirtd</span>
+
+<span class="token namespace">[root@kvm01 /opt]</span> <span class="token comment" spellcheck="true"># vim /etc/hosts</span>
+10<span class="token punctuation">.</span>0<span class="token punctuation">.</span>1<span class="token punctuation">.</span>11  kvm01
+10<span class="token punctuation">.</span>0<span class="token punctuation">.</span>1<span class="token punctuation">.</span>12  kvm02
+
+<span class="token namespace">[root@kvm02 /opt]</span> <span class="token comment" spellcheck="true"># virsh migrate --live --verbose web04 qemu+ssh://10.0.1.11/system --unsafe</span>
+root@10<span class="token punctuation">.</span>0<span class="token punctuation">.</span>1<span class="token punctuation">.</span>11's password: 
+Migration: <span class="token punctuation">[</span>100 <span class="token operator">%</span><span class="token punctuation">]</span>error: internal error: qemu unexpectedly closed the monitor
+
+<span class="token namespace">[root@kvm01 /opt]</span> <span class="token comment" spellcheck="true"># virsh  list  --all </span>
+ Id    Name                           State
+<span class="token operator">--</span>-<span class="token operator">--</span>-<span class="token operator">--</span>-<span class="token operator">--</span>-<span class="token operator">--</span>-<span class="token operator">--</span>-<span class="token operator">--</span>-<span class="token operator">--</span>-<span class="token operator">--</span>-<span class="token operator">--</span>-<span class="token operator">--</span>-<span class="token operator">--</span>-<span class="token operator">--</span>-<span class="token operator">--</span>-<span class="token operator">--</span>-<span class="token operator">--</span>-<span class="token operator">--</span>-<span class="token operator">-</span>
+ 3     web04                          running
+
+<span class="token namespace">[root@kvm01 /opt]</span> <span class="token comment" spellcheck="true"># virsh dumpxml  web04 > web04.xml</span>
+
+
+磁盘落地  才迁移
+<span class="token comment" spellcheck="true">#临时迁移</span>
+virsh migrate <span class="token operator">--</span>live <span class="token operator">--</span>verbose web04 qemu<span class="token operator">+</span>ssh:<span class="token operator">/</span><span class="token operator">/</span>10<span class="token punctuation">.</span>0<span class="token punctuation">.</span>1<span class="token punctuation">.</span>11<span class="token operator">/</span>system <span class="token operator">--</span>unsafe
+<span class="token comment" spellcheck="true">#永久迁移</span>
+virsh migrate <span class="token operator">--</span>live <span class="token operator">--</span>verbose web03 qemu<span class="token operator">+</span>ssh:<span class="token operator">/</span><span class="token operator">/</span>10<span class="token punctuation">.</span>0<span class="token punctuation">.</span>0<span class="token punctuation">.</span>100<span class="token operator">/</span>system <span class="token operator">--</span>unsafe <span class="token operator">--</span>persistent <span class="token operator">--</span>undefinesource
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="5-ESXI虚拟化系统"><a href="#5-ESXI虚拟化系统" class="headerlink" title="5: ESXI虚拟化系统"></a>5: ESXI虚拟化系统</h2><h3 id="5-1-安装ESXI"><a href="#5-1-安装ESXI" class="headerlink" title="5.1 安装ESXI"></a>5.1 安装ESXI</h3><p>5.1.1创建虚拟机</p>
+<p><img src="https://oldqiang.com/wp-content/uploads/2020/01/1563328522888.png" alt="1563328522888"></p>
+<p><img src="https://oldqiang.com/wp-content/uploads/2020/01/1563328645757.png" alt="1563328645757"></p>
+<p><img src="https://oldqiang.com/wp-content/uploads/2020/01/1563328904807.png" alt="1563328904807"></p>
+<p><img src="https://oldqiang.com/wp-content/uploads/2020/01/1563328949366.png" alt="1563328949366"></p>
+<p>一路回车，直到</p>
+<p><img src="https://oldqiang.com/wp-content/uploads/2020/01/1563329062181.png" alt="1563329062181"></p>
+<p>按F11</p>
+<p><img src="https://oldqiang.com/wp-content/uploads/2020/01/1563329353062.png" alt="1563329353062"></p>
+<h3 id="5-2启动ESXI"><a href="#5-2启动ESXI" class="headerlink" title="5.2启动ESXI"></a>5.2启动ESXI</h3><p><img src="https://oldqiang.com/wp-content/uploads/2020/01/1563329548046.png" alt="1563329548046"></p>
+<p><img src="G:/%E5%B0%8F%E6%98%8E%E5%90%8C%E5%AD%A6%E4%BD%9C%E4%B8%9A%E8%A1%A8/%E5%91%BD%E4%BB%A4%E5%AD%A6%E4%B9%A0%E6%96%87%E4%BB%B6.md/05-mysql%E6%95%B0%E6%8D%AE%E5%BA%93/tup/image-20200525095947816-1590922341972.png" alt="image-20200525095947816"></p>
+<p><img src="G:/%E5%B0%8F%E6%98%8E%E5%90%8C%E5%AD%A6%E4%BD%9C%E4%B8%9A%E8%A1%A8/%E5%91%BD%E4%BB%A4%E5%AD%A6%E4%B9%A0%E6%96%87%E4%BB%B6.md/05-mysql%E6%95%B0%E6%8D%AE%E5%BA%93/tup/image-20200525095955839-1590922341972.png" alt="image-20200525095955839"></p>
+<h3 id="5-3-安装ESXI客户端"><a href="#5-3-安装ESXI客户端" class="headerlink" title="5.3 安装ESXI客户端"></a>5.3 安装ESXI客户端</h3><p><img src="https://oldqiang.com/wp-content/uploads/2020/01/1563329654480.png" alt="1563329654480"></p>
+<p>一路下一步就行</p>
+<p><img src="https://oldqiang.com/wp-content/uploads/2020/01/1563329844909.png" alt="1563329844909"></p>
+<p>安装完成</p>
+<h3 id="5-4使用客户端连接EXSI服务端"><a href="#5-4使用客户端连接EXSI服务端" class="headerlink" title="5.4使用客户端连接EXSI服务端"></a>5.4使用客户端连接EXSI服务端</h3><p><img src="https://oldqiang.com/wp-content/uploads/2020/01/1563330112942.png" alt="1563330112942"></p>
+<p>连接成功界面</p>
+<p><img src="https://oldqiang.com/wp-content/uploads/2020/01/1563330083130.png" alt="1563330083130"></p>
+<h3 id="5-5了解ESXI的常用配置"><a href="#5-5了解ESXI的常用配置" class="headerlink" title="5.5了解ESXI的常用配置"></a>5.5了解ESXI的常用配置</h3><p><img src="https://oldqiang.com/wp-content/uploads/2020/01/1563330629135.png" alt="1563330629135"></p>
+<p><img src="https://oldqiang.com/wp-content/uploads/2020/01/1563330973095.png" alt="1563330973095"></p>
+<p>开启ssh功能</p>
+<p><img src="https://oldqiang.com/wp-content/uploads/2020/01/1563331495359.png" alt="1563331495359"></p>
+<p><img src="https://oldqiang.com/wp-content/uploads/2020/01/1563331556857.png" alt="1563331556857"></p>
+<p><img src="https://oldqiang.com/wp-content/uploads/2020/01/1563331591140.png" alt="1563331591140"></p>
+<h3 id="5-6安装一台ESXI虚拟机"><a href="#5-6安装一台ESXI虚拟机" class="headerlink" title="5.6安装一台ESXI虚拟机"></a>5.6安装一台ESXI虚拟机</h3><p><img src="https://oldqiang.com/wp-content/uploads/2020/01/1563331270853.png" alt="1563331270853"></p>
+<p><img src="G:/%E5%B0%8F%E6%98%8E%E5%90%8C%E5%AD%A6%E4%BD%9C%E4%B8%9A%E8%A1%A8/%E5%91%BD%E4%BB%A4%E5%AD%A6%E4%B9%A0%E6%96%87%E4%BB%B6.md/05-mysql%E6%95%B0%E6%8D%AE%E5%BA%93/tup/image-20200525103746955-1590922341972.png" alt="image-20200525103746955"></p>
+<p><img src="G:/%E5%B0%8F%E6%98%8E%E5%90%8C%E5%AD%A6%E4%BD%9C%E4%B8%9A%E8%A1%A8/%E5%91%BD%E4%BB%A4%E5%AD%A6%E4%B9%A0%E6%96%87%E4%BB%B6.md/05-mysql%E6%95%B0%E6%8D%AE%E5%BA%93/tup/image-20200525104950282-1590922341972.png" alt="image-20200525104950282"></p>
+<p><img src="G:/%E5%B0%8F%E6%98%8E%E5%90%8C%E5%AD%A6%E4%BD%9C%E4%B8%9A%E8%A1%A8/%E5%91%BD%E4%BB%A4%E5%AD%A6%E4%B9%A0%E6%96%87%E4%BB%B6.md/05-mysql%E6%95%B0%E6%8D%AE%E5%BA%93/tup/image-20200525105107583-1590922341972.png" alt="image-20200525105107583"></p>
+<p><img src="G:/%E5%B0%8F%E6%98%8E%E5%90%8C%E5%AD%A6%E4%BD%9C%E4%B8%9A%E8%A1%A8/%E5%91%BD%E4%BB%A4%E5%AD%A6%E4%B9%A0%E6%96%87%E4%BB%B6.md/05-mysql%E6%95%B0%E6%8D%AE%E5%BA%93/tup/image-20200525105315774-1590922341972.png" alt="image-20200525105315774"></p>
+<h3 id="5-7-将kvm虚拟机迁移到esxi上"><a href="#5-7-将kvm虚拟机迁移到esxi上" class="headerlink" title="5.7 将kvm虚拟机迁移到esxi上"></a>5.7 将kvm虚拟机迁移到esxi上</h3><pre class="line-numbers language-powershell"><code class="language-powershell">kvm宿主机:
+
+qemu<span class="token operator">-</span>img convert <span class="token operator">-</span>f qcow2 oldimage<span class="token punctuation">.</span>qcow2 <span class="token operator">-</span>O vmdk newimage<span class="token punctuation">.</span>vmdk
+
+\<span class="token comment" spellcheck="true">#可能不需要</span>
+
+vmkfstools <span class="token operator">-</span>i oldimage<span class="token punctuation">.</span>vmdk newimage<span class="token punctuation">.</span>vmdk <span class="token operator">-</span>d thin
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="5-8-将ESXI虚拟机迁移到kvm上"><a href="#5-8-将ESXI虚拟机迁移到kvm上" class="headerlink" title="5.8 将ESXI虚拟机迁移到kvm上"></a>5.8 将ESXI虚拟机迁移到kvm上</h3><pre class="line-numbers language-powershell"><code class="language-powershell">https:<span class="token operator">/</span><span class="token operator">/</span>www<span class="token punctuation">.</span>cnblogs<span class="token punctuation">.</span>com<span class="token operator">/</span>clsn<span class="token operator">/</span>p<span class="token operator">/</span>8510670<span class="token punctuation">.</span>html
+参考文献<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-powershell"><code class="language-powershell">2：再kvm上，转换ova，导入配置，启动
+a： 上传ova文件
+b:  yum install virt<span class="token operator">-</span>v2v <span class="token operator">-</span>y
+c:  virt<span class="token operator">-</span>v2v <span class="token operator">-</span>i ova <span class="token operator">/</span>opt<span class="token operator">/</span>CentOS7<span class="token punctuation">.</span>6<span class="token punctuation">.</span>ova <span class="token operator">-</span>o local <span class="token operator">-</span>os <span class="token operator">/</span>srv <span class="token operator">-</span>of qcow2 
+输出到本地                   什么位置
+<span class="token operator">--</span>-<span class="token operator">--</span>
+<span class="token namespace">[root@kvm02 /opt]</span> <span class="token comment" spellcheck="true"># virt-v2v -i ova /opt/CentOS7.6.ova -o local -os /srv -of qcow2 </span>
+<span class="token punctuation">[</span>   0<span class="token punctuation">.</span>0<span class="token punctuation">]</span> Opening the source <span class="token operator">-</span>i ova <span class="token operator">/</span>opt<span class="token operator">/</span>CentOS7<span class="token punctuation">.</span>6<span class="token punctuation">.</span>ova
+<span class="token punctuation">[</span> 191<span class="token punctuation">.</span>0<span class="token punctuation">]</span> Initializing the target <span class="token operator">-</span>o local <span class="token operator">-</span>os <span class="token operator">/</span>srv
+<span class="token punctuation">[</span> 191<span class="token punctuation">.</span>0<span class="token punctuation">]</span> Copying disk 1<span class="token operator">/</span>1 to <span class="token operator">/</span>srv<span class="token operator">/</span>CentOS7<span class="token punctuation">.</span>6<span class="token operator">-</span>sda <span class="token punctuation">(</span>qcow2<span class="token punctuation">)</span>
+    <span class="token punctuation">(</span>41<span class="token punctuation">.</span>16<span class="token operator">/</span>100<span class="token operator">%</span><span class="token punctuation">)</span>
+
+<span class="token operator">--</span>-<span class="token operator">--</span>-<span class="token operator">--</span>
+导入配置文件
+d:  virsh <span class="token keyword">define</span> <span class="token operator">/</span>srv<span class="token operator">/</span>CentOS7<span class="token punctuation">.</span>6<span class="token punctuation">.</span>xml
+
+e:  virsh <span class="token function">start</span> CentOS7<span class="token punctuation">.</span>6
+
+f:  virsh edit CentOS7<span class="token punctuation">.</span>6
+      &lt;mac address=<span class="token string">'52:54:00:e9:e9:f3'</span><span class="token operator">/</span>>
+      &lt;source bridge=<span class="token string">'br0'</span><span class="token operator">/</span>>
+
+    &lt;graphics <span class="token function">type</span>=<span class="token string">'vnc'</span> port=<span class="token string">'-1'</span> autoport=<span class="token string">'yes'</span> listen=<span class="token string">'0.0.0.0'</span>>
+      &lt;listen <span class="token function">type</span>=<span class="token string">'address'</span> address=<span class="token string">'0.0.0.0'</span><span class="token operator">/</span>>
+    &lt;<span class="token operator">/</span>graphics>
+g:  virsh <span class="token function">start</span> CentOS7<span class="token punctuation">.</span>6
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><img src="G:/%E5%B0%8F%E6%98%8E%E5%90%8C%E5%AD%A6%E4%BD%9C%E4%B8%9A%E8%A1%A8/%E5%91%BD%E4%BB%A4%E5%AD%A6%E4%B9%A0%E6%96%87%E4%BB%B6.md/05-mysql%E6%95%B0%E6%8D%AE%E5%BA%93/tup/image-20200525111837911-1590922341972.png" alt="image-20200525111837911"></p>
+<pre class="line-numbers language-powershell"><code class="language-powershell">将虚拟机导出ova文件
+
+virt<span class="token operator">-</span>v2v <span class="token operator">-</span>i ova centos<span class="token operator">-</span>dev<span class="token operator">-</span>test01<span class="token operator">-</span>v2v<span class="token punctuation">.</span>ova <span class="token operator">-</span>o local <span class="token operator">-</span>os <span class="token operator">/</span>opt<span class="token operator">/</span>test  <span class="token operator">-</span>of qcow2
+                                                        输出到本地                   什么位置
+
+
+kvm宿主机 2000台 查看每一个宿主机有多少台虚拟机? 查看每一个宿主机还剩多少资源? 查看每一台宿主机<span class="token punctuation">,</span>每一个虚拟机的ip地址?
+
+excel 资产管理  cmdb
+
+kvm管理平台<span class="token punctuation">,</span>数据库工具
+
+信息:宿主机<span class="token punctuation">,</span>总配置<span class="token punctuation">,</span>剩余的总配置     虚拟机的信息<span class="token punctuation">,</span>配置信息<span class="token punctuation">,</span>ip地址<span class="token punctuation">,</span>操作系统  
+
+带计费功能的kvm管理平台<span class="token punctuation">,</span>openstack      ceilometer计费   ecs   IAAS层 自动化管理kvm宿主机<span class="token punctuation">,</span>云主机定制化操作
+
+
+
+服务器， 20核心  1T内存    96T
+
+资源浪费，linux环境特别乱，，kvm虚拟机<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="6-使用脚本自动化部署openstack-M版"><a href="#6-使用脚本自动化部署openstack-M版" class="headerlink" title="6.使用脚本自动化部署openstack M版"></a>6.使用脚本自动化部署openstack M版</h2><p>部署<strong>openstack</strong>      克隆一台openstack模板机:</p>
+<blockquote>
+<p>all-in-one环境</p>
+<p>4G内存,开启虚拟化,挂载centos7.6的光盘</p>
+</blockquote>
+<p><img src="https://oldqiang.com/wp-content/uploads/2020/01/1563350783150.png" alt="1563350783150"></p>
+<p>虚拟机开机之后，修改ip地址为10.0.0.11</p>
+<pre class="line-numbers language-powershell"><code class="language-powershell">上传脚本openstack<span class="token operator">-</span>mitaka<span class="token operator">-</span>autoinstall<span class="token punctuation">.</span>sh到<span class="token operator">/</span>root目录
+上传镜像:cirros<span class="token operator">-</span>0<span class="token punctuation">.</span>3<span class="token punctuation">.</span>4<span class="token operator">-</span>x86_64<span class="token operator">-</span>disk<span class="token punctuation">.</span>img到<span class="token operator">/</span>root目录
+上传配置文件:local_settings到<span class="token operator">/</span>root目录
+上传openstack_rpm<span class="token punctuation">.</span>tar<span class="token punctuation">.</span>gz到<span class="token operator">/</span>root下<span class="token punctuation">,</span>
+
+<span class="token namespace">[root@kvm ~]</span> <span class="token comment" spellcheck="true"># tar xf openstack_rpm.tar.gz -C /opt/</span>
+
+<span class="token namespace">[root@kvm ~]</span> <span class="token comment" spellcheck="true"># mount  /dev/cdrom  /mnt</span>
+
+
+sh <span class="token operator">/</span>root<span class="token operator">/</span>openstack<span class="token operator">-</span>mitaka<span class="token operator">-</span>autoinstall<span class="token punctuation">.</span>sh
+大概10<span class="token operator">-</span>30分钟左右
+
+
+
+访问http:<span class="token operator">/</span><span class="token operator">/</span>10<span class="token punctuation">.</span>0<span class="token punctuation">.</span>0<span class="token punctuation">.</span>11<span class="token operator">/</span>dashboard
+域:default
+用户名:admin
+密码:ADMIN_PASS
+
+注意: 在windows系统上修改host解析<span class="token punctuation">(</span>10<span class="token punctuation">.</span>0<span class="token punctuation">.</span>0<span class="token punctuation">.</span>11 controller<span class="token punctuation">)</span>
+<span class="token operator">--</span>-<span class="token operator">--</span>-<span class="token operator">--</span>-<span class="token operator">--</span>-<span class="token operator">--</span>-<span class="token operator">--</span>-<span class="token operator">--</span>-<span class="token operator">--</span>-<span class="token operator">--</span>-<span class="token operator">--</span>-<span class="token operator">--</span>-<span class="token operator">--</span>-<span class="token operator">-</span>
+添加node节点:
+开启虚拟化——2G内存  光盘挂上
+修改ip地址
+hostnamectl <span class="token function">set</span><span class="token operator">-</span>hostname compute1
+重新登录让新主机名生效
+上传openstack_rpm<span class="token punctuation">.</span>tar<span class="token punctuation">.</span>gz到<span class="token operator">/</span>root下<span class="token punctuation">,</span>
+tar xf openstack_rpm<span class="token punctuation">.</span>tar<span class="token punctuation">.</span>gz <span class="token operator">-</span>C <span class="token operator">/</span>opt<span class="token operator">/</span>
+<span class="token function">mount</span>  <span class="token operator">/</span>dev<span class="token operator">/</span>cdrom  <span class="token operator">/</span>mnt
+
+上传脚本openstack_compute_install<span class="token punctuation">.</span>sh
+
+sh openstack_compute_install<span class="token punctuation">.</span>sh
+
+openstack  controller主控制节点<span class="token punctuation">,</span>node节点<span class="token punctuation">,</span> kvm宿主机
+node节点<span class="token punctuation">,</span> kvm宿主机
+node节点<span class="token punctuation">,</span> kvm宿主机
+node节点<span class="token punctuation">,</span> kvm宿主机  <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<hr>
+<p><img src="G:/%E5%B0%8F%E6%98%8E%E5%90%8C%E5%AD%A6%E4%BD%9C%E4%B8%9A%E8%A1%A8/%E5%91%BD%E4%BB%A4%E5%AD%A6%E4%B9%A0%E6%96%87%E4%BB%B6.md/05-mysql%E6%95%B0%E6%8D%AE%E5%BA%93/tup/image-20200525183709990-1590922341972.png" alt="image-20200525183709990"></p>
+<hr>
+<p><img src="G:/%E5%B0%8F%E6%98%8E%E5%90%8C%E5%AD%A6%E4%BD%9C%E4%B8%9A%E8%A1%A8/%E5%91%BD%E4%BB%A4%E5%AD%A6%E4%B9%A0%E6%96%87%E4%BB%B6.md/05-mysql%E6%95%B0%E6%8D%AE%E5%BA%93/tup/image-20200525183741476-1590922341973.png" alt="image-20200525183741476"></p>
+<hr>
+<p><img src="G:/%E5%B0%8F%E6%98%8E%E5%90%8C%E5%AD%A6%E4%BD%9C%E4%B8%9A%E8%A1%A8/%E5%91%BD%E4%BB%A4%E5%AD%A6%E4%B9%A0%E6%96%87%E4%BB%B6.md/05-mysql%E6%95%B0%E6%8D%AE%E5%BA%93/tup/image-20200525181859970-1590922341973.png" alt="image-20200525181859970"></p>
+<hr>
+<p><img src="G:/%E5%B0%8F%E6%98%8E%E5%90%8C%E5%AD%A6%E4%BD%9C%E4%B8%9A%E8%A1%A8/%E5%91%BD%E4%BB%A4%E5%AD%A6%E4%B9%A0%E6%96%87%E4%BB%B6.md/05-mysql%E6%95%B0%E6%8D%AE%E5%BA%93/tup/image-20200525192611839-1590922341973.png" alt="image-20200525192611839"></p>
+<hr>
+<p><img src="G:/%E5%B0%8F%E6%98%8E%E5%90%8C%E5%AD%A6%E4%BD%9C%E4%B8%9A%E8%A1%A8/%E5%91%BD%E4%BB%A4%E5%AD%A6%E4%B9%A0%E6%96%87%E4%BB%B6.md/05-mysql%E6%95%B0%E6%8D%AE%E5%BA%93/tup/image-20200525192639952-1590922341973.png" alt="image-20200525192639952"></p>
+<hr>
+<p><img src="G:/%E5%B0%8F%E6%98%8E%E5%90%8C%E5%AD%A6%E4%BD%9C%E4%B8%9A%E8%A1%A8/%E5%91%BD%E4%BB%A4%E5%AD%A6%E4%B9%A0%E6%96%87%E4%BB%B6.md/05-mysql%E6%95%B0%E6%8D%AE%E5%BA%93/tup/image-20200525194203628-1590922341973.png" alt="image-20200525194203628"></p>
+<p>本地解析host文件</p>
+<p><img src="G:/%E5%B0%8F%E6%98%8E%E5%90%8C%E5%AD%A6%E4%BD%9C%E4%B8%9A%E8%A1%A8/%E5%91%BD%E4%BB%A4%E5%AD%A6%E4%B9%A0%E6%96%87%E4%BB%B6.md/05-mysql%E6%95%B0%E6%8D%AE%E5%BA%93/tup/image-20200525213125134-1590922341973.png" alt="image-20200525213125134"></p>
+<pre class="line-numbers language-powershell"><code class="language-powershell">安装好系统的磁盘文件，为镜像
+http:<span class="token operator">/</span><span class="token operator">/</span>mirrors<span class="token punctuation">.</span>ustc<span class="token punctuation">.</span>edu<span class="token punctuation">.</span>cn<span class="token operator">/</span>centos<span class="token operator">-</span>cloud<span class="token operator">/</span>centos<span class="token operator">/</span>7<span class="token operator">/</span>images<span class="token operator">/</span>CentOS<span class="token operator">-</span>7<span class="token operator">-</span>x86_64<span class="token operator">-</span>GenericCloud<span class="token operator">-</span>1605<span class="token punctuation">.</span>qcow2
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p><img src="G:/%E5%B0%8F%E6%98%8E%E5%90%8C%E5%AD%A6%E4%BD%9C%E4%B8%9A%E8%A1%A8/%E5%91%BD%E4%BB%A4%E5%AD%A6%E4%B9%A0%E6%96%87%E4%BB%B6.md/05-mysql%E6%95%B0%E6%8D%AE%E5%BA%93/tup/image-20200525195921335-1590922341973.png" alt="image-20200525195921335"></p>
+<hr>
+<hr>
+<p>项目配额</p>
+<p><img src="G:/%E5%B0%8F%E6%98%8E%E5%90%8C%E5%AD%A6%E4%BD%9C%E4%B8%9A%E8%A1%A8/%E5%91%BD%E4%BB%A4%E5%AD%A6%E4%B9%A0%E6%96%87%E4%BB%B6.md/05-mysql%E6%95%B0%E6%8D%AE%E5%BA%93/tup/image-20200525200201457-1590922341973.png" alt="image-20200525200201457"></p>
+<hr>
+<p><img src="G:/%E5%B0%8F%E6%98%8E%E5%90%8C%E5%AD%A6%E4%BD%9C%E4%B8%9A%E8%A1%A8/%E5%91%BD%E4%BB%A4%E5%AD%A6%E4%B9%A0%E6%96%87%E4%BB%B6.md/05-mysql%E6%95%B0%E6%8D%AE%E5%BA%93/tup/image-20200525200321859-1590922341973.png" alt="image-20200525200321859"></p>
+<p><img src="G:/%E5%B0%8F%E6%98%8E%E5%90%8C%E5%AD%A6%E4%BD%9C%E4%B8%9A%E8%A1%A8/%E5%91%BD%E4%BB%A4%E5%AD%A6%E4%B9%A0%E6%96%87%E4%BB%B6.md/05-mysql%E6%95%B0%E6%8D%AE%E5%BA%93/tup/image-20200525200845426-1590922341974.png" alt="image-20200525200845426"></p>
+<p><img src="G:/%E5%B0%8F%E6%98%8E%E5%90%8C%E5%AD%A6%E4%BD%9C%E4%B8%9A%E8%A1%A8/%E5%91%BD%E4%BB%A4%E5%AD%A6%E4%B9%A0%E6%96%87%E4%BB%B6.md/05-mysql%E6%95%B0%E6%8D%AE%E5%BA%93/tup/image-20200525201915360-1590922341974.png" alt="image-20200525201915360"></p>
+<p><img src="G:/%E5%B0%8F%E6%98%8E%E5%90%8C%E5%AD%A6%E4%BD%9C%E4%B8%9A%E8%A1%A8/%E5%91%BD%E4%BB%A4%E5%AD%A6%E4%B9%A0%E6%96%87%E4%BB%B6.md/05-mysql%E6%95%B0%E6%8D%AE%E5%BA%93/tup/image-20200525202201946-1590922341974.png" alt="image-20200525202201946"></p>
+<hr>
+<p><img src="G:/%E5%B0%8F%E6%98%8E%E5%90%8C%E5%AD%A6%E4%BD%9C%E4%B8%9A%E8%A1%A8/%E5%91%BD%E4%BB%A4%E5%AD%A6%E4%B9%A0%E6%96%87%E4%BB%B6.md/05-mysql%E6%95%B0%E6%8D%AE%E5%BA%93/tup/image-20200525202253410-1590922341974.png" alt="image-20200525202253410"></p>
+<p>sh /root/openstack-mitaka-autoinstall.sh 大概10-30分钟左右 访问<a href="http://10.0.0.11/dashboard" target="_blank" rel="noopener">http://10.0.0.11/dashboard</a> 域:default 用户名:admin 密码:ADMIN_PASS</p>
+<p>注意: 在windows系统上修改host解析(10.0.0.11 controller)</p>
+<p><strong>添加node节点:</strong> 修改ip地址 hostnamectl set-hostname compute1 重新登录让新主机名生效 上传openstack_rpm.tar.gz到/root下, tar xf openstack_rpm.tar.gz -C /opt/ 上传脚本 openstack_node_autoinstall.sh </p>
+<p>sh openstack_node_autoinstall.sh </p>
+<p>openstack  controller主控制节点,node节点, kvm宿主机<br>node节点, kvm宿主机<br>node节点, kvm宿主机<br>node节点, kvm宿主机  </p>
+<h2 id="7：一步一步部署一个openstack集群"><a href="#7：一步一步部署一个openstack集群" class="headerlink" title="7：一步一步部署一个openstack集群"></a>7：一步一步部署一个openstack集群</h2><h3 id="7-1-openstack基础架构"><a href="#7-1-openstack基础架构" class="headerlink" title="7.1 openstack基础架构"></a>7.1 openstack基础架构</h3><p><img src="https://oldqiang.com/wp-content/uploads/2020/01/1563419996639.png" alt="1563419996639"></p>
+<h3 id="7-1：准备环境"><a href="#7-1：准备环境" class="headerlink" title="7.1：准备环境"></a>7.1：准备环境</h3><table>
+<thead>
+<tr>
+<th align="left">主机名称</th>
+<th align="left">角色</th>
+<th align="left">ip</th>
+<th align="left">内存</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">controller</td>
+<td align="left">控制节点</td>
+<td align="left">10.0.0.11</td>
+<td align="left">3G或4G</td>
+</tr>
+<tr>
+<td align="left">compute1</td>
+<td align="left">计算节点</td>
+<td align="left">10.0.0.31</td>
+<td align="left">1G</td>
+</tr>
+</tbody></table>
+<p>注意：主机之间相互host解析</p>
+<h4 id="7-1-1-时间同步"><a href="#7-1-1-时间同步" class="headerlink" title="7.1.1 时间同步"></a>7.1.1 时间同步</h4><pre class="line-numbers language-powershell"><code class="language-powershell"><span class="token comment" spellcheck="true">#服务端，controller节点</span>
+vim  <span class="token operator">/</span>etc<span class="token operator">/</span>chrony<span class="token punctuation">.</span>conf
+allow  10<span class="token punctuation">.</span>0<span class="token punctuation">.</span>0<span class="token punctuation">.</span>0<span class="token operator">/</span>24
+systemctl  restart   chronyd
+​
+<span class="token comment" spellcheck="true">#客户端，compute1节点</span>
+vim  <span class="token operator">/</span>etc<span class="token operator">/</span>chrony<span class="token punctuation">.</span>conf
+server 10<span class="token punctuation">.</span>0<span class="token punctuation">.</span>0<span class="token punctuation">.</span>11 iburst
+systemctl  restart   chronyd
+验证：同时执行date<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="7-1-2：配置yum源，并安装客户端"><a href="#7-1-2：配置yum源，并安装客户端" class="headerlink" title="7.1.2：配置yum源，并安装客户端"></a>7.1.2：配置yum源，并安装客户端</h4><pre class="line-numbers language-powershell"><code class="language-powershell"><span class="token comment" spellcheck="true">#所有节点</span>
+<span class="token comment" spellcheck="true">#配置过程：</span>
+cd <span class="token operator">/</span>opt<span class="token operator">/</span>
+rz <span class="token operator">-</span>E
+tar xf openstack_ocata_rpm<span class="token punctuation">.</span>tar<span class="token punctuation">.</span>gz 
+cd <span class="token operator">/</span>etc<span class="token operator">/</span>yum<span class="token punctuation">.</span>repos<span class="token punctuation">.</span>d<span class="token operator">/</span>
+<span class="token function">mv</span>  <span class="token operator">*</span><span class="token punctuation">.</span>repo   <span class="token operator">/</span>tmp
+<span class="token function">mv</span> <span class="token operator">/</span>tmp<span class="token operator">/</span>CentOS<span class="token operator">-</span>Base<span class="token punctuation">.</span>repo <span class="token punctuation">.</span>
+vi   openstack<span class="token punctuation">.</span>repo
+<span class="token namespace">[openstack]</span>
+name=openstack
+baseurl=file:<span class="token operator">/</span>/<span class="token operator">/</span>opt<span class="token operator">/</span>repo
+enable=1
+gpgcheck=0
+​
+<span class="token comment" spellcheck="true">#验证：</span>
+yum clean all
+yum install python<span class="token operator">-</span>openstackclient <span class="token operator">-</span>y<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>7.1.3：安装数据库</p>
+<pre class="line-numbers language-powershell"><code class="language-powershell"><span class="token comment" spellcheck="true">#控制节点</span>
+yum install mariadb mariadb<span class="token operator">-</span>server python2<span class="token operator">-</span>PyMySQL <span class="token operator">-</span>y
+<span class="token comment" spellcheck="true">##openstack所有组件使用python开发，openstack在连接数据库需要用到python2-PyMySQL模块</span>
+<span class="token comment" spellcheck="true">#修改mariadb配置文件</span>
+vi  <span class="token operator">/</span>etc<span class="token operator">/</span>my<span class="token punctuation">.</span>cnf<span class="token punctuation">.</span>d<span class="token operator">/</span>openstack<span class="token punctuation">.</span>cnf
+<span class="token namespace">[mysqld]</span>
+bind<span class="token operator">-</span>address = 10<span class="token punctuation">.</span>0<span class="token punctuation">.</span>0<span class="token punctuation">.</span>11
+​
+default<span class="token operator">-</span>storage<span class="token operator">-</span>engine = innodb
+innodb_file_per_table = on
+max_connections = 4096
+collation<span class="token operator">-</span>server = utf8_general_ci
+character<span class="token operator">-</span><span class="token function">set</span><span class="token operator">-</span>server = utf8
+<span class="token comment" spellcheck="true">#启动数据库</span>
+systemctl <span class="token function">start</span> mariadb
+systemctl enable mariadb
+<span class="token comment" spellcheck="true">#数据库安全初始化</span>
+mysql_secure_installation
+回车
+n
+一路y<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="7-1-3-安装消息队列rabbitmq"><a href="#7-1-3-安装消息队列rabbitmq" class="headerlink" title="7.1.3 安装消息队列rabbitmq"></a>7.1.3 安装消息队列rabbitmq</h4><pre><code>#控制节点
+#安装消息队列
+yum install rabbitmq-server
+#启动rabbitmq
+systemctl start rabbitmq-server.service 
+systemctl enable rabbitmq-server.service
+#在rabbitmq创建用户
+rabbitmqctl add_user openstack 123456
+#为刚创建的openstack授权
+rabbitmqctl set_permissions openstack &quot;.*&quot; &quot;.*&quot; &quot;.*&quot;</code></pre><p>7.1.4 安装memcache缓存</p>
+<pre class="line-numbers language-CQL"><code class="language-CQL">#控制节点
+#安装memcache
+yum install memcached python-memcached  -y
+##python-memcached是python连接memcache的模块插件
+#配置
+vim /etc/sysconfig/memcached
+##修改最后一行
+OPTIONS="-l 0.0.0.0"
+#启动服务
+systemctl start memcached
+systemctl enable memcached<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="7-2-安装keystone服务"><a href="#7-2-安装keystone服务" class="headerlink" title="7.2 安装keystone服务"></a>7.2 安装keystone服务</h3><pre class="line-numbers language-powershell"><code class="language-powershell"><span class="token comment" spellcheck="true">#创库授权</span>
+<span class="token comment" spellcheck="true">##登录mysql</span>
+CREATE DATABASE keystone<span class="token punctuation">;</span>
+GRANT ALL PRIVILEGES ON keystone<span class="token punctuation">.</span><span class="token operator">*</span> TO <span class="token string">'keystone'</span>@<span class="token string">'localhost'</span>  IDENTIFIED BY <span class="token string">'123456'</span><span class="token punctuation">;</span>
+GRANT ALL PRIVILEGES ON keystone<span class="token punctuation">.</span><span class="token operator">*</span> TO <span class="token string">'keystone'</span>@<span class="token string">'%'</span>  IDENTIFIED BY <span class="token string">'123456'</span><span class="token punctuation">;</span>
+<span class="token comment" spellcheck="true">#安装keystone服务</span>
+yum install openstack<span class="token operator">-</span>keystone httpd mod_wsgi <span class="token operator">-</span>y
+<span class="token comment" spellcheck="true">##httpd配合mod_wsgi插件调用python项目</span>
+<span class="token comment" spellcheck="true">#修改keystone配置文件</span>
+<span class="token function">cp</span> <span class="token operator">/</span>etc<span class="token operator">/</span>keystone<span class="token operator">/</span>keystone<span class="token punctuation">.</span>conf<span class="token punctuation">{</span><span class="token punctuation">,</span><span class="token punctuation">.</span>bak<span class="token punctuation">}</span>
+grep <span class="token operator">-</span>Ev <span class="token string">'^$|#'</span> <span class="token operator">/</span>etc<span class="token operator">/</span>keystone<span class="token operator">/</span>keystone<span class="token punctuation">.</span>conf<span class="token punctuation">.</span>bak ><span class="token operator">/</span>etc<span class="token operator">/</span>keystone<span class="token operator">/</span>keystone<span class="token punctuation">.</span>conf
+<span class="token comment" spellcheck="true">#完整配置文件如下：</span>
+<span class="token namespace">[root@controller ~]</span><span class="token comment" spellcheck="true"># vi /etc/keystone/keystone.conf</span>
+<span class="token namespace">[DEFAULT]</span>
+<span class="token namespace">[assignment]</span>
+<span class="token namespace">[auth]</span>
+<span class="token namespace">[cache]</span>
+<span class="token namespace">[catalog]</span>
+<span class="token namespace">[cors]</span>
+<span class="token namespace">[cors.subdomain]</span>
+<span class="token namespace">[credential]</span>
+<span class="token namespace">[database]</span>
+connection = mysql<span class="token operator">+</span>pymysql:<span class="token operator">/</span><span class="token operator">/</span>keystone:123456@controller<span class="token operator">/</span>keystone
+<span class="token namespace">[domain_config]</span>
+<span class="token namespace">[endpoint_filter]</span>
+<span class="token namespace">[endpoint_policy]</span>
+<span class="token namespace">[eventlet_server]</span>
+<span class="token namespace">[federation]</span>
+<span class="token namespace">[fernet_tokens]</span>
+<span class="token namespace">[healthcheck]</span>
+<span class="token namespace">[identity]</span>
+<span class="token namespace">[identity_mapping]</span>
+<span class="token namespace">[kvs]</span>
+<span class="token namespace">[ldap]</span>
+<span class="token namespace">[matchmaker_redis]</span>
+<span class="token namespace">[memcache]</span>
+<span class="token namespace">[oauth1]</span>
+<span class="token namespace">[oslo_messaging_amqp]</span>
+<span class="token namespace">[oslo_messaging_kafka]</span>
+<span class="token namespace">[oslo_messaging_notifications]</span>
+<span class="token namespace">[oslo_messaging_rabbit]</span>
+<span class="token namespace">[oslo_messaging_zmq]</span>
+<span class="token namespace">[oslo_middleware]</span>
+<span class="token namespace">[oslo_policy]</span>
+<span class="token namespace">[paste_deploy]</span>
+<span class="token namespace">[policy]</span>
+<span class="token namespace">[profiler]</span>
+<span class="token namespace">[resource]</span>
+<span class="token namespace">[revoke]</span>
+<span class="token namespace">[role]</span>
+<span class="token namespace">[saml]</span>
+<span class="token namespace">[security_compliance]</span>
+<span class="token namespace">[shadow_users]</span>
+<span class="token namespace">[signing]</span>
+<span class="token namespace">[token]</span>
+provider = fernet
+<span class="token namespace">[tokenless_auth]</span>
+<span class="token namespace">[trust]</span>
+<span class="token comment" spellcheck="true">#校验md5</span>
+md5sum <span class="token operator">/</span>etc<span class="token operator">/</span>keystone<span class="token operator">/</span>keystone<span class="token punctuation">.</span>conf
+85d8b59cce0e4bd307be15ffa4c0cbd6  <span class="token operator">/</span>etc<span class="token operator">/</span>keystone<span class="token operator">/</span>keystone<span class="token punctuation">.</span>conf
+<span class="token comment" spellcheck="true">#同步数据库</span>
+su <span class="token operator">-</span>s <span class="token operator">/</span>bin<span class="token operator">/</span>sh <span class="token operator">-</span>c <span class="token string">"keystone-manage db_sync"</span> keystone
+<span class="token comment" spellcheck="true">##切到普通用户下，使用指定的shell执行某一条命令</span>
+<span class="token comment" spellcheck="true">##检查数据是否同步成功</span>
+mysql keystone <span class="token operator">-</span>e <span class="token string">'show tables;'</span><span class="token punctuation">|</span>wc <span class="token operator">-</span>l
+<span class="token comment" spellcheck="true">#初始化令牌凭据</span>
+keystone<span class="token operator">-</span>manage fernet_setup <span class="token operator">--</span>keystone<span class="token operator">-</span>user keystone <span class="token operator">--</span>keystone<span class="token operator">-</span><span class="token function">group</span> keystone
+keystone<span class="token operator">-</span>manage credential_setup <span class="token operator">--</span>keystone<span class="token operator">-</span>user keystone <span class="token operator">--</span>keystone<span class="token operator">-</span><span class="token function">group</span> keystone
+<span class="token comment" spellcheck="true">#初始化keystone身份认证服务</span>
+keystone<span class="token operator">-</span>manage bootstrap <span class="token operator">--</span>bootstrap<span class="token operator">-</span>password 123456 \
+  <span class="token operator">--</span>bootstrap<span class="token operator">-</span>admin<span class="token operator">-</span>url http:<span class="token operator">/</span><span class="token operator">/</span>controller:35357<span class="token operator">/</span>v3<span class="token operator">/</span> \
+  <span class="token operator">--</span>bootstrap<span class="token operator">-</span>internal<span class="token operator">-</span>url http:<span class="token operator">/</span><span class="token operator">/</span>controller:5000<span class="token operator">/</span>v3<span class="token operator">/</span> \
+  <span class="token operator">--</span>bootstrap<span class="token operator">-</span>public<span class="token operator">-</span>url http:<span class="token operator">/</span><span class="token operator">/</span>controller:5000<span class="token operator">/</span>v3<span class="token operator">/</span> \
+  <span class="token operator">--</span>bootstrap<span class="token operator">-</span>region<span class="token operator">-</span>id RegionOne
+<span class="token comment" spellcheck="true">#配置httpd</span>
+<span class="token comment" spellcheck="true">#小优化</span>
+<span class="token function">echo</span> <span class="token string">"ServerName controller"</span> >><span class="token operator">/</span>etc<span class="token operator">/</span>httpd<span class="token operator">/</span>conf<span class="token operator">/</span>httpd<span class="token punctuation">.</span>conf
+<span class="token comment" spellcheck="true">#在httpd下添加keystone站点配置文件</span>
+ln <span class="token operator">-</span>s <span class="token operator">/</span>usr<span class="token operator">/</span>share<span class="token operator">/</span>keystone<span class="token operator">/</span>wsgi<span class="token operator">-</span>keystone<span class="token punctuation">.</span>conf <span class="token operator">/</span>etc<span class="token operator">/</span>httpd<span class="token operator">/</span>conf<span class="token punctuation">.</span>d<span class="token operator">/</span>
+<span class="token comment" spellcheck="true">#启动httpd等效于keystone</span>
+systemctl <span class="token function">start</span> httpd
+systemctl enable httpd
+<span class="token comment" spellcheck="true">#声明环境变量</span>
+export OS_USERNAME=admin
+export OS_PASSWORD=123456
+export OS_PROJECT_NAME=admin
+export OS_USER_DOMAIN_NAME=Default
+export OS_PROJECT_DOMAIN_NAME=Default
+export OS_AUTH_URL=http:<span class="token operator">/</span><span class="token operator">/</span>controller:35357<span class="token operator">/</span>v3
+export OS_IDENTITY_API_VERSION=3
+<span class="token comment" spellcheck="true">#验证keystone是否正常</span>
+openstack user list
+<span class="token comment" spellcheck="true">#创建service的项目</span>
+openstack project create <span class="token operator">--</span>domain default \
+  <span class="token operator">--</span>description <span class="token string">"Service Project"</span> service
+<span class="token comment" spellcheck="true">#修改/root/.bashrc文件</span>
+vi  <span class="token operator">/</span>root<span class="token operator">/</span><span class="token punctuation">.</span>bashrc
+export OS_USERNAME=admin
+export OS_PASSWORD=123456
+export OS_PROJECT_NAME=admin
+export OS_USER_DOMAIN_NAME=Default
+export OS_PROJECT_DOMAIN_NAME=Default
+export OS_AUTH_URL=http:<span class="token operator">/</span><span class="token operator">/</span>controller:35357<span class="token operator">/</span>v3
+export OS_IDENTITY_API_VERSION=3<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="7-3-安装glance服务"><a href="#7-3-安装glance服务" class="headerlink" title="7.3 安装glance服务"></a>7.3 安装glance服务</h3><p>功能：管理镜像模板机</p>
+<pre class="line-numbers language-powershell"><code class="language-powershell">1：创库授权
+CREATE DATABASE glance<span class="token punctuation">;</span>
+GRANT ALL PRIVILEGES ON glance<span class="token punctuation">.</span><span class="token operator">*</span> TO <span class="token string">'glance'</span>@<span class="token string">'localhost'</span> \
+  IDENTIFIED BY <span class="token string">'123456'</span><span class="token punctuation">;</span>
+GRANT ALL PRIVILEGES ON glance<span class="token punctuation">.</span><span class="token operator">*</span> TO <span class="token string">'glance'</span>@<span class="token string">'%'</span> \
+  IDENTIFIED BY <span class="token string">'123456'</span><span class="token punctuation">;</span>
+​
+2：keystone上创建用户，关联角色
+openstack user create <span class="token operator">--</span>domain default <span class="token operator">--</span>password 123456 glance
+openstack role add <span class="token operator">--</span>project service <span class="token operator">--</span>user glance admin
+​
+3：keystone上创建服务，注册api地址
+openstack service create <span class="token operator">--</span>name glance \
+  <span class="token operator">--</span>description <span class="token string">"OpenStack Image"</span> image
+openstack endpoint create <span class="token operator">--</span>region RegionOne \
+  image public http:<span class="token operator">/</span><span class="token operator">/</span>controller:9292
+openstack endpoint create <span class="token operator">--</span>region RegionOne \
+  image internal http:<span class="token operator">/</span><span class="token operator">/</span>controller:9292
+openstack endpoint create <span class="token operator">--</span>region RegionOne \
+  image admin http:<span class="token operator">/</span><span class="token operator">/</span>controller:9292
+​
+4：安装服务软件包
+yum install openstack<span class="token operator">-</span>glance <span class="token operator">-</span>y
+​
+5：修改配置文件（连接数据库，keystone授权）
+<span class="token comment" spellcheck="true">##glance-api 上传下载删除</span>
+<span class="token comment" spellcheck="true">##glance-registry  修改镜像的属性  x86  根分区大小</span>
+<span class="token comment" spellcheck="true">#修改glance-api配置文件</span>
+<span class="token function">cp</span> <span class="token operator">/</span>etc<span class="token operator">/</span>glance<span class="token operator">/</span>glance<span class="token operator">-</span>api<span class="token punctuation">.</span>conf<span class="token punctuation">{</span><span class="token punctuation">,</span><span class="token punctuation">.</span>bak<span class="token punctuation">}</span>
+grep <span class="token operator">-</span>Ev <span class="token string">'^$|#'</span> <span class="token operator">/</span>etc<span class="token operator">/</span>glance<span class="token operator">/</span>glance<span class="token operator">-</span>api<span class="token punctuation">.</span>conf<span class="token punctuation">.</span>bak ><span class="token operator">/</span>etc<span class="token operator">/</span>glance<span class="token operator">/</span>glance<span class="token operator">-</span>api<span class="token punctuation">.</span>conf
+vim <span class="token operator">/</span>etc<span class="token operator">/</span>glance<span class="token operator">/</span>glance<span class="token operator">-</span>api<span class="token punctuation">.</span>conf
+<span class="token namespace">[DEFAULT]</span>
+<span class="token namespace">[cors]</span>
+<span class="token namespace">[cors.subdomain]</span>
+<span class="token namespace">[database]</span>
+connection = mysql<span class="token operator">+</span>pymysql:<span class="token operator">/</span><span class="token operator">/</span>glance:123456@controller<span class="token operator">/</span>glance
+<span class="token namespace">[glance_store]</span>
+stores = file<span class="token punctuation">,</span>http
+default_store = file
+filesystem_store_datadir = <span class="token operator">/</span><span class="token keyword">var</span><span class="token operator">/</span>lib<span class="token operator">/</span>glance<span class="token operator">/</span>images<span class="token operator">/</span>
+<span class="token namespace">[image_format]</span>
+<span class="token namespace">[keystone_authtoken]</span>
+auth_uri = http:<span class="token operator">/</span><span class="token operator">/</span>controller:5000
+auth_url = http:<span class="token operator">/</span><span class="token operator">/</span>controller:35357
+memcached_servers = controller:11211
+auth_type = password
+project_domain_name = default
+user_domain_name = default
+project_name = service
+username = glance
+password = 123456
+<span class="token namespace">[matchmaker_redis]</span>
+<span class="token namespace">[oslo_concurrency]</span>
+<span class="token namespace">[oslo_messaging_amqp]</span>
+<span class="token namespace">[oslo_messaging_kafka]</span>
+<span class="token namespace">[oslo_messaging_notifications]</span>
+<span class="token namespace">[oslo_messaging_rabbit]</span>
+<span class="token namespace">[oslo_messaging_zmq]</span>
+<span class="token namespace">[oslo_middleware]</span>
+<span class="token namespace">[oslo_policy]</span>
+<span class="token namespace">[paste_deploy]</span>
+flavor = keystone
+<span class="token namespace">[profiler]</span>
+<span class="token namespace">[store_type_location_strategy]</span>
+<span class="token namespace">[task]</span>
+<span class="token namespace">[taskflow_executor]</span>
+<span class="token comment" spellcheck="true">##校验</span>
+md5sum <span class="token operator">/</span>etc<span class="token operator">/</span>glance<span class="token operator">/</span>glance<span class="token operator">-</span>api<span class="token punctuation">.</span>conf
+a42551f0c7e91e80e0702ff3cd3fc955  <span class="token operator">/</span>etc<span class="token operator">/</span>glance<span class="token operator">/</span>glance<span class="token operator">-</span>api<span class="token punctuation">.</span>conf
+​
+<span class="token comment" spellcheck="true">##修改glance-registry.conf配置文件</span>
+<span class="token function">cp</span> <span class="token operator">/</span>etc<span class="token operator">/</span>glance<span class="token operator">/</span>glance<span class="token operator">-</span>registry<span class="token punctuation">.</span>conf<span class="token punctuation">{</span><span class="token punctuation">,</span><span class="token punctuation">.</span>bak<span class="token punctuation">}</span> 
+grep <span class="token operator">-</span>Ev <span class="token string">'^$|#'</span> <span class="token operator">/</span>etc<span class="token operator">/</span>glance<span class="token operator">/</span>glance<span class="token operator">-</span>registry<span class="token punctuation">.</span>conf<span class="token punctuation">.</span>bak ><span class="token operator">/</span>etc<span class="token operator">/</span>glance<span class="token operator">/</span>glance<span class="token operator">-</span>registry<span class="token punctuation">.</span>conf
+vim <span class="token operator">/</span>etc<span class="token operator">/</span>glance<span class="token operator">/</span>glance<span class="token operator">-</span>registry<span class="token punctuation">.</span>conf
+<span class="token namespace">[DEFAULT]</span>
+<span class="token namespace">[database]</span>
+connection = mysql<span class="token operator">+</span>pymysql:<span class="token operator">/</span><span class="token operator">/</span>glance:123456@controller<span class="token operator">/</span>glance
+<span class="token namespace">[keystone_authtoken]</span>
+auth_uri = http:<span class="token operator">/</span><span class="token operator">/</span>controller:5000
+auth_url = http:<span class="token operator">/</span><span class="token operator">/</span>controller:35357
+memcached_servers = controller:11211
+auth_type = password
+project_domain_name = default
+user_domain_name = default
+project_name = service
+username = glance
+password = 123456
+<span class="token namespace">[matchmaker_redis]</span>
+<span class="token namespace">[oslo_messaging_amqp]</span>
+<span class="token namespace">[oslo_messaging_kafka]</span>
+<span class="token namespace">[oslo_messaging_notifications]</span>
+<span class="token namespace">[oslo_messaging_rabbit]</span>
+<span class="token namespace">[oslo_messaging_zmq]</span>
+<span class="token namespace">[oslo_policy]</span>
+<span class="token namespace">[paste_deploy]</span>
+flavor = keystone
+<span class="token namespace">[profiler]</span>
+<span class="token comment" spellcheck="true">##校验</span>
+md5sum <span class="token operator">/</span>etc<span class="token operator">/</span>glance<span class="token operator">/</span>glance<span class="token operator">-</span>registry<span class="token punctuation">.</span>conf
+5b28716e936cc7a0ab2a841c914cd080  <span class="token operator">/</span>etc<span class="token operator">/</span>glance<span class="token operator">/</span>glance<span class="token operator">-</span>registry<span class="token punctuation">.</span>conf
+​
+6：同步数据库（创表）
+su <span class="token operator">-</span>s <span class="token operator">/</span>bin<span class="token operator">/</span>sh <span class="token operator">-</span>c <span class="token string">"glance-manage db_sync"</span> glance
+mysql glance <span class="token operator">-</span>e <span class="token string">'show tables;'</span><span class="token punctuation">|</span>wc <span class="token operator">-</span>l
+7：启动服务
+systemctl enable openstack<span class="token operator">-</span>glance<span class="token operator">-</span>api<span class="token punctuation">.</span>service \
+  openstack<span class="token operator">-</span>glance<span class="token operator">-</span>registry<span class="token punctuation">.</span>service
+systemctl <span class="token function">start</span> openstack<span class="token operator">-</span>glance<span class="token operator">-</span>api<span class="token punctuation">.</span>service \
+  openstack<span class="token operator">-</span>glance<span class="token operator">-</span>registry<span class="token punctuation">.</span>service
+<span class="token comment" spellcheck="true">#验证端口</span>
+netstat <span class="token operator">-</span>lntup<span class="token punctuation">|</span>grep <span class="token operator">-</span>E <span class="token string">'9191|9292'</span>
+8：命令行上传镜像
+wget http:<span class="token operator">/</span><span class="token operator">/</span>download<span class="token punctuation">.</span>cirros<span class="token operator">-</span>cloud<span class="token punctuation">.</span>net<span class="token operator">/</span>0<span class="token punctuation">.</span>3<span class="token punctuation">.</span>5<span class="token operator">/</span>cirros<span class="token operator">-</span>0<span class="token punctuation">.</span>3<span class="token punctuation">.</span>5<span class="token operator">-</span>x86_64<span class="token operator">-</span>disk<span class="token punctuation">.</span>img
+openstack image create <span class="token string">"cirros"</span>   <span class="token operator">--</span>file cirros<span class="token operator">-</span>0<span class="token punctuation">.</span>3<span class="token punctuation">.</span>5<span class="token operator">-</span>x86_64<span class="token operator">-</span>disk<span class="token punctuation">.</span>img   <span class="token operator">--</span>disk<span class="token operator">-</span>format qcow2 <span class="token operator">--</span>container<span class="token operator">-</span>format bare   <span class="token operator">--</span>public
+<span class="token comment" spellcheck="true">##验证</span>
+ll <span class="token operator">/</span><span class="token keyword">var</span><span class="token operator">/</span>lib<span class="token operator">/</span>glance<span class="token operator">/</span>images<span class="token operator">/</span>
+<span class="token comment" spellcheck="true">#或</span>
+openstack image list<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="7-4-安装nova服务"><a href="#7-4-安装nova服务" class="headerlink" title="7.4 安装nova服务"></a>7.4 安装nova服务</h3><h4 id="7-4-1-控制节点安装nova服务"><a href="#7-4-1-控制节点安装nova服务" class="headerlink" title="7.4.1 控制节点安装nova服务"></a>7.4.1 控制节点安装nova服务</h4><p>1：创库授权</p>
+<pre class="line-numbers language-mysql"><code class="language-mysql">CREATE DATABASE nova_api;
+ CREATE DATABASE nova;
+ CREATE DATABASE nova_cell0;
+GRANT ALL PRIVILEGES ON nova_api.* TO 'nova'@'localhost' \
+  IDENTIFIED BY '123456';
+GRANT ALL PRIVILEGES ON nova_api.* TO 'nova'@'%' \
+  IDENTIFIED BY '123456';
+GRANT ALL PRIVILEGES ON nova.* TO 'nova'@'localhost' \
+  IDENTIFIED BY '123456';
+GRANT ALL PRIVILEGES ON nova.* TO 'nova'@'%' \
+  IDENTIFIED BY '123456';
+GRANT ALL PRIVILEGES ON nova_cell0.* TO 'nova'@'localhost' \
+  IDENTIFIED BY '123456';
+GRANT ALL PRIVILEGES ON nova_cell0.* TO 'nova'@'%' \
+  IDENTIFIED BY '123456';<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>2：keystone上创建用户，关联角色</p>
+<pre class="line-numbers language-mysql"><code class="language-mysql">openstack user create --domain default --password 123456 nova
+openstack role add --project service --user nova admin
+#placement 追踪云主机的资源使用具体情况
+openstack user create --domain default --password 123456 placement
+openstack role add --project service --user placement admin<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>3：keystone上创建服务，http访问地址（api地址）</p>
+<pre><code>openstack service create --name nova --description &quot;OpenStack Compute&quot; compute
+openstack endpoint create --region RegionOne   compute public http://controller:8774/v2.1
+openstack endpoint create --region RegionOne compute internal http://controller:8774/v2.1
+openstack endpoint create --region RegionOne  compute admin http://controller:8774/v2.1
+openstack service create --name placement --description &quot;Placement API&quot; placement
+openstack endpoint create --region RegionOne placement public http://controller:8778
+openstack endpoint create --region RegionOne placement internal http://controller:8778
+openstack endpoint create --region RegionOne placement admin http://controller:8778</code></pre><p>4：安装服务软件包</p>
+<pre><code>yum install openstack-nova-api openstack-nova-conductor \
+  openstack-nova-console openstack-nova-novncproxy \
+  openstack-nova-scheduler openstack-nova-placement-api -y</code></pre><p>5：修改配置文件（连接数据库，keystone授权）</p>
+<pre class="line-numbers language-mysql"><code class="language-mysql">#修改nova配置文件
+vim /etc/nova/nova.conf
+[DEFAULT]
+##启动nova服务api和metadata的api
+enabled_apis = osapi_compute,metadata
+##连接消息队列rabbitmq
+transport_url = rabbit://openstack:123456@controller
+my_ip = 10.0.0.11
+#启动neutron网络服务，禁用nova内置防火墙
+use_neutron = True
+firewall_driver = nova.virt.firewall.NoopFirewallDriver
+[api]
+auth_strategy = keystone
+[api_database]
+connection = mysql+pymysql://nova:123456@controller/nova_api
+[barbican]
+[cache]
+[cells]
+[cinder]
+[cloudpipe]
+[conductor]
+[console]
+[consoleauth]
+[cors]
+[cors.subdomain]
+[crypto]
+[database]
+connection = mysql+pymysql://nova:123456@controller/nova
+[ephemeral_storage_encryption]
+[filter_scheduler]
+[glance]
+api_servers = http://controller:9292
+[guestfs]
+[healthcheck]
+[hyperv]
+[image_file_url]
+[ironic]
+[key_manager]
+[keystone_authtoken]
+auth_uri = http://controller:5000
+auth_url = http://controller:35357
+memcached_servers = controller:11211
+auth_type = password
+project_domain_name = default
+user_domain_name = default
+project_name = service
+username = nova
+password = 123456
+[libvirt]
+[matchmaker_redis]
+[metrics]
+[mks]
+[neutron]
+[notifications]
+[osapi_v21]
+[oslo_concurrency]
+lock_path = /var/lib/nova/tmp
+[oslo_messaging_amqp]
+[oslo_messaging_kafka]
+[oslo_messaging_notifications]
+[oslo_messaging_rabbit]
+[oslo_messaging_zmq]
+[oslo_middleware]
+[oslo_policy]
+[pci]
+#追踪虚拟机使用资源情况
+[placement]
+os_region_name = RegionOne
+project_domain_name = Default
+project_name = service
+auth_type = password
+user_domain_name = Default
+auth_url = http://controller:35357/v3
+username = placement
+password = 123456
+[quota]
+[rdp]
+[remote_debug]
+[scheduler]
+[serial_console]
+[service_user]
+[spice]
+[ssl]
+[trusted_computing]
+[upgrade_levels]
+[vendordata_dynamic_auth]
+[vmware]
+#vnc的连接信息
+[vnc]
+enabled = true
+vncserver_listen = $my_ip
+vncserver_proxyclient_address = $my_ip
+[workarounds]
+[wsgi]
+[xenserver]
+[xvp]
+#修改httpd配置文件
+vi  /etc/httpd/conf.d/00-nova-placement-api.conf
+在16行</VirtualHost>这一行上面增加以下内容
+<Directory /usr/bin>
+   <IfVersion >= 2.4>
+      Require all granted
+   </IfVersion>
+   <IfVersion < 2.4>
+      Order allow,deny
+      Allow from all
+   </IfVersion>
+</Directory>
+#重启httpd
+systemctl restart httpd<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>6：同步数据库（创表）</p>
+<pre class="line-numbers language-mysql"><code class="language-mysql">su -s /bin/sh -c "nova-manage api_db sync" nova
+su -s /bin/sh -c "nova-manage cell_v2 map_cell0" nova
+su -s /bin/sh -c "nova-manage cell_v2 create_cell --name=cell1 --verbose" nova
+su -s /bin/sh -c "nova-manage db sync" nova
+#检查
+nova-manage cell_v2 list_cells<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>7：启动服务</p>
+<pre class="line-numbers language-mysql"><code class="language-mysql">systemctl enable openstack-nova-api.service \
+  openstack-nova-consoleauth.service openstack-nova-scheduler.service \
+  openstack-nova-conductor.service openstack-nova-novncproxy.service
+systemctl start openstack-nova-api.service \
+  openstack-nova-consoleauth.service openstack-nova-scheduler.service \
+  openstack-nova-conductor.service openstack-nova-novncproxy.service
+#检查
+openstack compute service list<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="7-4-2计算节点安装nova服务"><a href="#7-4-2计算节点安装nova服务" class="headerlink" title="7.4.2计算节点安装nova服务"></a>7.4.2计算节点安装nova服务</h4><p>1：安装</p>
+<pre><code>yum install openstack-nova-compute -y</code></pre><p>2：配置</p>
+<pre><code>#修改配置文件/etc/nova/nova.conf
+vim /etc/nova/nova.conf
+[DEFAULT]
+enabled_apis = osapi_compute,metadata
+transport_url = rabbit://openstack:123456@controller
+my_ip = 10.0.0.31
+use_neutron = True
+firewall_driver = nova.virt.firewall.NoopFirewallDriver
+[api]
+auth_strategy = keystone
+[api_database]
+[barbican]
+[cache]
+[cells]
+[cinder]
+[cloudpipe]
+[conductor]
+[console]
+[consoleauth]
+[cors]
+[cors.subdomain]
+[crypto]
+[database]
+[ephemeral_storage_encryption]
+[filter_scheduler]
+[glance]
+api_servers = http://controller:9292
+[guestfs]
+[healthcheck]
+[hyperv]
+[image_file_url]
+[ironic]
+[key_manager]
+[keystone_authtoken]
+auth_uri = http://controller:5000
+auth_url = http://controller:35357
+memcached_servers = controller:11211
+auth_type = password
+project_domain_name = default
+user_domain_name = default
+project_name = service
+username = nova
+password = 123456
+[libvirt]
+[matchmaker_redis]
+[metrics]
+[mks]
+[neutron]
+[notifications]
+[osapi_v21]
+[oslo_concurrency]
+lock_path = /var/lib/nova/tmp
+[oslo_messaging_amqp]
+[oslo_messaging_kafka]
+[oslo_messaging_notifications]
+[oslo_messaging_rabbit]
+[oslo_messaging_zmq]
+[oslo_middleware]
+[oslo_policy]
+[pci]
+[placement]
+os_region_name = RegionOne
+project_domain_name = Default
+project_name = service
+auth_type = password
+user_domain_name = Default
+auth_url = http://controller:35357/v3
+username = placement
+password = 123456
+[quota]
+[rdp]
+[remote_debug]
+[scheduler]
+[serial_console]
+[service_user]
+[spice]
+[ssl]
+[trusted_computing]
+[upgrade_levels]
+[vendordata_dynamic_auth]
+[vmware]
+[vnc]
+enabled = True
+vncserver_listen = 0.0.0.0
+vncserver_proxyclient_address = $my_ip
+novncproxy_base_url = http://controller:6080/vnc_auto.html
+[workarounds]
+[wsgi]
+[xenserver]
+[xvp]</code></pre><p>3：启动</p>
+<p>systemctl start libvirtd openstack-nova-compute.service  systemctl enable libvirtd openstack-nova-compute.service </p>
+<p>4:控制节点上验证</p>
+<p>openstack compute service list</p>
+<p>5：在控制节点上</p>
+<p>发现计算节点：</p>
+<p>su -s /bin/sh -c “nova-manage cell_v2 discover_hosts –verbose” nova</p>
+<h3 id="7-5-安装neutron服务"><a href="#7-5-安装neutron服务" class="headerlink" title="7.5 安装neutron服务"></a>7.5 安装neutron服务</h3><h4 id="7-5-1-在控制节点上安装neutron服务"><a href="#7-5-1-在控制节点上安装neutron服务" class="headerlink" title="7.5.1 在控制节点上安装neutron服务"></a>7.5.1 在控制节点上安装neutron服务</h4><p>1：创库授权</p>
+<pre><code>CREATE DATABASE neutron;
+GRANT ALL PRIVILEGES ON neutron.* TO &#39;neutron&#39;@&#39;localhost&#39; \
+  IDENTIFIED BY &#39;NEUTRON_DBPASS&#39;;
+GRANT ALL PRIVILEGES ON neutron.* TO &#39;neutron&#39;@&#39;%&#39; \
+  IDENTIFIED BY &#39;NEUTRON_DBPASS&#39;;</code></pre><p>2：keystone上创建用户，关联角色</p>
+<pre><code>openstack user create --domain default --password NEUTRON_PASS neutron
+openstack role add --project service --user neutron admin</code></pre><p>3：keystone上创建服务，http访问地址（api地址）</p>
+<pre class="line-numbers language-mysql"><code class="language-mysql"> openstack service create --name neutron \
+  --description "OpenStack Networking" network
+ openstack endpoint create --region RegionOne \
+  network public http://controller:9696
+openstack endpoint create --region RegionOne \
+  network internal http://controller:9696
+openstack endpoint create --region RegionOne \
+  network admin http://controller:9696<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>4：安装服务软件包</p>
+<p>#选择网络选项1</p>
+<pre><code>yum install openstack-neutron openstack-neutron-ml2 \
+  openstack-neutron-linuxbridge ebtables -y</code></pre><p>5：修改配置文件（连接数据库，keystone授权）</p>
+<pre class="line-numbers language-mysql"><code class="language-mysql">#修改neutron.conf
+vim /etc/neutron/neutron.conf
+[DEFAULT]
+core_plugin = ml2
+service_plugins =
+transport_url = rabbit://openstack:123456@controller
+auth_strategy = keystone
+notify_nova_on_port_status_changes = true
+notify_nova_on_port_data_changes = true
+[agent]
+[cors]
+[cors.subdomain]
+[database]
+connection = mysql+pymysql://neutron:NEUTRON_DBPASS@controller/neutron
+[keystone_authtoken]
+auth_uri = http://controller:5000
+auth_url = http://controller:35357
+memcached_servers = controller:11211
+auth_type = password
+project_domain_name = default
+user_domain_name = default
+project_name = service
+username = neutron
+password = NEUTRON_PASS
+[matchmaker_redis]
+[nova]
+auth_url = http://controller:35357
+auth_type = password
+project_domain_name = default
+user_domain_name = default
+region_name = RegionOne
+project_name = service
+username = nova
+password = 123456
+[oslo_concurrency]
+lock_path = /var/lib/neutron/tmp
+[oslo_messaging_amqp]
+[oslo_messaging_kafka]
+[oslo_messaging_notifications]
+[oslo_messaging_rabbit]
+[oslo_messaging_zmq]
+[oslo_middleware]
+[oslo_policy]
+[qos]
+[quotas]
+[ssl]
+##修改ml2_conf.ini
+vim /etc/neutron/plugins/ml2/ml2_conf.ini
+[DEFAULT]
+[ml2]
+type_drivers = flat,vlan
+tenant_network_types =
+mechanism_drivers = linuxbridge
+extension_drivers = port_security
+[ml2_type_flat]
+flat_networks = provider
+[ml2_type_geneve]
+[ml2_type_gre]
+[ml2_type_vlan]
+[ml2_type_vxlan]
+[securitygroup]
+enable_ipset = true
+##编辑linuxbridge_agent.ini
+vim /etc/neutron/plugins/ml2/linuxbridge_agent.ini
+[DEFAULT]
+[agent]
+[linux_bridge]
+physical_interface_mappings = provider:eth0
+[securitygroup]
+enable_security_group = true
+firewall_driver = neutron.agent.linux.iptables_firewall.IptablesFirewallDriver
+[vxlan]
+enable_vxlan = false
+##编辑dhcp_agent.ini
+vim /etc/neutron/dhcp_agent.ini
+[DEFAULT]
+interface_driver = linuxbridge
+dhcp_driver = neutron.agent.linux.dhcp.Dnsmasq
+enable_isolated_metadata = true
+[agent]
+[ovs]
+##编辑
+vim /etc/neutron/metadata_agent.ini
+[DEFAULT]
+nova_metadata_ip = controller
+metadata_proxy_shared_secret = METADATA_SECRET
+[agent]
+[cache]
+####编辑控制节点。nova配置文件
+vim  /etc/nova/nova.conf
+[neutron]
+url = http://controller:9696
+auth_url = http://controller:35357
+auth_type = password
+project_domain_name = default
+user_domain_name = default
+region_name = RegionOne
+project_name = service
+username = neutron
+password = NEUTRON_PASS
+service_metadata_proxy = true
+metadata_proxy_shared_secret = METADATA_SECRET
+#再次验证控制节点nova配置文件
+md5sum /etc/nova/nova.conf
+2c5e119c2b8a2f810bf5e0e48c099047  /etc/nova/nova.conf
+6：同步数据库（创表）
+
+ln -s /etc/neutron/plugins/ml2/ml2_conf.ini /etc/neutron/plugin.ini
+su -s /bin/sh -c "neutron-db-manage --config-file /etc/neutron/neutron.conf \
+  --config-file /etc/neutron/plugins/ml2/ml2_conf.ini upgrade head" neutron
+7：启动服务
+
+systemctl restart openstack-nova-api.service
+systemctl enable neutron-server.service \
+  neutron-linuxbridge-agent.service neutron-dhcp-agent.service \
+  neutron-metadata-agent.service
+systemctl restart neutron-server.service \
+  neutron-linuxbridge-agent.service neutron-dhcp-agent.service \
+  neutron-metadata-agent.service
+#验证方法
+openstack  network  agent list<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="7-5-2-在计算节点上安装neutron服务"><a href="#7-5-2-在计算节点上安装neutron服务" class="headerlink" title="7.5.2 在计算节点上安装neutron服务"></a>7.5.2 在计算节点上安装neutron服务</h4><p>1：安装</p>
+<pre><code>yum install openstack-neutron-linuxbridge ebtables ipset</code></pre><p>2：配置</p>
+<pre class="line-numbers language-mysql"><code class="language-mysql">#修改neutron.conf
+vim /etc/neutron/neutron.conf
+[DEFAULT]
+transport_url = rabbit://openstack:123456@controller
+auth_strategy = keystone
+[agent]
+[cors]
+[cors.subdomain]
+[database]
+[keystone_authtoken]
+auth_uri = http://controller:5000
+auth_url = http://controller:35357
+memcached_servers = controller:11211
+auth_type = password
+project_domain_name = default
+user_domain_name = default
+project_name = service
+username = neutron
+password = NEUTRON_PASS
+[matchmaker_redis]
+[nova]
+[oslo_concurrency]
+lock_path = /var/lib/neutron/tmp
+[oslo_messaging_amqp]
+[oslo_messaging_kafka]
+[oslo_messaging_notifications]
+[oslo_messaging_rabbit]
+[oslo_messaging_zmq]
+[oslo_middleware]
+[oslo_policy]
+[qos]
+[quotas]
+[ssl]
+##linux_agent配置文件
+scp -rp 10.0.0.11:/etc/neutron/plugins/ml2/linuxbridge_agent.ini /etc/neutron/plugins/ml2/linuxbridge_agent.ini
+##在计算节点上，再次修改nova.conf
+vim  /etc/nova/nova.conf
+[neutron]
+url = http://controller:9696
+auth_url = http://controller:35357
+auth_type = password
+project_domain_name = default
+user_domain_name = default
+region_name = RegionOne
+project_name = service
+username = neutron
+password = NEUTRON_PASS
+#校验
+md5sum /etc/nova/nova.conf
+91cc8aa0f7e33d7b824301cc894e90f1  /etc/nova/nova.conf<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>3：启动</p>
+<pre class="line-numbers language-mysql"><code class="language-mysql">systemctl restart openstack-nova-compute.service
+systemctl enable neutron-linuxbridge-agent.service
+systemctl start neutron-linuxbridge-agent.service<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<h3 id="7-6-安装dashboard服务"><a href="#7-6-安装dashboard服务" class="headerlink" title="7.6 安装dashboard服务"></a>7.6 安装dashboard服务</h3><p>#计算节点安装dashboard</p>
+<p>1：安装</p>
+<pre><code>yum install openstack-dashboard -y</code></pre><p>2：配置</p>
+<pre class="line-numbers language-mysql"><code class="language-mysql">rz  local_settings
+
+cat local_settings >/etc/openstack-dashboard/local_settings
+
+3：启动
+
+systemctl start httpd
+
+4: 访问dashboard<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>访问：<a href="http://10.0.0.31/dashboard" target="_blank" rel="noopener">http://10.0.0.31/dashboard</a></p>
+<p><img src="https://oldqiang.com/wp-content/uploads/2020/01/1563531898820.png" alt="1563531898820"></p>
+<p><img src="https://oldqiang.com/wp-content/uploads/2020/01/1563532138359.png" alt="1563532138359"></p>
+<ul>
+<li><h3 id="7-7-启动一台云主机"><a href="#7-7-启动一台云主机" class="headerlink" title="7.7  启动一台云主机"></a>7.7  启动一台云主机</h3></li>
+</ul>
+<pre class="line-numbers language-mysql"><code class="language-mysql">  #创建网络
+  neutron net-create --shared --provider:physical_network provider --provider:network_type flat WAN
+  neutron subnet-create --name subnet-wan --allocation-pool \
+  start=10.0.0.100,end=10.0.0.200 --dns-nameserver 223.5.5.5 \
+  --gateway 10.0.0.254 WAN 10.0.0.0/24
+  #创建硬件配置方案
+  openstack flavor create --id 0 --vcpus 1 --ram 64 --disk 1 m1.nano
+  #上传秘钥对
+  ssh-keygen -q -N "" -f ~/.ssh/id_rsa
+  openstack keypair create --public-key ~/.ssh/id_rsa.pub mykey<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>#安全组开放ping和ssh</p>
+<p>  openstack security group rule create –proto icmp default<br>  openstack security group rule create –proto tcp –dst-port 22 default</p>
+<pre><code>
+
+
+
+- ### 7.8 安装块存储cinder服务  云硬盘服务
+
+</code></pre>
+            </div>
+            <hr />
+
+            
+            <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.88rem;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-large waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fa fa-close"></i></a>
+            <h4 class="reward-title">写作不易，客官能否打赏一杯奶茶？</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat.jpg" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+            
+
+            <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+
+<div id="article-share">
+    
+    <div class="social-share" data-disabled="qzone" data-wechat-qrcode-helper="<p>微信里点“发现”->“扫一扫”二维码便可查看分享。</p>"></div>
+    
+</div>
+
+<script src="/libs/share/js/social-share.min.js"></script>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        <p class="reprint-tip">
+            <i class="fa fa-exclamation-triangle"></i>&nbsp;&nbsp;
+            <span>转载规则</span>
+        </p>
+        
+            <div class="center-align">
+                <a rel="license" href="https://creativecommons.org/licenses/by/4.0/deed.zh">
+                    <img alt=""
+                         style="border-width:0"
+                         src="https://i.creativecommons.org/l/by/4.0/88x31.png"/>
+                </a>
+            </div>
+            <br/>
+            <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text"
+                  property="dct:title" rel="dct:type">
+                    《01-云计算_kvm_openstack》
+                </span> 由
+            <a xmlns:cc="http://creativecommons.org/ns#" href="/2020/05/26/01-yun-ji-suan-kvm-openstack/" property="cc:attributionName"
+               rel="cc:attributionURL">
+                小明
+            </a> 采用
+            <a rel="license" href="https://creativecommons.org/licenses/by/4.0/deed.zh">
+                知识共享署名 4.0 国际许可协议
+            </a>进行许可。
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+        </div>
+    </div>
+
+    
+    <link rel="stylesheet" href="/libs/gitalk/gitalk.css">
+<link rel="stylesheet" href="/css/my-gitalk.css">
+
+<div class="card gitalk-card" data-aos="fade-up">
+    <div id="gitalk-container" class="card-content"></div>
+</div>
+
+<script src="/libs/gitalk/gitalk.min.js"></script>
+<script>
+    let gitalk = new Gitalk({
+        clientID: '',
+        clientSecret: '',
+        repo: 'godweiyang.github.io',
+        owner: 'godweiyang',
+        admin: "godweiyang",
+        id: '2020/05/26/01-yun-ji-suan-kvm-openstack/',
+        distractionFreeMode: false  // Facebook-like distraction free mode
+    });
+
+    gitalk.render('gitalk-container');
+</script>
+    
+
+    
+
+    
+
+    
+
+    
+    <style>
+    .valine-card {
+        margin: 1.5rem auto;
+    }
+
+    .valine-card .card-content {
+        padding: 20px 20px 5px 20px;
+    }
+
+    #vcomments input[type=text],
+    #vcomments input[type=email],
+    #vcomments input[type=url],
+    #vcomments textarea {
+        box-sizing: border-box;
+    }
+
+    #vcomments p {
+        margin: 2px 2px 10px;
+        font-size: 1.05rem;
+        line-height: 1.78rem;
+    }
+
+    #vcomments blockquote p {
+        text-indent: 0.2rem;
+    }
+
+    #vcomments a {
+        padding: 0 2px;
+        color: #42b983;
+        font-weight: 500;
+        text-decoration: underline;
+    }
+
+    #vcomments img {
+        max-width: 100%;
+        height: auto;
+        cursor: pointer;
+    }
+
+    #vcomments ol li {
+        list-style-type: decimal;
+    }
+
+    #vcomments ol,
+    ul {
+        display: block;
+        padding-left: 2em;
+        word-spacing: 0.05rem;
+    }
+
+    #vcomments ul li,
+    ol li {
+        display: list-item;
+        line-height: 1.8rem;
+        font-size: 1rem;
+    }
+
+    #vcomments ul li {
+        list-style-type: disc;
+    }
+
+    #vcomments ul ul li {
+        list-style-type: circle;
+    }
+
+    #vcomments table, th, td {
+        padding: 12px 13px;
+        border: 1px solid #dfe2e5;
+    }
+
+    #vcomments table, th, td {
+        border: 0;
+    }
+
+    table tr:nth-child(2n), thead {
+        background-color: #fafafa;
+    }
+
+    #vcomments table th {
+        background-color: #f2f2f2;
+        min-width: 80px;
+    }
+
+    #vcomments table td {
+        min-width: 80px;
+    }
+
+    #vcomments h1 {
+        font-size: 1.85rem;
+        font-weight: bold;
+        line-height: 2.2rem;
+    }
+
+    #vcomments h2 {
+        font-size: 1.65rem;
+        font-weight: bold;
+        line-height: 1.9rem;
+    }
+
+    #vcomments h3 {
+        font-size: 1.45rem;
+        font-weight: bold;
+        line-height: 1.7rem;
+    }
+
+    #vcomments h4 {
+        font-size: 1.25rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    #vcomments h5 {
+        font-size: 1.1rem;
+        font-weight: bold;
+        line-height: 1.4rem;
+    }
+
+    #vcomments h6 {
+        font-size: 1rem;
+        line-height: 1.3rem;
+    }
+
+    #vcomments p {
+        font-size: 1rem;
+        line-height: 1.5rem;
+    }
+
+    #vcomments hr {
+        margin: 12px 0;
+        border: 0;
+        border-top: 1px solid #ccc;
+    }
+
+    #vcomments blockquote {
+        margin: 15px 0;
+        border-left: 5px solid #42b983;
+        padding: 1rem 0.8rem 0.3rem 0.8rem;
+        color: #666;
+        background-color: rgba(66, 185, 131, .1);
+    }
+
+    #vcomments pre {
+        font-family: monospace, monospace;
+        padding: 1.2em;
+        margin: .5em 0;
+        background: #272822;
+        overflow: auto;
+        border-radius: 0.3em;
+        tab-size: 4;
+    }
+
+    #vcomments code {
+        font-family: monospace, monospace;
+        padding: 1px 3px;
+        font-size: 0.92rem;
+        color: #e96900;
+        background-color: #f8f8f8;
+        border-radius: 2px;
+    }
+
+    #vcomments pre code {
+        font-family: monospace, monospace;
+        padding: 0;
+        color: #e8eaf6;
+        background-color: #272822;
+    }
+
+    #vcomments pre[class*="language-"] {
+        padding: 1.2em;
+        margin: .5em 0;
+    }
+
+    #vcomments code[class*="language-"],
+    pre[class*="language-"] {
+        color: #e8eaf6;
+    }
+
+    #vcomments [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+        position: inherit;
+        margin-left: -1.3rem;
+        margin-right: 0.4rem;
+        margin-top: -1px;
+        vertical-align: middle;
+        left: unset;
+        visibility: visible;
+    }
+
+    #vcomments b,
+    strong {
+        font-weight: bold;
+    }
+
+    #vcomments dfn {
+        font-style: italic;
+    }
+
+    #vcomments small {
+        font-size: 85%;
+    }
+
+    #vcomments cite {
+        font-style: normal;
+    }
+
+    #vcomments mark {
+        background-color: #fcf8e3;
+        padding: .2em;
+    }
+
+    #vcomments table, th, td {
+        padding: 12px 13px;
+        border: 1px solid #dfe2e5;
+    }
+
+    table tr:nth-child(2n), thead {
+        background-color: #fafafa;
+    }
+
+    #vcomments table th {
+        background-color: #f2f2f2;
+        min-width: 80px;
+    }
+
+    #vcomments table td {
+        min-width: 80px;
+    }
+
+    #vcomments [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+        position: inherit;
+        margin-left: -1.3rem;
+        margin-right: 0.4rem;
+        margin-top: -1px;
+        vertical-align: middle;
+        left: unset;
+        visibility: visible;
+    }
+</style>
+
+<div class="card valine-card" data-aos="fade-up">
+    <div id="vcomments" class="card-content"></div>
+</div>
+
+<script src="/libs/valine/av-min.js"></script>
+<script src="/libs/valine/Valine.min.js"></script>
+<!-- <script src="//unpkg.com/valine@latest/dist/Valine.min.js"></script> -->
+
+<script>
+    new Valine({
+        el: '#vcomments',
+        appId: '',
+        appKey: '',
+        notify: 'false' === 'true',
+        verify: 'false' === 'true',
+        visitor: 'false' === 'true',
+        avatar: 'wavatar',
+        pageSize: '10',
+        lang: 'zh-cn',
+        placeholder: '如果你没有GitHub账号，还可以在这里评论啦！'
+    });
+</script>
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/2020/05/27/02-docker-ji-chu-cao-zuo/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/28.jpg" class="responsive-img" alt="02-docker基础操作">
+                        
+                        <span class="card-title">02-docker基础操作</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            1.什么是容器
+容器是隔离的环境中运行的一个进程,如果进程结束,容器就会停止,容器的隔离环境,拥有自己的ip地址,系统文件,主机名,进程管理
+
+
+程序: 代码,软件,命令
+进程:正在运行的程序
+
+2:容器和虚拟机的区别虚拟机: 硬件cpu支
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2020-05-27
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/docker/" class="post-category" target="_blank">
+                                    docker
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/leetcode/" target="_blank">
+                        <span class="chip bg-color">leetcode</span>
+                    </a>
+                    
+                    <a href="/tags/云计算/" target="_blank">
+                        <span class="chip bg-color">云计算</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fa fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2020/05/23/guan-fang-yuan-jing-xiang-yuan-hui-zong/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="官方源、镜像源汇总">
+                        
+                        <span class="card-title">官方源、镜像源汇总</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            站点版（一）、企业站搜狐：http://mirrors.sohu.com/
+网易：http://mirrors.163.com/
+阿里云：http://mirrors.aliyun.com/
+腾讯：http://android-mirror
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-05-23
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/k8s/" class="post-category" target="_blank">
+                                    k8s
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/leetcode/" target="_blank">
+                        <span class="chip bg-color">leetcode</span>
+                    </a>
+                    
+                    <a href="/tags/k8s/" target="_blank">
+                        <span class="chip bg-color">k8s</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+</div>
+
+
+<script>
+    $('#articleContent').on('copy', function (e) {
+        // IE8 or earlier browser is 'undefined'
+        if (typeof window.getSelection === 'undefined') return;
+
+        var selection = window.getSelection();
+        // if the selection is short let's not annoy our users.
+        if (('' + selection).length < Number.parseInt('5')) {
+            return;
+        }
+
+        // create a div outside of the visible area and fill it with the selected text.
+        var bodyElement = document.getElementsByTagName('body')[0];
+        var newdiv = document.createElement('div');
+        newdiv.style.position = 'absolute';
+        newdiv.style.left = '-99999px';
+        bodyElement.appendChild(newdiv);
+        newdiv.appendChild(selection.getRangeAt(0).cloneContents());
+
+        // we need a <pre> tag workaround.
+        // otherwise the text inside "pre" loses all the line breaks!
+        if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE') {
+            newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
+        }
+
+        var url = document.location.href;
+        newdiv.innerHTML += '<br />'
+            + '来源: 小明同学<br />'
+            + '作者: 小明<br />'
+            + '链接: <a href="' + url + '">' + url + '</a><br />'
+            + '本文章著作权归作者所有，任何形式的转载都请注明出处。';
+
+        selection.selectAllChildren(newdiv);
+        window.setTimeout(function () { bodyElement.removeChild(newdiv); }, 200);
+    });
+</script>
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget">
+            <div class="toc-title"><i class="fa fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fa fa-list"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            // headingsOffset: -205,
+            headingSelector: 'h1, h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h1, h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).slideUp(500);
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).slideDown(500);
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+    
+
+</main>
+
+
+<script src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script>
+    MathJax.Hub.Config({
+        tex2jax: {inlineMath: [['$', '$'], ['\(', '\)']]}
+    });
+</script>
+
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+<!-- 代码语言 -->
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+<!-- 代码块复制 -->
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+<script type="text/javascript" src="/libs/codeBlock/clipboard.min.js"></script>
+<!-- 代码块收缩 -->
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script> 
+<!-- 代码块折行 -->
+<style type="text/css">code[class*="language-"], pre[class*="language-"] { white-space: pre !important; }</style>
+
+
+    <footer class="page-footer bg-color">
+    <div class="container row center-align">
+        <div class="col s12 m8 l8 copy-right">
+            &copy; 2019-2020 小明. 版权所有
+
+            
+            &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
+            <span class="white-color">89.3k</span>
+            
+
+            <br>
+            <span id="sitetime"></span>
+
+            
+            
+            <br>
+            
+            <span id="busuanzi_container_site_pv" style='display:none'>
+                <i class="fa fa-heart-o"></i>
+                本站总访问量 <span id="busuanzi_value_site_pv" class="white-color"></span>
+            </span>
+            
+            
+            <span id="busuanzi_container_site_uv" style='display:none'>
+                人次,&nbsp;访客数 <span id="busuanzi_value_site_uv" class="white-color"></span> 人.
+            </span>
+            
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/xiaoming" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fa fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:ye33445200@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fa fa-envelope-open"></i>
+    </a>
+
+
+
+    <a href="https://zhihu.com/people/xiaoming" class="tooltipped" target="_blank" data-tooltip="访问我的知乎" data-position="top" data-delay="50">
+        <i class="fa fa-inverse">知</i>
+    </a>
+
+
+
+    <a href="http://wpa.qq.com/msgrd?v=3&uin=970740860&site=qq&menu=yes" class="tooltipped" target="_blank" data-tooltip="访问我的知乎" data-position="top" data-delay="50">
+        <i class="fa fa-qq"></i>
+    </a>
+
+
+
+    <a href="https://weibo.com/xiaoming" class="tooltipped" target="_blank" data-tooltip="关注我的微博" data-position="top" data-delay="50">
+        <i class="fa fa-weibo"></i>
+    </a>
+
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fa fa-rss"></i>
+    </a>
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+<!-- 不蒜子计数初始值纠正 -->
+<script>
+    $(document).ready(function () {
+
+        var int = setInterval(fixCount, 50);
+        var pvcountOffset = 80000;
+        var uvcountOffset = 20000;
+
+        function fixCount() {
+            if (document.getElementById("busuanzi_container_site_pv").style.display != "none") {
+                $("#busuanzi_value_site_pv").html(parseInt($("#busuanzi_value_site_pv").html()) + pvcountOffset);
+                clearInterval(int);
+            }
+            if ($("#busuanzi_container_site_pv").css("display") != "none") {
+                $("#busuanzi_value_site_uv").html(parseInt($("#busuanzi_value_site_uv").html()) + uvcountOffset); // 加上初始数据 
+                clearInterval(int);
+            }
+        }
+    });
+</script>
+
+<script language=javascript>
+    function siteTime() {
+        window.setTimeout("siteTime()", 1000);
+        var seconds = 1000;
+        var minutes = seconds * 60;
+        var hours = minutes * 60;
+        var days = hours * 24;
+        var years = days * 365;
+        var today = new Date();
+        var todayYear = today.getFullYear();
+        var todayMonth = today.getMonth() + 1;
+        var todayDate = today.getDate();
+        var todayHour = today.getHours();
+        var todayMinute = today.getMinutes();
+        var todaySecond = today.getSeconds();
+        /* Date.UTC() -- 返回date对象距世界标准时间(UTC)1970年1月1日午夜之间的毫秒数(时间戳)
+        year - 作为date对象的年份，为4位年份值
+        month - 0-11之间的整数，做为date对象的月份
+        day - 1-31之间的整数，做为date对象的天数
+        hours - 0(午夜24点)-23之间的整数，做为date对象的小时数
+        minutes - 0-59之间的整数，做为date对象的分钟数
+        seconds - 0-59之间的整数，做为date对象的秒数
+        microseconds - 0-999之间的整数，做为date对象的毫秒数 */
+        var t1 = Date.UTC(2019, 04, 22, 00, 00, 00); //北京时间2020-04-22 00:00:00
+        var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
+        var diff = t2 - t1;
+        var diffYears = Math.floor(diff / years);
+        var diffDays = Math.floor((diff / days) - diffYears * 365);
+        var diffHours = Math.floor((diff - (diffYears * 365 + diffDays) * days) / hours);
+        var diffMinutes = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours) / minutes);
+        var diffSeconds = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours - diffMinutes * minutes) / seconds);
+        document.getElementById("sitetime").innerHTML = "本站已运行 " + diffYears + " 年 " + diffDays + " 天 " + diffHours + " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
+    }/*因为建站时间还没有一年，就将之注释掉了。需要的可以取消*/
+    siteTime();
+</script>
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fa fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script src="/js/search.js"></script>
+<script type="text/javascript">
+$(function () {
+    searchFunc("/" + "search.xml", 'searchInput', 'searchResult');
+});
+</script>
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fa fa-angle-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    <script type="text/javascript"> var OriginTitile = document.title, st; document.addEventListener("visibilitychange", function () { document.hidden ? (document.title = "Σ(っ °Д °;)っ喔哟，崩溃啦！", clearTimeout(st)) : (document.title = "φ(゜▽゜*)♪咦，又好了！", st = setTimeout(function () { document.title = OriginTitile }, 3e3)) })
+    </script>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+<script async src="https://www.googletagmanager.com/gtag/js?id="></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+        dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+    gtag('config', '');
+</script>
+
+
+
+    
+    <script src="/libs/others/clicklove.js"></script>
+    
+
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    <!-- 雪花特效 -->
+    
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/shizuku.model.json"},"display":{"position":"right","width":200,"height":400},"mobile":{"show":true},"react":{"opacity":0.7}});</script></body>
+
+</html>

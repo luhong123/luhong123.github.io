@@ -2,16 +2,51 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://yoursite.com/2020/02/16/guan-fang-yuan-jing-xiang-yuan-hui-zong/</loc>
+    <loc>http://yoursite.com/categories/index.html</loc>
     
-    <lastmod>2020-05-29T15:19:57.376Z</lastmod>
+    <lastmod>2020-05-31T11:00:39.371Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://yoursite.com/2020/05/18/01-yun-ji-suan-kvm-openstack/</loc>
+    <loc>http://yoursite.com/contact/index.html</loc>
     
-    <lastmod>2020-05-29T15:12:11.282Z</lastmod>
+    <lastmod>2020-05-31T11:00:04.895Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2020/05/26/01-yun-ji-suan-kvm-openstack/</loc>
+    
+    <lastmod>2020-05-31T10:58:14.578Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2020/05/21/13-mysql-quan-mian-you-hua-gu-zhang-pt-gong-ju-shi-yong/</loc>
+    
+    <lastmod>2020-05-31T10:54:47.873Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2020/05/27/02-docker-ji-chu-cao-zuo/</loc>
+    
+    <lastmod>2020-05-31T09:19:13.979Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2020/05/23/guan-fang-yuan-jing-xiang-yuan-hui-zong/</loc>
+    
+    <lastmod>2020-05-31T09:17:54.365Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2020/05/20/12-fen-bu-shi-jia-gou-mycat/</loc>
+    
+    <lastmod>2020-05-31T09:11:36.141Z</lastmod>
     
   </url>
   
@@ -19,13 +54,6 @@
     <loc>http://yoursite.com/2020/05/19/11-mysql-zhu-cong-fu-zhi-gao-ji-jin-jie/</loc>
     
     <lastmod>2020-05-29T15:08:45.112Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/2020/05/17/12-fen-bu-shi-jia-gou-mycat/</loc>
-    
-    <lastmod>2020-05-23T10:44:16.203Z</lastmod>
     
   </url>
   
@@ -142,23 +170,9 @@
   </url>
   
   <url>
-    <loc>http://yoursite.com/2020/02/23/02/</loc>
-    
-    <lastmod>2020-04-24T13:42:41.336Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://yoursite.com/2020/02/23/di-san-zhang-mysql-lian-jie-guan-li/</loc>
     
     <lastmod>2020-04-23T12:58:49.070Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/contact/index.html</loc>
-    
-    <lastmod>2020-04-22T10:49:43.774Z</lastmod>
     
   </url>
   
@@ -192,13 +206,6 @@
   
   <url>
     <loc>http://yoursite.com/archives/index.html</loc>
-    
-    <lastmod>2020-04-05T02:43:43.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/categories/index.html</loc>
     
     <lastmod>2020-04-05T02:43:43.000Z</lastmod>
     
