@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-05-31T09:19:13.979Z</updated>
+  <updated>2020-06-05T12:05:06.574Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>03-k8s集群的安装</title>
+    <link href="http://yoursite.com/2020/06/05/03-docker-ji-chu-cao-zuo-copy/"/>
+    <id>http://yoursite.com/2020/06/05/03-docker-ji-chu-cao-zuo-copy/</id>
+    <published>2020-06-05T08:09:23.000Z</published>
+    <updated>2020-06-05T12:05:06.574Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;1-k8s集群的安装&quot;&gt;&lt;a href=&quot;#1-k8s集群的安装&quot; class=&quot;headerlink&quot; title=&quot;1:k8s集群的安装&quot;&gt;&lt;/a&gt;1:k8s集群的安装&lt;/h2&gt;&lt;h3 id=&quot;1-1-k8s的架构&quot;&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+      <category term="k8s" scheme="http://yoursite.com/categories/k8s/"/>
+    
+    
+      <category term="leetcode" scheme="http://yoursite.com/tags/leetcode/"/>
+    
+      <category term="云计算" scheme="http://yoursite.com/tags/%E4%BA%91%E8%AE%A1%E7%AE%97/"/>
+    
+  </entry>
   
   <entry>
     <title>02-docker基础操作</title>
@@ -125,9 +153,9 @@
       <category term="mysql" scheme="http://yoursite.com/categories/mysql/"/>
     
     
-      <category term="mysql" scheme="http://yoursite.com/tags/mysql/"/>
-    
       <category term="leetcode" scheme="http://yoursite.com/tags/leetcode/"/>
+    
+      <category term="mysql" scheme="http://yoursite.com/tags/mysql/"/>
     
   </entry>
   
@@ -153,9 +181,9 @@
       <category term="mysql" scheme="http://yoursite.com/categories/mysql/"/>
     
     
-      <category term="mysql" scheme="http://yoursite.com/tags/mysql/"/>
-    
       <category term="leetcode" scheme="http://yoursite.com/tags/leetcode/"/>
+    
+      <category term="mysql" scheme="http://yoursite.com/tags/mysql/"/>
     
   </entry>
   
@@ -181,9 +209,9 @@
       <category term="mysql" scheme="http://yoursite.com/categories/mysql/"/>
     
     
-      <category term="mysql" scheme="http://yoursite.com/tags/mysql/"/>
-    
       <category term="leetcode" scheme="http://yoursite.com/tags/leetcode/"/>
+    
+      <category term="mysql" scheme="http://yoursite.com/tags/mysql/"/>
     
   </entry>
   
@@ -209,9 +237,9 @@
       <category term="mysql" scheme="http://yoursite.com/categories/mysql/"/>
     
     
-      <category term="mysql" scheme="http://yoursite.com/tags/mysql/"/>
-    
       <category term="leetcode" scheme="http://yoursite.com/tags/leetcode/"/>
+    
+      <category term="mysql" scheme="http://yoursite.com/tags/mysql/"/>
     
   </entry>
   
@@ -237,9 +265,9 @@
       <category term="mysql" scheme="http://yoursite.com/categories/mysql/"/>
     
     
-      <category term="mysql" scheme="http://yoursite.com/tags/mysql/"/>
-    
       <category term="leetcode" scheme="http://yoursite.com/tags/leetcode/"/>
+    
+      <category term="mysql" scheme="http://yoursite.com/tags/mysql/"/>
     
   </entry>
   
@@ -265,9 +293,9 @@
       <category term="mysql" scheme="http://yoursite.com/categories/mysql/"/>
     
     
-      <category term="mysql" scheme="http://yoursite.com/tags/mysql/"/>
-    
       <category term="leetcode" scheme="http://yoursite.com/tags/leetcode/"/>
+    
+      <category term="mysql" scheme="http://yoursite.com/tags/mysql/"/>
     
   </entry>
   
@@ -457,9 +485,9 @@
       <category term="mysql" scheme="http://yoursite.com/categories/mysql/"/>
     
     
-      <category term="mysql" scheme="http://yoursite.com/tags/mysql/"/>
-    
       <category term="leetcode" scheme="http://yoursite.com/tags/leetcode/"/>
+    
+      <category term="mysql" scheme="http://yoursite.com/tags/mysql/"/>
     
   </entry>
   
@@ -543,36 +571,6 @@
       <category term="编程" scheme="http://yoursite.com/tags/%E7%BC%96%E7%A8%8B/"/>
     
       <category term="shell" scheme="http://yoursite.com/tags/shell/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Linux禁止ping以及开启ping的方法</title>
-    <link href="http://yoursite.com/2020/02/23/linux-jin-zhi-ping-yi-ji-kai-qi-ping-de-fang-fa/"/>
-    <id>http://yoursite.com/2020/02/23/linux-jin-zhi-ping-yi-ji-kai-qi-ping-de-fang-fa/</id>
-    <published>2020-02-23T07:09:23.000Z</published>
-    <updated>2020-04-27T00:35:48.407Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;Linux默认是允许Ping响应的，系统是否允许Ping由2个因素决定的 ：&lt;/p&gt;
-&lt;p&gt;作者：Happiness&lt;/p&gt;
-&lt;p&gt;来源：&lt;a href=&quot;https://urlify.cn/Mr6zMb&quot; target=&quot;_blank&quot;
-        
-      
-    
-    </summary>
-    
-      <category term="mysql" scheme="http://yoursite.com/categories/mysql/"/>
-    
-    
-      <category term="mysql" scheme="http://yoursite.com/tags/mysql/"/>
-    
-      <category term="leetcode" scheme="http://yoursite.com/tags/leetcode/"/>
     
   </entry>
   

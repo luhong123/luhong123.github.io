@@ -1,3 +1,4 @@
+http://yoursite.com/2020/06/05/03-docker-ji-chu-cao-zuo-copy/
 http://yoursite.com/2020/05/27/02-docker-ji-chu-cao-zuo/
 http://yoursite.com/2020/05/26/01-yun-ji-suan-kvm-openstack/
 http://yoursite.com/2020/05/23/guan-fang-yuan-jing-xiang-yuan-hui-zong/
